@@ -1,916 +1,588 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
 
-// ─── ICONS (inline SVG components to avoid icon library dependency) ───────────
-const MenuIcon = () => (
-  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
-  </svg>
-);
-const XIcon = () => (
-  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-const ArrowRight = () => (
+// ─── Icon Components ──────────────────────────────────────────────────────────
+
+const SearchIcon = () => (
   <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <path d="M5 12h14M12 5l7 7-7 7" />
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.35-4.35" />
   </svg>
 );
-const CheckIcon = () => (
+
+const TrackIcon = () => (
+  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+    <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l4 4v5" />
+    <polyline points="9 17 9 22 15 22 15 17" />
+    <path d="M17 21a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+  </svg>
+);
+
+const UserIcon = () => (
+  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
+const HeartIcon = () => (
+  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+  </svg>
+);
+
+const CartIcon = () => (
+  <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+    <circle cx="9" cy="21" r="1" />
+    <circle cx="20" cy="21" r="1" />
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+  </svg>
+);
+
+const ChevronLeftIcon = () => (
   <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
-const ChevronDown = () => (
-  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <polyline points="6 9 12 15 18 9" />
-  </svg>
-);
-const PhoneIcon = () => (
-  <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.14 2 2 0 012.05 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-  </svg>
-);
-const MailIcon = () => (
-  <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-    <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-const StarIcon = () => (
-  <svg width="16" height="16" fill="#F59E0B" viewBox="0 0 24 24">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    <polyline points="15 18 9 12 15 6" />
   </svg>
 );
 
-// ─── DATA ─────────────────────────────────────────────────────────────────────
+const ChevronRightIcon = () => (
+  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+    <polyline points="9 18 15 12 9 6" />
+  </svg>
+);
+
+// ─── Logo ─────────────────────────────────────────────────────────────────────
+
+const ChapaghorLogo = () => (
+  <div className="flex items-center gap-2 cursor-pointer select-none">
+    {/* House Icon */}
+    <div className="w-10 h-10 bg-[#E8521A] rounded-xl flex items-center justify-center shadow-md">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+        <rect x="9" y="14" width="6" height="7" fill="white" opacity="0.3" />
+        <rect x="9" y="14" width="6" height="7" rx="0.5" stroke="white" strokeWidth="0.8" fill="none" />
+      </svg>
+    </div>
+    <div className="flex flex-col leading-tight">
+      <span className="text-[#E8521A] font-black text-xl tracking-tight">Chapaghor</span>
+      <span className="text-gray-400 text-[9px] tracking-widest uppercase">your printing partner</span>
+    </div>
+  </div>
+);
+
+// ─── Category Icons ───────────────────────────────────────────────────────────
+
+const BusinessCardIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.5">
+    <rect x="2" y="6" width="20" height="12" rx="2" />
+    <line x1="2" y1="10" x2="22" y2="10" />
+    <line x1="6" y1="14" x2="10" y2="14" />
+    <line x1="6" y1="16" x2="9" y2="16" />
+  </svg>
+);
+
+const LetterheadIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.5">
+    <rect x="4" y="2" width="16" height="20" rx="1" />
+    <line x1="8" y1="7" x2="16" y2="7" />
+    <line x1="8" y1="10" x2="16" y2="10" />
+    <line x1="8" y1="13" x2="13" y2="13" />
+    <rect x="6" y="4" width="5" height="1.5" rx="0.5" fill="#E8521A" stroke="none" />
+  </svg>
+);
+
+const EnvelopeIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.5">
+    <rect x="2" y="5" width="20" height="14" rx="2" />
+    <polyline points="2,5 12,13 22,5" />
+  </svg>
+);
+
+const BannerIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.5">
+    <rect x="2" y="4" width="20" height="13" rx="1" />
+    <line x1="7" y1="20" x2="17" y2="20" />
+    <line x1="9" y1="17" x2="9" y2="20" />
+    <line x1="15" y1="17" x2="15" y2="20" />
+    <text x="6" y="13" fontSize="6" fill="#E8521A" stroke="none" fontWeight="bold">FLEX</text>
+  </svg>
+);
+
+const GiftIcon = () => (
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.5">
+    <rect x="3" y="10" width="18" height="11" rx="1" />
+    <rect x="2" y="6" width="20" height="4" rx="1" />
+    <line x1="12" y1="6" x2="12" y2="21" />
+    <path d="M12 6C12 6 8 3 8 6" />
+    <path d="M12 6C12 6 16 3 16 6" />
+  </svg>
+);
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
 const navLinks = [
-  { label: "Home", href: "/" },
-  {
-    label: "Services",
-    href: "#services",
-    children: [
-      { label: "Offset Printing", href: "#" },
-      { label: "Digital Printing", href: "#" },
-      { label: "Packaging Design", href: "#" },
-      { label: "Branding & Identity", href: "#" },
-    ],
-  },
-  {
-    label: "Products",
-    href: "#products",
-    children: [
-      { label: "Business Cards", href: "#" },
-      { label: "Brochures & Flyers", href: "#" },
-      { label: "Banners & Signage", href: "#" },
-      { label: "Custom Packaging", href: "#" },
-    ],
-  },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  "All Products",
+  "Offset Print",
+  "Signage",
+  "Wedding Invitations",
+  "ID Cards & Lanyards",
+  "Office Supplies",
 ];
 
-const stats = [
-  { value: "15+", label: "Years Experience", icon: "🏆" },
-  { value: "8K+", label: "Happy Clients", icon: "😊" },
-  { value: "120+", label: "Expert Team", icon: "👥" },
-  { value: "99%", label: "On-Time Delivery", icon: "🚀" },
+const quickCategories = [
+  { name: "Business Card", icon: <BusinessCardIcon /> },
+  { name: "Letterhead", icon: <LetterheadIcon /> },
+  { name: "Envelope", icon: <EnvelopeIcon /> },
+  { name: "Banner Print", icon: <BannerIcon /> },
+  { name: "Gift", icon: <GiftIcon /> },
 ];
 
-const services = [
+const partnerLogos = [
+  { name: "amberIT", color: "#E8521A", bg: "#fff3ee" },
+  { name: "bnet", color: "#cc0000", bg: "#fff0f0" },
+  { name: "FaithTrip", color: "#2563eb", bg: "#eff6ff" },
+  { name: "FlashNet", color: "#ca8a04", bg: "#fefce8" },
+];
+
+const popularServices = [
   {
-    icon: "🖨️",
-    title: "Offset Printing",
-    desc: "High-volume, precision offset printing for magazines, catalogs, books, and corporate materials with Pantone color accuracy.",
-    tag: "Most Popular",
+    title: "Vibe Coding",
+    bg: "from-purple-900 via-purple-800 to-rose-900",
+    accent: "#a855f7",
+    emoji: "💻",
   },
   {
-    icon: "💻",
-    title: "Digital Printing",
-    desc: "Fast-turnaround digital printing for short runs, variable data, personalized marketing, and on-demand production.",
-    tag: "",
+    title: "Website Development",
+    bg: "from-slate-800 via-blue-900 to-slate-900",
+    accent: "#3b82f6",
+    emoji: "🌐",
   },
   {
-    icon: "📦",
-    title: "Packaging & Box Design",
-    desc: "Custom packaging solutions — die-cut boxes, retail packaging, corrugated cartons designed for impact and durability.",
-    tag: "Premium",
+    title: "Video Editing",
+    bg: "from-pink-900 via-rose-800 to-orange-900",
+    accent: "#f43f5e",
+    emoji: "🎬",
   },
   {
-    icon: "🎨",
-    title: "Branding & Identity",
-    desc: "Complete brand identity packages — logo, style guide, stationery, and brand collateral design that speaks your story.",
-    tag: "",
+    title: "Software Development",
+    bg: "from-green-900 via-emerald-900 to-teal-900",
+    accent: "#10b981",
+    emoji: "⚙️",
   },
   {
-    icon: "🖼️",
-    title: "Large Format & Signage",
-    desc: "Billboards, banners, vehicle wraps, exhibition displays, and architectural signage with vivid, weather-resistant inks.",
-    tag: "",
+    title: "Book Publishing",
+    bg: "from-amber-900 via-yellow-900 to-orange-900",
+    accent: "#f59e0b",
+    emoji: "📚",
   },
   {
-    icon: "📋",
-    title: "Corporate Stationery",
-    desc: "Letterheads, envelopes, business cards, notepads, and full office stationery suites with premium paper finishing.",
-    tag: "",
+    title: "Architecture & Interior Design",
+    bg: "from-neutral-800 via-stone-800 to-zinc-900",
+    accent: "#d4a855",
+    emoji: "🏛️",
   },
 ];
 
-const whyUs = [
+const bannerSlides = [
   {
-    title: "ISO-Certified Quality",
-    desc: "Every job passes through our 12-point quality control protocol before dispatch.",
-    icon: "🏅",
+    id: 0,
+    type: "main",
+    bg: "from-orange-950 via-orange-900 to-neutral-900",
+    bengaliText: "ছাপাঘরে অর্ডারে,\nপ্রোডাক্ট উড়ে যাবে\nআপনার ঘরে...",
   },
   {
-    title: "State-of-the-Art Machinery",
-    desc: "Heidelberg, KOMORI & Roland presses delivering benchmark color precision.",
-    icon: "⚙️",
-  },
-  {
-    title: "On-Time, Every Time",
-    desc: "99% on-time delivery record backed by a money-back guarantee.",
-    icon: "⏱️",
-  },
-  {
-    title: "Eco-Friendly Printing",
-    desc: "FSC-certified paper, soy-based inks, and zero-waste production practices.",
-    icon: "🌿",
-  },
-  {
-    title: "Dedicated Account Manager",
-    desc: "One point of contact from quoting to delivery — no confusion, no delays.",
-    icon: "🤝",
-  },
-  {
-    title: "Competitive Pricing",
-    desc: "Factory-direct pricing with no middlemen — quality printing at honest cost.",
-    icon: "💎",
+    id: 1,
+    type: "printing",
+    bg: "from-red-700 via-red-600 to-red-800",
+    headlineSmall: "LARGE FORMAT",
+    headlineBig: "PRINTING",
   },
 ];
 
-const process = [
-  { step: "01", title: "Brief & Consultation", desc: "Share your vision, goals, and specs — we provide a detailed quote within 24 hours." },
-  { step: "02", title: "Design & Pre-Press", desc: "Our designers prepare or review artwork, ensuring print-ready files with perfect colour profiles." },
-  { step: "03", title: "Proof & Approval", desc: "Digital or physical proofs sent for your approval before we press go on production." },
-  { step: "04", title: "Production", desc: "Your job runs on our precision presses with in-line quality checks at every stage." },
-  { step: "05", title: "Finishing & Binding", desc: "Lamination, die-cutting, foiling, binding — all finishing done in-house for quality control." },
-  { step: "06", title: "Delivery & Support", desc: "Nationwide delivery with real-time tracking. Post-delivery support whenever you need us." },
-];
+// ─── Main Page ────────────────────────────────────────────────────────────────
 
-const testimonials = [
-  {
-    name: "Rashida Begum",
-    role: "CEO, Dhaka Mart",
-    text: "Chapaghor printed our entire product catalog — 5,000 copies — in 4 days. The color accuracy was perfect and the paper quality exceeded our expectations. Our clients were genuinely impressed.",
-    rating: 5,
-    initial: "R",
-    color: "from-blue-500 to-blue-700",
-  },
-  {
-    name: "Tanvir Ahmed",
-    role: "Marketing Director, NovaTech BD",
-    text: "We've been using Chapaghor for 3 years for all our corporate stationery and event materials. Consistent quality, excellent pre-press support, and they always hit the deadline.",
-    rating: 5,
-    initial: "T",
-    color: "from-indigo-500 to-indigo-700",
-  },
-  {
-    name: "Nusrat Jahan",
-    role: "Founder, Ritu Fashion House",
-    text: "The packaging designs Chapaghor created for us completely transformed our product presentation. Sales improved noticeably after the rebrand. Highly professional team.",
-    rating: 5,
-    initial: "N",
-    color: "from-sky-500 to-sky-700",
-  },
-];
+export default function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeNav, setActiveNav] = useState("All Products");
+  const [cartCount] = useState(3);
 
-const faqs = [
-  {
-    q: "What is your minimum order quantity?",
-    a: "We accommodate orders from as low as 100 units for digital printing. For offset printing, minimum quantities vary by product — typically 500 to 1,000 units for best pricing.",
-  },
-  {
-    q: "How do I submit my artwork files?",
-    a: "We accept PDF, AI, PSD, and INDD files. All files should be at 300 DPI, CMYK color mode, with 3mm bleed on all sides. Our pre-press team reviews every file before production.",
-  },
-  {
-    q: "Do you offer design services?",
-    a: "Absolutely. Our in-house design team can create or refine your artwork. We offer branding packages, single design jobs, and pre-press only services depending on your need.",
-  },
-  {
-    q: "What are your standard turnaround times?",
-    a: "Digital printing: 2–3 working days. Offset printing: 5–7 working days. Rush orders are available at a surcharge for select products — contact us for availability.",
-  },
-  {
-    q: "Do you deliver outside Dhaka?",
-    a: "Yes, we deliver nationwide across Bangladesh via Sundarban, SA Paribahan, and our own courier network. International shipping is available for select orders.",
-  },
-];
-
-const clients = [
-  "Grameen Bank", "BRAC", "Aarong", "Square Group", "Unilever BD",
-  "Robi Axiata", "ACI Limited", "PRAN Group", "DBH Finance", "Dutch-Bangla"
-];
-
-// ─── COUNTER HOOK ──────────────────────────────────────────────────────────────
-function useCounter(target: number, duration: number, start: boolean) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-// ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
-export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [statsVisible, setStatsVisible] = useState(false);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStatsVisible(true); },
-      { threshold: 0.3 }
-    );
-    if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const handlePrev = () => setActiveSlide((p) => (p === 0 ? bannerSlides.length - 1 : p - 1));
+  const handleNext = () => setActiveSlide((p) => (p === bannerSlides.length - 1 ? 0 : p + 1));
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-      {/* Google Font */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap');
-        :root {
-          --navy: #070E1C;
-          --navy-2: #0D1E3A;
-          --blue: #1B5EF8;
-          --blue-light: #3B82F6;
-          --accent: #00D4FF;
-        }
-        .font-display { font-family: 'Syne', sans-serif; }
-        .gradient-text {
-          background: linear-gradient(135deg, #1B5EF8 0%, #00D4FF 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-        .hero-bg {
-          background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(27,94,248,0.18) 0%, transparent 70%),
-                      radial-gradient(ellipse 40% 40% at 90% 40%, rgba(0,212,255,0.10) 0%, transparent 60%),
-                      #070E1C;
-        }
-        .card-hover { transition: all 0.3s cubic-bezier(.4,0,.2,1); }
-        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27,94,248,0.15); }
-        .btn-primary {
-          background: linear-gradient(135deg, #1B5EF8, #00D4FF);
-          color: #fff;
-          font-weight: 700;
-          padding: 14px 32px;
-          border-radius: 8px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s;
-          box-shadow: 0 4px 24px rgba(27,94,248,0.35);
-          border: none;
-          cursor: pointer;
-          font-size: 15px;
-          text-decoration: none;
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(27,94,248,0.5); }
-        .btn-outline {
-          background: transparent;
-          color: #1B5EF8;
-          font-weight: 700;
-          padding: 13px 32px;
-          border-radius: 8px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s;
-          border: 2px solid #1B5EF8;
-          cursor: pointer;
-          font-size: 15px;
-          text-decoration: none;
-        }
-        .btn-outline:hover { background: #1B5EF8; color: #fff; }
-        .btn-outline-white {
-          background: transparent;
-          color: #fff;
-          font-weight: 700;
-          padding: 13px 32px;
-          border-radius: 8px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s;
-          border: 2px solid rgba(255,255,255,0.4);
-          cursor: pointer;
-          font-size: 15px;
-          text-decoration: none;
-        }
-        .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
-        .tag { 
-          background: rgba(27,94,248,0.12); 
-          color: #1B5EF8; 
-          font-size: 12px; 
-          font-weight: 700; 
-          padding: 3px 10px; 
-          border-radius: 100px;
-          letter-spacing: 0.05em;
-        }
-        .section-tag {
-          background: rgba(27,94,248,0.08);
-          color: #1B5EF8;
-          font-size: 13px;
-          font-weight: 700;
-          padding: 6px 16px;
-          border-radius: 100px;
-          display: inline-block;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          margin-bottom: 16px;
-          border: 1px solid rgba(27,94,248,0.2);
-        }
-        .process-line::after {
-          content: '';
-          position: absolute;
-          top: 28px;
-          left: 56px;
-          width: calc(100% - 56px);
-          height: 2px;
-          background: linear-gradient(90deg, #1B5EF8, transparent);
-          z-index: 0;
-        }
-        .marquee-track {
-          display: flex;
-          gap: 48px;
-          animation: marquee 25s linear infinite;
-          width: max-content;
-        }
-        .marquee-track:hover { animation-play-state: paused; }
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-        .faq-answer {
-          overflow: hidden;
-          transition: max-height 0.35s ease, padding 0.35s ease;
-        }
-        .nav-dropdown {
-          position: absolute;
-          top: calc(100% + 12px);
-          left: 0;
-          background: #fff;
-          border: 1px solid #E8ECF4;
-          border-radius: 12px;
-          padding: 8px;
-          min-width: 220px;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-          z-index: 100;
-        }
-        .nav-dropdown a {
-          display: block;
-          padding: 10px 16px;
-          border-radius: 8px;
-          color: #374151;
-          font-size: 14px;
-          font-weight: 500;
-          text-decoration: none;
-          transition: all 0.2s;
-        }
-        .nav-dropdown a:hover { background: #F0F5FF; color: #1B5EF8; }
-        .hero-card {
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 16px;
-          backdrop-filter: blur(10px);
-        }
-        .floating { animation: floating 4s ease-in-out infinite; }
-        @keyframes floating {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        .floating-2 { animation: floating 5s ease-in-out 1s infinite; }
-        .floating-3 { animation: floating 6s ease-in-out 2s infinite; }
-        .grid-line-bg {
-          background-image: 
-            linear-gradient(rgba(27,94,248,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(27,94,248,0.06) 1px, transparent 1px);
-          background-size: 60px 60px;
-        }
-      `}</style>
+    <div className="min-h-screen bg-gray-50 font-sans">
 
-      {/* ── NAVBAR ─────────────────────────────────────────────────────────── */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-transparent"
-        }`}
-      >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-18" style={{ height: "72px" }}>
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xl font-bold" style={{ background: "linear-gradient(135deg, #1B5EF8, #00D4FF)" }}>C</div>
-              <div>
-                <div className={`font-display text-xl font-bold leading-none ${scrolled ? "text-gray-900" : "text-white"}`}>Chapaghor</div>
-                <div className={`text-xs font-medium ${scrolled ? "text-gray-400" : "text-blue-200"}`}>Print & Design Excellence</div>
-              </div>
-            </Link>
+      {/* ── HEADER ─────────────────────────────────────────────────────────── */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
 
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <div key={link.label} className="relative" onMouseEnter={() => link.children && setOpenDropdown(link.label)} onMouseLeave={() => setOpenDropdown(null)}>
-                  <Link
-                    href={link.href}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-600 transition-all duration-200 ${
-                      scrolled ? "text-gray-600 hover:text-blue-600 hover:bg-blue-50" : "text-blue-100 hover:text-white hover:bg-white/10"
-                    }`}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {link.label}
-                    {link.children && <ChevronDown />}
-                  </Link>
-                  {link.children && openDropdown === link.label && (
-                    <div className="nav-dropdown">
-                      {link.children.map((child) => (
-                        <a key={child.label} href={child.href}>{child.label}</a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <ChapaghorLogo />
+          </div>
+
+          {/* Search */}
+          <div className="flex-1 max-w-xl mx-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search products"
+                className="w-full h-10 pl-4 pr-12 rounded-full border-2 border-gray-200 focus:border-[#E8521A] focus:outline-none text-sm text-gray-700 bg-gray-50 transition-colors"
+              />
+              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#E8521A] transition-colors">
+                <SearchIcon />
+              </button>
             </div>
+          </div>
 
-            {/* CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <a href="tel:+8801700000000" className={`flex items-center gap-2 text-sm font-semibold ${scrolled ? "text-gray-600" : "text-blue-100"}`}>
-                <PhoneIcon /> +880 170 000 0000
-              </a>
-              <a href="#contact" className="btn-primary" style={{ padding: "10px 22px", fontSize: "14px" }}>
-                Get Free Quote <ArrowRight />
-              </a>
-            </div>
-
-            {/* Mobile toggle */}
-            <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 rounded-lg ${scrolled ? "text-gray-700" : "text-white"}`}>
-              {mobileOpen ? <XIcon /> : <MenuIcon />}
+          {/* Nav Icons */}
+          <nav className="flex items-center gap-5 ml-auto">
+            <button className="flex flex-col items-center gap-0.5 text-gray-600 hover:text-[#E8521A] transition-colors group">
+              <TrackIcon />
+              <span className="text-[10px] font-medium">Track Order</span>
             </button>
-          </div>
-        </nav>
+            <button className="flex flex-col items-center gap-0.5 text-gray-600 hover:text-[#E8521A] transition-colors">
+              <UserIcon />
+              <span className="text-[10px] font-medium">Sign In</span>
+            </button>
+            <button className="flex flex-col items-center gap-0.5 text-gray-600 hover:text-[#E8521A] transition-colors">
+              <HeartIcon />
+              <span className="text-[10px] font-medium">Wishlist</span>
+            </button>
+            <button className="relative flex flex-col items-center gap-0.5 text-gray-600 hover:text-[#E8521A] transition-colors">
+              <CartIcon />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1.5 w-4.5 h-4.5 bg-[#E8521A] text-white text-[9px] font-bold rounded-full flex items-center justify-center min-w-[18px] min-h-[18px] px-0.5">
+                  {cartCount}
+                </span>
+              )}
+              <span className="text-[10px] font-medium">Cart</span>
+            </button>
+          </nav>
+        </div>
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-1">
-            {navLinks.map((link) => (
-              <div key={link.label}>
-                <a href={link.href} className="block px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-blue-50 hover:text-blue-600 transition-all">
-                  {link.label}
-                </a>
-                {link.children && (
-                  <div className="ml-4 mt-1 space-y-1">
-                    {link.children.map((c) => (
-                      <a key={c.label} href={c.href} className="block px-4 py-2 text-sm text-gray-500 hover:text-blue-600">{c.label}</a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <div className="pt-4 flex flex-col gap-3">
-              <a href="#contact" className="btn-primary justify-center">Get Free Quote <ArrowRight /></a>
-            </div>
+        {/* ── SUB NAV ── */}
+        <div className="border-t border-gray-100 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <ul className="flex gap-0 overflow-x-auto scrollbar-hide">
+              {navLinks.map((link) => (
+                <li key={link}>
+                  <button
+                    onClick={() => setActiveNav(link)}
+                    className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-all ${
+                      activeNav === link
+                        ? "border-[#E8521A] text-[#E8521A]"
+                        : "border-transparent text-gray-600 hover:text-[#E8521A] hover:border-orange-200"
+                    }`}
+                  >
+                    {link}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
-        )}
+        </div>
       </header>
 
-      {/* ── HERO ───────────────────────────────────────────────────────────── */}
-      <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
-        {/* Grid lines */}
-        <div className="absolute inset-0 grid-line-bg opacity-40 pointer-events-none" />
+      {/* ── MAIN CONTENT ───────────────────────────────────────────────────── */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-8">
 
-        {/* Decorative blobs */}
-        <div className="absolute top-32 right-20 w-72 h-72 rounded-full opacity-10 blur-3xl" style={{ background: "#00D4FF" }} />
-        <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full opacity-8 blur-3xl" style={{ background: "#1B5EF8" }} />
+        {/* ── QUICK CATEGORIES ─────────────────────────────────────────────── */}
+        <section>
+          <div className="flex justify-center gap-4 flex-wrap sm:flex-nowrap">
+            {quickCategories.map((cat) => (
+              <button
+                key={cat.name}
+                className="flex flex-col items-center gap-3 bg-white rounded-2xl px-6 py-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-orange-200 hover:-translate-y-0.5 transition-all duration-200 min-w-[110px] group"
+              >
+                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-50 group-hover:bg-orange-100 transition-colors">
+                  {cat.icon}
+                </div>
+                <span className="text-sm font-medium text-gray-700 whitespace-nowrap">{cat.name}</span>
+              </button>
+            ))}
+          </div>
+        </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left */}
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-blue-200 font-semibold mb-8 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                Bangladesh's Leading Print & Design House
-              </div>
+        {/* ── HERO BANNER CAROUSEL ──────────────────────────────────────────── */}
+        <section className="relative rounded-2xl overflow-hidden">
+          <div className="relative">
 
-              <h1 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
-                Where Ideas<br />
-                <span className="gradient-text">Take Print</span><br />
-                & Come Alive
-              </h1>
+            {/* Slide Container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden min-h-[240px] sm:min-h-[280px] md:min-h-[320px]">
 
-              <p className="text-lg text-blue-100 leading-relaxed mb-10 max-w-lg">
-                From offset printing to complete brand identity — Chapaghor delivers precision-crafted print solutions that make your business stand out. Trusted by 8,000+ brands across Bangladesh.
-              </p>
-
-              <div className="flex flex-wrap gap-4 mb-12">
-                <a href="#contact" className="btn-primary">Get Free Quote <ArrowRight /></a>
-                <a href="#services" className="btn-outline-white">Explore Services <ArrowRight /></a>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-6 text-sm">
-                {["ISO Certified", "100% Colour Match", "Free Delivery Dhaka", "Rush Orders Available"].map((badge) => (
-                  <div key={badge} className="flex items-center gap-2 text-blue-200">
-                    <div className="text-green-400"><CheckIcon /></div>
-                    {badge}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — visual cards */}
-            <div className="relative hidden lg:block">
-              {/* Main card */}
-              <div className="hero-card p-8 rounded-2xl floating">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl" style={{ background: "rgba(27,94,248,0.2)" }}>🖨️</div>
-                  <div>
-                    <div className="text-white font-bold text-lg">Premium Offset Printing</div>
-                    <div className="text-blue-200 text-sm">Pantone-accurate, up to 1,200 DPI</div>
+              {/* Slide 1 — Main */}
+              <div
+                className={`relative bg-gradient-to-br from-orange-950 via-orange-900 to-neutral-900 p-8 flex items-center transition-all duration-500 ${
+                  activeSlide === 0 ? "opacity-100" : "md:opacity-100 opacity-0 absolute inset-0 md:static"
+                }`}
+              >
+                {/* Decorative printing machine illustration */}
+                <div className="absolute right-8 bottom-0 opacity-25 pointer-events-none select-none">
+                  <div className="w-48 h-40 relative">
+                    {/* Simplified press illustration */}
+                    <div className="absolute bottom-0 right-0 w-40 h-32 bg-gray-600 rounded-t-lg opacity-60" />
+                    <div className="absolute bottom-20 right-4 w-32 h-6 bg-gray-400 rounded opacity-80" />
+                    <div className="absolute bottom-14 right-2 w-36 h-4 bg-gray-500 rounded opacity-70" />
+                    <div className="absolute bottom-10 right-6 w-28 h-8 bg-gray-700 rounded" />
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-3">
-                  {[
-                    { icon: "📰", label: "Magazines" },
-                    { icon: "📦", label: "Packaging" },
-                    { icon: "📋", label: "Catalogs" },
-                    { icon: "🎴", label: "Business Cards" },
-                    { icon: "🖼️", label: "Banners" },
-                    { icon: "📚", label: "Books" },
-                  ].map((item) => (
-                    <div key={item.label} className="bg-white/08 rounded-xl p-3 text-center" style={{ background: "rgba(255,255,255,0.05)" }}>
-                      <div className="text-2xl mb-1">{item.icon}</div>
-                      <div className="text-blue-200 text-xs font-medium">{item.label}</div>
+
+                <div className="relative z-10">
+                  {/* Bengali Headline */}
+                  <p className="text-white text-2xl sm:text-3xl font-bold leading-tight mb-6 whitespace-pre-line drop-shadow-lg">
+                    {`ছাপাঘরে অর্ডারে,\nপ্রোডাক্ট উড়ে যাবে\nআপনার ঘরে...`}
+                  </p>
+                  {/* Logo watermark */}
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-[#E8521A] rounded-lg flex items-center justify-center">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+                      </svg>
                     </div>
+                    <div>
+                      <p className="text-white font-black text-lg leading-none">Chapaghor</p>
+                      <p className="text-orange-300 text-[9px] tracking-widest">your printing partner</p>
+                    </div>
+                  </div>
+                  <p className="text-orange-300 text-xs mt-2 tracking-wider">www.chapaghor.com</p>
+                </div>
+
+                {/* Social icons row */}
+                <div className="absolute top-4 right-6 flex gap-1.5">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-5 h-5 rounded-full border border-orange-400 opacity-50" />
                   ))}
                 </div>
               </div>
 
-              {/* Floating stat cards */}
-              <div className="hero-card absolute -left-12 top-24 p-4 rounded-xl floating-2" style={{ minWidth: 160 }}>
-                <div className="text-xs text-blue-300 font-semibold mb-1">Current Order</div>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-sm">✓</div>
-                  <div>
-                    <div className="text-white text-sm font-bold">50,000 Leaflets</div>
-                    <div className="text-blue-400 text-xs">In Production</div>
+              {/* Slide 2 — Large Format Printing */}
+              <div
+                className={`relative bg-gradient-to-br from-red-600 via-red-600 to-red-700 p-8 flex items-center justify-center transition-all duration-500 ${
+                  activeSlide === 1 ? "opacity-100" : "md:opacity-100 opacity-0 absolute inset-0 md:static"
+                }`}
+              >
+                {/* Red pattern dots */}
+                <div className="absolute inset-0 opacity-20 pointer-events-none select-none"
+                  style={{
+                    backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+                    backgroundSize: "24px 24px",
+                  }}
+                />
+
+                {/* Chapaghor logo top-right */}
+                <div className="absolute top-4 right-4 flex items-center gap-1.5">
+                  <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#E8521A">
+                      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+                    </svg>
+                  </div>
+                  <span className="text-white font-bold text-sm">Chapaghor</span>
+                </div>
+
+                <div className="relative z-10 text-center">
+                  <p className="text-white/80 font-bold text-xl sm:text-2xl tracking-[0.2em] uppercase mb-1">
+                    LARGE FORMAT
+                  </p>
+                  <p className="text-white font-black text-4xl sm:text-5xl tracking-tight uppercase leading-none drop-shadow-xl">
+                    PRINTING
+                  </p>
+                  {/* Printer illustration simplified */}
+                  <div className="mt-4 flex items-center justify-center gap-2">
+                    <div className="w-28 h-16 bg-white/10 border border-white/20 rounded-lg flex items-end justify-center pb-2">
+                      <div className="w-20 h-2 bg-white/40 rounded" />
+                    </div>
+                  </div>
+                  <div className="mt-3 bg-white/20 text-white text-xs px-4 py-1.5 rounded-full inline-block font-semibold tracking-wider">
+                    ORDER NOW
                   </div>
                 </div>
-              </div>
 
-              <div className="hero-card absolute -right-6 bottom-12 p-4 rounded-xl floating-3" style={{ minWidth: 180 }}>
-                <div className="text-xs text-blue-300 font-semibold mb-2">Client Satisfaction</div>
-                <div className="flex gap-0.5 mb-1">
-                  {[1,2,3,4,5].map(i => <StarIcon key={i} />)}
+                {/* Side social row */}
+                <div className="absolute bottom-4 right-4 flex flex-col gap-1.5">
+                  {[0, 1, 2, 3].map((i) => (
+                    <div key={i} className="w-5 h-5 rounded-full border border-white/40 opacity-60" />
+                  ))}
                 </div>
-                <div className="text-white text-sm font-bold">4.9 / 5.0</div>
-                <div className="text-blue-400 text-xs">Based on 1,240 reviews</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── STATS ──────────────────────────────────────────────────────────── */}
-      <section ref={statsRef} className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => {
-              const num = parseInt(stat.value.replace(/\D/g, ""));
-              const suffix = stat.value.replace(/[0-9]/g, "");
-              const counted = useCounter(num, 2000 + i * 200, statsVisible);
-              return (
-                <div key={stat.label} className="text-center">
-                  <div className="text-4xl mb-2">{stat.icon}</div>
-                  <div className="font-display text-4xl lg:text-5xl font-bold mb-1" style={{ color: "#1B5EF8" }}>
-                    {statsVisible ? counted : 0}{suffix}
-                  </div>
-                  <div className="text-gray-500 font-medium text-sm">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+            {/* ── CAROUSEL CONTROLS ── */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-white shadow-md rounded-full flex items-center justify-center text-gray-700 hover:text-[#E8521A] transition-all z-10"
+            >
+              <ChevronLeftIcon />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/90 hover:bg-white shadow-md rounded-full flex items-center justify-center text-gray-700 hover:text-[#E8521A] transition-all z-10"
+            >
+              <ChevronRightIcon />
+            </button>
 
-      {/* ── CLIENT LOGOS ───────────────────────────────────────────────────── */}
-      <section className="py-12 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
-          <p className="text-sm text-gray-400 font-semibold uppercase tracking-widest">Trusted by Leading Brands in Bangladesh</p>
-        </div>
-        <div className="overflow-hidden relative">
-          <div className="marquee-track">
-            {[...clients, ...clients].map((client, i) => (
-              <div key={i} className="flex items-center justify-center px-8 py-3 bg-white rounded-xl border border-gray-200 whitespace-nowrap text-gray-600 font-semibold text-sm" style={{ minWidth: 160 }}>
-                {client}
+            {/* ── DOTS ── */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 md:hidden z-10">
+              {bannerSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveSlide(i)}
+                  className={`rounded-full transition-all ${
+                    activeSlide === i ? "w-6 h-2 bg-[#E8521A]" : "w-2 h-2 bg-white/60"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── STATS + PARTNERS ─────────────────────────────────────────────── */}
+        <section className="bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-5">
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+
+            {/* Stats */}
+            <div className="flex items-center gap-4 flex-shrink-0">
+              {/* Icon */}
+              <div className="w-12 h-12 flex-shrink-0">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <rect x="4" y="20" width="12" height="20" rx="2" fill="#E8521A" opacity="0.3" />
+                  <rect x="18" y="12" width="12" height="28" rx="2" fill="#E8521A" opacity="0.6" />
+                  <rect x="32" y="8" width="12" height="32" rx="2" fill="#E8521A" />
+                  <path d="M6 18 L18 10 L30 14 L42 6" stroke="#E8521A" strokeWidth="2" strokeLinecap="round" />
+                </svg>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ───────────────────────────────────────────────────────── */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="section-tag">Our Services</div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Print Solutions for Every <span className="gradient-text">Business Need</span>
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              From a single business card to a full-scale national print campaign — we have the technology, talent, and track record to deliver.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <div key={service.title} className="card-hover p-8 rounded-2xl border border-gray-100 bg-white group cursor-pointer">
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl" style={{ background: "rgba(27,94,248,0.08)" }}>
-                    {service.icon}
-                  </div>
-                  {service.tag && <div className="tag">{service.tag}</div>}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{service.desc}</p>
-                <a href="#contact" className="text-sm font-bold flex items-center gap-1 group-hover:gap-3 transition-all" style={{ color: "#1B5EF8" }}>
-                  Get a Quote <ArrowRight />
-                </a>
+              <div>
+                <p className="text-3xl font-black text-[#E8521A]">3,500+</p>
+                <p className="text-sm text-gray-500 font-medium">Company Served in Bangladesh and Abroad</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY US ─────────────────────────────────────────────────────────── */}
-      <section id="about" className="py-24" style={{ background: "#F8FAFF" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left text */}
-            <div>
-              <div className="section-tag">Why Chapaghor</div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                The Standard for Print<br />Quality in Bangladesh
-              </h2>
-              <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-                With 15+ years of expertise and Bangladesh's most advanced printing infrastructure, Chapaghor is the trusted partner for corporates, agencies, and SMEs who refuse to compromise on quality.
-              </p>
-              <a href="#contact" className="btn-primary">Book a Free Consultation <ArrowRight /></a>
             </div>
 
-            {/* Right grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {whyUs.map((item) => (
-                <div key={item.title} className="card-hover bg-white rounded-2xl p-6 border border-gray-100">
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <h4 className="font-bold text-gray-900 mb-2">{item.title}</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+            {/* Divider */}
+            <div className="hidden sm:block w-px h-14 bg-gray-200 mx-2" />
+
+            {/* Partner logos */}
+            <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start flex-1">
+              {partnerLogos.map((p) => (
+                <div
+                  key={p.name}
+                  className="px-5 py-2.5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  style={{ backgroundColor: p.bg }}
+                >
+                  <span className="font-bold text-sm" style={{ color: p.color }}>{p.name}</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── PROCESS ────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="section-tag">How We Work</div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Our Production <span className="gradient-text">Process</span>
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              A streamlined, transparent workflow from brief to delivery — so you always know where your job stands.
-            </p>
-          </div>
+        {/* ── POPULAR SERVICES ──────────────────────────────────────────────── */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-800 mb-5">Popular services</h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, i) => (
-              <div key={step.step} className="card-hover bg-white border border-gray-100 rounded-2xl p-8 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 font-display text-8xl font-bold opacity-5 leading-none -mr-2 -mt-2 group-hover:opacity-10 transition-opacity" style={{ color: "#1B5EF8" }}>
-                  {step.step}
-                </div>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-6" style={{ background: "linear-gradient(135deg, #1B5EF8, #00D4FF)" }}>
-                  {step.step}
-                </div>
-                <h4 className="font-bold text-gray-900 text-lg mb-3">{step.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Scrollable Row */}
+          <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
+            {popularServices.map((service) => (
+              <div
+                key={service.title}
+                className={`relative flex-shrink-0 w-[175px] sm:w-[190px] h-[160px] rounded-2xl bg-gradient-to-br ${service.bg} overflow-hidden cursor-pointer group snap-start hover:-translate-y-1 transition-transform duration-200`}
+              >
+                {/* Glow accent */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl"
+                  style={{ background: `radial-gradient(circle at 30% 70%, ${service.accent}, transparent 70%)` }}
+                />
 
-      {/* ── TESTIMONIALS ───────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "#F8FAFF" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="section-tag">Client Reviews</div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              What Our Clients <span className="gradient-text">Say About Us</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card-hover bg-white rounded-2xl p-8 border border-gray-100">
-                <div className="flex gap-0.5 mb-5">
-                  {Array(t.rating).fill(0).map((_, i) => <StarIcon key={i} />)}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold`}>
-                    {t.initial}
-                  </div>
+                {/* Content */}
+                <div className="absolute inset-0 p-4 flex flex-col justify-between">
                   <div>
-                    <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                    <div className="text-gray-400 text-xs">{t.role}</div>
+                    <p className="text-white font-bold text-[15px] leading-tight">{service.title}</p>
+                  </div>
+
+                  {/* Emoji / illustration area */}
+                  <div className="flex items-end justify-end">
+                    <div
+                      className="w-16 h-16 rounded-xl flex items-center justify-center text-3xl"
+                      style={{ backgroundColor: service.accent + "33" }}
+                    >
+                      {service.emoji}
+                    </div>
                   </div>
                 </div>
+
+                {/* Subtle grid texture */}
+                <div
+                  className="absolute inset-0 opacity-5 pointer-events-none"
+                  style={{
+                    backgroundImage: "linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px)",
+                    backgroundSize: "20px 20px",
+                  }}
+                />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ── CTA BANNER ─────────────────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: "linear-gradient(135deg, #070E1C 0%, #0D2060 50%, #070E1C 100%)" }}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="text-4xl mb-6">🚀</div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to Print Something <span className="gradient-text">Extraordinary?</span>
-          </h2>
-          <p className="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">
-            Get a free, no-obligation quote within 24 hours. Our team is ready to bring your vision to life with the finest print quality in Bangladesh.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="#contact" className="btn-primary">Get Free Quote <ArrowRight /></a>
-            <a href="tel:+8801700000000" className="btn-outline-white"><PhoneIcon /> Call Now</a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      <section id="contact" className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="section-tag">FAQ</div>
-            <h2 className="font-display text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked <span className="gradient-text">Questions</span>
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-bold text-gray-900">{faq.q}</span>
-                  <span className={`transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""}`} style={{ color: "#1B5EF8" }}>
-                    <ChevronDown />
-                  </span>
-                </button>
-                <div className="faq-answer" style={{ maxHeight: openFaq === i ? "300px" : "0px" }}>
-                  <div className="px-6 pb-6 text-gray-500 leading-relaxed">{faq.a}</div>
-                </div>
+            {/* Show more card */}
+            <div className="flex-shrink-0 w-[175px] sm:w-[190px] h-[160px] rounded-2xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center cursor-pointer hover:border-[#E8521A] hover:text-[#E8521A] transition-colors group snap-start">
+              <div className="w-10 h-10 rounded-full border-2 border-current flex items-center justify-center mb-2 group-hover:bg-orange-50 transition-colors">
+                <ChevronRightIcon />
               </div>
-            ))}
+              <span className="text-sm font-semibold text-gray-500 group-hover:text-[#E8521A] transition-colors">View All</span>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── CONTACT STRIP ──────────────────────────────────────────────────── */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            {[
-              { icon: <PhoneIcon />, label: "Call Us", value: "+880 170 000 0000", sub: "Mon–Sat, 9am–7pm" },
-              { icon: <MailIcon />, label: "Email Us", value: "hello@chapaghor.com", sub: "Reply within 24 hours" },
-              { icon: <span className="text-lg">📍</span>, label: "Visit Us", value: "Gulshan-2, Dhaka", sub: "By appointment" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(27,94,248,0.1)", color: "#1B5EF8" }}>
-                  {item.icon}
-                </div>
-                <div className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">{item.label}</div>
-                <div className="font-bold text-gray-900 mb-1">{item.value}</div>
-                <div className="text-sm text-gray-400">{item.sub}</div>
-              </div>
-            ))}
+        {/* ── PROMO STRIP ───────────────────────────────────────────────────── */}
+        <section className="bg-gradient-to-r from-[#E8521A] to-orange-500 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-white font-black text-xl sm:text-2xl">Get 10% off on your first order!</p>
+            <p className="text-orange-100 text-sm mt-1">Use code: <span className="font-bold text-white">CHAPA10</span> at checkout</p>
           </div>
-        </div>
-      </section>
+          <button className="bg-white text-[#E8521A] font-bold px-8 py-3 rounded-xl hover:bg-orange-50 transition-colors shadow-md flex-shrink-0">
+            Shop Now →
+          </button>
+        </section>
+
+      </main>
 
       {/* ── FOOTER ─────────────────────────────────────────────────────────── */}
-      <footer style={{ background: "#070E1C" }} className="pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Brand */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xl font-bold" style={{ background: "linear-gradient(135deg, #1B5EF8, #00D4FF)" }}>C</div>
-                <div>
-                  <div className="font-display text-xl font-bold text-white">Chapaghor</div>
-                  <div className="text-xs text-blue-400">Print & Design Excellence</div>
-                </div>
+      <footer className="bg-gray-900 text-gray-400 mt-12 py-10 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-[#E8521A] rounded-lg flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+                </svg>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Bangladesh's most trusted print house — delivering precision, quality, and excellence since 2009.
-              </p>
-              <div className="flex gap-3">
-                {["f", "in", "tw", "yt"].map((s) => (
-                  <a key={s} href="#" className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold text-gray-400 hover:text-white transition-colors" style={{ background: "rgba(255,255,255,0.07)" }}>
-                    {s.toUpperCase()}
-                  </a>
-                ))}
-              </div>
+              <span className="text-white font-black text-lg">Chapaghor</span>
             </div>
+            <p className="text-sm leading-relaxed">Your trusted printing partner in Bangladesh. Quality prints, delivered to your door.</p>
+          </div>
 
-            {/* Services */}
-            <div>
-              <h5 className="text-white font-bold mb-5">Services</h5>
-              <ul className="space-y-3">
-                {["Offset Printing", "Digital Printing", "Packaging Design", "Branding & Identity", "Large Format", "Corporate Stationery"].map((item) => (
-                  <li key={item}><a href="#" className="text-gray-400 text-sm hover:text-blue-400 transition-colors">{item}</a></li>
+          {/* Links */}
+          {[
+            { title: "Products", items: ["Business Card", "Letterhead", "Envelope", "Banner Print"] },
+            { title: "Services", items: ["Offset Print", "Signage", "Wedding Cards", "ID Cards"] },
+            { title: "Support", items: ["Track Order", "Contact Us", "FAQ", "Return Policy"] },
+          ].map((col) => (
+            <div key={col.title}>
+              <h3 className="text-white font-semibold mb-4">{col.title}</h3>
+              <ul className="space-y-2">
+                {col.items.map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-sm hover:text-[#E8521A] transition-colors">{item}</a>
+                  </li>
                 ))}
               </ul>
             </div>
+          ))}
+        </div>
 
-            {/* Company */}
-            <div>
-              <h5 className="text-white font-bold mb-5">Company</h5>
-              <ul className="space-y-3">
-                {["About Us", "Portfolio", "Our Team", "Careers", "News & Blog", "Contact Us"].map((item) => (
-                  <li key={item}><a href="#" className="text-gray-400 text-sm hover:text-blue-400 transition-colors">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h5 className="text-white font-bold mb-5">Get In Touch</h5>
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="text-blue-400 mt-0.5 shrink-0"><PhoneIcon /></div>
-                  <div className="text-gray-400 text-sm">+880 170 000 0000<br />+880 180 000 0000</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="text-blue-400 mt-0.5 shrink-0"><MailIcon /></div>
-                  <div className="text-gray-400 text-sm">hello@chapaghor.com<br />support@chapaghor.com</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="text-blue-400 mt-0.5 shrink-0 text-lg">📍</div>
-                  <div className="text-gray-400 text-sm">House 12, Road 4, Block D<br />Gulshan-2, Dhaka-1212</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">© 2009–2025 Chapaghor. All Rights Reserved.</p>
-            <div className="flex gap-6">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-                <a key={item} href="#" className="text-gray-500 text-sm hover:text-gray-300 transition-colors">{item}</a>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs">© {new Date().getFullYear()} Chapaghor. All rights reserved.</p>
+          <p className="text-xs">Made with ❤️ in Bangladesh</p>
         </div>
       </footer>
     </div>
