@@ -11,11 +11,11 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col relative">
-      
+
       {/* Modal Logic */}
-      {/* {isModalOpen && (
+      {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
-      )} */}
+      )}
 
       {/* Header */}
       <NavbHead />
@@ -39,7 +39,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      
+
     </main>
   );
 }

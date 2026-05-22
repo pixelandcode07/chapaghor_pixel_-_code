@@ -12,7 +12,7 @@ export default function UnderDevelopmentModal({ onClose }: { onClose: () => void
         {/* Orange Header Strip */}
         <div className="bg-[#F05A28] py-8 flex justify-center items-center relative">
           <img 
-            src="/logos/loginandregisterpagelogo.png" 
+            src="/logos/Logo.png" 
             alt="Chapaghor Logo" 
             className="h-12 object-contain"
           />
