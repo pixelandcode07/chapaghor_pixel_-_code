@@ -4,6 +4,7 @@ import { useState } from "react";
 import CategoryNeeds from "@/components/home/CategoryNeeds";
 import NavbHead from "@/components/home/NavbHead";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
+import HeroSection from "@/components/home/HeroSection";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -21,6 +22,9 @@ export default function HomePage() {
 
       {/* Category Needs */}
       <CategoryNeeds />
+
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Main content */}
       <div className="flex-grow">
