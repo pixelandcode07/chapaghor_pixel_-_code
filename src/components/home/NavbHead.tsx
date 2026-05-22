@@ -473,7 +473,6 @@ export default function NavbHead() {
             {/* ── Logo ── */}
             <div className="shrink-0 flex items-center justify-start">
               <Link href="/" >
-                {/* className="w-[95px] h-[28px]" */}
                 <Image
                   src={'/logos/Logo.png'}
                   alt="Chapaghor Logo"
