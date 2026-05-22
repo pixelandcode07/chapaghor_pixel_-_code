@@ -1,7 +1,10 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Loader2 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
 type Category = {
   _id: string;
@@ -9,6 +12,54 @@ type Category = {
   slug: string;
   icon: string;
   isFeatured: boolean;
+};
+
+// Renamed from 'Variants' to avoid collision with Framer Motion's type
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.0, 0.0, 0.2, 1.0] }
+  }
+};
+
+// Custom variants for the top white card
+const face1Variants: Variants = {
+  hidden: { y: 0, boxShadow: "0px 1px 3px 1px rgba(0,0,0,0.15)" },
+  visible: {
+    y: 0,
+    boxShadow: "0px 1px 3px 1px rgba(0,0,0,0.15)",
+    transition: { duration: 0.3, ease: "easeOut" }
+  },
+  hover: {
+    y: -16,
+    boxShadow: "0px 12px 30px 0px rgba(255,195,181,0.5)",
+    transition: { duration: 0.3, ease: "easeOut" }
+  }
+};
+
+// Custom variants for the bottom beige card 
+const face2Variants: Variants = {
+  hidden: { y: 0, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 0,
+    transition: { duration: 0.3, ease: "easeOut" }
+  },
+  hover: {
+    y: 45,
+    opacity: 1,
+    transition: { duration: 0.3, ease: "easeOut" }
+  }
 };
 
 export default function CategoryNeeds() {
@@ -42,202 +93,81 @@ export default function CategoryNeeds() {
     );
   }
 
-  const doubled = [...categories, ...categories];
-
   return (
     <>
-      <style>{`
+      <section className="bg-white py-12 relative">
+        {/* Soft radial background glow to match the image depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
 
-        /* ── Marquee ── */
-        @keyframes marqueeScroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .cn-track {
-          display: flex;
-          align-items: flex-start;
-          gap: 18px;
-          width: max-content;
-          padding: 14px 0;
-          animation: marqueeScroll ${categories.length * 2.5}s linear infinite;
-        }
-        .cn-track:hover {
-          animation-play-state: paused;
-        }
-
-        /* ════════════════════════════════════════
-           OUTER CARD
-           NORMAL → bg = white
-           HOVER  → bg = peach
-           overflow: hidden → inner card এর
-           top corners outer card এর সাথে মিলবে
-        ════════════════════════════════════════ */
-        .cn-card {
-          flex-shrink: 0;
-          width: 178px;
-          background-color: #ffffff;
-          border-radius: 22px;
-          border: none;
-          box-shadow: none;
-          overflow: hidden;
-          cursor: pointer;
-          transition: background-color 0.45s ease;
-        }
-        .cn-card:hover {
-          background-color: #FDDCB5;
-        }
-
-        /* ════════════════════════════════════════
-           WHITE INNER SECTION
-           margin-top    = 0   → top এ peach দেখাবে না
-           margin-left   = 0   → left এ peach দেখাবে না
-           margin-right  = 0   → right এ peach দেখাবে না
-           margin-bottom = 0   → panel এর আগে সামান্য gap
-
-           border-radius:
-             top-left / top-right  = 22px (outer card match)
-             bottom-left / bottom-right = 16px (ছোট curve)
-             → নিচে peach দেখাবে smooth করে
-        ════════════════════════════════════════ */
-        .cn-white {
-          background: #ffffff;
-          border-radius: 22px 22px 16px 16px;
-          margin: 0 0 0 0;
-          padding: 28px 14px 24px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 14px;
-          /* NO transform — icon একদম স্থির থাকবে */
-        }
-
-        /* icon */
-        .cn-icon {
-          width: 74px;
-          height: 74px;
-          object-fit: contain;
-          display: block;
-        }
-
-        /* name */
-        .cn-name {
-          font-size: 14px;
-          font-weight: 600;
-          color: #1C2B45;
-          text-align: center;
-          line-height: 1.4;
-          margin: 0;
-        }
-
-        /* ════════════════════════════════════════
-           SLIDE-DOWN PANEL
-           Normal → max-height: 0 (hidden)
-           Hover  → max-height: 80px (visible)
-           bg = card এর peach (automatically)
-        ════════════════════════════════════════ */
-        .cn-panel {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cn-card:hover .cn-panel {
-          max-height: 80px;
-          transition-delay: 0.08s;
-        }
-
-        .cn-panel-pad {
-          padding: 8px 8px 10px 8px;
-        }
-
-        /* ════════════════════════════════════════
-           VIEW DETAILS BUTTON
-        ════════════════════════════════════════ */
-        .cn-btn {
-          display: block;
-          width: 100%;
-          box-sizing: border-box;
-          text-align: center;
-          background: #ffffff;
-          color: #1C2B45;
-          font-size: 13px;
-          font-weight: 500;
-          padding: 11px 0;
-          border-radius: 12px;
-          text-decoration: none;
-          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
-          white-space: nowrap;
-          transition:
-            background-color 0.20s ease,
-            color            0.20s ease,
-            transform        0.15s ease;
-        }
-        .cn-btn:hover {
-          background-color: #F05A28;
-          color: #ffffff;
-          transform: scale(1.02);
-        }
-        .cn-btn:active {
-          transform: scale(0.97);
-        }
-
-      `}</style>
-
-      {/* Section */}
-      <section style={{ padding: "64px 0 72px", background: "#ffffff" }}>
-        <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px" }}>
-
+        <div className="max-w-[62vw] mx-auto relative z-10">
           {/* Heading */}
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "clamp(26px, 3.5vw, 40px)",
-              fontWeight: 700,
-              letterSpacing: "0.055em",
-              color: "#1C2B45",
-              marginBottom: 48,
-            }}
-          >
+          <h2 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-tight">
             YOUR NEEDS
           </h2>
 
-          {/* Marquee */}
-          <div style={{ overflow: "hidden" }}>
-            <div className="cn-track">
-              {doubled.map((category, index) => (
-                <div
-                  key={`${category._id}-${index}`}
-                  className="cn-card"
+          {/* Grid */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-6 place-items-center"
+          >
+            {categories.map((category) => (
+              <Link
+                href={`/category/${category.slug}`}
+                key={category._id}
+                className="block"
+              >
+                {/* Wrapper handles layout footprint and passes 
+                  hover/stagger triggers to Face 1 & Face 2 
+                */}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover="hover"
+                  className="relative w-[143px] h-[155px] cursor-pointer group z-10 hover:z-50"
                 >
-                  {/* White section — icon + name — never moves */}
-                  <div className="cn-white">
-                    <img
-                      src={category.icon}
-                      alt={category.name}
-                      className="cn-icon"
-                    />
-                    <p className="cn-name">{category.name}</p>
-                  </div>
 
-                  {/* Panel — peach bg, slides down on hover */}
-                  <div className="cn-panel">
-                    <div className="cn-panel-pad">
-                      <Link
-                        href={`/category/${category.slug}`}
-                        className="cn-btn"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View Details
-                      </Link>
+                  {/* Face 2: Beige Base (Slides Down) */}
+                  <motion.div
+                    variants={face2Variants}
+                    className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-b-2xl flex items-end justify-center pb-3 z-0"
+                  >
+                    {/* Using a div here instead of a button prevents semantically invalid <button> inside <a> warnings */}
+                    <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
+                      View Details
                     </div>
-                  </div>
+                  </motion.div>
 
-                </div>
-              ))}
-            </div>
-          </div>
+                  {/* Face 1: White Card (Slides Up) */}
+                  <motion.div
+                    variants={face1Variants}
+                    className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
+                  >
+                    {/* Dynamic Icon */}
+                    <div className="relative w-16 h-16 xl:w-20 xl:h-20 mb-3">
+                      <Image
+                        src={category.icon || "/icons/card.svg"}
+                        alt={`${category.name} icon`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
 
+                    {/* Dynamic Label */}
+                    <span className="text-[14px] xl:text-[15px] font-medium text-[#012C60] text-center tracking-tight">
+                      {category.name}
+                    </span>
+                  </motion.div>
+
+                </motion.div>
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </section>
     </>
   );
 }
+
+
