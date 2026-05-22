@@ -61,7 +61,6 @@ const face2Variants: Variants = {
     transition: { duration: 0.3, ease: "easeOut" }
   }
 };
-
 export default function CategoryNeeds() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -96,7 +95,6 @@ export default function CategoryNeeds() {
   return (
     <>
       <section className="bg-white py-12 relative">
-        {/* Soft radial background glow to match the image depth */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
 
         <div className="max-w-[62vw] mx-auto relative z-10">
@@ -104,8 +102,6 @@ export default function CategoryNeeds() {
           <h2 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-tight">
             YOUR NEEDS
           </h2>
-
-          {/* Grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -119,9 +115,7 @@ export default function CategoryNeeds() {
                 key={category._id}
                 className="block"
               >
-                {/* Wrapper handles layout footprint and passes 
-                  hover/stagger triggers to Face 1 & Face 2 
-                */}
+               
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
