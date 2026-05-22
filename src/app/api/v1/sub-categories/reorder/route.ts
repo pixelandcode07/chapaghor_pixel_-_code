@@ -1,0 +1,6 @@
+import { NextRequest } from 'next/server';
+import { SubCategoryController } from '@/server/modules/subCategory/subCategory.controller';
+
+export async function POST(req: NextRequest) {
+  return SubCategoryController.reorderSubCategories(req);
+} 
