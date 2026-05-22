@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Search, Sun, ShoppingCart, Users, Menu, ChevronDown, Loader2 } from "lucide-react";
 import SearchOverlay from "./SearchOverlay";
 
-// Types
 type SubCategory = {
   _id: string;
   name: string;
@@ -56,24 +55,29 @@ export default function NavbHead() {
 
   return (
     <>
-      {/* ═══════════════════════════════════════════════════════════
-          ANIMATION SYSTEM
-          Phase 1 (0 → 0.45s) : conic-gradient border sweeps around
-          Phase 2 (0.40s → 0.62s): orange bg fades in
-          Phase 3 (0.50s → 0.65s): text colour → white
-      ═══════════════════════════════════════════════════════════ */}
       <style>{`
 
-        /* ── Animatable CSS custom property ── */
+        /* ═══════════════════════════════════════════════════════
+           Animatable CSS custom property
+        ═══════════════════════════════════════════════════════ */
         @property --nav-sweep {
           syntax: '<percentage>';
           initial-value: 0%;
           inherits: false;
         }
 
-        /* ══════════════════════════════════════════════
-           .nav-pill  — the pill button wrapper
-        ══════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════
+           .nav-pill  — pill button
+
+           WHY THIS GIVES UNIFORM 2px BORDER (no thick top/bottom):
+           ─ Previous approach used conic-gradient + -webkit-mask
+             which caused uneven rendering at top/bottom.
+           ─ New approach: background-clip trick
+               Layer 0: white fill  → background-clip: padding-box
+               Layer 1: conic sweep → background-clip: border-box
+             Browser draws the gradient exactly in the 2px border
+             strip on all sides — perfectly uniform.
+        ═══════════════════════════════════════════════════════ */
         .nav-pill {
           position: relative;
           display: inline-flex;
@@ -82,60 +86,43 @@ export default function NavbHead() {
           padding: 8px 16px;
           border-radius: 9999px;
           cursor: pointer;
-          /* keep default: 0% sweep */
+
+          /* 2-px border placeholder — filled by background-clip */
+          border: 2px solid transparent;
+
+          /* Layer 0: white inner | Layer 1: sweeping border colour */
+          background-image:
+            linear-gradient(#ffffff, #ffffff),
+            conic-gradient(
+              from -90deg,
+              #F05A28 var(--nav-sweep),
+              transparent var(--nav-sweep)
+            );
+          background-origin: border-box;
+          background-clip: padding-box, border-box;
+
+          /* Phase 1 — animate sweep 0% → 100% */
           --nav-sweep: 0%;
-        }
-
-        /* ──────────────────────────────────────────────
-           PHASE 1 — ::before  →  sweeping orange border
-           conic-gradient starting from top (-90deg)
-           masked to show only the 2px "ring"
-        ────────────────────────────────────────────── */
-        .nav-pill::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 9999px;
-          padding: 2px;                           /* border thickness */
-
-          background: conic-gradient(
-            from -90deg,
-            #F05A28 var(--nav-sweep),
-            transparent var(--nav-sweep)
-          );
-
-          /* punch out the centre → only the 2px padding ring shows */
-          -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-          /* animate the sweep percentage */
           transition: --nav-sweep 0.45s ease;
-
-          z-index: 1;
-          pointer-events: none;
         }
 
-        /* Trigger sweep on hover */
-        .nav-pill:hover::before {
+        .nav-pill:hover {
           --nav-sweep: 100%;
         }
 
-        /* ──────────────────────────────────────────────
-           PHASE 2 — ::after  →  solid orange fill
-           Delayed 0.40s so it starts just before
-           the border sweep finishes (0.45s)
-        ────────────────────────────────────────────── */
+        /* ═══════════════════════════════════════════════════════
+           Phase 2 — ::after  →  solid orange FILL
+           inset: -2px sits on top of the border strip (no gap)
+           Delayed 0.40s so it appears as sweep finishes
+        ═══════════════════════════════════════════════════════ */
         .nav-pill::after {
           content: '';
           position: absolute;
-          inset: 0;
+          inset: -2px;
           border-radius: 9999px;
           background: #F05A28;
           opacity: 0;
-          transition: opacity 0.22s ease 0.40s;   /* delay = sweep time */
+          transition: opacity 0.22s ease 0.40s;
           z-index: 0;
           pointer-events: none;
         }
@@ -144,10 +131,10 @@ export default function NavbHead() {
           opacity: 1;
         }
 
-        /* ──────────────────────────────────────────────
-           PHASE 3 — text + icon colour → white
-           Slightly later than fill (0.52s delay)
-        ────────────────────────────────────────────── */
+        /* ═══════════════════════════════════════════════════════
+           Phase 3 — text + icon → white
+           0.52s: after fill appears
+        ═══════════════════════════════════════════════════════ */
         .nav-pill-text {
           position: relative;
           z-index: 10;
@@ -180,7 +167,7 @@ export default function NavbHead() {
           color: #ffffff;
         }
 
-        /* Chevron rotates when the OUTER group (dropdown) is hovered */
+        /* Chevron rotates when outer group (dropdown) is hovered */
         .nav-outer:hover .nav-pill-chevron {
           transform: rotate(180deg);
         }
@@ -220,10 +207,10 @@ export default function NavbHead() {
                     return (
                       <li key={category._id} className="flex items-center h-20">
 
-                        {/* Outer group: controls dropdown show/hide */}
+                        {/* Outer group — controls dropdown */}
                         <div className="nav-outer relative h-full flex items-center group/nav">
 
-                          {/* ── Pill button (draw + fill animation) ── */}
+                          {/* ── Pill button ── */}
                           <div className="nav-pill">
                             <Link
                               href={`/category/${category.slug}`}
@@ -231,10 +218,7 @@ export default function NavbHead() {
                             >
                               {category.name}
                               {relatedSubCats.length > 0 && (
-                                <ChevronDown
-                                  size={14}
-                                  className="nav-pill-chevron"
-                                />
+                                <ChevronDown size={14} className="nav-pill-chevron" />
                               )}
                             </Link>
                           </div>
@@ -268,7 +252,7 @@ export default function NavbHead() {
                           )}
                         </div>
 
-                        {/* Divider between items */}
+                        {/* Divider */}
                         {index !== categories.length - 1 && (
                           <span className="text-gray-300 mx-1 xl:mx-2 pointer-events-none select-none text-xs">
                             |
