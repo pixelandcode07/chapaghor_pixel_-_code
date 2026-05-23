@@ -4,13 +4,14 @@ import { useState } from "react";
 import CategoryNeeds from "@/components/home/CategoryNeeds";
 import NavbHead from "@/components/home/NavbHead";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
+import HeroSection from "@/components/home/HeroSection";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col relative">
-      
+
       {/* Modal Logic */}
       {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
@@ -21,6 +22,9 @@ export default function HomePage() {
 
       {/* Category Needs */}
       <CategoryNeeds />
+
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Main content */}
       <div className="flex-grow">
@@ -35,7 +39,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      
+
     </main>
   );
 }
