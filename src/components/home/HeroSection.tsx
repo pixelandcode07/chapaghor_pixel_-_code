@@ -81,9 +81,9 @@ export default function HeroSection() {
                                             w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] 
                                             aspect-[967/307]
                                             ${isActive
-                                                    ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
-                                                    : "blur-[6px] opacity-60 scale-95 z-0"
-                                                }
+                                                ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
+                                                : "blur-[6px] opacity-60 scale-95 z-0"
+                                            }
                                         `}
                                     >
                                         <Image
@@ -123,22 +123,21 @@ export default function HeroSection() {
                     </div>
                 </Carousel>
 
-                    <div className="flex justify-center items-center gap-2 mt-8">
-                        {Array.from({ length: count }).map((_, index) => {
-                            const isActive = index === current;
-                            return (
-                                <button
-                                    key={index}
-                                    onClick={() => api?.scrollTo(index)}
-                                    aria-label={`Go to slide ${index + 1}`}
-                                    className={`transition-all duration-300 ease-in-out rounded-full ${isActive
-                                        ? "w-8 h-2 bg-[#F05A28]"
-                                        : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                                        }`}
-                                />
-                            );
-                        })}
-                    </div>
+                <div className="flex justify-center items-center gap-2 mt-8">
+                    {Array.from({ length: count }).map((_, index) => {
+                        const isActive = index === current;
+                        return (
+                            <button
+                                key={index}
+                                onClick={() => api?.scrollTo(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                                className={`transition-all duration-300 ease-in-out rounded-full ${isActive
+                                    ? "w-8 h-2 bg-[#F05A28]"
+                                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                                    }`}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </section>

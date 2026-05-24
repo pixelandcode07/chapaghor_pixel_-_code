@@ -90,7 +90,7 @@ export default function CategoryNeeds() {
 
   return (
     <>
-      <section className="bg-white py-12 relative">
+      <section className="container mx-auto bg-white py-12 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
 
         <div className="max-w-[62vw] mx-auto relative z-10">
@@ -104,24 +104,24 @@ export default function CategoryNeeds() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-[23px]"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 place-items-center gap-5.75"
           >
             {categories.map((category) => (
               <Link
                 href={`/category/${category.slug}`}
                 key={category._id}
-                className="block shadow-sm shadow-[#FFC3B585] "
+                className="block shadow-[17px] shadow-[#FFC3B585] "
               >
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative w-[143px] h-[155px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
+                  className="relative w-35.75 h-38.75 rounded-[17px] cursor-pointer group z-10 hover:z-50"
                 >
 
                   {/* Face 2: Beige Base (Slides Down) */}
                   <motion.div
                     variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-b-2xl flex items-end justify-center pb-3 z-0"
+                    className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-[17px] flex items-end justify-center pb-3 z-0"
                   >
                     <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
                       View Details
