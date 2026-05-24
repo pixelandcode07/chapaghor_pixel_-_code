@@ -5,6 +5,7 @@ import CategoryNeeds from "@/components/home/CategoryNeeds";
 import NavbHead from "@/components/home/NavbHead";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
+import OurClient from "@/components/home/OurClient";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -25,6 +26,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <HeroSection />
+      <OurClient/>
 
       {/* Main content */}
       <div className="flex-grow">

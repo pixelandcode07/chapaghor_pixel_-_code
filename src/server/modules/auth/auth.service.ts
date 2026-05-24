@@ -4,7 +4,7 @@ import { User } from '../user/user.model';
 import { TLoginInput, TLoginResponse } from './auth.interface';
 
 const loginUser = async (payload: TLoginInput): Promise<TLoginResponse> => {
-  // ১. ইউজার ইমেইল অথবা ফোন নম্বর দিয়ে এক্সিস্ট করে কিনা চেক করা 
+  // ১. ইউজার ইমেইল অথবা ফোন নম্বর দিয়ে এক্সিস্ট করে কিনা চেক করা 
   const user = await User.isUserExists(payload.identifier);
   
   if (!user) {
@@ -16,8 +16,11 @@ const loginUser = async (payload: TLoginInput): Promise<TLoginResponse> => {
     throw new Error('This user account is deactivated');
   }
 
-  // ৩. পাসওয়ার্ড ম্যাচ করা 
-  const isPasswordMatched = await User.isPasswordMatched(payload.password, user.password);
+  // ৩. পাসওয়ার্ড ম্যাচ করা (এখানে user.password as string ব্যবহার করা হলো)
+  const isPasswordMatched = await User.isPasswordMatched(
+    payload.password, 
+    user.password as string // 🔴 FIX: Typescript Error (ts(2345)) Solved Here
+  );
   
   if (!isPasswordMatched) {
     throw new Error('Incorrect password. Please try again.');
@@ -36,14 +39,14 @@ const loginUser = async (payload: TLoginInput): Promise<TLoginResponse> => {
   const accessToken = JwtHelpers.createToken(
     jwtPayload,
     (process.env.JWT_ACCESS_SECRET || 'secret_access_123') as Secret,
-    process.env.JWT_ACCESS_EXPIRES_IN || '1d'
+    (process.env.JWT_ACCESS_EXPIRES_IN || '1d') as string // 🔴 FIX: Added as string
   );
 
   // ৬. JwtHelpers ব্যবহার করে Refresh Token তৈরি 
   const refreshToken = JwtHelpers.createToken(
     jwtPayload,
     (process.env.JWT_REFRESH_SECRET || 'secret_refresh_123') as Secret,
-    process.env.JWT_REFRESH_EXPIRES_IN || '7d'
+    (process.env.JWT_REFRESH_EXPIRES_IN || '7d') as string // 🔴 FIX: Added as string
   );
 
   const userObj = user.toObject();

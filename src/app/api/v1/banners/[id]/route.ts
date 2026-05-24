@@ -1,10 +1,11 @@
 import { NextRequest } from 'next/server';
 import { BannerController } from '@/server/modules/banner/banner.controller';
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
-  return BannerController.updateBanner(req, { params });
+// params কে Promise হিসেবে গ্রহণ করতে হবে
+export async function PATCH(req: NextRequest, context: { params: Promise<{ id: string }> }) {
+  return BannerController.updateBanner(req, context);
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-  return BannerController.deleteBanner(req, { params });
+export async function DELETE(req: NextRequest, context: { params: Promise<{ id: string }> }) {
+  return BannerController.deleteBanner(req, context);
 }

@@ -23,16 +23,13 @@ export default function HeroSection() {
     const [current, setCurrent] = React.useState(0);
     const [count, setCount] = React.useState(0);
 
-    // 1. Set to 3 seconds (3000ms) 
-    // 2. stopOnInteraction: false ensures manual clicking doesn't permanently kill the autoplay
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: false })
     );
-    // Avoid accessing ref.current during render — initialize plugins state in effect
     const [plugins, setPlugins] = React.useState<any[]>([]);
+
     React.useEffect(() => {
         setPlugins([plugin.current]);
-        // plugin ref won't change, so empty deps
     }, []);
 
     React.useEffect(() => {
@@ -57,76 +54,74 @@ export default function HeroSection() {
 
     return (
         <section className="w-full py-12 bg-white relative overflow-hidden flex flex-col items-center">
-            <div className="">
-                <div className="container mx-auto xl:w-full relative">
-                    <Carousel
-                        setApi={setApi}
-                        // Provide plugins from state to avoid reading ref during render
-                        plugins={plugins}
-                        opts={{
-                            align: "center",
-                            loop: true,
-                        }}
-                        className="w-full"
-                    // COMPLETELY REMOVED onMouseEnter and onMouseLeave here. 
-                    // Now your mouse cursor cannot accidentally pause it!
-                    >
-                        <CarouselContent className="flex items-center">
-                            {images.map((image, index) => {
-                                const isActive = index === current;
+            <div className="w-full max-w-[100vw] relative">
+                <Carousel
+                    setApi={setApi}
+                    plugins={plugins}
+                    opts={{
+                        align: "center",
+                        loop: true,
+                    }}
+                    className="w-full"
+                >
+                    <CarouselContent className="flex items-center">
+                        {images.map((image, index) => {
+                            const isActive = index === current;
 
-                                return (
-                                    <CarouselItem
-                                        key={image.id}
-                                        className="pl-4 md:pl-6 basis-auto"
-                                    >
-                                        <div
-                                            className={`
+                            return (
+                                <CarouselItem
+                                    key={image.id}
+                                    // basis-auto রাখা হয়েছে যাতে ভেতরের div এর সাইজ অনুযায়ী আইটেম জায়গা নেয়
+                                    className="pl-4 md:pl-6 basis-auto"
+                                >
+                                    <div
+                                        className={`
                                             relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out
-                                            w-[967px] h-[307px]
-                                            max-w-[85vw] sm:max-w-[967px] sm:h-[307px]
+                                            // মূল যাদু এখানে: w-[vw] দিয়ে স্ক্রিনের আনুপাতিক সাইজ এবং aspect ratio ফিক্স করা হয়েছে
+                                            w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] 
+                                            aspect-[967/307]
                                             ${isActive
                                                     ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
                                                     : "blur-[6px] opacity-60 scale-95 z-0"
                                                 }
                                         `}
-                                        >
-                                            <Image
-                                                src={image.src}
-                                                alt={image.alt}
-                                                width={967}
-                                                height={307}
-                                                priority={index === 0}
-                                                className="object-cover w-full h-full pointer-events-none"
-                                            />
-                                        </div>
-                                    </CarouselItem>
-                                );
-                            })}
-                        </CarouselContent>
+                                    >
+                                        <Image
+                                            src={image.src}
+                                            alt={image.alt}
+                                            fill // width/height এর বদলে fill ব্যবহার করা হয়েছে aspect ratio এর সাথে কাজ করার জন্য
+                                            priority={index === 0}
+                                            className="object-cover pointer-events-none"
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            );
+                        })}
+                    </CarouselContent>
 
-                        <div className="absolute top-1/2 left-[5%] md:left-[10%] lg:left-[15%] -translate-y-1/2 z-20 hidden sm:block">
-                            <Button
-                                variant="default"
-                                size="icon"
-                                className="w-10 h-10 md:w-12 md:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg"
-                                onClick={() => api?.scrollPrev()}
-                            >
-                                <ChevronLeft className="h-6 w-6" />
-                            </Button>
-                        </div>
+                    {/* বাটনগুলোর পজিশন স্ক্রিনের সাথে সামঞ্জস্য রেখে সেট করা হয়েছে */}
+                    <div className="absolute top-1/2 left-[5%] md:left-[8%] lg:left-[12%] xl:left-[15%] -translate-y-1/2 z-20 hidden sm:block">
+                        <Button
+                            variant="default"
+                            size="icon"
+                            className="w-10 h-10 md:w-12 md:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg"
+                            onClick={() => api?.scrollPrev()}
+                        >
+                            <ChevronLeft className="h-6 w-6" />
+                        </Button>
+                    </div>
 
-                        <div className="absolute top-1/2 right-[5%] md:right-[10%] lg:right-[15%] -translate-y-1/2 z-20 hidden sm:block">
-                            <Button
-                                variant="default"
-                                size="icon"
-                                className="w-10 h-10 md:w-12 md:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg"
-                                onClick={() => api?.scrollNext()}
-                            >
-                                <ChevronRight className="h-6 w-6" />
-                            </Button>
-                        </div>
-                    </Carousel>
+                    <div className="absolute top-1/2 right-[5%] md:right-[8%] lg:right-[12%] xl:right-[15%] -translate-y-1/2 z-20 hidden sm:block">
+                        <Button
+                            variant="default"
+                            size="icon"
+                            className="w-10 h-10 md:w-12 md:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg"
+                            onClick={() => api?.scrollNext()}
+                        >
+                            <ChevronRight className="h-6 w-6" />
+                        </Button>
+                    </div>
+                </Carousel>
 
                     <div className="flex justify-center items-center gap-2 mt-8">
                         {Array.from({ length: count }).map((_, index) => {

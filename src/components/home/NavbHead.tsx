@@ -311,7 +311,6 @@
 // }
 
 
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -390,7 +389,6 @@ export default function NavbHead() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 8px 16px;
           border-radius: 9999px;
           cursor: pointer;
           border: 2px solid transparent;
@@ -404,7 +402,8 @@ export default function NavbHead() {
           background-origin: border-box;
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
-          transition: --nav-sweep 0.55s ease;
+          /* Sweep animation timing */
+          transition: --nav-sweep 0.35s ease;
         }
 
         .nav-pill:hover {
@@ -417,11 +416,12 @@ export default function NavbHead() {
         .nav-pill::after {
           content: '';
           position: absolute;
-          inset: -2px;
+          inset: -2px; /* Covers the border */
           border-radius: 9999px;
-          background: #FD7034;
+          background: #F05A28; /* Matches the sweep color exactly */
           opacity: 0;
-          transition: opacity 0.22s ease 0.40s;
+          /* Wait 0.3s for sweep to finish, then smoothly fade in */
+          transition: opacity 0.25s ease 0.3s;
           z-index: 0;
           pointer-events: none;
         }
@@ -439,16 +439,16 @@ export default function NavbHead() {
           display: inline-flex;
           align-items: center;
           gap: 4px;
-          color: #003B5C;
+          color: #012C60; /* Initial blue text */
           text-decoration: none;
-          font-size: 15px;
           font-weight: 500;
-          transition: color 0.15s ease 0.52s;
+          /* Sync text color change with the background fill */
+          transition: color 0.15s ease 0.3s;
           white-space: nowrap;
         }
 
         .nav-pill:hover .nav-pill-text {
-          color: #ffffff;
+          color: #ffffff; /* Becomes exact white on hover */
         }
 
         .nav-pill-chevron {
@@ -456,7 +456,7 @@ export default function NavbHead() {
           z-index: 10;
           color: #9ca3af;
           flex-shrink: 0;
-          transition: color 0.15s ease 0.52s;
+          transition: color 0.15s ease 0.3s;
         }
 
         .nav-pill:hover .nav-pill-chevron {
@@ -473,7 +473,6 @@ export default function NavbHead() {
             {/* ── Logo ── */}
             <div className="shrink-0 flex items-center justify-start">
               <Link href="/" >
-                {/* className="w-[95px] h-[28px]" */}
                 <Image
                   src={'/logos/Logo.png'}
                   alt="Chapaghor Logo"
@@ -527,10 +526,11 @@ export default function NavbHead() {
                         <div className="nav-outer relative h-full flex items-center group/nav">
 
                           {/* ── Pill button ── */}
-                          <div className="nav-pill min-w-[95px] h-[28px] px-3 !py-0 flex items-center justify-center">
+                          {/* Adjusted size to closer match the 100x22 look */}
+                          <div className="nav-pill min-w-[100px] h-[26px] px-4 !py-0 flex items-center justify-center">
                             <Link
                               href={`/category/${category.slug}`}
-                              className="nav-pill-text flex items-center justify-center w-full h-full text-[16px] text-[#012C60] tracking-[0px] whitespace-nowrap"
+                              className="nav-pill-text flex items-center justify-center w-full h-full text-[14px] tracking-[0px] whitespace-nowrap"
                             >
                               <span>
                                 {category.name}
@@ -597,7 +597,7 @@ export default function NavbHead() {
               {/* Search Box */}
               <div
                 onClick={() => setIsSearchOpen(true)}
-                className="hidden md:flex items-center justify-between bg-[#0000000D] rounded-full px-3 cursor-text hover:bg-black/10 transition-colors w-[95px] h-[28px] group"
+                className="hidden md:flex items-center justify-between bg-[#0000000D] rounded-[10px] px-3 cursor-text hover:bg-black/10 transition-colors w-[95px] h-[28px] group"
               >
                 <span className="text-[13px] text-gray-500 select-none font-medium leading-none">
                   Search

@@ -70,4 +70,5 @@ userSchema.statics.isPasswordMatched = async function (plainTextPassword, hashed
   return await bcrypt.compare(plainTextPassword, hashedPassword);
 };
 
-export const User = models.User || model<TUser, UserModel>('User', userSchema);
+// 🔴 FIX: Added "as UserModel" to models.User so TypeScript knows about the static methods
+export const User = (models.User as UserModel) || model<TUser, UserModel>('User', userSchema);
