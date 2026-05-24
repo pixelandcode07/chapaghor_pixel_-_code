@@ -328,7 +328,6 @@
 // }
 
 
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -343,6 +342,7 @@ type SubCategory = {
   name: string;
   slug: string;
   category: { _id: string; name: string };
+  image?: string; // Added image property for dynamic DB loading
 };
 
 type Category = {
@@ -409,7 +409,7 @@ export default function NavbHead() {
           justify-content: center;
           border-radius: 7px;
           cursor: pointer;
-          border: 2px solid transparent;
+          border: 1px solid transparent;
           background-image:
             linear-gradient(#ffffff, #ffffff),
             conic-gradient(
@@ -433,7 +433,7 @@ export default function NavbHead() {
         .nav-pill::after {
           content: '';
           position: absolute;
-          inset: -2px; 
+          inset: -1px; 
           border-radius: 7px;
           background: #FD7034; 
           opacity: 0;
@@ -454,7 +454,7 @@ export default function NavbHead() {
           z-index: 10;
           display: inline-flex;
           align-items: center;
-          gap: 4px;
+          gap: 11px;
           color: #012C60; 
           text-decoration: none;
           font-weight: 500;
@@ -544,7 +544,7 @@ export default function NavbHead() {
                           <div className="nav-pill min-w-25 h-6.5 px-4 py-0! flex items-center justify-center">
                             <Link
                               href={`/category/${category.slug}`}
-                              className="nav-pill-text flex items-center justify-center w-full h-full text-[14px] tracking-[0px] whitespace-nowrap"
+                              className="nav-pill-text flex items-center justify-center w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap"
                             >
                               <span>{category.name}</span>
                               {relatedSubCats.length > 0 && (
@@ -570,12 +570,12 @@ export default function NavbHead() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 15 }}
                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                    className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[900px] bg-white border-t-[3px] border-[#3b82f6] shadow-xl p-8 rounded-b-xl z-50 flex items-center gap-8 cursor-default"
+                                    className="absolute top-[185%] left-1/2 -translate-x-1/2 w-[900px] bg-white shadow-xl p-8 rounded-b-xl z-50 flex items-center gap-8 cursor-default"
                                   >
                                     <div className="w-[280px] shrink-0">
-                                      <img 
-                                        src="/images/machine.png" 
-                                        alt="Offset Print Machine" 
+                                      <img
+                                        src="/images/machine.png"
+                                        alt="Offset Print Machine"
                                         className="w-full h-auto object-contain"
                                         onError={(e) => (e.currentTarget.src = 'https://placehold.co/400x300/eeeeee/999999?text=Heidelberg+Machine')}
                                       />
@@ -593,35 +593,43 @@ export default function NavbHead() {
                                     </div>
                                   </motion.div>
 
-                                // {/* --- INDEX 2: SIGNAGE LAYOUT --- */}
+                                  // {/* --- INDEX 2: SIGNAGE LAYOUT --- */}
                                 ) : index === 2 ? (
                                   <motion.div
                                     initial={{ opacity: 0, y: 15 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 15 }}
                                     transition={{ duration: 0.2, ease: "easeOut" }}
-                                    className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[950px] bg-white border-t-[3px] border-[#3b82f6] shadow-xl p-8 rounded-b-xl z-50 flex gap-10 cursor-default"
+                                    className="absolute top-[185%] left-1/2 -translate-x-1/2 w-[1064px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
                                   >
                                     {/* Left: Image Cards */}
-                                    <div className="flex gap-4 flex-1 justify-between">
-                                      {relatedSubCats.slice(0, 4).map((subCat, i) => (
+                                    <div className="flex gap-5 flex-1 justify-between">
+                                      {relatedSubCats.slice(0, 4).map((subCat) => (
                                         <Link
                                           key={subCat._id}
                                           href={`/category/${category.slug}/${subCat.slug}`}
                                           className="relative w-[150px] h-[300px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
                                         >
-                                          <img 
-                                            src={`/images/signage-0${i + 1}.jpg`} 
-                                            alt={subCat.name} 
-                                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                            onError={(e) => (e.currentTarget.src = `https://placehold.co/300x600/333333/ffffff?text=Image`)}
+                                          <Image
+                                            // ── Dynamic Sub Category Image Fetching Here ── //
+                                            src={subCat.image || '/banners/nav-alter.png'}
+                                            alt={subCat.name}
+                                            fill
+                                            sizes="200px"
+                                            className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                            onError={(e) => {
+                                              // Next.js uses srcset for optimized images, so we must clear it and set the fallback src
+                                              const target = e.currentTarget as HTMLImageElement;
+                                              target.srcset = "";
+                                              target.src = "https://placehold.co/300x600/333333/ffffff.png?text=Image";
+                                            }}
                                           />
                                           {/* Orange Gradient Overlay overlaying bottom-half */}
-                                          <div className="absolute inset-0 bg-gradient-to-t from-[#F05A28] via-[#F05A28]/60 to-transparent opacity-95" />
-                                          
+                                          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#F05A28] via-[#F05A28]/60 to-transparent opacity-100" /> */}
+
                                           {/* Rotated Vertical Text */}
                                           <div className="absolute inset-0 flex">
-                                            <span className="absolute bottom-6 right-3 origin-bottom-right -rotate-90 text-white font-black text-xl uppercase tracking-widest whitespace-nowrap drop-shadow-md">
+                                            <span className="absolute bottom-80 right-3 origin-bottom-right -rotate-90 text-white font-black text-xl uppercase tracking-widest whitespace-nowrap drop-shadow-md">
                                               {subCat.name}
                                             </span>
                                           </div>
@@ -643,7 +651,7 @@ export default function NavbHead() {
                                     </div>
                                   </motion.div>
 
-                                // {/* --- DEFAULT: STANDARD COMPACT DROPDOWN --- */}
+                                  // {/* --- DEFAULT: STANDARD COMPACT DROPDOWN --- */}
                                 ) : (
                                   <motion.div
                                     initial={{ opacity: 0, y: 15, scale: 0.95 }}
@@ -674,7 +682,7 @@ export default function NavbHead() {
 
                         {/* Divider */}
                         {index !== categories.length - 1 && (
-                          <span className="text-gray-300 mx-1 xl:mx-2 pointer-events-none select-none text-xs">
+                          <span className="text-[#012C60] mx-1 xl:mx-2 pointer-events-none select-none text-xs">
                             |
                           </span>
                         )}

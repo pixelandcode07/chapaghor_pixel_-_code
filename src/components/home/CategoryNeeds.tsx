@@ -95,7 +95,7 @@ export default function CategoryNeeds() {
 
         {/* <div className=""> */}
           <div className="max-w-[62vw] mx-auto relative z-10">
-            <h2 className="text-[36px] font-thin text-[#012C60] mb-10 text-center tracking-tight">
+            <h2 className="h-9 text-[36px] font-[300px] text-[#012C60] mb-10 text-center tracking-tight">
               YOUR NEEDS
             </h2>
 
@@ -135,9 +135,9 @@ export default function CategoryNeeds() {
                       style={{
                         boxShadow: "6px 8px 50px 0px rgba(255, 195, 181, 0.52)"
                       }}
-                      className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
+                      className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
                     >
-                      <div className="relative w-16 h-16 xl:w-[67px] xl:h-[47px] mb-3">
+                      <div className="relative w-16 h-16 xl:w-[67px] xl:h-[50px] mb-3">
                         <Image
                           src={category.icon || "/icons/card.svg"}
                           alt={`${category.name} icon`}
