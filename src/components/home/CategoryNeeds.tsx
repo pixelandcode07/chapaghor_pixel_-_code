@@ -117,7 +117,7 @@ export default function CategoryNeeds() {
               <Link
                 href={`/category/${category.slug}`}
                 key={category._id}
-                className="block"
+                className="block shadow-sm shadow-[#FFC3B585] "
               >
                 {/* Wrapper handles layout footprint and passes 
                   hover/stagger triggers to Face 1 & Face 2 
@@ -145,7 +145,8 @@ export default function CategoryNeeds() {
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
                   >
                     {/* Dynamic Icon */}
-                    <div className="relative w-16 h-16 xl:w-20 xl:h-20 mb-3">
+                    <div className="relative w-17 h-12.5  mb-3">
+                      {/* xl:w-20 xl:h-20 */}
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
