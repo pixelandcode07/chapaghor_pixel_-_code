@@ -90,72 +90,74 @@ export default function CategoryNeeds() {
 
   return (
     <>
-      <section className="container mx-auto bg-white py-12 relative">
+      <div className="container mx-auto bg-white py-12 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
 
-        <div className="max-w-[62vw] mx-auto relative z-10">
-          <h2 className="text-[36px] font-thin text-[#012C60] mb-10 text-center tracking-tight">
-            YOUR NEEDS
-          </h2>
+        {/* <div className=""> */}
+          <div className="max-w-[62vw] mx-auto relative z-10">
+            <h2 className="text-[36px] font-thin text-[#012C60] mb-10 text-center tracking-tight">
+              YOUR NEEDS
+            </h2>
 
-          {/* ✅ Switched to flex — cards stay at natural 143px width, gap is exactly 23px */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 place-items-center gap-5.75"
-          >
-            {categories.map((category) => (
-              <Link
-                href={`/category/${category.slug}`}
-                key={category._id}
-                className="block shadow-[17px] shadow-[#FFC3B585] "
-              >
-                <motion.div
-                  variants={itemVariants}
-                  whileHover="hover"
-                  className="relative w-35.75 h-38.75 rounded-[17px] cursor-pointer group z-10 hover:z-50"
+            {/* ✅ Switched to flex — cards stay at natural 143px width, gap is exactly 23px */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="max-w-[62vw] mx-auto flex flex-wrap justify-center gap-[23px]"
+            >
+              {categories.map((category) => (
+                <Link
+                  href={`/category/${category.slug}`}
+                  key={category._id}
+                  className="block shadow-[17px] shadow-[#FFC3B585] "
                 >
-
-                  {/* Face 2: Beige Base (Slides Down) */}
                   <motion.div
-                    variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-[17px] flex items-end justify-center pb-3 z-0"
+                    variants={itemVariants}
+                    whileHover="hover"
+                    className="relative w-35.75 h-38.75 rounded-[17px] cursor-pointer group z-10 hover:z-50"
                   >
-                    <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
-                      View Details
-                    </div>
+
+                    {/* Face 2: Beige Base (Slides Down) */}
+                    <motion.div
+                      variants={face2Variants}
+                      className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-[17px] flex items-end justify-center pb-3 z-0"
+                    >
+                      <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
+                        View Details
+                      </div>
+                    </motion.div>
+
+                    {/* Face 1: White Card (Slides Up) */}
+                    <motion.div
+                      variants={face1Variants}
+                      style={{
+                        boxShadow: "6px 8px 50px 0px rgba(255, 195, 181, 0.52)"
+                      }}
+                      className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
+                    >
+                      <div className="relative w-16 h-16 xl:w-[67px] xl:h-[47px] mb-3">
+                        <Image
+                          src={category.icon || "/icons/card.svg"}
+                          alt={`${category.name} icon`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+
+                      <span className="text-[14px] xl:text-[15px] font-medium text-[#012C60] text-center tracking-tight">
+                        {category.name}
+                      </span>
+                    </motion.div>
+
                   </motion.div>
-
-                  {/* Face 1: White Card (Slides Up) */}
-                  <motion.div
-                    variants={face1Variants}
-                    style={{
-                      boxShadow: "6px 8px 50px 0px rgba(255, 195, 181, 0.52)"
-                    }}
-                    className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
-                  >
-                    <div className="relative w-16 h-16 xl:w-[67px] xl:h-[47px] mb-3">
-                      <Image
-                        src={category.icon || "/icons/card.svg"}
-                        alt={`${category.name} icon`}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-
-                    <span className="text-[14px] xl:text-[15px] font-medium text-[#012C60] text-center tracking-tight">
-                      {category.name}
-                    </span>
-                  </motion.div>
-
-                </motion.div>
-              </Link>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                </Link>
+              ))}
+            </motion.div>
+          </div>
+        {/* </div> */}
+      </div>
     </>
   );
 }

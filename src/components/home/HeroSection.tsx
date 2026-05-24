@@ -53,8 +53,8 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full py-12 bg-white relative overflow-hidden flex flex-col items-center">
-            <div className="w-full max-w-[100vw] relative">
+        <section className="container mx-auto w-full py-12 bg-white relative overflow-hidden flex flex-col items-center">
+            <div className="w-full max-w-[300vw] relative">
                 <Carousel
                     setApi={setApi}
                     plugins={plugins}
@@ -100,7 +100,7 @@ export default function HeroSection() {
                     </CarouselContent>
 
                     {/* বাটনগুলোর পজিশন স্ক্রিনের সাথে সামঞ্জস্য রেখে সেট করা হয়েছে */}
-                    <div className="absolute top-1/2 left-[5%] md:left-[8%] lg:left-[12%] xl:left-[15%] -translate-y-1/2 z-20 hidden sm:block">
+                    <div className="absolute top-1/2 left-[5%] md:left-[8%] lg:left-[12%] xl:left-[8%] -translate-y-1/2 z-20 hidden sm:block">
                         <Button
                             variant="default"
                             size="icon"
@@ -111,7 +111,7 @@ export default function HeroSection() {
                         </Button>
                     </div>
 
-                    <div className="absolute top-1/2 right-[5%] md:right-[8%] lg:right-[12%] xl:right-[15%] -translate-y-1/2 z-20 hidden sm:block">
+                    <div className="absolute top-1/2 right-[5%] md:right-[8%] lg:right-[12%] xl:right-[7.5%] -translate-y-1/2 z-20 hidden sm:block">
                         <Button
                             variant="default"
                             size="icon"

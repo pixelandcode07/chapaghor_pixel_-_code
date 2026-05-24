@@ -1,3 +1,334 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { Search, Sun, ShoppingCart, Users, Menu, ChevronDown, Loader2 } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import SearchOverlay from "./SearchOverlay";
+
+// type SubCategory = {
+//   _id: string;
+//   name: string;
+//   slug: string;
+//   category: { _id: string; name: string };
+// };
+
+// type Category = {
+//   _id: string;
+//   name: string;
+//   slug: string;
+//   isActive: boolean;
+//   isNavhead: boolean;
+// };
+
+// export default function NavbHead() {
+//   const [categories, setCategories] = useState<Category[]>([]);
+//   const [subCategories, setSubCategories] = useState<SubCategory[]>([]);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [isSearchOpen, setIsSearchOpen] = useState(false);
+//   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     const fetchNavData = async () => {
+//       try {
+//         const [catRes, subCatRes] = await Promise.all([
+//           fetch("/api/v1/categories"),
+//           fetch("/api/v1/sub-categories"),
+//         ]);
+//         const catData = await catRes.json();
+//         const subCatData = await subCatRes.json();
+
+//         if (catData.success) {
+//           setCategories(
+//             catData.data.filter(
+//               (c: Category) => c.isActive && c.isNavhead !== false
+//             )
+//           );
+//         }
+//         if (subCatData.success) setSubCategories(subCatData.data);
+//       } catch (error) {
+//         console.error("Failed to load navigation data", error);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+//     fetchNavData();
+//   }, []);
+
+//   return (
+//     <>
+//       <style>{`
+//         /* ═══════════════════════════════════════════════════════
+//            Animatable CSS custom property
+//         ═══════════════════════════════════════════════════════ */
+//         @property --nav-sweep {
+//           syntax: '<percentage>';
+//           initial-value: 0%;
+//           inherits: false;
+//         }
+
+//         /* ═══════════════════════════════════════════════════════
+//            .nav-pill  — pill button
+//         ═══════════════════════════════════════════════════════ */
+//         .nav-pill {
+//           position: relative;
+//           display: inline-flex;
+//           align-items: center;
+//           justify-content: center;
+//           border-radius: 7px;
+//           cursor: pointer;
+//           border: 2px solid transparent;
+//           background-image:
+//             linear-gradient(#ffffff, #ffffff),
+//             conic-gradient(
+//               from -90deg,
+//               #FD7034 var(--nav-sweep),
+//               transparent var(--nav-sweep)
+//             );
+//           background-origin: border-box;
+//           background-clip: padding-box, border-box;
+//           --nav-sweep: 0%;
+//           /* Sweep animation timing */
+//           transition: --nav-sweep 0.35s ease;
+//         }
+
+//         .nav-pill:hover {
+//           --nav-sweep: 100%;
+//         }
+
+//         /* ═══════════════════════════════════════════════════════
+//            Phase 2 — ::after  →  solid orange FILL
+//         ═══════════════════════════════════════════════════════ */
+//         .nav-pill::after {
+//           content: '';
+//           position: absolute;
+//           inset: -2px; /* Covers the border */
+//           border-radius: 7px;
+//           background: #FD7034; /* Matches the sweep color exactly */
+//           opacity: 0;
+//           /* Wait 0.3s for sweep to finish, then smoothly fade in */
+//           transition: opacity 0.25s ease 0.3s;
+//           z-index: 0;
+//           pointer-events: none;
+//         }
+
+//         .nav-pill:hover::after {
+//           opacity: 1;
+//         }
+
+//         /* ═══════════════════════════════════════════════════════
+//            Phase 3 — text + icon → white
+//         ═══════════════════════════════════════════════════════ */
+//         .nav-pill-text {
+//           position: relative;
+//           z-index: 10;
+//           display: inline-flex;
+//           align-items: center;
+//           gap: 4px;
+//           color: #012C60; /* Initial blue text */
+//           text-decoration: none;
+//           font-weight: 500;
+//           /* Sync text color change with the background fill */
+//           transition: color 0.15s ease 0.3s;
+//           white-space: nowrap;
+//         }
+
+//         .nav-pill:hover .nav-pill-text {
+//           color: #ffffff; /* Becomes exact white on hover */
+//         }
+
+//         .nav-pill-chevron {
+//           position: relative;
+//           z-index: 10;
+//           color: #9ca3af;
+//           flex-shrink: 0;
+//           transition: color 0.15s ease 0.3s;
+//         }
+
+//         .nav-pill:hover .nav-pill-chevron {
+//           color: #ffffff;
+//         }
+//       `}</style>
+
+//       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+//       <header className="bg-white sticky top-0 z-50">
+//         <div className="max-w-[80vw] mx-auto ">
+//           <div className="flex justify-between items-center py-4">
+
+//             {/* ── Logo ── */}
+//             <div className="shrink-0 flex items-center justify-start">
+//               <Link href="/" >
+//                 <Image
+//                   src={'/logos/Logo.png'}
+//                   alt="Chapaghor Logo"
+//                   width={180}
+//                   height={35}
+//                 />
+//               </Link>
+//             </div>
+
+//             {/* ── Category Nav with Framer Motion ── */}
+//             <nav className="hidden lg:flex items-center">
+//               {isLoading ? (
+//                 <motion.h1
+//                   initial={{ opacity: 0 }}
+//                   animate={{ opacity: 1 }}
+//                   className="flex items-center gap-2 text-gray-400 text-sm"
+//                 >
+//                   <Loader2 className="animate-spin" size={16} /> Loading menu...
+//                 </motion.h1>
+//               ) : (
+//                 <motion.ul
+//                   initial="hidden"
+//                   animate="visible"
+//                   variants={{
+//                     hidden: { opacity: 0 },
+//                     visible: {
+//                       opacity: 1,
+//                       transition: { staggerChildren: 0.05 }
+//                     }
+//                   }}
+//                   className="flex items-center"
+//                 >
+//                   {categories.map((category, index) => {
+//                     const relatedSubCats = subCategories.filter(
+//                       (sub) => sub.category?._id === category._id
+//                     );
+//                     const isHovered = hoveredCategory === category._id;
+
+//                     return (
+//                       <motion.li
+//                         variants={{
+//                           hidden: { opacity: 0, y: -10 },
+//                           visible: { opacity: 1, y: 0 }
+//                         }}
+//                         key={category._id}
+//                         className="flex items-center justify-center relative"
+//                         onMouseEnter={() => setHoveredCategory(category._id)}
+//                         onMouseLeave={() => setHoveredCategory(null)}
+//                       >
+//                         {/* Outer group */}
+//                         <div className="nav-outer relative h-full flex items-center group/nav">
+
+//                           {/* ── Pill button ── */}
+//                           {/* Adjusted size to closer match the 100x22 look */}
+//                           <div className="nav-pill min-w-25 h-6.5 px-4 py-0! flex items-center justify-center">
+//                             <Link
+//                               href={`/category/${category.slug}`}
+//                               className="nav-pill-text flex items-center justify-center w-full h-full text-[14px] tracking-[0px] whitespace-nowrap"
+//                             >
+//                               <span>
+//                                 {category.name}
+//                               </span>
+//                               {relatedSubCats.length > 0 && (
+//                                 <motion.div
+//                                   animate={{ rotate: isHovered ? 180 : 0 }}
+//                                   transition={{ duration: 0.3, ease: "easeInOut" }}
+//                                   className="ml-1.5 flex-shrink-0"
+//                                 >
+//                                   <ChevronDown size={14} className="nav-pill-chevron" />
+//                                 </motion.div>
+//                               )}
+//                             </Link>
+//                           </div>
+
+//                           {/* ── Framer Motion Dropdown ── */}
+//                           <AnimatePresence>
+//                             {isHovered && relatedSubCats.length > 0 && (
+//                               <motion.div
+//                                 initial={{ opacity: 0, y: 15, scale: 0.95 }}
+//                                 animate={{ opacity: 1, y: 0, scale: 1 }}
+//                                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
+//                                 transition={{ duration: 0.2, ease: "easeOut" }}
+//                                 className="
+//                                   absolute top-[110%] left-1/2 -translate-x-1/2
+//                                   w-56 bg-white border border-gray-100
+//                                   shadow-xl rounded-b-xl z-50 overflow-hidden
+//                                 "
+//                               >
+//                                 <div className="h-0.5 w-full bg-[#F05A28]" />
+//                                 <ul className="py-2">
+//                                   {relatedSubCats.map((subCat) => (
+//                                     <li key={subCat._id}>
+//                                       <Link
+//                                         href={`/category/${category.slug}/${subCat.slug}`}
+//                                         className="block px-5 py-2.5 text-sm text-gray-600 hover:text-[#F05A28] hover:bg-orange-50 transition-colors text-center"
+//                                       >
+//                                         {subCat.name}
+//                                       </Link>
+//                                     </li>
+//                                   ))}
+//                                 </ul>
+//                               </motion.div>
+//                             )}
+//                           </AnimatePresence>
+//                         </div>
+
+//                         {/* Divider */}
+//                         {index !== categories.length - 1 && (
+//                           <span className="text-gray-300 mx-1 xl:mx-2 pointer-events-none select-none text-xs">
+//                             |
+//                           </span>
+//                         )}
+//                       </motion.li>
+//                     );
+//                   })}
+//                 </motion.ul>
+//               )}
+//             </nav>
+
+//             {/* ── Search + Icons ── */}
+//             <div className="flex items-center justify-end gap-4">
+//               {/* Search Box */}
+//               <div
+//                 onClick={() => setIsSearchOpen(true)}
+//                 className="hidden md:flex items-center justify-between bg-[#0000000D] rounded-[10px] px-3 cursor-text hover:bg-black/10 transition-colors w-[95px] h-[28px] group"
+//               >
+//                 <span className="text-[13px] text-gray-500 select-none font-medium leading-none">
+//                   Search
+//                 </span>
+//                 <Search
+//                   size={14}
+//                   className="text-gray-500 group-hover:text-[#2D264B] transition-colors"
+//                   strokeWidth={2}
+//                 />
+//               </div>
+
+//               {/* Icons Container */}
+//               <div className="flex items-center justify-between gap-4 text-[#2D264B] ">
+//                 <button className="hover:text-[#F05A28] transition-colors flex items-center" title="Theme">
+//                   <Sun size={18} strokeWidth={1.5} />
+//                 </button>
+
+//                 <button className="hover:text-[#F05A28] transition-colors relative flex items-center" title="Cart">
+//                   <ShoppingCart size={18} strokeWidth={1.5} />
+//                   <span className="absolute -top-1.5 -right-1.5 bg-[#F05A28] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center ring-1 ring-white">
+//                     0
+//                   </span>
+//                 </button>
+
+//                 <button className="hover:text-[#F05A28] transition-colors hidden sm:flex items-center" title="Account">
+//                   <Users size={18} strokeWidth={1.5} />
+//                 </button>
+
+//                 <button className="hover:text-[#F05A28] transition-colors flex items-center">
+//                   <Menu size={20} strokeWidth={1.5} />
+//                 </button>
+//               </div>
+
+//             </div>
+
+//           </div>
+//         </div>
+//       </header>
+//     </>
+//   );
+// }
+
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -89,7 +420,6 @@ export default function NavbHead() {
           background-origin: border-box;
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
-          /* Sweep animation timing */
           transition: --nav-sweep 0.35s ease;
         }
 
@@ -103,11 +433,10 @@ export default function NavbHead() {
         .nav-pill::after {
           content: '';
           position: absolute;
-          inset: -2px; /* Covers the border */
+          inset: -2px; 
           border-radius: 7px;
-          background: #FD7034; /* Matches the sweep color exactly */
+          background: #FD7034; 
           opacity: 0;
-          /* Wait 0.3s for sweep to finish, then smoothly fade in */
           transition: opacity 0.25s ease 0.3s;
           z-index: 0;
           pointer-events: none;
@@ -126,16 +455,15 @@ export default function NavbHead() {
           display: inline-flex;
           align-items: center;
           gap: 4px;
-          color: #012C60; /* Initial blue text */
+          color: #012C60; 
           text-decoration: none;
           font-weight: 500;
-          /* Sync text color change with the background fill */
           transition: color 0.15s ease 0.3s;
           white-space: nowrap;
         }
 
         .nav-pill:hover .nav-pill-text {
-          color: #ffffff; /* Becomes exact white on hover */
+          color: #ffffff; 
         }
 
         .nav-pill-chevron {
@@ -153,13 +481,13 @@ export default function NavbHead() {
 
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
-      <header className="bg-white sticky top-0 z-50">
-        <div className="max-w-[80vw] mx-auto ">
+      <header className="bg-white sticky top-0 z-50 shadow-sm">
+        <div className="max-w-[80vw] mx-auto">
           <div className="flex justify-between items-center py-4">
 
             {/* ── Logo ── */}
             <div className="shrink-0 flex items-center justify-start">
-              <Link href="/" >
+              <Link href="/">
                 <Image
                   src={'/logos/Logo.png'}
                   alt="Chapaghor Logo"
@@ -213,15 +541,12 @@ export default function NavbHead() {
                         <div className="nav-outer relative h-full flex items-center group/nav">
 
                           {/* ── Pill button ── */}
-                          {/* Adjusted size to closer match the 100x22 look */}
                           <div className="nav-pill min-w-25 h-6.5 px-4 py-0! flex items-center justify-center">
                             <Link
                               href={`/category/${category.slug}`}
                               className="nav-pill-text flex items-center justify-center w-full h-full text-[14px] tracking-[0px] whitespace-nowrap"
                             >
-                              <span>
-                                {category.name}
-                              </span>
+                              <span>{category.name}</span>
                               {relatedSubCats.length > 0 && (
                                 <motion.div
                                   animate={{ rotate: isHovered ? 180 : 0 }}
@@ -234,34 +559,115 @@ export default function NavbHead() {
                             </Link>
                           </div>
 
-                          {/* ── Framer Motion Dropdown ── */}
+                          {/* ── Dynamic Mega Menu Rendering ── */}
                           <AnimatePresence>
                             {isHovered && relatedSubCats.length > 0 && (
-                              <motion.div
-                                initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                transition={{ duration: 0.2, ease: "easeOut" }}
-                                className="
-                                  absolute top-[110%] left-1/2 -translate-x-1/2
-                                  w-56 bg-white border border-gray-100
-                                  shadow-xl rounded-b-xl z-50 overflow-hidden
-                                "
-                              >
-                                <div className="h-0.5 w-full bg-[#F05A28]" />
-                                <ul className="py-2">
-                                  {relatedSubCats.map((subCat) => (
-                                    <li key={subCat._id}>
-                                      <Link
-                                        href={`/category/${category.slug}/${subCat.slug}`}
-                                        className="block px-5 py-2.5 text-sm text-gray-600 hover:text-[#F05A28] hover:bg-orange-50 transition-colors text-center"
-                                      >
-                                        {subCat.name}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </motion.div>
+                              <>
+                                {/* --- INDEX 1: OFFSET PRINT LAYOUT --- */}
+                                {index === 1 ? (
+                                  <motion.div
+                                    initial={{ opacity: 0, y: 15 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 15 }}
+                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                    className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[900px] bg-white border-t-[3px] border-[#3b82f6] shadow-xl p-8 rounded-b-xl z-50 flex items-center gap-8 cursor-default"
+                                  >
+                                    <div className="w-[280px] shrink-0">
+                                      <img 
+                                        src="/images/machine.png" 
+                                        alt="Offset Print Machine" 
+                                        className="w-full h-auto object-contain"
+                                        onError={(e) => (e.currentTarget.src = 'https://placehold.co/400x300/eeeeee/999999?text=Heidelberg+Machine')}
+                                      />
+                                    </div>
+                                    <div className="flex-1 grid grid-cols-4 gap-y-4 gap-x-6 border-l border-gray-100 pl-8">
+                                      {relatedSubCats.map((subCat) => (
+                                        <Link
+                                          key={subCat._id}
+                                          href={`/category/${category.slug}/${subCat.slug}`}
+                                          className="text-[14px] text-[#012C60] font-medium hover:text-[#F05A28] transition-colors whitespace-nowrap"
+                                        >
+                                          {subCat.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+
+                                // {/* --- INDEX 2: SIGNAGE LAYOUT --- */}
+                                ) : index === 2 ? (
+                                  <motion.div
+                                    initial={{ opacity: 0, y: 15 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 15 }}
+                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                    className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[950px] bg-white border-t-[3px] border-[#3b82f6] shadow-xl p-8 rounded-b-xl z-50 flex gap-10 cursor-default"
+                                  >
+                                    {/* Left: Image Cards */}
+                                    <div className="flex gap-4 flex-1 justify-between">
+                                      {relatedSubCats.slice(0, 4).map((subCat, i) => (
+                                        <Link
+                                          key={subCat._id}
+                                          href={`/category/${category.slug}/${subCat.slug}`}
+                                          className="relative w-[150px] h-[300px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
+                                        >
+                                          <img 
+                                            src={`/images/signage-0${i + 1}.jpg`} 
+                                            alt={subCat.name} 
+                                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                            onError={(e) => (e.currentTarget.src = `https://placehold.co/300x600/333333/ffffff?text=Image`)}
+                                          />
+                                          {/* Orange Gradient Overlay overlaying bottom-half */}
+                                          <div className="absolute inset-0 bg-gradient-to-t from-[#F05A28] via-[#F05A28]/60 to-transparent opacity-95" />
+                                          
+                                          {/* Rotated Vertical Text */}
+                                          <div className="absolute inset-0 flex">
+                                            <span className="absolute bottom-6 right-3 origin-bottom-right -rotate-90 text-white font-black text-xl uppercase tracking-widest whitespace-nowrap drop-shadow-md">
+                                              {subCat.name}
+                                            </span>
+                                          </div>
+                                        </Link>
+                                      ))}
+                                    </div>
+
+                                    {/* Right: Text List */}
+                                    <div className="w-[200px] flex flex-col gap-3 border-l border-gray-100 pl-8 shrink-0 py-2">
+                                      {relatedSubCats.map((subCat) => (
+                                        <Link
+                                          key={subCat._id}
+                                          href={`/category/${category.slug}/${subCat.slug}`}
+                                          className="text-[14px] text-[#012C60] font-medium hover:text-[#F05A28] transition-colors whitespace-nowrap"
+                                        >
+                                          {subCat.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+
+                                // {/* --- DEFAULT: STANDARD COMPACT DROPDOWN --- */}
+                                ) : (
+                                  <motion.div
+                                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                    className="absolute top-[110%] left-1/2 -translate-x-1/2 w-56 bg-white border border-gray-100 shadow-xl rounded-b-xl z-50 overflow-hidden"
+                                  >
+                                    <div className="h-0.5 w-full bg-[#F05A28]" />
+                                    <ul className="py-2">
+                                      {relatedSubCats.map((subCat) => (
+                                        <li key={subCat._id}>
+                                          <Link
+                                            href={`/category/${category.slug}/${subCat.slug}`}
+                                            className="block px-5 py-2.5 text-sm text-gray-600 hover:text-[#F05A28] hover:bg-orange-50 transition-colors text-center"
+                                          >
+                                            {subCat.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </motion.div>
+                                )}
+                              </>
                             )}
                           </AnimatePresence>
                         </div>
@@ -297,27 +703,23 @@ export default function NavbHead() {
               </div>
 
               {/* Icons Container */}
-              <div className="flex items-center justify-between gap-4 text-[#2D264B] ">
+              <div className="flex items-center justify-between gap-4 text-[#2D264B]">
                 <button className="hover:text-[#F05A28] transition-colors flex items-center" title="Theme">
                   <Sun size={18} strokeWidth={1.5} />
                 </button>
-
                 <button className="hover:text-[#F05A28] transition-colors relative flex items-center" title="Cart">
                   <ShoppingCart size={18} strokeWidth={1.5} />
                   <span className="absolute -top-1.5 -right-1.5 bg-[#F05A28] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center ring-1 ring-white">
                     0
                   </span>
                 </button>
-
                 <button className="hover:text-[#F05A28] transition-colors hidden sm:flex items-center" title="Account">
                   <Users size={18} strokeWidth={1.5} />
                 </button>
-
                 <button className="hover:text-[#F05A28] transition-colors flex items-center">
                   <Menu size={20} strokeWidth={1.5} />
                 </button>
               </div>
-
             </div>
 
           </div>
