@@ -14,7 +14,6 @@ type Category = {
   isFeatured: boolean;
 };
 
-// Renamed from 'Variants' to avoid collision with Framer Motion's type
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -32,22 +31,18 @@ const itemVariants: Variants = {
   }
 };
 
-// Custom variants for the top white card
 const face1Variants: Variants = {
-  hidden: { y: 0, boxShadow: "0px 1px 3px 1px rgba(0,0,0,0.15)" },
+  hidden: { y: 0 },
   visible: {
     y: 0,
-    boxShadow: "0px 1px 3px 1px rgba(0,0,0,0.15)",
     transition: { duration: 0.3, ease: "easeOut" }
   },
   hover: {
     y: -16,
-    boxShadow: "0px 12px 30px 0px rgba(255,195,181,0.5)",
     transition: { duration: 0.3, ease: "easeOut" }
   }
 };
 
-// Custom variants for the bottom beige card 
 const face2Variants: Variants = {
   hidden: { y: 0, opacity: 0 },
   visible: {
@@ -96,22 +91,20 @@ export default function CategoryNeeds() {
   return (
     <>
       <section className="bg-white py-12 relative">
-        {/* Soft radial background glow to match the image depth */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
 
         <div className="max-w-[62vw] mx-auto relative z-10">
-          {/* Heading */}
-          <h2 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-tight">
+          <h2 className="text-[36px] font-thin text-[#012C60] mb-10 text-center tracking-tight">
             YOUR NEEDS
           </h2>
 
-          {/* Grid */}
+          {/* ✅ Switched to flex — cards stay at natural 143px width, gap is exactly 23px */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 xl:gap-6 place-items-center"
+            className="flex flex-wrap justify-center gap-[23px]"
           >
             {categories.map((category) => (
               <Link
@@ -119,13 +112,10 @@ export default function CategoryNeeds() {
                 key={category._id}
                 className="block"
               >
-                {/* Wrapper handles layout footprint and passes 
-                  hover/stagger triggers to Face 1 & Face 2 
-                */}
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative w-[143px] h-[155px] cursor-pointer group z-10 hover:z-50"
+                  className="relative w-[143px] h-[155px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
                 >
 
                   {/* Face 2: Beige Base (Slides Down) */}
@@ -133,7 +123,6 @@ export default function CategoryNeeds() {
                     variants={face2Variants}
                     className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-b-2xl flex items-end justify-center pb-3 z-0"
                   >
-                    {/* Using a div here instead of a button prevents semantically invalid <button> inside <a> warnings */}
                     <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
                       View Details
                     </div>
@@ -142,10 +131,12 @@ export default function CategoryNeeds() {
                   {/* Face 1: White Card (Slides Up) */}
                   <motion.div
                     variants={face1Variants}
+                    style={{
+                      boxShadow: "6px 8px 50px 0px rgba(255, 195, 181, 0.52)"
+                    }}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
                   >
-                    {/* Dynamic Icon */}
-                    <div className="relative w-16 h-16 xl:w-20 xl:h-20 mb-3">
+                    <div className="relative w-16 h-16 xl:w-[67px] xl:h-[47px] mb-3">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
@@ -154,7 +145,6 @@ export default function CategoryNeeds() {
                       />
                     </div>
 
-                    {/* Dynamic Label */}
                     <span className="text-[14px] xl:text-[15px] font-medium text-[#012C60] text-center tracking-tight">
                       {category.name}
                     </span>
@@ -169,5 +159,3 @@ export default function CategoryNeeds() {
     </>
   );
 }
-
-
