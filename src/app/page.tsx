@@ -6,6 +6,7 @@ import NavbHead from "@/components/home/NavbHead";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
+import BestSelling from "@/components/home/BestSelling";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -27,6 +28,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection />
       <OurClient/>
+      <BestSelling/>
 
       {/* Main content */}
       <div className="flex-grow">
