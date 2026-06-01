@@ -133,7 +133,8 @@ export default function NavbHead() {
         }
 
         .nav-pill:hover .nav-pill-text {
-          color: #ffffff; 
+          color: #ffffff;
+         
         }
 
         .nav-pill-chevron {
@@ -218,7 +219,7 @@ export default function NavbHead() {
                             {/* hover:mx-2.5 */}
                             <Link
                               href={`/category/${category.slug}`}
-                              className="nav-pill-text  w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5 "
+                              className="nav-pill-text  w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5  "
                             >
                               <span>{category.name}</span>
                               {/* {relatedSubCats.length > 0 && (
@@ -356,7 +357,7 @@ export default function NavbHead() {
 
                         {/* Divider */}
                         {index !== categories.length - 1 && (
-                          <span className="text-[#012C60]  pointer-events-none select-none text-xs">
+                          <span className="text-[#012C60]  pointer-events-none select-none text-xs px-0.5">
                             {/* mx-1 xl:mx-2 */}
                             |
                           </span>
