@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import CategoryNeeds from "@/components/home/CategoryNeeds";
-import NavbHead from "@/components/home/NavbHead";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
 import BestSelling from "@/components/home/BestSelling";
+import NavHead from "@/components/home/(Navbar)/NavHead";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -15,20 +15,20 @@ export default function HomePage() {
     <main className="min-h-screen bg-gray-50 flex flex-col relative">
 
       {/* Modal Logic */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
-      )}
+      )} */}
 
       {/* Header */}
-      <NavbHead />
+      <NavHead />
 
       {/* Category Needs */}
       <CategoryNeeds />
 
       {/* Hero Section */}
       <HeroSection />
-      <OurClient/>
-      <BestSelling/>
+      <OurClient />
+      <BestSelling />
 
       {/* Main content */}
       <div className="flex-grow">

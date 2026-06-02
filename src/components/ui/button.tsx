@@ -19,6 +19,10 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        nav_sun: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
+        nav_cart: "hover:text-[#F05A28] transition-colors relative flex items-center cursor-pointer",
+        nav_user: "hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer",
+        nav_menu: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
       },
       size: {
         default:
