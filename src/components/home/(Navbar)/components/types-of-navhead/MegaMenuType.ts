@@ -6,7 +6,7 @@ type SubCategory = {
         _id: string;
         name: string;
     };
-    image?: string;
+    icon?: string;
 };
 
 type Category = {
