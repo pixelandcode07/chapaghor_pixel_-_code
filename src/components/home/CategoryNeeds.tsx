@@ -95,7 +95,7 @@ export default function CategoryNeeds() {
 
         {/* <div className=""> */}
         <div className="max-w-[62vw] mx-auto relative z-10">
-          <h2 className="h-9 text-[36px] font-light text-[#012C60] mb-10 text-center tracking-tight">
+          <h2 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
             YOUR NEEDS
           </h2>
 
@@ -146,7 +146,7 @@ export default function CategoryNeeds() {
                       />
                     </div>
 
-                    <span className="text-[14px] xl:text-[15px] font-medium text-[#012C60] text-center tracking-tight">
+                    <span className="text-[16.49px] font-light text-[#012C60] text-center tracking-normal">
                       {category.name}
                     </span>
                   </motion.div>
