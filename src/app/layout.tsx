@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-// Viewport configuration
 export const viewport: Viewport = {
   themeColor: "#F05A28",
 };
 
-// Favicon and Manifest Setup
 export const metadata: Metadata = {
   title: "Chapaghor - Your Printing Partner",
   description: "Dynamic Print & E-commerce Platform",
@@ -32,7 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body
+  className="min-h-full flex flex-col font-light text-base leading-relaxed antialiased"
+  style={{ fontFamily: '"Helvetica Neue"' }}
+>
+        {children}
+      </body>
     </html>
   );
 }
