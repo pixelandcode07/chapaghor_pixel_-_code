@@ -206,21 +206,12 @@ export default function NavHead() {
                                                     {/* ── Pill button ── */}
                                                     <div className="nav-pill flex items-center justify-center ">
                                                         {/* hover:mx-2.5 */}
-                                                        <Link
-                                                            href={`/category/${category.slug}`}
-                                                            className="nav-pill-text  w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5  "
-                                                        >
-                                                            <span>{category.name}</span>
-                                                            {/* {relatedSubCats.length > 0 && (
-                                  <motion.div
-                                    animate={{ rotate: isHovered ? 180 : 0 }}
-                                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    className="ml-1.5 flex-shrink-0"
-                                  >
-                                    <ChevronDown size={14} className="nav-pill-chevron" />
-                                  </motion.div>
-                                )} */}
-                                                        </Link>
+                                                       <Link
+  href={`/category/${category.slug}`}
+  className="nav-pill-text w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5"
+>
+  <span>{category.name}</span>
+</Link>
                                                     </div>
 
                                                     {/* ── Dynamic Mega Menu Rendering ── */}

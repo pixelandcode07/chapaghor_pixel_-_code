@@ -80,7 +80,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
 
       {/* Most Searched Products */}
       <div className="w-full max-w-[1300px] px-4 md:px-6 pb-20">
-        <h3 className="text-2xl md:text-3xl font-medium text-[#003B5C] text-center mb-12">
+        <h3 className="text-2xl md:text-[36px] font-[300PX] text-[#003B5C] text-center mb-12">
           Most Searched Products
         </h3>
 
@@ -92,7 +92,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
               onClick={onClose}
               className="group flex flex-col items-start cursor-pointer w-max"
             >
-              <div className="relative w-[160px] h-[170px] sm:w-[180px] sm:h-[190px] md:w-[235px] md:h-[305px] mb-4">
+              <div className="relative w-[160px] h-[170px] sm:w-[180px] sm:h-[190px] md:w-[235px] md:h-[255px] mb-4">
                 
                 {/* Inner image box */}
                 <div className="absolute inset-0 rounded-[20px] overflow-hidden bg-gray-100">
