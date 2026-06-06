@@ -142,9 +142,7 @@ export default function NavHead() {
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
             <header className="bg-white sticky top-0 z-50 ">
-                {/* shadow-sm */}
-                {/* <div className="max-w-[80vw] mx-auto"> */}
-                <div className="w-[calc(100vw-200px)] mx-auto py-1.5">
+                <div className="w-[calc(100vw-200px)] mx-auto pb-3.75 pt-2">
                     <div className="flex justify-between items-center ">
 
                         {/* ── Logo ── */}
@@ -161,7 +159,7 @@ export default function NavHead() {
 
                         {/* <div> */}
                         {/* ── Category Nav with Framer Motion ── */}
-                        <nav className="hidden lg:flex items-center pt-2.5">
+                        <nav className="hidden lg:flex items-center pt-3.5 pb-5.5">
                             {isLoading ? (
                                 <motion.h1
                                     initial={{ opacity: 0 }}
@@ -204,15 +202,17 @@ export default function NavHead() {
                                                 <div className="nav-outer relative h-full flex items-center group/nav">
 
                                                     {/* ── Pill button ── */}
-                                                    <div className="nav-pill flex items-center justify-center ">
-                                                        {/* hover:mx-2.5 */}
-                                                       <Link
-  href={`/category/${category.slug}`}
-  className="nav-pill-text w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5"
->
-  <span>{category.name}</span>
-</Link>
+                                                    <div className="nav-pill flex items-center justify-center">
+                                                        <Link
+                                                            href={`/category/${category.slug}`}
+                                                            className="nav-pill-text w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5"
+                                                        >
+                                                            <span>{category.name}</span>
+                                                        </Link>
                                                     </div>
+
+                                                    {/* ── Animated Bottom Border ── */}
+                                                    <span className="absolute -bottom-9.5 left-1/2 -translate-x-1/2 w-[80%] h-[2.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                     {/* ── Dynamic Mega Menu Rendering ── */}
                                                     <MegaMenu
