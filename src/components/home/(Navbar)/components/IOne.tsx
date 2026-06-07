@@ -1,4 +1,4 @@
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
@@ -10,7 +10,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[1064px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[240%] left-1/2 -translate-x-1/2 w-[1064px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
             <div className="flex gap-5 flex-1 justify-between">
@@ -25,16 +25,21 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
                             alt={subCat.name}
                             fill
                             sizes="200px"
-                            className="object-cover group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                            // Added grayscale by default to match the image style
+                            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                             onError={(e) => {
                                 const target = e.currentTarget as HTMLImageElement;
                                 target.srcset = "";
                                 target.src = "https://placehold.co/300x600/333333/ffffff.png?text=Image";
                             }}
                         />
+
+                        {/* Orange Gradient Overlay */}
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#F05A28]/95 via-[#F05A28]/40 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-80" />
+
                         {/* Rotated Vertical Text */}
-                        <div className="absolute inset-0 flex">
-                            <span className="absolute bottom-80 right-3 origin-bottom-right -rotate-90 text-white font-black text-xl uppercase tracking-widest whitespace-nowrap drop-shadow-md">
+                        <div className="absolute inset-y-0 right-3 w-[24px] z-20 pointer-events-none">
+                            <span className="absolute bottom-2 left-8 origin-bottom-left -rotate-90 text-white font-black text-[22px] uppercase tracking-widest whitespace-nowrap drop-shadow-lg">
                                 {subCat.name}
                             </span>
                         </div>

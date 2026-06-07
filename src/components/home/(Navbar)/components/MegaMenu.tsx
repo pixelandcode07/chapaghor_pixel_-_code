@@ -30,8 +30,6 @@ export default function MegaMenu({ isHovered, relatedSubCats, category, index }:
                             {/* Menu Container */}
                             <IOne relatedSubCats={relatedSubCats} category={category} isHovered={isHovered} index={index} />
                         </>
-
-
                         // {/* --- INDEX 2: CATEGORY 2 LAYOUT --- */}
                     ) : index === 2 ? (
                         <>
