@@ -93,7 +93,7 @@ export default function ChooseUs() {
             </div>
 
             <Text3DFlip 
-              className="text-white/90 max-w-[600px] mt-2"
+              className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center"
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontWeight: 400,
