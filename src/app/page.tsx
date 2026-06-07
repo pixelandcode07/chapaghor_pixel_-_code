@@ -9,6 +9,7 @@ import BestSelling from "@/components/home/BestSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
 import Combo from "@/components/home/ComboFiles)/Combo";
 import OurService from "@/components/home/OurService";
+import ChooseUs from "@/components/home/ChooseUs";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -33,6 +34,7 @@ export default function HomePage() {
       <BestSelling />
       <Combo />
       <OurService />
+      <ChooseUs />
 
       {/* Main content */}
       <div className="flex-grow">
