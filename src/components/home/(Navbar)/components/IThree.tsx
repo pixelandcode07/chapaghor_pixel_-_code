@@ -10,7 +10,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[137.5%] left-1/2 -translate-x-1/2 w-291.5 max-w-[95vw] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
+            className="absolute top-[240%] left-1/2 -translate-x-1/2 w-291.5 max-w-[95vw] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
         >
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
             <div className="grid grid-cols-[repeat(4,244px)] auto-rows-[135px] gap-[2px]">
