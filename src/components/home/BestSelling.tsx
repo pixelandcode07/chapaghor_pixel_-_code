@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Adjust path to your shadcn button
+import { CoolMode } from "../ui/cool-mode";
 
 export default function BestSelling() {
     // Replace these src paths with the actual names of the images in your /public folder
@@ -90,12 +91,14 @@ export default function BestSelling() {
 
             {/* --- View All Products Button --- */}
             <div className="mt-12">
-                <Button
-                    variant={"best_sell_btn"}
-                    size={"best_sell_btn_size"}
-                >
-                    View All Products
-                </Button>
+                <CoolMode>
+                    <Button
+                        variant={"landing_page_view_btn"}
+                        size={"landing_page_view_btn_size"}
+                    >
+                        View All Products
+                    </Button>
+                </CoolMode>
             </div>
         </div>
         // {/* </section> */}
