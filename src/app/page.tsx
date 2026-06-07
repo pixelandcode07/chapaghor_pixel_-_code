@@ -11,6 +11,7 @@ import Combo from "@/components/home/ComboFiles)/Combo";
 import OurService from "@/components/home/OurService";
 import ChooseUs from "@/components/home/ChooseUs";
 import HowToOrder from "@/components/home/HowToOrder";
+import Footer from "@/components/home/Footer";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -37,6 +38,7 @@ export default function HomePage() {
       <OurService />
       <ChooseUs />
       <HowToOrder />
+      <Footer />
 
       {/* Main content */}
       <div className="flex-grow">
