@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="w-full mt-16 flex flex-col items-center">
 
             {/* ── Pre-Footer: Contact Card & Gray Space ── */}
-            <div className="w-[calc(100vw-100px)] mx-auto flex flex-col md:flex-row rounded-t-[16px] overflow-hidden z-10">
+            <div className="w-[calc(100vw-200px)] mx-auto flex flex-col md:flex-row rounded-t-[16px] overflow-hidden z-10">
 
                 {/* Orange WhatsApp Card */}
                 <div className="bg-[#FA702E] p-8 md:px-10 md:py-8 flex items-start gap-4 md:w-[450px] shrink-0">
@@ -40,18 +40,18 @@ export default function Footer() {
                 </div>
 
                 {/* Light Gray Empty Space on Right */}
-                <div className="bg-[#F5F5F5] flex-1 hidden md:block"></div>
+                {/* <div className="bg-[#F5F5F5] flex-1 hidden md:block"></div> */}
             </div>
 
             {/* ── Main Dark Footer ── */}
-            <div className="w-full bg-[#24303F] py-[60px] px-8 relative -mt-1 z-0">
-                <div className="w-[calc(100vw-100px)] mx-auto flex flex-col xl:flex-row items-start justify-between gap-12">
+            <div className="w-full bg-[#232F3E] py-[64px] px-8 relative  z-0">
+                <div className="w-[calc(100vw-200px)] mx-auto flex flex-col xl:flex-row items-start justify-between gap-12">
 
                     {/* Left: Logo & Description */}
                     <div className="flex flex-col max-w-sm">
                         <div className="mb-6">
                             <Image
-                                src="/images/chapaghor-logo-white.png" // Replace with your white logo path
+                                src="/footer/logo-white.png"
                                 alt="Chapaghor Logo"
                                 width={220}
                                 height={60}
@@ -71,21 +71,27 @@ export default function Footer() {
 
                     {/* Right: Payment Gateways */}
                     <div className="flex flex-row items-center gap-4 mt-8 xl:mt-4 overflow-x-auto w-full xl:w-auto">
-                        <span
+                        {/* <span
                             className="text-white/80 text-[10px] uppercase whitespace-nowrap"
                             style={{ fontFamily: 'Urbanist, sans-serif' }}
                         >
                             Pay With
-                        </span>
+                        </span> */}
                         <div className="min-w-[500px] sm:min-w-[700px] shrink-0">
                             <Image
-                                src="/images/payment-gateways.png" // Replace with your payment gateways strip image path
+                                src="/footer/payment.png"
                                 alt="Payment Methods"
                                 width={800}
                                 height={50}
                                 className="object-contain"
                             />
                         </div>
+                        {/* <span
+                            className="text-white/80 text-[10px] uppercase whitespace-nowrap"
+                            style={{ fontFamily: 'Urbanist, sans-serif' }}
+                        >
+                            Pay With
+                        </span> */}
                     </div>
 
                 </div>

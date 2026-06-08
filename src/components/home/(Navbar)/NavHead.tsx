@@ -149,7 +149,7 @@ export default function NavHead() {
                         <div className="shrink-0 flex items-center justify-start">
                             <Link href="/">
                                 <Image
-                                    src={'/logos/Logo.png'}
+                                    src={'/nav-logo/Logo.png'}
                                     alt="Chapaghor Logo"
                                     width={180}
                                     height={35}
