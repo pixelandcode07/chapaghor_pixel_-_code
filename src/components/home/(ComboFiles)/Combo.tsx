@@ -94,10 +94,11 @@
 // }
 
 
-"use client";
+// "use client";
 
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import { KineticText } from '@/components/ui/kinetic-text';
 
 const comboData = [
     { id: 1, title: 'Exclusive', image: '/combo/1.png' },
@@ -128,9 +129,13 @@ export default function Combo() {
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-                    <h2 className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide">
+                    <div className="flex gap-2.5">
+                    <KineticText text="Exclusive Combo" className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide" />
+                    <KineticText text="Deals" className="text-[36px] md:text-[46px] font-normal text-[#F05A28] leading-tight tracking-wide" />
+                    </div>
+                    {/* <h2 className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide">
                         Exclusive Combo <span className="text-[#F05A28]">Deals</span>
-                    </h2>
+                    </h2> */}
                     <p className="text-gray-300 text-[18px] md:text-[16px] font-medium max-w-[400px] leading-relaxed">
                         We provide high quality printing services for you business, event and personal needs
                     </p>
@@ -142,7 +147,8 @@ export default function Combo() {
                         <div key={item.id} className="relative group cursor-pointer pt-2">
 
                             {/* Dark Translucent Wrapper (Top Box) */}
-                            <div className="absolute top-0 left-4 w-[90%] h-[45%] border border-white/20 rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10" />
+                            <div className="absolute top-0 left-2 w-[95%] h-[99%]  rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 border-2 border-red-500" />
+                            {/* border border-white/20 */}
 
                             {/* Title */}
                             <h3 className="relative z-10 text-white font-medium text-[15px] px-6 pt-5 pb-10 ">
@@ -162,7 +168,7 @@ export default function Combo() {
                                 <div className="relative w-full aspect-5/4 mt-2">
 
                                     {/* Inner image box (overflow hidden handles the outer rounded corners) */}
-                                    <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm bg-[#E5E5E5]">
+                                    <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm bg-[#E5E5E5] border-2 border-red-500">
                                         <Image
                                             src={item.image}
                                             alt={item.title}
@@ -171,17 +177,17 @@ export default function Combo() {
                                         />
 
                                         {/* Block for the cutout (Darkened to match background) */}
-                                        <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-[#111111] rounded-tl-[38px] z-10 pointer-events-none" />
+                                        <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-[#fafafa] rounded-tl-[38px] z-10 pointer-events-none border-2 border-red-500" />
 
                                         {/* Concave curve (Top edge) */}
-                                        <div className="absolute bottom-[75px] -right-0.5 w-6 h-6 z-10 pointer-events-none">
-                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#111111]">
+                                        <div className="absolute bottom-[75px] -right-0.5 w-6 h-6 z-10 pointer-events-none border-2 border-red-500">
+                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#111111] ">
                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                                             </svg>
                                         </div>
 
                                         {/* Concave curve (Left edge) */}
-                                        <div className="absolute bottom-0 right-[75px] w-6 h-6 z-10 pointer-events-none">
+                                        <div className="absolute bottom-0 right-[75px] w-6 h-6 z-10 pointer-events-none border-2 border-red-500">
                                             <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#111111]">
                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                                             </svg>

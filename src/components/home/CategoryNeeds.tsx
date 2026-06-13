@@ -90,8 +90,8 @@ export default function CategoryNeeds() {
 
   return (
     <>
-      <div className="container mx-auto bg-white pt-23 pb-16.25 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" />
+      <div className="container mx-auto bg-[#FFFFFF] pt-23 pb-16.25 relative">
+        {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" /> */}
 
         {/* <div className=""> */}
         <div className="max-w-[62vw] mx-auto relative z-10">
@@ -132,14 +132,22 @@ export default function CategoryNeeds() {
                   {/* Face 1: White Card (Slides Up) */}
                   <motion.div
                     variants={face1Variants}
-                    style={{
-                      boxShadow: "6px 8px 50px 0px rgba(255, 195, 181, 0.52)"
-                    }}
-                    className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300"
+                    className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-16 h-16 xl:w-16.75 xl:h-12.5 mb-3">
+                    {/* <div className="relative w-16 h-16 xl:w-16.75 xl:h-12.5 mb-3">
                       <Image
                         src={category.icon || "/icons/card.svg"}
+                        alt={`${category.name} icon`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div> */}
+
+                    <div className="relative w-16 h-16 xl:w-20 xl:h-20 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-95">
+                      <Image
+                        src={category.icon || "/icons/card.svg"}
+                        // width={80}
+                        // height={80}
                         alt={`${category.name} icon`}
                         fill
                         className="object-contain"
