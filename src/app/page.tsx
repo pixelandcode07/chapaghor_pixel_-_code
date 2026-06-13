@@ -7,7 +7,11 @@ import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
 import BestSelling from "@/components/home/BestSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
-import Combo from "@/components/home/ComboFiles)/Combo";
+import OurService from "@/components/home/OurService";
+import Combo from "@/components/home/(ComboFiles)/Combo";
+import ChooseUs from "@/components/home/ChooseUs";
+import HowToOrder from "@/components/home/HowToOrder";
+import Footer from "@/components/home/Footer";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -20,32 +24,16 @@ export default function HomePage() {
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
       )} */}
 
-      {/* Header */}
       <NavHead />
-
-      {/* Category Needs */}
       <CategoryNeeds />
-
-      {/* Hero Section */}
       <HeroSection />
       <OurClient />
       <BestSelling />
       <Combo />
-
-      {/* Main content */}
-      <div className="flex-grow">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="text-center py-20">
-            <h1 className="text-3xl font-bold text-[#003B5C] mb-4">
-              Welcome to Chapaghor
-            </h1>
-            <p className="text-gray-500">
-              Header and Needs section are ready!
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <OurService />
+      <ChooseUs />
+      <HowToOrder />
+      <Footer />
     </main>
   );
 }

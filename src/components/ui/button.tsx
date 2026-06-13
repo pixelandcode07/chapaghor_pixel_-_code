@@ -23,7 +23,7 @@ const buttonVariants = cva(
         nav_cart: "hover:text-[#F05A28] transition-colors relative flex items-center cursor-pointer",
         nav_user: "hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer",
         nav_menu: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
-        best_sell_btn: "text-white text-base font-semibold rounded-[60px] bg-[#232F3E] hover:underline underline-offset-4 cursor-pointer",
+        landing_page_view_btn: "text-white text-base font-semibold rounded-[60px] bg-[#232F3E] hover:underline underline-offset-4 cursor-pointer",
       },
       size: {
         default:
@@ -31,7 +31,7 @@ const buttonVariants = cva(
         xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        best_sell_btn_size: "w-60.75 h-16.5 px-10 py-5 gap-2.5",
+        landing_page_view_btn_size: "w-60.75 h-16.5 px-10 py-5 gap-2.5",
         icon: "size-8",
         "icon-xs":
           "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",

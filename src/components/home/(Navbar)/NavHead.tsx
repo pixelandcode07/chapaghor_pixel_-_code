@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Sun, ShoppingCart, Users, Menu, Loader2 } from "lucide-react";
+import { Search, Sun, ShoppingCart, Users, Menu, Loader2, Mic } from "lucide-react";
 import { motion } from "framer-motion";
 import SearchOverlay from "../SearchOverlay";
 import { Button } from "@/components/ui/button";
@@ -149,7 +149,7 @@ export default function NavHead() {
                         <div className="shrink-0 flex items-center justify-start">
                             <Link href="/">
                                 <Image
-                                    src={'/logos/Logo.png'}
+                                    src={'/nav-logo/Logo.png'}
                                     alt="Chapaghor Logo"
                                     width={180}
                                     height={35}
@@ -243,16 +243,33 @@ export default function NavHead() {
                             {/* Search Box */}
                             <div
                                 onClick={() => setIsSearchOpen(true)}
-                                className="hidden md:flex items-center justify-between bg-[#0000000D] rounded-[10px] px-3 cursor-text hover:bg-black/10 transition-colors w-[95px] h-[28px] group"
+                                className="hidden md:flex items-center justify-between bg-white border border-gray-100 shadow-[0px_2px_8px_rgba(0,0,0,0.05)] rounded-full pl-4 pr-3 cursor-text hover:shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition-all w-[160px] h-[36px] group"
                             >
-                                <span className="text-[13px] text-gray-500 select-none font-medium leading-none">
+                                <span className="text-[14px] text-gray-500 select-none font-medium leading-none">
                                     Search
                                 </span>
-                                <Search
-                                    size={14}
-                                    className="text-gray-500 group-hover:text-[#2D264B] transition-colors"
-                                    strokeWidth={2}
-                                />
+
+                                {/* Right-aligned Icon Group */}
+                                <div className="flex items-center gap-2">
+                                    <Search
+                                        size={16}
+                                        className="text-gray-500 group-hover:text-[#2D264B] transition-colors"
+                                        strokeWidth={2}
+                                    />
+
+                                    {/* Vertical Divider */}
+                                    <div className="h-3.5 w-[1px] bg-gray-300"></div>
+
+                                    {/* Mic Icon */}
+                                    <Mic
+                                        size={16}
+                                        className="text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
+                                        strokeWidth={2}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                        }}
+                                    />
+                                </div>
                             </div>
 
                             {/* Icons Container */}
@@ -274,7 +291,6 @@ export default function NavHead() {
                                 </Button>
                             </div>
                         </div>
-                        {/* </div> */}
 
                     </div>
                 </div>
