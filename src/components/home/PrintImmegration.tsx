@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { KineticText } from "../ui/kinetic-text";
 
 type Category = {
   _id: string;
@@ -57,7 +58,7 @@ const face2Variants: Variants = {
   }
 };
 
-export default function CategoryNeeds() {
+export default function PrintImmegration() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -91,13 +92,10 @@ export default function CategoryNeeds() {
   return (
     <>
       <div className="container mx-auto bg-[#FFFFFF] pt-23 pb-16.25 relative">
-        {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white pointer-events-none" /> */}
-
-        {/* <div className=""> */}
         <div className="max-w-[62vw] mx-auto relative z-10">
-          <h2 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
-            YOUR NEEDS
-          </h2>
+          <div className="flex justify-center items-center">
+            <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" />
+          </div>
 
           {/* ✅ Switched to flex — cards stay at natural 143px width, gap is exactly 23px */}
           <motion.div
@@ -134,20 +132,9 @@ export default function CategoryNeeds() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    {/* <div className="relative w-16 h-16 xl:w-16.75 xl:h-12.5 mb-3">
+                    <div className="relative w-16 h-16 xl:w-28 xl:h-28 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-95">
                       <Image
                         src={category.icon || "/icons/card.svg"}
-                        alt={`${category.name} icon`}
-                        fill
-                        className="object-contain"
-                      />
-                    </div> */}
-
-                    <div className="relative w-16 h-16 xl:w-20 xl:h-20 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-95">
-                      <Image
-                        src={category.icon || "/icons/card.svg"}
-                        // width={80}
-                        // height={80}
                         alt={`${category.name} icon`}
                         fill
                         className="object-contain"
@@ -164,7 +151,6 @@ export default function CategoryNeeds() {
             ))}
           </motion.div>
         </div>
-        {/* </div> */}
       </div>
     </>
   );

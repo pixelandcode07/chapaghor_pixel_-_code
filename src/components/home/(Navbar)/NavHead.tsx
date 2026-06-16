@@ -59,7 +59,7 @@ export default function NavHead() {
         }
 
         /* ═══════════════════════════════════════════════════════
-           .nav-pill  — pill button
+           .nav-pill  — normal state (Controls the HOVER OUT)
         ═══════════════════════════════════════════════════════ */
         .nav-pill {
           position: relative;
@@ -69,22 +69,31 @@ export default function NavHead() {
           border-radius: 20px;
           cursor: pointer;
           border: 1px solid transparent;
+          
+          /* Start exactly at top middle (12 o'clock) */
           background-image:
             linear-gradient(#ffffff, #ffffff),
             conic-gradient(
-              from -90deg,
+              from 0deg, 
               #FD7034 var(--nav-sweep),
               transparent var(--nav-sweep)
             );
           background-origin: border-box;
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
-          transition: --nav-sweep 0.35s ease;
-        
+          
+          /* HOVER OUT ACTION: Slower, smoother erase */
+          transition: --nav-sweep 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
         }
 
+        /* ═══════════════════════════════════════════════════════
+           .nav-pill:hover — hover state (Controls the HOVER IN)
+        ═══════════════════════════════════════════════════════ */
         .nav-pill:hover {
           --nav-sweep: 100%;
+          
+          /* HOVER IN ACTION: Fast, snappy draw */
+          transition: --nav-sweep 0.3s ease-in;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -97,13 +106,18 @@ export default function NavHead() {
           border-radius: 20px;
           background: #FD7034; 
           opacity: 0;
-          transition: opacity 0.25s ease 0.3s;
           z-index: 0;
           pointer-events: none;
+
+          /* HOVER OUT: Fade out instantly so the retracting border is visible */
+          transition: opacity 0.15s ease 0s;
         }
 
         .nav-pill:hover::after {
           opacity: 1;
+
+          /* HOVER IN: Wait 0.3s for the border to finish drawing before filling */
+          transition: opacity 0.25s ease 0.3s;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -117,13 +131,17 @@ export default function NavHead() {
           color: #012C60; 
           text-decoration: none;
           font-weight: 400;
-          transition: color 0.15s ease 0.3s;
           white-space: nowrap;
+
+          /* HOVER OUT: Instantly change text back to dark blue */
+          transition: color 0.15s ease 0s;
         }
 
         .nav-pill:hover .nav-pill-text {
           color: #ffffff;
-         
+
+          /* HOVER IN: Wait 0.3s before turning white */
+          transition: color 0.15s ease 0.3s;
         }
 
         .nav-pill-chevron {
@@ -131,11 +149,16 @@ export default function NavHead() {
           z-index: 10;
           color: #9ca3af;
           flex-shrink: 0;
-          transition: color 0.15s ease 0.3s;
+
+          /* HOVER OUT: Instantly change back */
+          transition: color 0.15s ease 0s;
         }
 
         .nav-pill:hover .nav-pill-chevron {
           color: #ffffff;
+
+          /* HOVER IN: Wait 0.3s */
+          transition: color 0.15s ease 0.3s;
         }
       `}</style>
 
@@ -194,7 +217,9 @@ export default function NavHead() {
                                                     visible: { opacity: 1, y: 0 }
                                                 }}
                                                 key={category._id}
-                                                className="flex items-center justify-center relative"
+                                                // className="flex items-center justify-center relative z-50"
+                                                className={`flex items-center justify-center relative ${isHovered ? "z-[99]" : "z-50"
+                                                    }`}
                                                 onMouseEnter={() => setHoveredCategory(category._id)}
                                                 onMouseLeave={() => setHoveredCategory(null)}
                                             >
@@ -226,7 +251,7 @@ export default function NavHead() {
 
                                                 {/* Divider */}
                                                 {index !== categories.length - 1 && (
-                                                    <span className="text-[#012C60]  pointer-events-none select-none text-xs px-0.5">
+                                                    <span className="text-[#012C60]  pointer-events-none select-none text-xs px-1">
                                                         {/* mx-1 xl:mx-2 */}
                                                         |
                                                     </span>
