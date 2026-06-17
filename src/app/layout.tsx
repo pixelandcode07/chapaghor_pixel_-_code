@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import CustomCursor from "@/components/CustomCursor";
+
+
 
 export const viewport: Viewport = {
   themeColor: "#F05A28",
@@ -35,6 +38,7 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-light text-base leading-relaxed antialiased"
         style={{ fontFamily: '"Helvetica Neue"' }}
       >
+        <CustomCursor />
         {children}
         <ScrollToTop />
       </body>

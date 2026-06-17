@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Adjust path to your shadcn button
 import { CoolMode } from "../ui/cool-mode";
+import { KineticText } from "../ui/kinetic-text";
 
 export default function BestSelling() {
     // Replace these src paths with the actual names of the images in your /public folder
@@ -19,23 +20,13 @@ export default function BestSelling() {
         // <section className="">
         <div className="w-[calc(100vw-200px)] mx-auto py-16 bg-white flex flex-col items-center justify-center">
             {/* --- Title --- */}
-            <h2
-                className="mb-10 text-[#1E3A8A] "
-                style={{
-                    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                    fontWeight: 300,
-                    fontSize: "36px",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    textAlign: "center",
-                }}
-            >
-                BEST SELLING
-            </h2>
+            <div className="flex justify-center items-center mb-10 text-[#1E3A8A]">
+                <KineticText text="BEST SELLING" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal " />
+            </div>
 
             {/* --- Cards Grid --- */}
             {/* <div className="flex flex-row justify-center gap-[19.8px]  border-2 border-gray-950"> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center items-center gap-[19.8px] w-[calc(100vw-200px)] mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center items-center gap-[19.8px]">
                 {products.map((product, index) => (
                     <div
                         key={index}
@@ -80,8 +71,8 @@ export default function BestSelling() {
                         </div>
 
                         {/* Product Title Pill */}
-                        <div className="mt-auto flex items-start">
-                            <span className="bg-[#F3F4F6] text-[#1E293B] text-[14px] font-medium px-5 py-2.5 rounded-xl inline-flex group-hover:bg-[#e4e7eb] transition-colors tracking-wide">
+                        <div className="mt-auto flex items-center justify-center">
+                            <span className=" min-w-[235px] text-center bg-[#F3F4F6] text-[#1E293B] text-[14px] font-medium px-5 py-2.5 rounded-xl group-hover:bg-[#e4e7eb] transition-colors tracking-wide">
                                 {product.name}
                             </span>
                         </div>

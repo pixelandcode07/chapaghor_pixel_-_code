@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import CategoryNeeds from "@/components/home/CategoryNeeds";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
@@ -12,6 +11,7 @@ import Combo from "@/components/home/(ComboFiles)/Combo";
 import ChooseUs from "@/components/home/ChooseUs";
 import HowToOrder from "@/components/home/HowToOrder";
 import Footer from "@/components/home/Footer";
+import PrintImmegration from "@/components/home/PrintImmegration";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -25,7 +25,7 @@ export default function HomePage() {
       )} */}
 
       <NavHead />
-      <CategoryNeeds />
+      <PrintImmegration />
       <HeroSection />
       <OurClient />
       <BestSelling />

@@ -38,7 +38,7 @@ export default function ChooseUs() {
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/banners/combo-bg.jpg" // Replace with your actual dark wavy background image path
+            src="/choose-us/banner.jpg" // Replace with your actual dark wavy background image path
             alt="Combo Background"
             fill
             className="object-fill opacity-60"
