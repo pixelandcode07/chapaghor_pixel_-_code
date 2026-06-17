@@ -74,11 +74,10 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-4 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] aspect-[967/307] ${
-                                            isActive
+                                        className={`relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] aspect-[967/307] ${isActive
                                                 ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
                                                 : "blur-[6px] opacity-40 scale-95 z-0"
-                                        }`}
+                                            }`}
                                     >
                                         <Image
                                             src={image.src}
@@ -98,19 +97,19 @@ export default function HeroSection() {
                     <Button
                         variant="default"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff]  text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         onClick={() => api?.scrollPrev()}
                     >
-                        <ChevronLeft className="h-6 w-6" />
+                        <ChevronLeft className="h-6 w-6 text-[#797272]" />
                     </Button>
 
                     <Button
                         variant="default"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#012C60] hover:bg-[#012C60]/90 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff]  text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         onClick={() => api?.scrollNext()}
                     >
-                        <ChevronRight className="h-6 w-6" />
+                        <ChevronRight className="h-6 w-6 text-[#797272]" />
                     </Button>
                 </div>
 
@@ -122,11 +121,10 @@ export default function HeroSection() {
                                 key={index}
                                 onClick={() => api?.scrollTo(index)}
                                 aria-label={`Go to slide ${index + 1}`}
-                                className={`transition-all duration-300 ease-in-out rounded-full ${
-                                    isActive
+                                className={`transition-all duration-300 ease-in-out rounded-full ${isActive
                                         ? "w-8 h-2 bg-[#F05A28]"
                                         : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                                }`}
+                                    }`}
                             />
                         );
                     })}

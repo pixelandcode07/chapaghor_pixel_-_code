@@ -2,6 +2,18 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+
+@media (pointer: fine) {
+  body {
+    cursor: none; /* Hides the default mouse pointer */
+  }
+  
+  /* Ensure links and buttons don't bring the default pointer back */
+  a, button {
+    cursor: none; 
+  }
+}
+
 @font-face {
   font-family: 'Helvetica Neue';
   src: url('/fonts/HelveticaNeueUltraLight.otf') format('opentype');
