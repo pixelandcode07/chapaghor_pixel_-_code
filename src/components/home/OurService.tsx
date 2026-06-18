@@ -74,7 +74,7 @@ export default function OurService() {
                                     />
 
                                     {/* Gradient Overlay for Text Readability */}
-                                    <div className="absolute top-36 inset-0 bg-linear-to-t from-[#FF6633] via-[#EA4335] to-transparent z-10 opacity-90"/>
+                                    <div className="absolute top-36 inset-0 bg-linear-to-t from-[#FF6633] via-[#EA4335] to-transparent z-10 opacity-90" />
 
                                     {/* Inside Image Text */}
                                     <span
