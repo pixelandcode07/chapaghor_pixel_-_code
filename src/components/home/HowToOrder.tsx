@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { KineticText } from '../ui/kinetic-text';
 
 const orderSteps = [
   {
@@ -42,8 +43,8 @@ export default function HowToOrder() {
 
         {/* Title Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
-          <h3
-            className="uppercase text-[#FF8D28] mb-2"
+          <KineticText
+            text='How To Order'
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 400,
@@ -51,20 +52,17 @@ export default function HowToOrder() {
               lineHeight: '100%',
               letterSpacing: '0%',
             }}
-          >
-            How To Order
-          </h3>
-          <h2
-            className="text-[#1C3E6E] capitalize"
+            className="uppercase text-[#FF8D28] mb-2 font-normal text-base" />
+
+          <KineticText
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 300,
               fontSize: '36px',
               lineHeight: '100%',
             }}
-          >
-            Easy Steps To Order
-          </h2>
+            text='Easy Steps To Order'
+            className="text-[#1C3E6E] capitalize font-normal text-[36px]" />
         </div>
 
         {/* Steps Layout */}
@@ -128,11 +126,11 @@ export default function HowToOrder() {
         </div>
         <div className='hidden lg:flex flex-1'>
           <Image
-          src={'/order/round-arrow.png'}
-          alt="Round arrow decoration"
-          width={120}
-          height={120}
-          className="absolute bottom-30 -right-24"
+            src={'/order/round-arrow.png'}
+            alt="Round arrow decoration"
+            width={120}
+            height={120}
+            className="absolute bottom-30 -right-24"
           />
         </div>
       </div>

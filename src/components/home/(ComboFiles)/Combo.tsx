@@ -1,7 +1,7 @@
-// "use client";
-
 // import Image from 'next/image';
 // import { ArrowUpRight } from 'lucide-react';
+// import { KineticText } from '@/components/ui/kinetic-text';
+// import Text3DFlip from '@/components/ui/text-3d-flip';
 
 // const comboData = [
 //     { id: 1, title: 'Exclusive', image: '/combo/1.png' },
@@ -32,12 +32,24 @@
 
 //                 {/* Header Section */}
 //                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-//                     <h2 className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide">
-//                         Exclusive Combo <span className="text-[#F05A28]">Deals</span>
-//                     </h2>
-//                     <p className="text-gray-300 text-[18px] md:text-[16px] font-medium max-w-[400px] leading-relaxed">
+//                     <div className="flex gap-2.5">
+//                         {/* Left Title */}
+//                         <KineticText text="Exclusive Combo" className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide" />
+//                         <KineticText text="Deals" className="text-[36px] md:text-[46px] font-normal text-[#F05A28] leading-tight tracking-wide" />
+//                     </div>
+//                     {/* Right Title */}
+//                     <Text3DFlip
+//                         className="text-gray-300 text-[18px] md:text-[16px] font-medium max-w-[400px] leading-relaxed"
+//                         style={{
+//                             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+//                             fontWeight: 400,
+//                             fontSize: '18px',
+//                             lineHeight: '127%',
+//                             letterSpacing: '-0.015em',
+//                         }}
+//                     >
 //                         We provide high quality printing services for you business, event and personal needs
-//                     </p>
+//                     </Text3DFlip>
 //                 </div>
 
 //                 {/* Cards Grid Section */}
@@ -46,10 +58,11 @@
 //                         <div key={item.id} className="relative group cursor-pointer pt-2">
 
 //                             {/* Dark Translucent Wrapper (Top Box) */}
-//                             <div className="absolute top-0 left-0 w-full h-[65%] border border-white/20 rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10" />
+//                             <div className="absolute top-0 left-[14.5px] w-[92%] h-[96.5%]  rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 border-2 border-red-500" />
+//                             {/* border border-white/20 */}
 
 //                             {/* Title */}
-//                             <h3 className="relative z-10 text-white font-medium text-[15px] px-6 pt-5 pb-10">
+//                             <h3 className="relative z-10 text-white font-medium text-[15px] px-6 pt-5 pb-10 ">
 //                                 {item.title}
 //                             </h3>
 
@@ -60,28 +73,44 @@
 //                                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[82%] h-full bg-[#404040] rounded-[16px] -z-20 transition-transform duration-500 group-hover:-translate-y-2" />
 
 //                                 {/* Layer 2 (Medium Gray - Middle) */}
-//                                 <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-[91%] h-full bg-[#999999] rounded-[16px] -z-10 transition-transform duration-500 group-hover:-translate-y-1" />
+//                                 {/* <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-[91%] h-full bg-[#999999] rounded-[16px] -z-10 transition-transform duration-500 group-hover:-translate-y-1" /> */}
 
-//                                 {/* Layer 3 (Light Gray - Front Image Box) */}
-//                                 <div className="relative w-full aspect-[5/4] bg-[#E5E5E5] rounded-[16px] flex items-center justify-center p-5 shadow-lg overflow-hidden">
-//                                     <Image
-//                                         src={item.image}
-//                                         alt={item.title}
-//                                         fill
-//                                         sizes="(max-width: 768px) 100vw, 300px"
-//                                         className="object-contain p-4 transition-transform duration-700 ease-in-out group-hover:scale-110"
-//                                         onError={(e) => {
-//                                             const target = e.currentTarget as HTMLImageElement;
-//                                             target.srcset = "";
-//                                             target.src = "https://placehold.co/400x300/E5E5E5/999999.png?text=Mockup";
-//                                         }}
-//                                     />
+//                                 {/* ── Layer 3 (Front Image Box wrapper) ── */}
+//                                 <div className="relative w-full aspect-5/4 mt-2">
+
+//                                     {/* Inner image box (overflow hidden handles the outer rounded corners) */}
+//                                     <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm bg-[#E5E5E5] ">
+//                                         <Image
+//                                             src={item.image}
+//                                             alt={item.title}
+//                                             fill
+//                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
+//                                         />
+
+//                                         {/* Block for the cutout (Darkened to match background) */}
+//                                         <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-[#fafafa] rounded-tl-[38px] z-10 pointer-events-none border-2 border-red-500 " />
+
+//                                         {/* Concave curve (Top edge) */}
+//                                         <div className="absolute bottom-[75px] -right-0.5 w-6 h-6 z-10 pointer-events-none ">
+//                                             <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#FFFFFF] ">
+//                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
+//                                             </svg>
+//                                         </div>
+
+//                                         {/* Concave curve (Left edge) */}
+//                                         <div className="absolute bottom-0 right-[75px] w-6 h-6 z-10 pointer-events-none ">
+//                                             <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#FFFFFF]">
+//                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
+//                                             </svg>
+//                                         </div>
+//                                     </div>
+
+//                                     {/* Circular Button (Placed OUTSIDE the overflow-hidden box, but inside the aspect container) */}
+//                                     <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md ">
+//                                         <ArrowUpRight size={28} strokeWidth={2} />
+//                                     </div>
+
 //                                 </div>
-
-//                                 {/* Orange Circular Arrow Button */}
-//                                 <button className="absolute -bottom-1 -right-2 w-[46px] h-[46px] bg-[#F05A28] rounded-full flex items-center justify-center border-[5px] border-[#1C1A18] text-white transition-transform duration-300 group-hover:rotate-45 z-30 shadow-xl">
-//                                     <ArrowUpRight size={22} strokeWidth={2} />
-//                                 </button>
 
 //                             </div>
 //                         </div>
@@ -94,11 +123,12 @@
 // }
 
 
-// "use client";
 
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { KineticText } from '@/components/ui/kinetic-text';
+import Text3DFlip from '@/components/ui/text-3d-flip';
+import { BorderBeam } from '@/components/ui/border-beam'; // <-- Added Magic UI import
 
 const comboData = [
     { id: 1, title: 'Exclusive', image: '/combo/1.png' },
@@ -130,15 +160,23 @@ export default function Combo() {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
                     <div className="flex gap-2.5">
-                    <KineticText text="Exclusive Combo" className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide" />
-                    <KineticText text="Deals" className="text-[36px] md:text-[46px] font-normal text-[#F05A28] leading-tight tracking-wide" />
+                        {/* Left Title */}
+                        <KineticText text="Exclusive Combo" className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide" />
+                        <KineticText text="Deals" className="text-[36px] md:text-[46px] font-normal text-[#F05A28] leading-tight tracking-wide" />
                     </div>
-                    {/* <h2 className="text-[36px] md:text-[46px] font-normal text-white leading-tight tracking-wide">
-                        Exclusive Combo <span className="text-[#F05A28]">Deals</span>
-                    </h2> */}
-                    <p className="text-gray-300 text-[18px] md:text-[16px] font-medium max-w-[400px] leading-relaxed">
+                    {/* Right Title */}
+                    <Text3DFlip
+                        className="text-gray-300 text-[18px] md:text-[16px] font-medium max-w-[400px] leading-relaxed"
+                        style={{
+                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                            fontWeight: 400,
+                            fontSize: '18px',
+                            lineHeight: '127%',
+                            letterSpacing: '-0.015em',
+                        }}
+                    >
                         We provide high quality printing services for you business, event and personal needs
-                    </p>
+                    </Text3DFlip>
                 </div>
 
                 {/* Cards Grid Section */}
@@ -147,8 +185,22 @@ export default function Combo() {
                         <div key={item.id} className="relative group cursor-pointer pt-2">
 
                             {/* Dark Translucent Wrapper (Top Box) */}
-                            <div className="absolute top-0 left-2 w-[95%] h-[99%]  rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 border-2 border-red-500" />
-                            {/* border border-white/20 */}
+                            {/* REMOVED: border-2 border-red-500 | ADDED: overflow-hidden & BorderBeam */}
+                            <div className="absolute top-0 left-[14.5px] w-[92%] h-[96.5%] rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
+                                {/* <BorderBeam duration={8} size={100} /> */}
+                                <BorderBeam
+                                    duration={6}
+                                    size={400}
+                                    className="from-transparent via-red-500 to-transparent"
+                                />
+                                <BorderBeam
+                                    duration={6}
+                                    delay={3}
+                                    size={400}
+                                    borderWidth={2}
+                                    className="from-transparent via-blue-500 to-transparent"
+                                />
+                            </div>
 
                             {/* Title */}
                             <h3 className="relative z-10 text-white font-medium text-[15px] px-6 pt-5 pb-10 ">
@@ -161,14 +213,11 @@ export default function Combo() {
                                 {/* Layer 1 (Darkest Gray - Back) */}
                                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[82%] h-full bg-[#404040] rounded-[16px] -z-20 transition-transform duration-500 group-hover:-translate-y-2" />
 
-                                {/* Layer 2 (Medium Gray - Middle) */}
-                                <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-[91%] h-full bg-[#999999] rounded-[16px] -z-10 transition-transform duration-500 group-hover:-translate-y-1" />
-
                                 {/* ── Layer 3 (Front Image Box wrapper) ── */}
                                 <div className="relative w-full aspect-5/4 mt-2">
 
                                     {/* Inner image box (overflow hidden handles the outer rounded corners) */}
-                                    <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm bg-[#E5E5E5] border-2 border-red-500">
+                                    <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm bg-[#E5E5E5] ">
                                         <Image
                                             src={item.image}
                                             alt={item.title}
@@ -177,25 +226,28 @@ export default function Combo() {
                                         />
 
                                         {/* Block for the cutout (Darkened to match background) */}
-                                        <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-[#fafafa] rounded-tl-[38px] z-10 pointer-events-none border-2 border-red-500" />
+                                        {/* REMOVED: border-2 border-red-500 | ADDED: overflow-hidden & BorderBeam */}
+                                        <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-[#fafafa] rounded-tl-[38px] z-10 pointer-events-none overflow-hidden">
+                                            <BorderBeam duration={8} size={100} />
+                                        </div>
 
                                         {/* Concave curve (Top edge) */}
-                                        <div className="absolute bottom-[75px] -right-0.5 w-6 h-6 z-10 pointer-events-none border-2 border-red-500">
-                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#111111] ">
+                                        <div className="absolute bottom-[75px] -right-0.5 w-6 h-6 z-10 pointer-events-none ">
+                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#FFFFFF] ">
                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                                             </svg>
                                         </div>
 
                                         {/* Concave curve (Left edge) */}
-                                        <div className="absolute bottom-0 right-[75px] w-6 h-6 z-10 pointer-events-none border-2 border-red-500">
-                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#111111]">
+                                        <div className="absolute bottom-0 right-[75px] w-6 h-6 z-10 pointer-events-none ">
+                                            <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-[#FFFFFF]">
                                                 <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                                             </svg>
                                         </div>
                                     </div>
 
                                     {/* Circular Button (Placed OUTSIDE the overflow-hidden box, but inside the aspect container) */}
-                                    <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md">
+                                    <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md ">
                                         <ArrowUpRight size={28} strokeWidth={2} />
                                     </div>
 

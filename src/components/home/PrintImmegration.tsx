@@ -91,8 +91,8 @@ export default function PrintImmegration() {
 
   return (
     <>
-      <div className="container mx-auto bg-[#FFFFFF] pt-12 pb-16.25 relative">
-        <div className="max-w-[62vw] mx-auto relative z-10">
+      <div className="container mx-auto bg-[#FFFFFF] pt-12.5 pb-16.25 relative">
+        <div className="max-w-[60vw] mx-auto relative z-10">
           <div className="flex justify-center items-center">
             <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" />
           </div>
@@ -154,4 +154,4 @@ export default function PrintImmegration() {
       </div>
     </>
   );
-}
+} 
