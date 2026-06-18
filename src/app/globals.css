@@ -3,16 +3,15 @@
 @import "shadcn/tailwind.css";
 
 
-@media (pointer: fine) {
+/* @media (pointer: fine) {
   body {
-    cursor: none; /* Hides the default mouse pointer */
+    cursor: none; 
   }
   
-  /* Ensure links and buttons don't bring the default pointer back */
   a, button {
     cursor: none; 
   }
-}
+} */
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -181,6 +180,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

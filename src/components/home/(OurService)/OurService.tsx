@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { Button } from "../ui/button";
-import { CoolMode } from "../ui/cool-mode";
-import { KineticText } from "../ui/kinetic-text";
+import { KineticText } from "@/components/ui/kinetic-text";
+import { CoolMode } from "@/components/ui/cool-mode";
+import { Button } from "@/components/ui/button";
+import ServiceProductCard from "./components/ServiceProductCard";
 
 const products = [
     { id: 1, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
@@ -15,6 +15,8 @@ const products = [
     { id: 9, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
     { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
 ];
+
+
 
 export default function OurService() {
     return (
@@ -39,7 +41,6 @@ export default function OurService() {
                         textAlign: 'center',
                         verticalAlign: 'middle',
                     }} />
-
             </div>
 
             {/* Image Grid Section */}
@@ -55,41 +56,8 @@ export default function OurService() {
 
                         return (
                             <div key={product.id} className={`${staggerClass} w-full flex justify-center`}>
-                                <div
-                                    className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-pointer"
-                                    style={{
-                                        width: '230px',
-                                        height: '234px',
-                                        borderRadius: '10px',
-                                        borderWidth: '1.03px',
-                                        opacity: 1,
-                                    }}
-                                >
-                                    {/* Product Image */}
-                                    <Image
-                                        src={product.imageUrl}
-                                        alt={product.title}
-                                        fill
-                                        className="absolute inset-0 w-full h-full object-cover z-0"
-                                    />
-
-                                    {/* Gradient Overlay for Text Readability */}
-                                    <div className="absolute top-36 inset-0 bg-linear-to-t from-[#FF6633] via-[#EA4335] to-transparent z-10 opacity-90" />
-
-                                    {/* Inside Image Text */}
-                                    <span
-                                        className="relative z-20 text-white pb-5 drop-shadow-md"
-                                        style={{
-                                            fontFamily: 'Rubik, sans-serif',
-                                            fontWeight: 700,
-                                            fontSize: '18.23px',
-                                            lineHeight: '150%',
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {product.title}
-                                    </span>
-                                </div>
+                                {/* 2. Render the isolated ProductCard component */}
+                                <ServiceProductCard product={product} />
                             </div>
                         );
                     })}
@@ -108,5 +76,5 @@ export default function OurService() {
                 </CoolMode>
             </div>
         </section>
-    )
+    );
 }
