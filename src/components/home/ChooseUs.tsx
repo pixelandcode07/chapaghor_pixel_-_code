@@ -34,7 +34,7 @@ export default function ChooseUs() {
     <section className="w-full py-16 bg-white">
       {/* Main Card Container */}
       <div className="relative w-[calc(100vw-100px)] mx-auto rounded-[24px] overflow-hidden bg-[#111111] px-8 py-16 md:py-20">
-        
+
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -52,7 +52,17 @@ export default function ChooseUs() {
         <div className="relative z-10">
           {/* Title Section */}
           <div className="flex flex-col items-center justify-center text-center space-y-4 mb-16 px-4">
-            <Text3DFlip 
+            <h5 className="uppercase text-[#FF8D28]"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                fontSize: '16px',
+                lineHeight: '100%',
+                letterSpacing: '-0.015em',
+              }} >
+              WHY CHOOSE US
+            </h5>
+            {/* <Text3DFlip 
               className="uppercase text-[#FF8D28]"
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -63,10 +73,30 @@ export default function ChooseUs() {
               }} 
             >
               WHY CHOOSE US
-            </Text3DFlip>
-            
+            </Text3DFlip> */}
+
             <div className="flex flex-wrap justify-center gap-[8px]">
-              <Text3DFlip 
+              <h1 className="text-white"
+                style={{
+                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '39.04px',
+                  lineHeight: '100%',
+                  letterSpacing: '-0.015em',
+                }}>
+                Quality Printing You Can
+              </h1>
+              <h1 className="text-[#FF8D28]"
+                style={{
+                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '39.04px',
+                  lineHeight: '100%',
+                  letterSpacing: '-0.015em',
+                }} >
+                Trust
+              </h1>
+              {/* <Text3DFlip 
                 className="text-white"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -77,8 +107,8 @@ export default function ChooseUs() {
                 }} 
               >
                 Quality Printing You Can
-              </Text3DFlip>
-              <Text3DFlip 
+              </Text3DFlip> */}
+              {/* <Text3DFlip
                 className="text-[#FF8D28]"
                 style={{
                   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -86,13 +116,23 @@ export default function ChooseUs() {
                   fontSize: '39.04px',
                   lineHeight: '100%',
                   letterSpacing: '-0.015em',
-                }} 
+                }}
               >
                 Trust
-              </Text3DFlip>
+              </Text3DFlip> */}
             </div>
 
-            <Text3DFlip 
+            <h5 className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                fontSize: '18px',
+                lineHeight: '127%',
+                letterSpacing: '-0.015em',
+              }}>
+              We use the best materials and latest technology to deliver the perfect printing quality
+            </h5>
+            {/* <Text3DFlip
               className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center"
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -100,30 +140,30 @@ export default function ChooseUs() {
                 fontSize: '18px',
                 lineHeight: '127%',
                 letterSpacing: '-0.015em',
-              }} 
+              }}
             >
               We use the best materials and latest technology to deliver the perfect printing quality
-            </Text3DFlip>
+            </Text3DFlip> */}
           </div>
 
           {/* Feature Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
             {features.map((feature) => (
               <div key={feature.id} className="flex flex-col items-center pt-8">
-                
+
                 {/* Icon standing outside the glass box */}
                 <div className="mb-6 flex justify-center w-20 h-20 z-10 drop-shadow-lg">
-                  <Image 
-                    src={feature.iconUrl} 
-                    alt={feature.title} 
-                    width={64} 
-                    height={64} 
+                  <Image
+                    src={feature.iconUrl}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
                     className="object-contain"
                   />
                 </div>
 
                 {/* Glassmorphic Description Card */}
-                <div 
+                <div
                   className="bg-[#ffffff10] border border-[#ffffff1a] backdrop-blur-md flex flex-col items-center justify-center text-center"
                   style={{
                     width: '212px',
@@ -134,7 +174,7 @@ export default function ChooseUs() {
                     opacity: 1,
                   }}
                 >
-                  <h4 
+                  <h4
                     className="text-white"
                     style={{
                       fontFamily: 'Urbanist, sans-serif',
@@ -147,7 +187,7 @@ export default function ChooseUs() {
                   >
                     {feature.title}
                   </h4>
-                  <p 
+                  <p
                     className="text-white/70 whitespace-pre-line"
                     style={{
                       fontFamily: 'Lufga, sans-serif',
@@ -161,7 +201,7 @@ export default function ChooseUs() {
                     {feature.description}
                   </p>
                 </div>
-                
+
               </div>
             ))}
           </div>

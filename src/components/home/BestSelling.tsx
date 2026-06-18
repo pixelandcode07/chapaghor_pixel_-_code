@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button"; // Adjust path to your shadcn button
-import { CoolMode } from "../ui/cool-mode";
-import { KineticText } from "../ui/kinetic-text";
+import { Button } from "@/components/ui/button";
+// import { CoolMode } from "../ui/cool-mode";
+// import { KineticText } from "../ui/kinetic-text";
 
 export default function BestSelling() {
     // Replace these src paths with the actual names of the images in your /public folder
@@ -21,7 +21,10 @@ export default function BestSelling() {
         <div className="w-[calc(100vw-200px)] mx-auto py-16 bg-white flex flex-col items-center justify-center">
             {/* --- Title --- */}
             <div className="flex justify-center items-center mb-10 text-[#1E3A8A]">
-                <KineticText text="BEST SELLING" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal " />
+                {/* <KineticText text="BEST SELLING" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal " /> */}
+                <h1 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal ">
+                    BEST SELLING
+                </h1>
             </div>
 
             {/* --- Cards Grid --- */}
@@ -38,7 +41,7 @@ export default function BestSelling() {
                             style={{ height: "244px" }}
                         >
                             {/* Inner image box (overflow hidden handles the outer rounded corners) */}
-                            <div className="absolute inset-0 rounded-[20px] overflow-hidden shadow-sm">
+                            <div className="absolute inset-0 rounded-[20px] overflow-hidden ">
                                 <Image
                                     src={product.src}
                                     alt={product.name}
@@ -65,7 +68,7 @@ export default function BestSelling() {
                             </div>
 
                             {/* Circular Button (Placed OUTSIDE the overflow-hidden box, but inside the 244px relative container) */}
-                            <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#232F3E] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md">
+                            <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#232F3E] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 ">
                                 <ArrowUpRight size={28} strokeWidth={2} />
                             </div>
                         </div>
@@ -82,14 +85,14 @@ export default function BestSelling() {
 
             {/* --- View All Products Button --- */}
             <div className="mt-12">
-                <CoolMode>
+                {/* <CoolMode> */}
                     <Button
                         variant={"landing_page_view_btn"}
                         size={"landing_page_view_btn_size"}
                     >
                         View All Products
                     </Button>
-                </CoolMode>
+                {/* </CoolMode> */}
             </div>
         </div>
         // {/* </section> */}

@@ -10,10 +10,10 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[240%] left-1/2 -translate-x-1/2 w-[1064px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[234%] -left-2.5 w-[1250px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
-            <div className="flex gap-5 flex-1 justify-between">
+            <div className="max-w-[680px] flex gap-5 flex-1 justify-between">
                 {relatedSubCats.slice(0, 4).map((subCat) => (
                     <Link
                         key={subCat._id}

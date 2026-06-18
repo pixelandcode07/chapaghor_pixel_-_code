@@ -43,7 +43,26 @@ export default function HowToOrder() {
 
         {/* Title Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
-          <KineticText
+          <h5 style={{
+            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontWeight: 400,
+            fontSize: '18px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+          }}
+            className="uppercase text-[#FF8D28] mb-2 font-normal text-base">
+            How To Order
+          </h5>
+          <h1 style={{
+            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontWeight: 300,
+            fontSize: '36px',
+            lineHeight: '100%',
+          }}
+            className="text-[#1C3E6E] capitalize font-normal text-[36px]">
+            Easy Steps To Order
+          </h1>
+          {/* <KineticText
             text='How To Order'
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -52,9 +71,9 @@ export default function HowToOrder() {
               lineHeight: '100%',
               letterSpacing: '0%',
             }}
-            className="uppercase text-[#FF8D28] mb-2 font-normal text-base" />
+            className="uppercase text-[#FF8D28] mb-2 font-normal text-base" /> */}
 
-          <KineticText
+          {/* <KineticText
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 300,
@@ -62,7 +81,7 @@ export default function HowToOrder() {
               lineHeight: '100%',
             }}
             text='Easy Steps To Order'
-            className="text-[#1C3E6E] capitalize font-normal text-[36px]" />
+            className="text-[#1C3E6E] capitalize font-normal text-[36px]" /> */}
         </div>
 
         {/* Steps Layout */}
