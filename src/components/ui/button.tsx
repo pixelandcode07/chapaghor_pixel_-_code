@@ -23,7 +23,7 @@ const buttonVariants = cva(
         nav_cart: "hover:text-[#F05A28] transition-colors relative flex items-center cursor-pointer",
         nav_user: "hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer",
         nav_menu: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
-        landing_page_view_btn: "text-white text-base font-semibold rounded-[60px] bg-[#232F3E] hover:underline underline-offset-4 cursor-pointer",
+        landing_page_view_btn: "text-[#FD7034] text-base font-semibold border border-[#FD7034] rounded-[8px] bg-[#FFFFFF] hover:underline underline-offset-4 cursor-pointer",
       },
       size: {
         default:
