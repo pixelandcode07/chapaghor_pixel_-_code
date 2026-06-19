@@ -249,7 +249,7 @@ export default function NavHead() {
 
                                             {/* Divider */}
                                             {index !== categories.length - 1 && (
-                                                <span className="text-[#012C60]  pointer-events-none select-none text-xs px-1">
+                                                <span className="text-[#012C60]  pointer-events-none select-none text-xs px-2">
                                                     {/* mx-1 xl:mx-2 */}
                                                     |
                                                 </span>

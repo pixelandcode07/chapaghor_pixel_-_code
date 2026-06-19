@@ -13,6 +13,7 @@ import HowToOrder from "@/components/home/HowToOrder";
 import Footer from "@/components/home/Footer";
 import PrintImmegration from "@/components/home/PrintImmegration";
 import OurService from "@/components/home/(OurService)/OurService";
+import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -30,7 +31,8 @@ export default function HomePage() {
       <HeroSection />
       <OurClient />
       <BestSelling />
-      <Combo />
+      {/* <Combo /> */}
+      <ComboFile />
       <OurService />
       <ChooseUs />
       <HowToOrder />

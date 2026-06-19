@@ -1,5 +1,5 @@
-import { KineticText } from "@/components/ui/kinetic-text";
-import { CoolMode } from "@/components/ui/cool-mode";
+// import { KineticText } from "@/components/ui/kinetic-text";
+// import { CoolMode } from "@/components/ui/cool-mode";
 import { Button } from "@/components/ui/button";
 import ServiceProductCard from "./components/ServiceProductCard";
 
@@ -23,7 +23,7 @@ export default function OurService() {
         <section className="max-w-[60vw] mx-auto w-full bg-white">
             {/* Title Section */}
             <div className="pt-[64px] pb-[37px] flex flex-col items-center justify-center">
-                <KineticText text="Our Service" className="text-[#E06045] uppercase mb-2"
+                <h4
                     style={{
                         fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                         fontWeight: 300,
@@ -31,8 +31,11 @@ export default function OurService() {
                         lineHeight: '100%',
                         textAlign: 'center',
                         verticalAlign: 'middle',
-                    }} />
-                <KineticText text="What We Print" className="text-[#1C3E6E] uppercase"
+                    }}
+                    className="text-[#E06045] uppercase mb-2">
+                    Our Service
+                </h4>
+                <h2
                     style={{
                         fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                         fontWeight: 300,
@@ -40,7 +43,28 @@ export default function OurService() {
                         lineHeight: '100%',
                         textAlign: 'center',
                         verticalAlign: 'middle',
-                    }} />
+                    }}
+                    className="text-[#1C3E6E] uppercase">
+                    What We Print
+                </h2>
+                {/* <KineticText text="Our Service" className="text-[#E06045] uppercase mb-2"
+                    style={{
+                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                        fontWeight: 300,
+                        fontSize: '25px',
+                        lineHeight: '100%',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                    }} /> */}
+                {/* <KineticText text="What We Print" className="text-[#1C3E6E] uppercase"
+                    style={{
+                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                        fontWeight: 300,
+                        fontSize: '36px',
+                        lineHeight: '100%',
+                        textAlign: 'center',
+                        verticalAlign: 'middle',
+                    }} /> */}
             </div>
 
             {/* Image Grid Section */}
@@ -66,14 +90,14 @@ export default function OurService() {
 
             {/* Button Section */}
             <div className="flex justify-center mt-12 pb-16">
-                <CoolMode>
-                    <Button
-                        variant={"landing_page_view_btn"}
-                        size={"landing_page_view_btn_size"}
-                    >
-                        View All Products
-                    </Button>
-                </CoolMode>
+                {/* <CoolMode> */}
+                <Button
+                    variant={"landing_page_view_btn"}
+                    size={"landing_page_view_btn_size"}
+                >
+                    View All Products
+                </Button>
+                {/* </CoolMode> */}
             </div>
         </section>
     );

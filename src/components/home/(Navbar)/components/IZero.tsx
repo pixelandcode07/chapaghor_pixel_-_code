@@ -10,7 +10,7 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[240%] lg:translate-x-[-30%] xl:translate-x-[-35%] w-637.5 max-w-[100vw] h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
+            className="absolute top-[240%] xl:translate-x-[-34%] w-637.5 max-w-[100vw] h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
         >
             <div className="w-360 max-w-full h-full relative flex items-start pl-[168px] pt-[28px]">
                 <div className="w-44 h-44.75 shrink-0">
