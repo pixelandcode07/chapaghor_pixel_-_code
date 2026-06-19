@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
-import { KineticText } from "../ui/kinetic-text";
+// import { KineticText } from "../ui/kinetic-text";
 
 type Category = {
   _id: string;
@@ -94,7 +94,10 @@ export default function PrintImmegration() {
       <div className="container mx-auto bg-[#FFFFFF] pt-12.5 pb-16.25 relative">
         <div className="max-w-[60vw] mx-auto relative z-10">
           <div className="flex justify-center items-center">
-            <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" />
+            {/* <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" /> */}
+            <h1 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
+              PRINT YOUR IMAGINATION
+            </h1>
           </div>
 
           {/* ✅ Switched to flex — cards stay at natural 143px width, gap is exactly 23px */}
@@ -132,7 +135,7 @@ export default function PrintImmegration() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-16 h-16 xl:w-28 xl:h-28 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-95">
+                    <div className="relative w-16 h-16 xl:w-28 xl:h-28 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-[80%]">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}

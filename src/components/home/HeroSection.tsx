@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 
 const images = [
     { id: 1, src: "/banners/home-banner.jpg", alt: "Cama de casal mariah banner" },
-    { id: 2, src: "/banners/home-banner.jpg", alt: "Frete grátis banner" },
+    { id: 2, src: "/banners/home-banner2.jpg", alt: "Frete grátis banner" },
     { id: 3, src: "/banners/home-banner.jpg", alt: "Receba suas compras banner" },
 ];
 
