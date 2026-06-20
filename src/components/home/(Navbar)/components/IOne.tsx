@@ -10,7 +10,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[234%] -left-2.5 w-[1250px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 px-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[234%] -left-64 w-[1600px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
             <div className="max-w-[680px] flex gap-5 flex-1 justify-between">
