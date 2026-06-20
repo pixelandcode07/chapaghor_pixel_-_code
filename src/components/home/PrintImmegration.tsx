@@ -41,7 +41,7 @@ const face1Variants: Variants = {
   },
   hover: {
     // -16 to -32, -40, or -50
-    y: -32, 
+    y: -32,
     transition: { duration: 0.3, ease: "easeOut" }
   }
 };
