@@ -32,6 +32,7 @@ const itemVariants: Variants = {
   }
 };
 
+
 const face1Variants: Variants = {
   hidden: { y: 0 },
   visible: {
@@ -39,7 +40,8 @@ const face1Variants: Variants = {
     transition: { duration: 0.3, ease: "easeOut" }
   },
   hover: {
-    y: -16,
+    // -16 to -32, -40, or -50
+    y: -32, 
     transition: { duration: 0.3, ease: "easeOut" }
   }
 };
@@ -123,7 +125,7 @@ export default function PrintImmegration() {
                   {/* Face 2: Beige Base (Slides Down) */}
                   <motion.div
                     variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[85px] bg-[#FBE9DC] rounded-[17px] flex items-end justify-center pb-3 z-0"
+                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FBE9DC] rounded-b-[17px] flex items-end justify-center pb-3 z-0"
                   >
                     <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
                       View Details
@@ -135,7 +137,7 @@ export default function PrintImmegration() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-16 h-16 xl:w-28 xl:h-28 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-[80%]">
+                    <div className="relative w-16 h-16 xl:w-28 xl:h-28  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-[80%]">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
