@@ -11,7 +11,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             // className="absolute top-[234%] left-1/2 -translate-x-1/2 -left-2.5 w-[1250px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
-            className="absolute top-[234%] -left-[278px] w-[1250px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
+            className="absolute top-[234%] -left-[780px] w-[1900px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-[300px] flex justify-start cursor-default"
         >
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
             <div className="grid grid-cols-[repeat(4,244px)] auto-rows-[135px] gap-[2px]">
