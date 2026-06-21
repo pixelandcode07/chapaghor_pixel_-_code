@@ -10,7 +10,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[234%] -left-64 w-[1600px] h-[585px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[180%] -left-64 w-[1600px] h-[585px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
             <div className="max-w-[980px] flex gap-5 flex-1 justify-between">
@@ -53,7 +53,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
                     <Link
                         key={subCat._id}
                         href={`/category/${category.slug}/${subCat.slug}`}
-                        className="text-[14px] text-[#012C60] font-medium hover:text-[#F05A28] transition-colors whitespace-nowrap"
+                        className="text-[14px] text-[#012C60] font-normal hover:text-[#F05A28] transition-colors whitespace-nowrap"
                     >
                         {subCat.name}
                     </Link>
