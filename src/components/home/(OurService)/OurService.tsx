@@ -2,6 +2,7 @@
 // import { CoolMode } from "@/components/ui/cool-mode";
 import { Button } from "@/components/ui/button";
 import ServiceProductCard from "./components/ServiceProductCard";
+import Link from "next/dist/client/link";
 
 const products = [
     { id: 1, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
@@ -91,12 +92,14 @@ export default function OurService() {
             {/* Button Section */}
             <div className="flex justify-center mt-12 pb-16">
                 {/* <CoolMode> */}
-                <Button
-                    variant={"landing_page_view_btn"}
-                    size={"landing_page_view_btn_size"}
-                >
-                    View All Products
-                </Button>
+                <Link href={'/view-all-product'}>
+                    <Button
+                        variant={"landing_page_view_btn"}
+                        size={"landing_page_view_btn_size"}
+                    >
+                        View All Products
+                    </Button>
+                </Link>
                 {/* </CoolMode> */}
             </div>
         </section>

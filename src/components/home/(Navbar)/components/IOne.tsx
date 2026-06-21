@@ -10,15 +10,15 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[234%] -left-64 w-[1600px] h-[435px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[234%] -left-64 w-[1600px] h-[585px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
-            <div className="max-w-[680px] flex gap-5 flex-1 justify-between">
+            <div className="max-w-[980px] flex gap-5 flex-1 justify-between">
                 {relatedSubCats.slice(0, 4).map((subCat) => (
                     <Link
                         key={subCat._id}
                         href={`/category/${category.slug}/${subCat.slug}`}
-                        className="relative w-[150px] h-[300px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
+                        className="relative w-[350px] h-[500px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
                     >
                         <Image
                             src={subCat.icon || '/banners/nav-alter.png'}

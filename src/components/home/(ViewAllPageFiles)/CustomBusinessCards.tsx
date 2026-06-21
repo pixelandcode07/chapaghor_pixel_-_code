@@ -1,36 +1,33 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-// import { CoolMode } from "../ui/cool-mode";
-// import { KineticText } from "../ui/kinetic-text";
 
-export default function BestSelling() {
+export default function CustomBusinessCards() {
     // Replace these src paths with the actual names of the images in your /public folder
     const products = [
-        { name: "Mug", src: "/best/mug.jpg" },
-        { name: "Business Card", src: "/best/card.jpg" },
-        { name: "Photo Frame", src: "/best/frame.jpg" },
-        { name: "ID Card", src: "/best/id.jpg" },
-        { name: "X-Stand", src: "/best/stand.jpg" },
-        // { name: "ID Card", src: "/best/id.jpg" },
-        // { name: "X-Stand", src: "/best/stand.jpg" },
+        { name: "Mat Business Card", src: "/view-all-product/custom/one.png" },
+        { name: "Spot Business Card", src: "/view-all-product/custom/two.png" },
+        { name: "Spot Business Card", src: "/view-all-product/custom/three.png" },
+        { name: "Back to Back Di", src: "/view-all-product/custom/four.png" },
+        { name: "Back to Back Mat", src: "/view-all-product/custom/five.jpg" },
     ];
 
     return (
         // <section className="">
-        <div className="w-[calc(100vw-200px)] mx-auto py-16 bg-white flex flex-col items-center justify-center">
+        <div className="w-[calc(100vw-200px)] mx-auto pb-5 bg-white flex flex-col items-center justify-center">
             {/* --- Title --- */}
-            <div className="flex justify-center items-center mb-10 text-[#1E3A8A]">
+            <div className="flex flex-col justify-center items-center mb-10 text-[#1E3A8A]">
                 {/* <KineticText text="BEST SELLING" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal " /> */}
-                <h1 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal ">
-                    BEST SELLING
+                <h1 className="text-[36px] font-light text-[#012C60] mb-2 text-center tracking-normal ">
+                    Custom Business Cards
                 </h1>
+                <h2 className="text-[22px] font-light text-[#012C60] text-center tracking-normal ">
+                    Custom business cards with premium materials, finishes, and fast delivery, perfect for making a strong first impression.
+                </h2>
             </div>
 
             {/* --- Cards Grid --- */}
             {/* <div className="flex flex-row justify-center gap-[19.8px]  border-2 border-gray-950"> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center items-center gap-[19.8px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center items-center gap-[19.8px]">
                 {products.map((product, index) => (
                     <div
                         key={index}
@@ -83,21 +80,6 @@ export default function BestSelling() {
                     </div>
                 ))}
             </div>
-
-            {/* --- View All Products Button --- */}
-            <div className="mt-12">
-                {/* <CoolMode> */}
-                <Link href={'/view-all-product'}>
-                    <Button
-                        variant={"landing_page_view_btn"}
-                        size={"landing_page_view_btn_size"}
-                    >
-                        View All Products
-                    </Button>
-                </Link>
-                {/* </CoolMode> */}
-            </div>
         </div>
-        // {/* </section> */}
     );
 }
