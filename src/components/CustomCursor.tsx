@@ -41,7 +41,7 @@ export default function CustomCursor() {
           x: haloSpringX,
           y: haloSpringY,
         }}
-        className="pointer-events-none fixed left-0 top-0 z-[9998] h-12 w-12 -ml-6 -mt-6 rounded-full bg-[#F05A28]/15"
+        className="pointer-events-none fixed left-0 top-0 z-[9998] h-10 w-10 -ml-6 -mt-6 rounded-full bg-[#F05A28]/15"
       />
 
       {/* 2. The Solid Inner Dot */}
@@ -50,7 +50,7 @@ export default function CustomCursor() {
           x: dotSpringX,
           y: dotSpringY,
         }}
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2.5 w-2.5 -ml-[5px] -mt-[5px] rounded-full bg-[#F05A28] shadow-sm"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 -ml-[5px] -mt-[5px] rounded-full bg-[#F05A28] shadow-sm"
       />
     </>
   );

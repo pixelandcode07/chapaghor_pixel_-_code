@@ -19,7 +19,7 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col relative">
+    <main className=" flex flex-col relative">
 
       {/* Modal Logic */}
       {/* {isModalOpen && (
