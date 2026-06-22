@@ -166,7 +166,7 @@ export default function NavHead() {
 
             <header className="bg-white sticky top-0 z-50 ">
                 {/* <div className="container mx-auto pb-3.75 pt-2 flex justify-between items-center "> */}
-                <div className="w-[calc(100vw-200px)] mx-auto pb-3.75 pt-2 flex justify-between items-center ">
+                <div className="container mx-auto py-3.75 lg:px-25 xl:px-20 flex justify-between items-center ">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -180,7 +180,8 @@ export default function NavHead() {
                         </Link>
                     </div>
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center pt-3.5 pb-5.5">
+                    <nav className="hidden lg:flex items-center ">
+                        {/* pt-3.5 pb-5.5 */}
                         {isLoading ? (
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -235,7 +236,7 @@ export default function NavHead() {
                                                 </div>
 
                                                 {/* ── Animated Bottom Border ── */}
-                                                <span className="absolute -bottom-9.5 left-1/2 -translate-x-1/2 w-[80%] h-[2.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
+                                                <span className="absolute -bottom-4.5 left-1/2 -translate-x-1/2 w-full h-[2.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                 {/* ── Dynamic Mega Menu Rendering ── */}
                                                 <MegaMenu
@@ -262,7 +263,8 @@ export default function NavHead() {
                     </nav>
 
                     {/* ── Search + Icons ── */}
-                    <div className="flex items-center justify-end gap-4 pt-2.5">
+                    <div className="flex items-center justify-end gap-4 ">
+                        {/* pt-2.5 */}
                         {/* Search Box */}
                         <div
                             onClick={() => setIsSearchOpen(true)}
@@ -275,7 +277,7 @@ export default function NavHead() {
                             {/* Right-aligned Icon Group */}
                             <div className="flex items-center gap-2">
                                 <Search
-                                    size={16}
+                                    size={18}
                                     className="text-gray-500 group-hover:text-[#2D264B] transition-colors"
                                     strokeWidth={2}
                                 />
@@ -285,7 +287,7 @@ export default function NavHead() {
 
                                 {/* Mic Icon */}
                                 <Mic
-                                    size={16}
+                                    size={18}
                                     className="text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
                                     strokeWidth={2}
                                     onClick={(e) => {
@@ -297,19 +299,19 @@ export default function NavHead() {
 
                         {/* Icons Container */}
                         <div className="flex items-center justify-between text-[#2D264B]">
-                            <Button variant={'nav_sun'} title="Theme">
+                            <Button size={"nav-icon"} variant={'nav_sun'} title="Theme">
                                 <Sun size={22} strokeWidth={1.5} />
                             </Button>
-                            <Button variant={'nav_cart'} title="Cart">
+                            <Button size={"nav-icon"} variant={'nav_cart'} title="Cart">
                                 <ShoppingCart size={22} strokeWidth={1.5} />
                                 <span className="absolute -top-1.5 -right-1.5 bg-[#F05A28] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center ring-1 ring-white">
                                     0
                                 </span>
                             </Button>
-                            <Button variant={'nav_user'} title="Account">
+                            <Button size={"nav-icon"} variant={'nav_user'} title="Account">
                                 <Users size={22} strokeWidth={1.5} />
                             </Button>
-                            <Button variant={'nav_menu'} title="Menu">
+                            <Button size={"nav-icon"} variant={'nav_menu'} title="Menu">
                                 <Menu size={22} strokeWidth={1.5} />
                             </Button>
                         </div>
