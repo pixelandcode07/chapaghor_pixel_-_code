@@ -13,7 +13,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
             // lg:translate-x-[-30%] xl:
             className="absolute top-[180%] translate-x-[-44%] w-637.5 h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
         >
-            <div className="w-360 max-w-full h-full relative flex items-start justify-center pl-[168px] pt-[28px]">
+            <div className="w-360 max-w-full h-full relative flex items-start justify-center xl:pl-[168px] pt-[28px]">
                 <div className="w-44 h-44.75 shrink-0">
                     <Image
                         src={'/nav-logo/stationary.png'}
@@ -24,7 +24,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
                     />
                 </div>
                 <div className="ml-[136px] mt-[14px] h-[157px] pr-8">
-                    <div className="columns-2 md:columns-4 lg:columns-6 gap-x-12 [column-rule:1px_solid_#E5E7EB]">
+                    <div className="columns-2 lg:columns-4 xl:columns-6 gap-x-12 [column-rule:1px_solid_#E5E7EB]">
                         {relatedSubCats.map((subCat) => (
                             <Link
                                 key={subCat._id}

@@ -98,7 +98,7 @@ export default function PrintImmegration() {
         <div className=" relative z-10">
           <div className="flex justify-center items-center">
             {/* <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" /> */}
-            <h1 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
+            <h1 className="lg:text-3xl xl:text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
               PRINT YOUR IMAGINATION
             </h1>
           </div>
@@ -109,18 +109,18 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="w-full flex flex-wrap justify-center gap-[23px]"
+            className="w-full flex flex-wrap justify-center lg:gap-[15px] xl:gap-[23px]"
           >
             {categories.map((category) => (
-              <Link
-                href={`/category/${category.slug}`}
+              <button
+                // href={`/category/${category.slug}`}
                 key={category._id}
                 className="block shadow-[17px] shadow-[#FFC3B585] "
               >
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
+                  className="relative lg:w-[130px] lg:h-[140px] xl:w-[150px]  xl:h-[160px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
                 >
                   {/* w-35.75 h-38.75 */}
 
@@ -139,7 +139,7 @@ export default function PrintImmegration() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-32 h-32  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-95">
+                    <div className="relative lg:w-24 lg:h-24 xl:w-32 xl:h-32  mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-110">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
@@ -148,13 +148,13 @@ export default function PrintImmegration() {
                       />
                     </div>
 
-                    <span className="text-[16.49px] font-light text-[#012C60] text-center tracking-normal">
+                    <span className="lg:text-base xl:text-[16.49px] whitespace-nowrap  font-light text-[#012C60] text-center tracking-normal">
                       {category.name}
                     </span>
                   </motion.div>
 
                 </motion.div>
-              </Link>
+              </button>
             ))}
           </motion.div>
         </div>
