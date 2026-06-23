@@ -34,14 +34,15 @@ const itemVariants: Variants = {
 
 
 const face1Variants: Variants = {
-  hidden: { y: 0 },
+  hidden: { top: 0, bottom: 0 },
   visible: {
-    y: 0,
+    top: 0,
+    bottom: 0,
     transition: { duration: 0.3, ease: "easeOut" }
   },
   hover: {
-    // -16 to -32, -40, or -50
-    y: -32,
+    top: -10,     // Moves the top edge UP by 8px
+    bottom: 32,  // Moves the bottom edge UP by 16px
     transition: { duration: 0.3, ease: "easeOut" }
   }
 };
@@ -54,7 +55,7 @@ const face2Variants: Variants = {
     transition: { duration: 0.3, ease: "easeOut" }
   },
   hover: {
-    y: 45,
+    y: 22,
     opacity: 1,
     transition: { duration: 0.3, ease: "easeOut" }
   }
@@ -93,8 +94,8 @@ export default function PrintImmegration() {
 
   return (
     <>
-      <div className="container mx-auto bg-[#FFFFFF] pt-12.5 pb-16.25 relative">
-        <div className="max-w-[60vw] mx-auto relative z-10">
+      <div className="container mx-auto bg-[#FFFFFF] pt-10 pb-16.25 relative">
+        <div className=" relative z-10">
           <div className="flex justify-center items-center">
             {/* <KineticText text="PRINT YOUR IMAGINATION" className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal" /> */}
             <h1 className="text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
@@ -108,7 +109,7 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="max-w-[62vw] mx-auto flex flex-wrap justify-center gap-[23px]"
+            className="w-full flex flex-wrap justify-center gap-[23px]"
           >
             {categories.map((category) => (
               <Link
@@ -137,7 +138,7 @@ export default function PrintImmegration() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-16 h-16 xl:w-28 xl:h-28  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-[80%]">
+                    <div className="relative w-16 h-16 xl:w-28 xl:h-28  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-125">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}

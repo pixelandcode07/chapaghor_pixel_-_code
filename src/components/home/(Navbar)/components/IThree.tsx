@@ -11,10 +11,10 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             // className="absolute top-[234%] left-1/2 -translate-x-1/2 -left-2.5 w-[1250px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
-            className="absolute top-[180%] -left-[780px] w-[1900px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-[278px] flex justify-start cursor-default"
+            className="absolute top-[180%] -left-[780px] w-[1900px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-[314px] flex justify-start cursor-default"
         >
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
-            <div className="grid grid-cols-[repeat(4,278px)] auto-rows-[185px] gap-[8px]">
+            <div className="grid grid-cols-[repeat(4,314px)] auto-rows-[185px] gap-[8px]">
                 {relatedSubCats.map((subCat, i) => {
                     // Index 0: Text Description Card
                     if (i === 0 || i === 6 || i === 9) {
@@ -22,7 +22,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
                             <Link
                                 key={subCat._id}
                                 href={`/category/${category.slug}/${subCat.slug}`}
-                                className="col-span-1 row-span-1 w-[278px] h-[185px] bg-gray-50 border border-gray-100 rounded-lg p-6 flex flex-col justify-center "
+                                className="col-span-1 row-span-1 w-[314px] h-[185px] bg-gray-50 border border-gray-100 rounded-lg p-6 flex flex-col justify-center "
                             >
                                 {/* hover:bg-orange-50 transition-colors group */}
                                 <h3 className="text-[#000000] font-normal text-[16px] leading-5">
@@ -34,10 +34,10 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
 
                     // Index 1 to 5: Image Layout Configurations
                     // Added explicit width and height as requested
-                    let gridClass = "col-span-1 row-span-1 w-[278px] h-[185px]";
+                    let gridClass = "col-span-1 row-span-1 w-[314px] h-[185px]";
 
-                    if (i === 4) gridClass = "col-span-1 row-span-2 w-[278px] h-[390px]"; // Tall portrait
-                    if (i === 5) gridClass = "col-span-1 row-span-2 w-[278px] h-[390px]"; // Tall portrait
+                    if (i === 4) gridClass = "col-span-1 row-span-2 w-[314px] h-[380px]"; // Tall portrait
+                    if (i === 5) gridClass = "col-span-1 row-span-2 w-[314px] h-[380px]"; // Tall portrait
 
                     return (
                         <Link
@@ -49,7 +49,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
                                 src={subCat.icon || '/banners/nav-alter.png'}
                                 alt={subCat.name}
                                 fill
-                                sizes="(max-width: 768px) 100vw, 278px"
+                                sizes="(max-width: 768px) 100vw, 314px"
                                 // Added `grayscale group-hover:grayscale-0` and updated to `transition-all`
                                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
                                 onError={(e) => {
