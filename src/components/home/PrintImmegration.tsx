@@ -120,8 +120,9 @@ export default function PrintImmegration() {
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative w-35.75 h-38.75 rounded-[17px] cursor-pointer group z-10 hover:z-50"
+                  className="relative lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
                 >
+                  {/* w-35.75 h-38.75 */}
 
                   {/* Face 2: Beige Base (Slides Down) */}
                   <motion.div
@@ -138,7 +139,7 @@ export default function PrintImmegration() {
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                   >
-                    <div className="relative w-16 h-16 xl:w-28 xl:h-28  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-125">
+                    <div className="relative w-32 h-32  mb-3 transform transition-all duration-500 ease-in-out  group-hover:scale-95">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
