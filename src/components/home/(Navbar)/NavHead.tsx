@@ -164,9 +164,9 @@ export default function NavHead() {
 
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
-            <header className="bg-white sticky top-0 z-50 ">
+            <header className=" bg-white sticky top-0 z-50 ">
                 {/* <div className="container mx-auto pb-3.75 pt-2 flex justify-between items-center "> */}
-                <div className="container mx-auto py-3.75 lg:px-25 xl:px-20 flex justify-between items-center ">
+                <div className="w-[calc(100vw-200px)] mx-auto py-3.75  flex justify-between items-center ">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -180,7 +180,7 @@ export default function NavHead() {
                         </Link>
                     </div>
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center ">
+                    <nav className="hidden lg:flex items-center justify-end pl-30 ">
                         {/* pt-3.5 pb-5.5 */}
                         {isLoading ? (
                             <motion.h1
