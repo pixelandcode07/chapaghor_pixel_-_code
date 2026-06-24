@@ -105,17 +105,17 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                     }}
                   />
 
-                  {/* ✅ UPDATED: White block reduced to 76x76, border-radius to 38px */}
+                  {/* White block cutout */}
                   <div className="absolute bottom-0 right-0 w-[76px] h-[76px] bg-white rounded-tl-[38px] z-10 pointer-events-none" />
 
-                  {/* ✅ UPDATED: Concave curve (Top edge) adjusted to bottom-[76px] */}
+                  {/* Concave curve (Top edge) */}
                   <div className="absolute bottom-[76px] right-0 w-6 h-6 z-10 pointer-events-none">
                     <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-white">
                       <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                     </svg>
                   </div>
 
-                  {/* ✅ UPDATED: Concave curve (Left edge) adjusted to right-[76px] */}
+                  {/* Concave curve (Left edge) */}
                   <div className="absolute bottom-0 right-[76px] w-6 h-6 z-10 pointer-events-none">
                     <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-white">
                       <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
@@ -123,7 +123,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                   </div>
                 </div>
 
-                {/* ✅ UPDATED: Button evenly centered in the 76px cutout using bottom-[6px] right-[6px] */}
+                {/* Button evenly centered in the cutout */}
                 <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#1A2530] text-white flex items-center justify-center rounded-full group-hover:bg-[#F05A28] transition-colors duration-300 z-20 shadow-md">
                   <ArrowUpRight size={28} strokeWidth={2} />
                 </div>
