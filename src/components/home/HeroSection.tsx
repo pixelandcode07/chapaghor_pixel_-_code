@@ -53,7 +53,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="container mx-auto pb-12 bg-white relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-12 relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
@@ -73,8 +73,9 @@ export default function HeroSection() {
                                     key={image.id}
                                     className="pl-2 md:pl-4 basis-auto"
                                 >
+                                    {/* ✅ FIX: ব্যানার Width ঠিক কার্ডের Width এর সমান করা হয়েছে */}
                                     <div
-                                        className={`relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] aspect-[967/307] ${isActive
+                                        className={`relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1020px] aspect-[967/307] ${isActive
                                             ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
                                             : "blur-[6px] opacity-40 scale-95 z-0"
                                             }`}
@@ -93,11 +94,12 @@ export default function HeroSection() {
                     </CarouselContent>
                 </Carousel>
 
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[60vw] max-w-[1200px] h-0 pointer-events-none z-20 hidden sm:flex items-center justify-between ">
+                {/* Nav Arrows */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1020px] h-0 pointer-events-none z-20 hidden sm:flex items-center justify-between">
                     <Button
                         variant="default"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff]  text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff] text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         onClick={() => api?.scrollPrev()}
                     >
                         <ChevronLeft className="h-6 w-6 text-[#797272]" />
@@ -106,14 +108,15 @@ export default function HeroSection() {
                     <Button
                         variant="default"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff]  text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff] text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         onClick={() => api?.scrollNext()}
                     >
                         <ChevronRight className="h-6 w-6 text-[#797272]" />
                     </Button>
                 </div>
 
-                <div className="flex justify-center items-center gap-2">
+                {/* Dots Indicator */}
+                <div className="flex justify-center items-center gap-2 mt-6">
                     {Array.from({ length: count }).map((_, index) => {
                         const isActive = index === current;
                         return (
