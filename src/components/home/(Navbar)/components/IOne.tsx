@@ -10,15 +10,15 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[180%] -left-64 w-[1600px] h-[585px] bg-white shadow-xl pt-7.5 pb-12.5 pl-36 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[179%] lg:-left-48 xl:-left-64 w-[1600px] lg:h-[380px] xl:h-[485px] bg-white shadow-[0px_4px_15px_7px_#0000001C] pt-7.5 lg:pl-12 xl:pl-20 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
-            <div className="max-w-[980px] flex gap-5 flex-1 justify-between">
+            <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-5 flex-1 justify-between pl-5">
                 {relatedSubCats.slice(0, 4).map((subCat) => (
                     <Link
                         key={subCat._id}
                         href={`/category/${category.slug}/${subCat.slug}`}
-                        className="relative w-[350px] h-[500px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
+                        className="relative lg:w-[350px] xl:w-[450px] lg:h-[300px] xl:h-[400px] bg-gray-100 group overflow-hidden block shadow-sm border border-gray-200"
                     >
                         <Image
                             src={subCat.icon || '/banners/nav-alter.png'}
@@ -48,7 +48,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             </div>
 
             {/* Right: Text List */}
-            <div className="w-[200px] flex flex-col gap-3 border-l border-gray-100 pl-8 shrink-0 py-2">
+            <div className="w-[200px] flex flex-col gap-3 border-l border-gray-100 lg:pl-4 xl:pl-8 shrink-0 py-2">
                 {relatedSubCats.map((subCat) => (
                     <Link
                         key={subCat._id}
