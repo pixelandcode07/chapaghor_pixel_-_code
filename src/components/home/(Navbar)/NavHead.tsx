@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Sun, ShoppingCart, Users, Menu, Loader2, Mic } from "lucide-react";
+import { Search, Sun, ShoppingCart, Users, Menu, Loader2, Mic, TextAlignEnd, School } from "lucide-react";
 import { motion } from "framer-motion";
 import SearchOverlay from "../SearchOverlay";
 import { Button } from "@/components/ui/button";
@@ -164,9 +164,9 @@ export default function NavHead() {
 
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
-            <header className=" bg-white sticky top-0 z-50 ">
+            <header className=" bg-white sticky top-0 z-50">
                 {/* <div className="container mx-auto pb-3.75 pt-2 flex justify-between items-center "> */}
-                <div className="w-[calc(100vw-200px)] mx-auto py-3.75  flex justify-between items-center ">
+                <div className="container xl:w-[calc(100vw-100px)] mx-auto py-3.75 lg:px-2.5 xl:px-0 flex justify-between items-center ">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -180,7 +180,8 @@ export default function NavHead() {
                         </Link>
                     </div>
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center justify-end pl-30 ">
+                    <nav className="hidden lg:flex items-center justify-center lg:pl-16 xl:pl-30 ">
+                        
                         {/* pt-3.5 pb-5.5 */}
                         {isLoading ? (
                             <motion.h1
@@ -229,7 +230,7 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full text-[16px] font-normal tracking-normal whitespace-nowrap px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] font-normal tracking-normal whitespace-nowrap lg:px-1.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
@@ -250,7 +251,7 @@ export default function NavHead() {
 
                                             {/* Divider */}
                                             {index !== categories.length - 1 && (
-                                                <span className="text-[#012C60]  pointer-events-none select-none text-xs px-2">
+                                                <span className="text-[#012C60]  pointer-events-none select-none text-xs lg:px-0.5 xl:px-2">
                                                     {/* mx-1 xl:mx-2 */}
                                                     |
                                                 </span>
@@ -268,7 +269,7 @@ export default function NavHead() {
                         {/* Search Box */}
                         <div
                             onClick={() => setIsSearchOpen(true)}
-                            className="hidden md:flex items-center justify-between bg-white border border-gray-100 shadow-[0px_2px_8px_rgba(0,0,0,0.05)] rounded-full pl-4 pr-3 cursor-text hover:shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition-all w-[160px] h-[36px] group"
+                            className="hidden md:flex items-center justify-between bg-[#FFFFFF] border-2 border-[#012C60] shadow-[0px_2px_8px_rgba(0,0,0,0.05)] rounded-[8px] px-4 cursor-text hover:shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition-all lg:w-[150px] xl:w-[200px] h-[36px] group"
                         >
                             <span className="text-[14px] text-gray-500 select-none font-medium leading-none">
                                 Search
@@ -299,20 +300,25 @@ export default function NavHead() {
 
                         {/* Icons Container */}
                         <div className="flex items-center justify-between text-[#2D264B]">
-                            <Button size={"nav-icon"} variant={'nav_sun'} title="Theme">
+                            {/* <Button size={"nav-icon"} variant={'nav_sun'} title="Theme">
                                 <Sun size={22} strokeWidth={1.5} />
-                            </Button>
-                            <Button size={"nav-icon"} variant={'nav_cart'} title="Cart">
+                            </Button> */}
+                            {/* <Button size={"nav-icon"} variant={'nav_cart'} title="Cart">
                                 <ShoppingCart size={22} strokeWidth={1.5} />
                                 <span className="absolute -top-1.5 -right-1.5 bg-[#F05A28] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center ring-1 ring-white">
                                     0
                                 </span>
+                            </Button> */}
+
+                            <Button size={"nav-icon"} variant={'nav_user'} title="Account" >
+                                <School size={22} strokeWidth={1.5} />
+
                             </Button>
                             <Button size={"nav-icon"} variant={'nav_user'} title="Account">
                                 <Users size={22} strokeWidth={1.5} />
                             </Button>
                             <Button size={"nav-icon"} variant={'nav_menu'} title="Menu">
-                                <Menu size={22} strokeWidth={1.5} />
+                                <TextAlignEnd size={22} strokeWidth={1.5} />
                             </Button>
                         </div>
                     </div>

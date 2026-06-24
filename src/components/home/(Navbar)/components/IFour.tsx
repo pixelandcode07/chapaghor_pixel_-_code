@@ -10,9 +10,9 @@ export default function IFour({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[180%] translate-x-[-56%] w-637.5 pl-[100px] h-58.75 bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
+            className="absolute top-[180%] translate-x-[-56%] w-637.5 lg:pl-[80px] xl:pl-[100px] h-58.75 bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
         >
-            <div className="w-360 max-w-full h-full relative flex items-start pl-42 pt-7">
+            <div className="lg:w-300 xl:w-360 max-w-full h-full relative flex items-start pl-42 pt-7">
                 <div className="w-44 h-44.75 shrink-0">
                     <Image
                         src={'/nav-logo/stationary.png'}
@@ -23,7 +23,7 @@ export default function IFour({ relatedSubCats, category }: MegaMenuProps) {
                     />
                 </div>
                 <div className="ml-34 mt-3.5 h-39.25 pr-8">
-                    <div className="columns-2 md:columns-4 lg:columns-6 gap-x-12 [column-rule:1px_solid_#E5E7EB]">
+                    <div className="columns-2 lg:columns-4 xl:columns-6 gap-x-12 [column-rule:1px_solid_#E5E7EB]">
                         {relatedSubCats.map((subCat) => (
                             <Link
                                 key={subCat._id}

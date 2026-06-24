@@ -31,7 +31,6 @@ export default function HomePage() {
       <HeroSection />
       <OurClient />
       <BestSelling />
-      {/* <Combo /> */}
       <ComboFile />
       <OurService />
       <ChooseUs />
