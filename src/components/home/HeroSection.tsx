@@ -13,9 +13,9 @@ import {
 import { Button } from "@/components/ui/button";
 
 const images = [
-    { id: 1, src: "/banners/home-banner.jpg", alt: "Cama de casal mariah banner" },
-    { id: 2, src: "/banners/home-banner2.jpg", alt: "Frete grátis banner" },
-    { id: 3, src: "/banners/home-banner.jpg", alt: "Receba suas compras banner" },
+    { id: 1, src: "/banners/home-banner3.png", alt: "Cama de casal mariah banner" },
+    { id: 2, src: "/banners/home-banner4.png", alt: "Frete grátis banner" },
+    { id: 3, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
 ];
 
 export default function HeroSection() {
@@ -64,20 +64,22 @@ export default function HeroSection() {
                     }}
                     className="w-full"
                 >
-                    <CarouselContent className="flex items-center -ml-2 md:-ml-4">
+                    {/* ✅ FIX 1: স্ট্রাকচারাল গ্যাপ একদম কমিয়ে দেওয়া হয়েছে */}
+                    <CarouselContent className="flex items-center -ml-2 md:-ml-3">
                         {images.map((image, index) => {
                             const isActive = index === current;
 
                             return (
                                 <CarouselItem
                                     key={image.id}
-                                    className="pl-2 md:pl-4 basis-auto"
+                                    className="pl-2 md:pl-3 basis-auto"
                                 >
-                                    {/* ✅ FIX: ব্যানার Width ঠিক কার্ডের Width এর সমান করা হয়েছে */}
                                     <div
-                                        className={`relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1020px] aspect-[967/307] ${isActive
-                                            ? "blur-0 opacity-100 scale-100 shadow-xl z-10"
-                                            : "blur-[6px] opacity-40 scale-95 z-0"
+                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] aspect-[967/307] ${
+                                            isActive
+                                                ? "blur-0 opacity-100 scale-100 shadow-2xl z-20"
+                                                // ✅ FIX 2: সাইড ব্যানারের scale-100 করা হয়েছে যাতে গ্যাপ একদম না থাকে, শুধু opacity ও blur দিয়ে আলাদা করা হয়েছে।
+                                                : "blur-[5px] opacity-40 scale-100 z-0"
                                             }`}
                                     >
                                         <Image
@@ -94,24 +96,27 @@ export default function HeroSection() {
                     </CarouselContent>
                 </Carousel>
 
-                {/* Nav Arrows */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1020px] h-0 pointer-events-none z-20 hidden sm:flex items-center justify-between">
+                {/* ✅ FIX 3: Nav Arrows - Positioned EXACTLY on the middle edges */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                    
+                    {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
-                        variant="default"
+                        variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff] text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6 xl:-ml-7"
                         onClick={() => api?.scrollPrev()}
                     >
-                        <ChevronLeft className="h-6 w-6 text-[#797272]" />
+                        <ChevronLeft className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
                     </Button>
 
+                    {/* Right Arrow (iPhone Glassmorphism Style) */}
                     <Button
-                        variant="default"
+                        variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-10 h-10 xl:w-12 xl:h-12 bg-[#ffffff] text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7"
                         onClick={() => api?.scrollNext()}
                     >
-                        <ChevronRight className="h-6 w-6 text-[#797272]" />
+                        <ChevronRight className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
                     </Button>
                 </div>
 
