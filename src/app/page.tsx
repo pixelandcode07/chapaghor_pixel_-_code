@@ -31,10 +31,10 @@ export default function HomePage() {
       <OurClient />
       <BestSelling />
       <ComboFile />
-      {/* <OurService />
+      <OurService />
       <ChooseUs />
       <HowToOrder />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
