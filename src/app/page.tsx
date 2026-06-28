@@ -4,7 +4,7 @@ import { useState } from "react";
 import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
-import BestSelling from "@/components/home/BestSelling";
+import BestSelling from "@/components/home/(BestSellingFiles)/BestSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
 // import OurService from "@/components/home/OurService";
 import ChooseUs from "@/components/home/ChooseUs";
