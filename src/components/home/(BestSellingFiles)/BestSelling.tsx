@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DynamicCardsReuse from "./components/DynamicCardsReuse";
@@ -14,31 +15,34 @@ export default function BestSelling() {
     ];
 
     return (
-        <div className="container lg:w-full mx-auto px-1 md:px-2.5 py-16 bg-white flex flex-col items-center justify-center">
-            {/* --- Title --- */}
-            <div className="flex justify-center items-center text-[#1E3A8A]">
-                <h1 className="text-[30px] md:text-[36px] font-light text-[#012C60]  text-center tracking-normal">
-                    BEST SELLING
-                </h1>
-            </div>
+        <section className="w-full bg-white pt-10 pb-16">
+            {/* ✅ FIX 1: Navbar-এর সাথে হুবহু অ্যালাইন করার জন্য NavHead-এর সেইম ক্লাস দেওয়া হলো */}
+            <div className="container xl:w-full mx-auto px-1 md:px-2.5 flex flex-col items-center justify-center">
+                
+                {/* --- Title --- */}
+                <div className="w-full flex justify-center items-center text-[#1E3A8A] mb-10">
+                    <h1 className="text-[28px] md:text-[32px] xl:text-[36px] font-light text-[#012C60] text-center tracking-normal uppercase">
+                        TOP SELLING ITEMS
+                    </h1>
+                </div>
 
-            {/* --- Cards Grid --- */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center items-center gap-[19.8px] w-full mt-10">
-                <DynamicCardsReuse products={products} />
-            </div>
+                {/* --- Cards Grid --- */}
+                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 xl:gap-[20px] justify-center items-start">
+                    <DynamicCardsReuse products={products} />
+                </div>
 
-            {/* --- View All Products Button --- */}
-            <div className="mt-12">
-                <Link href={'/view-all-product'} className="w-full sm:w-auto">
-                    <Button
-                        variant={"landing_page_view_btn"}
-                        size={"landing_page_view_btn_size"}
-                        className="transition-colors duration-300 hover:bg-[#FD7034] hover:text-white "
-                    >
-                        View All Products
-                    </Button>
-                </Link>
+                {/* --- View All Products Button --- */}
+                <div className="mt-14">
+                    <Link href={'/view-all-product'} className="w-full sm:w-auto block">
+                        <Button
+                            variant={"outline"}
+                            className="bg-white border-[1.5px] border-[#FD7034] text-[#FD7034] font-medium text-[16px] px-10 py-6 rounded-md transition-all duration-300 hover:bg-[#FD7034] hover:text-white shadow-sm"
+                        >
+                            View All Products
+                        </Button>
+                    </Link>
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
