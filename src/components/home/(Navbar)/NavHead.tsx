@@ -3,15 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Loader2, Mic } from "lucide-react";
+import { Search, Loader2, Mic, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import SearchOverlay from "../SearchOverlay";
 import { Button } from "@/components/ui/button";
 import MegaMenu from "./components/MegaMenu";
 import { Category, SubCategory } from "./components/types-of-navhead/NavHeadType";
 import { CustomMenuIcon, GroupUsersIcon, VendorBoxIcon } from "./components/custom/icons";
-
-
 
 export default function NavHead() {
     const [categories, setCategories] = useState<Category[]>([]);
@@ -71,7 +69,6 @@ export default function NavHead() {
           cursor: pointer;
           border: 1px solid transparent;
           
-          /* Start exactly at top middle (12 o'clock) */
           background-image:
             linear-gradient(#ffffff, #ffffff),
             conic-gradient(
@@ -83,17 +80,11 @@ export default function NavHead() {
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
           
-          /* HOVER OUT ACTION: Slower, smoother erase */
           transition: --nav-sweep 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
         }
 
-        /* ═══════════════════════════════════════════════════════
-           .nav-pill:hover — hover state (Controls the HOVER IN)
-        ═══════════════════════════════════════════════════════ */
         .nav-pill:hover {
           --nav-sweep: 100%;
-          
-          /* HOVER IN ACTION: Fast, snappy draw */
           transition: --nav-sweep 0.3s ease-in;
         }
 
@@ -109,15 +100,11 @@ export default function NavHead() {
           opacity: 0;
           z-index: 0;
           pointer-events: none;
-
-          /* HOVER OUT: Fade out instantly so the retracting border is visible */
           transition: opacity 0.15s ease 0s;
         }
 
         .nav-pill:hover::after {
           opacity: 1;
-
-          /* HOVER IN: Wait 0.3s for the border to finish drawing before filling */
           transition: opacity 0.25s ease 0.3s;
         }
 
@@ -133,32 +120,11 @@ export default function NavHead() {
           text-decoration: none;
           font-weight: 400;
           white-space: nowrap;
-
-          /* HOVER OUT: Instantly change text back to dark blue */
           transition: color 0.15s ease 0s;
         }
 
         .nav-pill:hover .nav-pill-text {
           color: #ffffff;
-
-          /* HOVER IN: Wait 0.3s before turning white */
-          transition: color 0.15s ease 0.3s;
-        }
-
-        .nav-pill-chevron {
-          position: relative;
-          z-index: 10;
-          color: #9ca3af;
-          flex-shrink: 0;
-
-          /* HOVER OUT: Instantly change back */
-          transition: color 0.15s ease 0s;
-        }
-
-        .nav-pill:hover .nav-pill-chevron {
-          color: #ffffff;
-
-          /* HOVER IN: Wait 0.3s */
           transition: color 0.15s ease 0.3s;
         }
       `}</style>
@@ -166,9 +132,9 @@ export default function NavHead() {
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
             <header className=" bg-white sticky top-0 z-50">
-                <div className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center ">
+                {/* <div className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
                     {/* w-[calc(100vw-100px)] */}
-                    {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
+                    <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -178,12 +144,13 @@ export default function NavHead() {
                                 alt="Chapaghor Logo"
                                 width={180}
                                 height={35}
+                                className="object-contain"
                             />
                         </Link>
                     </div>
 
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center justify-center lg:pl-16 xl:pl-28 ">
+                    <nav className="hidden lg:flex items-center justify-center lg:pl-16 xl:pl-28">
                         {isLoading ? (
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -218,8 +185,7 @@ export default function NavHead() {
                                                 visible: { opacity: 1, y: 0 }
                                             }}
                                             key={category._id}
-                                            className={`flex items-center justify-center relative ${isHovered ? "z-[99]" : "z-50"
-                                                }`}
+                                            className={`flex items-center justify-center relative ${isHovered ? "z-[99]" : "z-50"}`}
                                             onMouseEnter={() => setHoveredCategory(category._id)}
                                             onMouseLeave={() => setHoveredCategory(null)}
                                         >
@@ -246,7 +212,7 @@ export default function NavHead() {
                                             </div>
 
                                             {index !== categories.length - 1 && (
-                                                <span className="text-[#012C60]  pointer-events-none select-none text-xs lg:px-0.5 xl:px-2">
+                                                <span className="text-[#012C60] pointer-events-none select-none text-xs lg:px-0.5 xl:px-2">
                                                     |
                                                 </span>
                                             )}
@@ -258,30 +224,30 @@ export default function NavHead() {
                     </nav>
 
                     {/* ── Search + Icons ── */}
-                    <div className="flex items-center justify-end gap-4 ">
+                    <div className="flex items-center justify-end gap-4 shrink-0">
 
-                        {/* ✅ FIX: Search Box Border thickness reduced to 'border' and rounded corners set to 'rounded-full' to perfectly match Figma */}
+                        {/* ✅ FIX: Removed fixed width & justify-between. Added gap-4 xl:gap-6 to keep spacing perfectly tight! */}
                         <div
                             onClick={() => setIsSearchOpen(true)}
-                            className="hidden md:flex items-center justify-between bg-[#FFFFFF] border border-[#012C60] shadow-[0px_2px_8px_rgba(0,0,0,0.05)] rounded-[12px] px-2 cursor-text hover:shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition-all lg:w-[150px] xl:w-[180px] h-[30px] group"
+                            className="hidden md:flex items-center gap-4 xl:gap-6 bg-[#FFFFFF] border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-3.5 pr-2.5 cursor-text hover:border-gray-300 hover:shadow-sm transition-all h-[36px] group"
                         >
-                            <span className="text-[12px] text-gray-500 select-none font-medium leading-none">
+                            <span className="text-[14px] text-[#9CA3AF] select-none font-normal leading-none">
                                 Search
                             </span>
 
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center">
                                 <Search
                                     size={16}
-                                    className="text-gray-500 group-hover:text-[#2D264B] transition-colors"
-                                    strokeWidth={1.5}
+                                    className="text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
+                                    strokeWidth={2}
                                 />
 
-                                <div className="h-3.5 w-[1px] bg-gray-300"></div>
+                                <div className="h-[18px] w-[1.5px] bg-[#E5E7EB] mx-1.5"></div>
 
                                 <Mic
                                     size={16}
                                     className="text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
-                                    strokeWidth={1.5}
+                                    strokeWidth={2}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                     }}
@@ -289,8 +255,11 @@ export default function NavHead() {
                             </div>
                         </div>
 
-                        {/* ✅ FIX: Icons replaced with perfectly matching custom SVGs */}
                         <div className="flex items-center justify-between text-[#012C60] gap-1">
+                            <Button size={"nav-icon"} variant={'nav_user'} title="Wishlist">
+                                <Heart size={20} strokeWidth={1.5} />
+                            </Button>
+
                             <Button size={"nav-icon"} variant={'nav_user'} title="Vendor/Box">
                                 <VendorBoxIcon />
                             </Button>

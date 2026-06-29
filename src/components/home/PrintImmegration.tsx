@@ -103,34 +103,32 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            // ✅ FIX: Fixed Width + Exactly 24px Gap
-            className="w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1020px] flex flex-wrap justify-center gap-[24px]"
+            className="w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1006px] flex flex-wrap justify-center gap-4 xl:gap-[24px]"
           >
             {categories.map((category) => (
               <button
                 key={category._id}
-                className="block shadow-[17px] shadow-[#FFC3B585]"
+                className="block outline-none"
               >
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  // কার্ডের ফিক্সড সাইজ (Desktop-এ ১৩০px এবং ১৫px)
-                  className="relative w-[130px] h-[140px] xl:w-[150px] xl:h-[160px] rounded-[17px] cursor-pointer group z-10 hover:z-50"
+                  className="relative w-[130px] h-[140px] xl:w-[147.4px] xl:h-[159.76px] rounded-[17.5px] cursor-pointer group z-10 hover:z-50"
                 >
                   <motion.div
                     variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FBE9DC] rounded-b-[17px] flex items-end justify-center pb-3 z-0"
+                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FBE9DC] rounded-b-[17.5px] flex items-end justify-center pb-3 z-0"
                   >
-                    <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-sm border border-gray-50">
+                    <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-xl border border-gray-100">
                       View Details
                     </div>
                   </motion.div>
 
                   <motion.div
                     variants={face1Variants}
-                    className="absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center gap-6 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] group-hover:shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
+                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0px_8px_30px_rgba(255,195,181,0.5)]"
                   >
-                    <div className="relative w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 mb-3 transform transition-all duration-500 ease-in-out group-hover:scale-110">
+                    <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-110">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
@@ -138,7 +136,7 @@ export default function PrintImmegration() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm lg:text-base xl:text-[16.49px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
+                    <span className="text-sm xl:text-[16px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
                       {category.name}
                     </span>
                   </motion.div>

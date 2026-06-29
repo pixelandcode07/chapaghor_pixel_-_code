@@ -7,7 +7,7 @@ export const VendorBoxIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) 
         <path d="M10.6149 10.257L8.49166 8.13379L6.36847 10.257" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
-);
+    );
 
 export const GroupUsersIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) => (
     <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ export const GroupUsersIcon = ({ size = 22, className = "", strokeWidth = 1.5 })
         <path d="M13.8967 14.3169C14.0102 14.1275 14.2106 14 14.4314 14H14.605C15.8476 14 16.855 12.9926 16.855 11.75C16.855 10.5074 15.8476 9.5 14.605 9.5H14.4314C14.2106 9.5 14.0102 9.37252 13.8967 9.18313C13.6196 8.72082 13.9203 8 14.4593 8H14.605C16.676 8 18.355 9.67893 18.355 11.75C18.355 13.8211 16.676 15.5 14.605 15.5H14.4593C13.9203 15.5 13.6196 14.7792 13.8967 14.3169Z" fill="#012C60" />
     </svg>
 
-);
+    );
 
 export const CustomMenuIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) => (
     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,4 +27,4 @@ export const CustomMenuIcon = ({ size = 22, className = "", strokeWidth = 1.5 })
         <path d="M16.3771 11.5246H4.24593" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
-);
+    );
