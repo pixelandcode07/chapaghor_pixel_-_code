@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import DynamicCards from './components/DynamicCards';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 // Data array now holds 3 images per card for the stacked rotation
 export const comboData = [
@@ -32,7 +33,7 @@ export default function Combo() {
             </div>
 
             {/* Main Content Container */}
-            <div className="relative z-10 container xl:w-[calc(100vw-100px)] mx-auto pt-[52px] pb-[83px] lg:px-2.5 xl:px-0">
+            <div className="relative z-10 container xl:w-full mx-auto px-1 md:px-15 xl:px-25 pt-[52px] pb-[83px]">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10">
@@ -41,14 +42,17 @@ export default function Combo() {
                             Exclusive Combo <span className="text-[#F05A28]">Deals</span>
                         </h1>
                     </div>
-                    <h4 className=" text-gray-300 text-base md:text-[16px] font-medium w-[400px] pl-16"
+                    {/* <h4 className=" text-gray-300 text-base md:text-[16px] font-medium w-[400px] pl-16"
                         style={{
                             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                             fontWeight: 400,
                             letterSpacing: '-0.015em',
                         }}>
                         We provide high quality printing services for you business, event and personal needs
-                    </h4>
+                    </h4> */}
+                    <button className="text-white lg:text-[16px] xl:text-[22px] font-medium cursor-pointer flex justify-center items-center">
+                        View All<ArrowRight className="w-5 h-5 ml-2" />
+                    </button>
                 </div>
 
                 {/* Cards Grid Section */}

@@ -21,7 +21,8 @@ const products = [
 
 export default function OurService() {
     return (
-        <section className="max-w-[60vw] mx-auto w-full bg-white">
+        // <section className="max-w-[60vw] mx-auto w-full bg-white">
+        <section className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 bg-white">
             {/* Title Section */}
             <div className="pt-[64px] pb-[37px] flex flex-col items-center justify-center">
                 <h4
@@ -71,7 +72,7 @@ export default function OurService() {
             {/* Image Grid Section */}
             <div className="">
                 {/* Grid with exact requested gaps */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-[30px] gap-y-[40px] justify-items-center items-start">
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
                     {products.map((product, index) => {
                         // Determine if the item is in the 1st, 3rd, or 5th column (0-indexed: 0, 2, 4)
                         const isOddColumn = index % 5 === 0 || index % 5 === 2 || index % 5 === 4;

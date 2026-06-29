@@ -19,10 +19,10 @@ export default function ServiceProductCard({ product }) {
     };
     return (
         <div
-            className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-none" // Note: cursor-none hides the default cursor while inside the card
+            className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-none w-[200px] h-[200px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[265px] xl:w-[300px] xl:h-[310px]"
             style={{
-                width: '230px',
-                height: '234px',
+                // width: '300px',
+                // height: '304px',
                 borderRadius: '10px',
                 borderWidth: '1.03px',
                 opacity: 1,
