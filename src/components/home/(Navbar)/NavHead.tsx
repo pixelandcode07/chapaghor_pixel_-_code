@@ -132,9 +132,9 @@ export default function NavHead() {
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
             <header className=" bg-white sticky top-0 z-50">
-                <div className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center ">
+                {/* <div className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
                     {/* w-[calc(100vw-100px)] */}
-                    {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
+                    <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
