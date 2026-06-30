@@ -26,10 +26,10 @@ export default function Combo() {
                     src="/banners/combo-bg.jpg"
                     alt="Combo Background"
                     fill
-                    className="object-fill opacity-60"
+                    className="object-center backdrop-opacity-100/50 blur-in-3xl"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/90" />
             </div>
 
             {/* Main Content Container */}
