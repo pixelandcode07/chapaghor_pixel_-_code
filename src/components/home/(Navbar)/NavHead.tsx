@@ -132,9 +132,11 @@ export default function NavHead() {
             <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
             <header className=" bg-white sticky top-0 z-50">
-                {/* <div className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
+                {/* <div className="container xl:max-w-[80vw] 2xl:max-w-[80vw] mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
+                {/* 2xl:max-w-[90vw] 3xl:max-w-[90vw] 4xl:max-w-[90vw] */}
+                <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center border-2 border-amber-800 py-[15px]">
                     {/* w-[calc(100vw-100px)] */}
-                    <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center">
+                    {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -150,7 +152,7 @@ export default function NavHead() {
                     </div>
 
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center justify-center lg:pl-16 xl:pl-28">
+                    <nav className="hidden lg:flex items-center justify-center lg:pl-10.5 xl:pl-28">
                         {isLoading ? (
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -194,7 +196,7 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] font-normal tracking-normal whitespace-nowrap lg:px-1.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
@@ -224,7 +226,7 @@ export default function NavHead() {
                     </nav>
 
                     {/* ── Search + Icons ── */}
-                    <div className="flex items-center justify-end gap-4 shrink-0">
+                    <div className="flex items-center justify-end xl:gap-4 shrink-0">
 
                         {/* ✅ FIX: Removed fixed width & justify-between. Added gap-4 xl:gap-6 to keep spacing perfectly tight! */}
                         <div
@@ -255,7 +257,7 @@ export default function NavHead() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between text-[#012C60] gap-1">
+                        <div className="flex items-center justify-between text-[#012C60] xl:gap-1">
                             <Button size={"nav-icon"} variant={'nav_user'} title="Wishlist">
                                 <Heart size={20} strokeWidth={1.5} />
                             </Button>

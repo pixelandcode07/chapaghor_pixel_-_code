@@ -203,13 +203,13 @@ export default function HowToOrder() {
 
         {/* Title Section */}
         <div className="flex flex-col items-center justify-center text-center mb-12 md:mb-16">
-          <h5 
+          <h5
             style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
             className="uppercase text-[#FF8D28] mb-2 font-normal leading-none tracking-normal text-[16px] lg:text-[14px] xl:text-[18px]"
           >
             How To Order
           </h5>
-          <h1 
+          <h1
             style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
             className="text-[#1C3E6E] capitalize font-light leading-none text-[28px] md:text-[36px] lg:text-[28px] xl:text-[36px]"
           >
