@@ -33,7 +33,7 @@ export default function ChooseUs() {
   return (
     <section className="w-full py-16 bg-white">
       {/* Main Card Container */}
-      <div className="relative w-[calc(100vw-100px)] mx-auto rounded-[24px] overflow-hidden bg-[#111111] px-8 py-16 md:py-20">
+      <div className="relative w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto rounded-[24px] overflow-hidden bg-[#111111] px-8 py-16 md:py-20">
 
         {/* ── Background Image ── */}
         <div className="absolute inset-0 z-0">

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import ServiceProductCard from "./components/ServiceProductCard";
 import Link from "next/dist/client/link";
+import LandingPageBtn from "../LandingPageBtn";
 
 const products = [
     { id: 1, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
@@ -15,6 +16,13 @@ const products = [
     { id: 8, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
     { id: 9, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
     { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    { id: 13, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    { id: 14, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 15, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 16, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 17, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
 ];
 
 
@@ -22,7 +30,7 @@ const products = [
 export default function OurService() {
     return (
         // <section className="max-w-[60vw] mx-auto w-full bg-white">
-        <section className="container xl:w-full mx-auto py-3.75 px-1 md:px-2.5 bg-white">
+        <section className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto py-3.75 bg-white">
             {/* Title Section */}
             <div className="pt-[64px] pb-[37px] flex flex-col items-center justify-center">
                 <h4
@@ -72,10 +80,10 @@ export default function OurService() {
             {/* Image Grid Section */}
             <div className="">
                 {/* Grid with exact requested gaps */}
-                <div className="grid grid-cols-3 md:grid-cols-5 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
+                <div className="grid grid-cols-3 md:grid-cols-5 3xl:grid-cols-7 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
                     {products.map((product, index) => {
                         // Determine if the item is in the 1st, 3rd, or 5th column (0-indexed: 0, 2, 4)
-                        const isOddColumn = index % 5 === 0 || index % 5 === 2 || index % 5 === 4;
+                        const isOddColumn = index % 7 === 0 || index % 7 === 2 || index % 7 === 4;
 
                         // Apply padding top for 1st, 3rd, 5th and padding bottom for 2nd, 4th
                         const staggerClass = isOddColumn ? 'pt-[44px]' : 'pb-[44px]';
@@ -92,16 +100,7 @@ export default function OurService() {
 
             {/* Button Section */}
             <div className="flex justify-center mt-12 pb-16">
-                {/* <CoolMode> */}
-                <Link href={'/view-all-product'}>
-                    <Button
-                        variant={"landing_page_view_btn"}
-                        size={"landing_page_view_btn_size"}
-                    >
-                        View All Products
-                    </Button>
-                </Link>
-                {/* </CoolMode> */}
+                <LandingPageBtn />
             </div>
         </section>
     );

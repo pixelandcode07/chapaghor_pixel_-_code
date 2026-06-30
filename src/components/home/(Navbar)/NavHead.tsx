@@ -134,7 +134,7 @@ export default function NavHead() {
             <header className=" bg-white sticky top-0 z-50">
                 {/* <div className="container xl:max-w-[80vw] 2xl:max-w-[80vw] mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
                 {/* 2xl:max-w-[90vw] 3xl:max-w-[90vw] 4xl:max-w-[90vw] */}
-                <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center border-2 border-amber-800 py-[15px]">
+                <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[15px]">
                     {/* w-[calc(100vw-100px)] */}
                     {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
 
@@ -144,9 +144,10 @@ export default function NavHead() {
                             <Image
                                 src={'/nav-logo/Logo.png'}
                                 alt="Chapaghor Logo"
+                                // fill
                                 width={180}
                                 height={35}
-                                className="object-contain"
+                                className="object-contain w-[180px] h-[35px] 3xl:w-[200px] 3xl:h-[40px]"
                             />
                         </Link>
                     </div>
@@ -196,7 +197,7 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-xl font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
@@ -231,24 +232,24 @@ export default function NavHead() {
                         {/* ✅ FIX: Removed fixed width & justify-between. Added gap-4 xl:gap-6 to keep spacing perfectly tight! */}
                         <div
                             onClick={() => setIsSearchOpen(true)}
-                            className="hidden md:flex items-center gap-4 xl:gap-6 bg-[#FFFFFF] border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-3.5 pr-2.5 cursor-text hover:border-gray-300 hover:shadow-sm transition-all h-[36px] group"
+                            className="hidden md:flex items-center gap-4 xl:gap-6 3xl:gap-8 bg-[#FFFFFF] border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-3.5 pr-2.5 cursor-text hover:border-gray-300 hover:shadow-sm transition-all h-[36px] group"
                         >
-                            <span className="text-[14px] text-[#9CA3AF] select-none font-normal leading-none">
+                            <span className="text-[14px] 3xl:text-base text-[#9CA3AF] select-none font-normal leading-none">
                                 Search
                             </span>
 
                             <div className="flex items-center">
                                 <Search
-                                    size={16}
-                                    className="text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
+                                    // size={16}
+                                    className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
                                     strokeWidth={2}
                                 />
 
                                 <div className="h-[18px] w-[1.5px] bg-[#E5E7EB] mx-1.5"></div>
 
                                 <Mic
-                                    size={16}
-                                    className="text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
+                                    // size={16}
+                                    className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
                                     strokeWidth={2}
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -257,7 +258,7 @@ export default function NavHead() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between text-[#012C60] xl:gap-1">
+                        <div className="flex items-center justify-between text-[#012C60] xl:gap-1 ">
                             <Button size={"nav-icon"} variant={'nav_user'} title="Wishlist">
                                 <Heart size={20} strokeWidth={1.5} />
                             </Button>

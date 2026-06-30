@@ -11,7 +11,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             // lg:translate-x-[-30%] xl:
-            className="absolute top-[180%] translate-x-[-44%] w-637.5 h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
+            className="absolute top-[169%] translate-x-[-44%] w-637.5 h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
         >
             <div className="w-360 max-w-full h-full relative flex items-start justify-center xl:pl-[168px] pt-[28px]">
                 <div className="w-44 h-44.75 shrink-0">

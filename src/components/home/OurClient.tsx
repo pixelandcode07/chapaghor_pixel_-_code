@@ -21,7 +21,7 @@ export default function OurClient() {
       {/* ন্যাভবারের এলাইনমেন্ট। 
         এখানে justify-between সরিয়ে শুধু flex রাখা হয়েছে যাতে আমরা নির্দিষ্ট 178px গ্যাপ দিতে পারি।
       */}
-      <div className="container xl:w-[calc(100vw-100px)] mx-auto flex items-center justify-center lg:px-2.5 xl:px-0">
+      <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex items-center justify-center lg:px-2.5 xl:px-0">
 
         {/* Left Side: Static Stats & Handshake Icon */}
         <div className="flex items-center gap-4 z-10 shrink-0">

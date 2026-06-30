@@ -7,7 +7,7 @@ export const VendorBoxIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) 
         <path d="M10.6149 10.257L8.49166 8.13379L6.36847 10.257" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
-    );
+);
 
 export const GroupUsersIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) => (
     <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ export const GroupUsersIcon = ({ size = 22, className = "", strokeWidth = 1.5 })
         <path d="M13.8967 14.3169C14.0102 14.1275 14.2106 14 14.4314 14H14.605C15.8476 14 16.855 12.9926 16.855 11.75C16.855 10.5074 15.8476 9.5 14.605 9.5H14.4314C14.2106 9.5 14.0102 9.37252 13.8967 9.18313C13.6196 8.72082 13.9203 8 14.4593 8H14.605C16.676 8 18.355 9.67893 18.355 11.75C18.355 13.8211 16.676 15.5 14.605 15.5H14.4593C13.9203 15.5 13.6196 14.7792 13.8967 14.3169Z" fill="#012C60" />
     </svg>
 
-    );
+);
 
 export const CustomMenuIcon = ({ size = 22, className = "", strokeWidth = 1.5 }) => (
     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,4 +27,22 @@ export const CustomMenuIcon = ({ size = 22, className = "", strokeWidth = 1.5 })
         <path d="M16.3771 11.5246H4.24593" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
-    );
+);
+
+
+import * as React from "react"
+import { cn } from "@/lib/utils"
+
+export function TakaIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className={cn("size-5", className)}
+            {...props}
+        >
+            <path d="M8.72 5.75c-.39 0-.76.17-1.02.48a1.59 1.59 0 0 0-.28 1.43.75.75 0 1 1-1.46.34 3.09 3.09 0 0 1 .55-2.78c.56-.66 1.38-1.03 2.21-1.03 1.56 0 2.78 1.16 2.78 2.65v1.41h3.75a.75.75 0 0 1 0 1.5h-3.75v3.23c0 2.12 1.43 3.52 3.25 3.52 1.04 0 1.75-.46 2.13-1.09a1.75 1.75 0 1 1 2.53 2.41 4.56 4.56 0 0 1-4.66 1.18c-2.48-.68-4-2.77-4-5.34v-3.91H6.75a.75.75 0 0 1 0-1.5h4.25V7.04c0-.72-.56-1.29-1.28-1.29Z" />
+        </svg>
+    )
+}

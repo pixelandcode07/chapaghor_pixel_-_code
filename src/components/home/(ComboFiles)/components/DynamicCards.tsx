@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { useEffect, useState } from 'react';
 import { comboData } from '../ComboFile';
+import { TakaIcon } from '../../(Navbar)/components/custom/icons';
 
 
 
@@ -37,9 +38,17 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
             </div>
 
             {/* Title */}
-            <h3 className="relative z-10 text-white font-medium text-[15px] py-4 pl-4 mb-11 lg:mb-12 xl:mb-16 border-b-2 border-[#686868] ">
-                {item.title}
-            </h3>
+            <div className="relative z-10 text-white font-medium text-[15px] 3xl:text-[18px] p-4 mb-11 lg:mb-12 xl:mb-16 border-b border-[#686868] flex justify-between items-center">
+                <h3>
+                    {item.title}
+                </h3>
+                <h3 className='flex justify-center items-center text-[#FD7034]'>
+                    <span>
+                       <TakaIcon className='w-6 h-6' />
+                    </span>
+                    {item.price}
+                </h3>
+            </div>
 
             {/* Stacked Image Container */}
             <div className="relative z-10 pb-4 mt-2">
@@ -100,7 +109,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
                     </div>
 
                     {/* Concave Curve (Left edge) */}
-                    <div className="absolute bottom-0 right-[75px] w-6 h-6 z-40 pointer-events-none">
+                    <div className="absolute  -bottom-0.5 right-[75px] w-6 h-6 z-40 pointer-events-none">
                         <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
                             <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                         </svg>
