@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DynamicCardsReuse from "./components/DynamicCardsReuse";
+import LandingPageBtn from "../LandingPageBtn";
 
 export default function BestSelling() {
     const products = [
@@ -12,13 +13,14 @@ export default function BestSelling() {
         { name: "Photo Frame", src: "/best/frame.jpg" },
         { name: "ID Card", src: "/best/id.jpg" },
         { name: "X-Stand", src: "/best/stand.jpg" },
+        { name: "X-Stand", src: "/best/stand.jpg" },
+        { name: "X-Stand", src: "/best/stand.jpg" },
     ];
 
     return (
         <section className="w-full bg-white pt-10 pb-16">
-            {/* ✅ FIX 1: Navbar-এর সাথে হুবহু অ্যালাইন করার জন্য NavHead-এর সেইম ক্লাস দেওয়া হলো */}
-            <div className="container xl:w-full mx-auto px-1 md:px-2.5 flex flex-col items-center justify-center">
-                
+            <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex flex-col items-center justify-center">
+
                 {/* --- Title --- */}
                 <div className="w-full flex justify-center items-center text-[#1E3A8A] mb-10">
                     <h1 className="text-[28px] md:text-[32px] xl:text-[36px] font-light text-[#012C60] text-center tracking-normal uppercase">
@@ -27,20 +29,13 @@ export default function BestSelling() {
                 </div>
 
                 {/* --- Cards Grid --- */}
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 xl:gap-[20px] justify-center items-start">
+                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 3xl:grid-cols-7 gap-4 md:gap-5 xl:gap-[20px] justify-center items-start">
                     <DynamicCardsReuse products={products} />
                 </div>
 
                 {/* --- View All Products Button --- */}
                 <div className="mt-14">
-                    <Link href={'/view-all-product'} className="w-full sm:w-auto block">
-                        <Button
-                            variant={"outline"}
-                            className="bg-white border-[1.5px] border-[#FD7034] text-[#FD7034] font-medium text-[16px] px-10 py-6 rounded-md transition-all duration-300 hover:bg-[#FD7034] hover:text-white shadow-sm"
-                        >
-                            View All Products
-                        </Button>
-                    </Link>
+                    <LandingPageBtn />
                 </div>
             </div>
         </section>

@@ -16,6 +16,9 @@ const images = [
     { id: 1, src: "/banners/home-banner3.png", alt: "Cama de casal mariah banner" },
     { id: 2, src: "/banners/home-banner4.png", alt: "Frete grátis banner" },
     { id: 3, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
+    { id: 4, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
+    { id: 5, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
+    { id: 6, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
 ];
 
 export default function HeroSection() {

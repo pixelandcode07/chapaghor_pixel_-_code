@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Loader2 } from "lucide-react";
+import { Loader2, SquareArrowOutUpRight } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 type Category = {
@@ -93,7 +93,7 @@ export default function PrintImmegration() {
     <div className="w-full bg-[#FFFFFF]">
       <div className="w-full pt-10 pb-[65px] relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
-          
+
           <h1 className="lg:text-3xl xl:text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
             PRINT YOUR IMAGINATION
           </h1>
@@ -117,16 +117,16 @@ export default function PrintImmegration() {
                 >
                   <motion.div
                     variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FBE9DC] rounded-b-[17.5px] flex items-end justify-center pb-3 z-0"
+                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center pb-3 z-0"
                   >
-                    <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-xl border border-gray-100">
-                      View Details
-                    </div>
+                    {/* <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-xl border border-gray-100">
+                    </div> */}
+                     <h2 className="flex justify-center items-center gap-0.5 text-base font-medium text-white"> ORDER  <SquareArrowOutUpRight className="h-3.5 w-3.5" /></h2>
                   </motion.div>
 
                   <motion.div
                     variants={face1Variants}
-                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-[#FFC3B585] transition-colors duration-300 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0px_8px_30px_rgba(255,195,181,0.5)]"
+                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] "
                   >
                     <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-110">
                       <Image
@@ -144,7 +144,7 @@ export default function PrintImmegration() {
               </button>
             ))}
           </motion.div>
-          
+
         </div>
       </div>
     </div>

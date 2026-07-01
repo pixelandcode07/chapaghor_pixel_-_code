@@ -33,19 +33,19 @@ export default function ChooseUs() {
   return (
     <section className="w-full py-16 bg-white">
       {/* Main Card Container */}
-      <div className="relative w-[calc(100vw-100px)] mx-auto rounded-[24px] overflow-hidden bg-[#111111] px-8 py-16 md:py-20">
+      <div className="relative w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto rounded-[24px] overflow-hidden bg-[#111111] px-8 py-16 md:py-20">
 
         {/* ── Background Image ── */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-black">
           <Image
-            src="/choose-us/banner.jpg" // Replace with your actual dark wavy background image path
+            src="/choose-us/banner.jpg"
             alt="Combo Background"
             fill
-            className="object-fill opacity-60"
+            className="object-bottom-left  opacity-60"
             priority
           />
           {/* Optional dark gradient overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" /> */}
         </div>
 
         {/* ── Content (Must be z-10 to stay above background) ── */}
