@@ -9,7 +9,7 @@ import SearchOverlay from "../SearchOverlay";
 import { Button } from "@/components/ui/button";
 import MegaMenu from "./components/MegaMenu";
 import { Category, SubCategory } from "./components/types-of-navhead/NavHeadType";
-import { CustomMenuIcon, GroupUsersIcon, VendorBoxIcon } from "./components/custom/icons";
+import { CustomMenuIcon, GroupUsersIcon, HeartIcon, VendorBoxIcon } from "./components/custom/icons";
 
 export default function NavHead() {
     const [categories, setCategories] = useState<Category[]>([]);
@@ -153,7 +153,7 @@ export default function NavHead() {
                     </div>
 
                     {/* ── Category Nav with Framer Motion ── */}
-                    <nav className="hidden lg:flex items-center justify-center lg:pl-10.5 xl:pl-28">
+                    <nav className="hidden lg:flex items-center justify-center lg:pl-10.5 xl:pl-[140px]">
                         {isLoading ? (
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -197,7 +197,7 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-xl font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[18px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
@@ -260,7 +260,8 @@ export default function NavHead() {
 
                         <div className="flex items-center justify-between text-[#012C60] xl:gap-1 ">
                             <Button size={"nav-icon"} variant={'nav_user'} title="Wishlist">
-                                <Heart size={20} strokeWidth={1.5} />
+                                {/* <Heart size={20} strokeWidth={1.5} /> */}
+                                <HeartIcon />
                             </Button>
 
                             <Button size={"nav-icon"} variant={'nav_user'} title="Vendor/Box">

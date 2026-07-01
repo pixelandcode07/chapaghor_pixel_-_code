@@ -54,7 +54,7 @@ export default function OurService() {
                         textAlign: 'center',
                         verticalAlign: 'middle',
                     }}
-                    className="text-[#1C3E6E] uppercase">
+                    className="text-[#1C3E6E] xl:text-[36px] 3xl:text-[40px] uppercase">
                     What We Print
                 </h2>
                 {/* <KineticText text="Our Service" className="text-[#E06045] uppercase mb-2"

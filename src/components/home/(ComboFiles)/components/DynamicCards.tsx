@@ -38,7 +38,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
             </div>
 
             {/* Title */}
-            <div className="relative z-10 text-white font-medium text-[15px] 3xl:text-[18px] p-4 mb-11 lg:mb-12 xl:mb-16 border-b border-[#686868] flex justify-between items-center">
+            <div className="relative z-10 text-white font-medium text-[16px] p-4 mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
                 <h3>
                     {item.title}
                 </h3>
@@ -52,7 +52,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
 
             {/* Stacked Image Container */}
             <div className="relative z-10 pb-4 mt-2">
-                <div className="relative w-full aspect-5/4 mt-4"> {/* mt-4 gives room for back layers to peek out top */}
+                <div className="relative w-full aspect-4/4 mt-4"> {/* mt-4 gives room for back layers to peek out top */}
 
                     {/* The 3 Image Layers */}
                     {item.images.map((src, index) => {
@@ -68,7 +68,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
                                 key={src}
                                 initial={false}
                                 animate={{
-                                    y: isFront ? 0 : isMiddle ? -18 : -36, // Pushes back layers up
+                                    y: isFront ? 0 : isMiddle ? -12 : -24, // Pushes back layers up
                                     scale: isFront ? 1 : isMiddle ? 0.92 : 0.84, // Shrinks back layers
                                     zIndex: isFront ? 30 : isMiddle ? 20 : 10,
                                 }}
@@ -125,12 +125,3 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
         </div>
     )
 }
-
-
-// const ComboFile = ({ item }: { item: typeof comboData[0] }) => {
-
-
-//     return (
-       
-//     );
-// };
