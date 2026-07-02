@@ -57,24 +57,6 @@ export default function OurService() {
                     className="text-[#1C3E6E] xl:text-[36px] 3xl:text-[40px] uppercase">
                     What We Print
                 </h2>
-                {/* <KineticText text="Our Service" className="text-[#E06045] uppercase mb-2"
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '25px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }} /> */}
-                {/* <KineticText text="What We Print" className="text-[#1C3E6E] uppercase"
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '36px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }} /> */}
             </div>
 
             {/* Image Grid Section */}

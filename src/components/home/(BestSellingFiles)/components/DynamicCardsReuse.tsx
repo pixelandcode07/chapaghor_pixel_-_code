@@ -92,6 +92,7 @@ export default function DynamicCardsReuse({ products, index }: DynamicCardsReuse
                     key={idx}
                     className="relative flex flex-col group cursor-pointer w-full max-w-[260px] mx-auto"
                 >
+
                     {/* Image & Cutout Wrapper */}
                     <div className="relative w-full aspect-square">
 
@@ -101,7 +102,7 @@ export default function DynamicCardsReuse({ products, index }: DynamicCardsReuse
                                 src={product.src}
                                 alt={product.name}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                className="object-cover rounded-br-4xl hover:rounded-br-[80px] group-hover:scale-105 transition-transform duration-700"
                             />
 
                             {/* White block for the cutout */}
@@ -121,6 +122,11 @@ export default function DynamicCardsReuse({ products, index }: DynamicCardsReuse
                                     <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                                 </svg>
                             </div>
+                            {/* <div className="absolute -bottom-0.5 right-[63px] 3xl:right-[75px] w-5 h-5 xl:w-6 xl:h-6 z-10 pointer-events-none">
+                                <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-white">
+                                    <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
+                                </svg>
+                            </div> */}
                         </div>
 
                         {/* Circular Button */}

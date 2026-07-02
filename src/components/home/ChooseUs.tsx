@@ -52,98 +52,23 @@ export default function ChooseUs() {
         <div className="relative z-10">
           {/* Title Section */}
           <div className="flex flex-col items-center justify-center text-center space-y-4 mb-16 px-4">
-            <h5 className="uppercase text-[#FF8D28]"
-              style={{
-                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '100%',
-                letterSpacing: '-0.015em',
-              }} >
+            <h5 
+            className="uppercase text-[#FF8D28] text-[16px] 3xl:text-[18px] font-normal leading-tight tracking-wide">
               WHY CHOOSE US
             </h5>
-            {/* <Text3DFlip 
-              className="uppercase text-[#FF8D28]"
-              style={{
-                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                fontSize: '16px',
-                lineHeight: '100%',
-                letterSpacing: '-0.015em',
-              }} 
-            >
-              WHY CHOOSE US
-            </Text3DFlip> */}
 
             <div className="flex flex-wrap justify-center gap-[8px]">
-              <h1 className="text-white"
-                style={{
-                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '39.04px',
-                  lineHeight: '100%',
-                  letterSpacing: '-0.015em',
-                }}>
+              <h1 className="text-white text-[39.04px] 3xl:text-[41px] font-normal leading-tight tracking-wide">
                 Quality Printing You Can
               </h1>
-              <h1 className="text-[#FF8D28]"
-                style={{
-                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '39.04px',
-                  lineHeight: '100%',
-                  letterSpacing: '-0.015em',
-                }} >
+              <h1 className="text-[#FF8D28] text-[39.04px] 3xl:text-[41px] font-normal leading-tight tracking-wide">
                 Trust
               </h1>
-              {/* <Text3DFlip 
-                className="text-white"
-                style={{
-                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '39.04px',
-                  lineHeight: '100%',
-                  letterSpacing: '-0.015em',
-                }} 
-              >
-                Quality Printing You Can
-              </Text3DFlip> */}
-              {/* <Text3DFlip
-                className="text-[#FF8D28]"
-                style={{
-                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '39.04px',
-                  lineHeight: '100%',
-                  letterSpacing: '-0.015em',
-                }}
-              >
-                Trust
-              </Text3DFlip> */}
             </div>
 
-            <h5 className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center"
-              style={{
-                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '127%',
-                letterSpacing: '-0.015em',
-              }}>
+            <h5 className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center text-[18px] 3xl:text-[20px] font-normal leading-tight tracking-wide">
               We use the best materials and latest technology to deliver the perfect printing quality
             </h5>
-            {/* <Text3DFlip
-              className="text-white/90 max-w-[600px] mt-2 flex justify-center items-center text-center"
-              style={{
-                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                fontSize: '18px',
-                lineHeight: '127%',
-                letterSpacing: '-0.015em',
-              }}
-            >
-              We use the best materials and latest technology to deliver the perfect printing quality
-            </Text3DFlip> */}
           </div>
 
           {/* Feature Cards Grid */}

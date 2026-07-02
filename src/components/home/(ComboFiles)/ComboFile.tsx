@@ -42,14 +42,6 @@ export default function Combo() {
                             Exclusive Combo <span className="text-[#F05A28]">Deals</span>
                         </h1>
                     </div>
-                    {/* <h4 className=" text-gray-300 text-base md:text-[16px] font-medium w-[400px] pl-16"
-                        style={{
-                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                            fontWeight: 400,
-                            letterSpacing: '-0.015em',
-                        }}>
-                        We provide high quality printing services for you business, event and personal needs
-                    </h4> */}
                     <button
                         style={{
                             letterSpacing: '1.3px'
