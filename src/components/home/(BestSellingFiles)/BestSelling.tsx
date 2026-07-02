@@ -23,7 +23,7 @@ export default function BestSelling() {
 
                 {/* --- Title --- */}
                 <div className="w-full flex justify-center items-center text-[#1E3A8A] mb-10">
-                    <h1 className="text-[28px] md:text-[32px] xl:text-[36px] font-light text-[#012C60] text-center tracking-normal uppercase">
+                    <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[40px] font-light text-[#012C60] text-center tracking-normal uppercase">
                         TOP SELLING ITEMS
                     </h1>
                 </div>

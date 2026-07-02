@@ -38,7 +38,7 @@ export default function Combo() {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10">
                     <div className="flex gap-2.5">
-                        <h1 className="text-2xl md:text-[28px] lg:text-[38px] xl:text-[45px] font-normal text-white leading-tight tracking-wide">
+                        <h1 className="text-2xl md:text-[28px] lg:text-[38px] xl:text-[45px] 3xl:text-[47px] font-normal text-white leading-tight tracking-wide">
                             Exclusive Combo <span className="text-[#F05A28]">Deals</span>
                         </h1>
                     </div>
@@ -50,7 +50,11 @@ export default function Combo() {
                         }}>
                         We provide high quality printing services for you business, event and personal needs
                     </h4> */}
-                    <button className="text-white lg:text-[16px] xl:text-[22px] font-medium cursor-pointer flex justify-center items-center">
+                    <button
+                        style={{
+                            letterSpacing: '1.3px'
+                        }}
+                        className="text-white lg:text-[16px] xl:text-[22px] font-light leading-relaxed cursor-pointer flex justify-center items-center">
                         View All<ArrowRight className="w-5 h-5 ml-2" />
                     </button>
                 </div>

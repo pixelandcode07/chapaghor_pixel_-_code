@@ -94,7 +94,7 @@ export default function PrintImmegration() {
       <div className="w-full pt-10 pb-[65px] relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
 
-          <h1 className="lg:text-3xl xl:text-[36px] font-light text-[#012C60] mb-10 text-center tracking-normal">
+          <h1 className="lg:text-3xl 3xl:text-[40px] font-light text-[#012C60] mb-10 text-center tracking-normal">
             PRINT YOUR IMAGINATION
           </h1>
 
@@ -126,7 +126,7 @@ export default function PrintImmegration() {
 
                   <motion.div
                     variants={face1Variants}
-                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] "
+                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] hover:shadow-none "
                   >
                     <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-110">
                       <Image
@@ -136,7 +136,7 @@ export default function PrintImmegration() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm xl:text-[16px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
+                    <span className="text-sm xl:text-[16px] 3xl:text-[18px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
                       {category.name}
                     </span>
                   </motion.div>

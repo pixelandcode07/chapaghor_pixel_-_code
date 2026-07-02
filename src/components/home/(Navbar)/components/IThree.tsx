@@ -11,7 +11,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             // className="absolute top-[234%] left-1/2 -translate-x-1/2 -left-2.5 w-[1250px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 pt-7.5 pb-16.5 pl-19 pr-25.5 flex justify-center cursor-default"
-            className="absolute top-[169%] lg:-left-[480px] xl:-left-[443px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] border-2 rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-20.5 lg:pl-[80px] xl:pl-[90px] flex justify-start cursor-default"
+            className="absolute top-[169%] lg:-left-[480px] xl:-left-[443px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] border-2 rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-28 lg:pl-[80px] xl:pl-[90px] flex justify-start cursor-default"
         >
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
             <div className="grid lg:grid-cols-[repeat(4,200px)] 3xl:grid-cols-[repeat(4,280px)] 3xl:auto-rows-[145px] gap-[8px]">
