@@ -13,12 +13,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 const images = [
-    { id: 1, src: "/banners/home-banner3.png", alt: "Cama de casal mariah banner" },
-    { id: 2, src: "/banners/home-banner4.png", alt: "Frete grátis banner" },
-    { id: 3, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 4, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 5, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 6, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
+    { id: 1, src: "/banners/Banner-Design.gif", alt: "Cama de casal mariah banner" },
+    { id: 2, src: "/banners/Banner-Design.gif", alt: "Frete grátis banner" },
+    { id: 3, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 4, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 5, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 6, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
 ];
 
 export default function HeroSection() {
@@ -90,7 +90,7 @@ export default function HeroSection() {
                                             alt={image.alt}
                                             fill
                                             priority={index === 0}
-                                            className="object-cover pointer-events-none"
+                                            className="object-fill pointer-events-none"
                                         />
                                     </div>
                                 </CarouselItem>
