@@ -6,7 +6,7 @@ export function HeartIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
             viewBox="0 0 21 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={cn("size-5", className)}
+            className={cn("size-5 ", className)}
             {...props}
         >
             <path d="M10.1117 16.605L2.04865 9.23532C-2.33344 4.81344 4.10822 -3.67655 10.1117 3.19209C16.1151 -3.67655 22.5276 4.84293 18.1747 9.23532L10.1117 16.605Z" stroke="#012C60" stroke-width="1.21" stroke-linejoin="round" />
@@ -16,16 +16,18 @@ export function HeartIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
 }
 
 export const VendorBoxIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+
     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
         className={cn("size-5", className)}
         {...props}
     >
-        <path d="M8.49194 0.606567V5.45903" stroke="md:#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M0.606689 5.45901H16.3772V15.1639C16.3772 15.4857 16.2493 15.7943 16.0219 16.0217C15.7944 16.2492 15.4858 16.377 15.1641 16.377H1.8198C1.49806 16.377 1.18951 16.2492 0.962002 16.0217C0.7345 15.7943 0.606689 15.4857 0.606689 15.1639V5.45901Z" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M0.606689 5.45903L2.42636 1.95312C2.62253 1.55798 2.92273 1.2238 3.29466 0.986533C3.66659 0.749269 4.09617 0.617903 4.53718 0.606567H12.4467C12.8981 0.606806 13.3404 0.732959 13.7241 0.97084C14.1077 1.20872 14.4173 1.5489 14.6182 1.95312L16.3772 5.45903" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M8.49139 13.7642V8.16943" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M10.6149 10.257L8.49166 8.13379L6.36847 10.257" stroke="#012C60" stroke-width="1.21311" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.49182 0.606567V5.45903" stroke="#012C60" stroke-width="1.21311" stroke-linejoin="round" />
+        <path d="M0.606567 5.45901H16.3771V15.1639C16.3771 15.4857 16.2492 15.7943 16.0217 16.0217C15.7943 16.2492 15.4857 16.377 15.1639 16.377H1.81968C1.49794 16.377 1.18938 16.2492 0.96188 16.0217C0.734378 15.7943 0.606567 15.4857 0.606567 15.1639V5.45901Z" stroke="#012C60" stroke-width="1.21311" stroke-linejoin="round" />
+        <path d="M0.606567 5.45903L2.42624 1.95312C2.62241 1.55798 2.92261 1.2238 3.29454 0.986533C3.66647 0.749269 4.09604 0.617903 4.53706 0.606567H12.4466C12.898 0.606806 13.3403 0.732959 13.724 0.97084C14.1076 1.20872 14.4172 1.5489 14.618 1.95312L16.3771 5.45903" stroke="#012C60" stroke-width="1.21311" stroke-linejoin="round" />
+        <path d="M8.49133 13.7642V8.16943" stroke="#012C60" stroke-width="1.21311" stroke-linejoin="round" />
+        <path d="M10.6147 10.257L8.49148 8.13379L6.36829 10.257" stroke="#012C60" stroke-width="1.21311" stroke-linejoin="round" />
     </svg>
+
 
 );
 

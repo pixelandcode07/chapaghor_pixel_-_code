@@ -78,7 +78,7 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-3 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] aspect-[967/307] ${
+                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[980px] aspect-[967/307] ${
                                             isActive
                                                 ? "blur-0 opacity-100 scale-100 shadow-2xl z-20"
                                                 // ✅ FIX 2: সাইড ব্যানারের scale-100 করা হয়েছে যাতে গ্যাপ একদম না থাকে, শুধু opacity ও blur দিয়ে আলাদা করা হয়েছে।
@@ -106,7 +106,7 @@ export default function HeroSection() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6 xl:-ml-7"
+                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6  mb-5"
                         onClick={() => api?.scrollPrev()}
                     >
                         <ChevronLeft className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
@@ -116,7 +116,7 @@ export default function HeroSection() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7"
+                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7 mb-5"
                         onClick={() => api?.scrollNext()}
                     >
                         <ChevronRight className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
@@ -124,7 +124,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center items-center gap-2 mt-6">
+                <div className="flex justify-center items-center gap-2 mt-4">
                     {Array.from({ length: count }).map((_, index) => {
                         const isActive = index === current;
                         return (

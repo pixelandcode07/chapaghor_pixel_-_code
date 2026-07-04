@@ -6,10 +6,10 @@ import Image from "next/image";
 import { Search, Loader2, Mic, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import SearchOverlay from "../SearchOverlay";
-import { Button } from "@/components/ui/button";
 import MegaMenu from "./components/MegaMenu";
 import { Category, SubCategory } from "./components/types-of-navhead/NavHeadType";
 import { CustomMenuIcon, GroupUsersIcon, HeartIcon, VendorBoxIcon } from "./components/custom/icons";
+import { Button } from "@/components/ui/button";
 
 export default function NavHead() {
     const [categories, setCategories] = useState<Category[]>([]);
@@ -17,6 +17,8 @@ export default function NavHead() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+
+
 
     useEffect(() => {
         const fetchNavData = async () => {
@@ -249,7 +251,7 @@ export default function NavHead() {
 
                                 <Mic
                                     // size={16}
-                                    className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#F05A28] cursor-pointer hover:opacity-80 transition-opacity"
+                                    className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#6839A3] cursor-pointer hover:opacity-80 transition-opacity"
                                     strokeWidth={2}
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -257,23 +259,35 @@ export default function NavHead() {
                                 />
                             </div>
                         </div>
+                        {/* px-2.5 size-11 hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer */}
 
-                        <div className="flex items-center justify-between text-[#012C60] xl:gap-1 ">
-                            <Button size={"nav-icon"} variant={'nav_user'} title="Wishlist">
-                                {/* <Heart size={20} strokeWidth={1.5} /> */}
-                                <HeartIcon />
+                        <div className="flex items-center justify-between text-[#012C60] lg:gap-1 xl:gap-0 ">
+                            <Button
+                                size={"nav-icon"} 
+                                variant={'nav_user'} 
+                                title="Wishlist">
+                                <HeartIcon className="size-7" />
                             </Button>
 
-                            <Button size={"nav-icon"} variant={'nav_user'} title="Vendor/Box">
-                                <VendorBoxIcon />
+                            <Button
+                                size={"nav-icon"} 
+                                variant={'nav_user'} 
+                                title="Vendor/Box">
+                                <VendorBoxIcon className="size-6" />
                             </Button>
 
-                            <Button size={"nav-icon"} variant={'nav_user'} title="Group Users">
-                                <GroupUsersIcon />
+                            <Button
+                                size={"nav-icon"} 
+                                variant={'nav_user'} 
+                                title="Group Users">
+                                <GroupUsersIcon className="size-7" />
                             </Button>
 
-                            <Button size={"nav-icon"} variant={'nav_menu'} title="Menu">
-                                <CustomMenuIcon />
+                            <Button
+                                size={"nav-icon"} 
+                                variant={'nav_menu'} 
+                                title="Menu">
+                                <CustomMenuIcon className="size-6" />
                             </Button>
                         </div>
                     </div>

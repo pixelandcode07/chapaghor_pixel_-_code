@@ -22,7 +22,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
         <div className="relative group cursor-pointer pt-2">
 
             {/* Background Wrapper with Magic UI BorderBeam */}
-            <div className="absolute top-0 left-0 w-full h-[90%] rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-[90%] rounded-[18px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
                 <BorderBeam
                     duration={6}
                     size={400}
