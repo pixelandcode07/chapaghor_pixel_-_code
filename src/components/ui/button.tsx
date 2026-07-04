@@ -38,7 +38,7 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         // "nav-icon": "size-9 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5",
-        "nav-icon": "size-9 px-2.5 3xl:size-11 3xl:px-3.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5 3xl:[&_svg:not([class*='size-'])]:size-6",
+        "nav-icon": "px-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5 3xl:[&_svg:not([class*='size-'])]:size-6",
       },
     },
     defaultVariants: {

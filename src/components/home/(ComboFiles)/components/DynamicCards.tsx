@@ -22,7 +22,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
         <div className="relative group cursor-pointer pt-2">
 
             {/* Background Wrapper with Magic UI BorderBeam */}
-            <div className="absolute top-0 left-0 w-full h-[90%] rounded-[18px] bg-white/5 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-[90%] rounded-[18px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
                 <BorderBeam
                     duration={6}
                     size={400}
@@ -38,7 +38,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
             </div>
 
             {/* Title */}
-            <div className="relative z-10 text-white font-medium text-[16px] p-4 mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
+            <div className="relative z-10 text-white font-medium text-[16px] 3xl:text-[18px] p-4 mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
                 <h3>
                     {item.title}
                 </h3>
@@ -52,7 +52,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
 
             {/* Stacked Image Container */}
             <div className="relative z-10 pb-4 mt-2">
-                <div className="relative w-full aspect-4/4 mt-4"> {/* mt-4 gives room for back layers to peek out top */}
+                <div className="relative w-full aspect-5/4.5 mt-4"> {/* mt-4 gives room for back layers to peek out top */}
 
                     {/* The 3 Image Layers */}
                     {item.images.map((src, index) => {
@@ -102,14 +102,14 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
                     </div>
 
                     {/* Concave Curve (Top edge) */}
-                    <div className="absolute bottom-[75px] -right-[0.2px] w-6 h-6 z-40 pointer-events-none">
+                    <div className="absolute bottom-[75px] -right-[0px] w-6 h-6 z-40 pointer-events-none">
                         <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
                             <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                         </svg>
                     </div>
 
                     {/* Concave Curve (Left edge) */}
-                    <div className="absolute  -bottom-0.5 right-[75px] w-6 h-6 z-40 pointer-events-none">
+                    <div className="absolute -bottom-[0.5px] right-[75.5px] w-6 h-6 z-40 pointer-events-none">
                         <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
                             <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
                         </svg>

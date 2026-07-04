@@ -113,20 +113,18 @@ export default function PrintImmegration() {
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative w-[130px] h-[140px] xl:w-[147.4px] xl:h-[159.76px] rounded-[17.5px] cursor-pointer group z-10 hover:z-50"
+                  className="relative w-[130px] h-[140px] xl:w-[147.4px] xl:h-[159.76px] rounded-[17.5px] cursor-pointer group z-10 hover:z-50 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                 >
                   <motion.div
                     variants={face2Variants}
-                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center pb-3 z-0"
+                    className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0 "
                   >
-                    {/* <div className="bg-white text-[#012C60] text-[13px] font-medium px-4 py-1.5 rounded shadow-xl border border-gray-100">
-                    </div> */}
-                     <h2 className="flex justify-center items-center gap-0.5 text-base font-medium text-white"> ORDER  <SquareArrowOutUpRight className="h-3.5 w-3.5" /></h2>
+                     <h2 className="flex justify-center items-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[18px] font-light text-white"> ORDER  <SquareArrowOutUpRight className="h-3.5 3xl:h-4 w-3.5 3xl:w-4 3xl:mb-[1px]" /></h2>
                   </motion.div>
 
                   <motion.div
                     variants={face1Variants}
-                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD] hover:shadow-none "
+                    className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300   "
                   >
                     <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-110">
                       <Image
