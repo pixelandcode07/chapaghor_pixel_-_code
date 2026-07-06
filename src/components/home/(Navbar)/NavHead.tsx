@@ -135,10 +135,7 @@ export default function NavHead() {
 
             <header className=" bg-white sticky top-0 z-50">
                 {/* <div className="container xl:max-w-[80vw] 2xl:max-w-[80vw] mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
-                {/* 2xl:max-w-[90vw] 3xl:max-w-[90vw] 4xl:max-w-[90vw] */}
-                <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[15px]">
-                    {/* w-[calc(100vw-100px)] */}
-                    {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
+                <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[23.5px]">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -199,7 +196,7 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[18px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
@@ -263,29 +260,29 @@ export default function NavHead() {
 
                         <div className="flex items-center justify-between text-[#012C60] lg:gap-1 xl:gap-0 ">
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Wishlist">
                                 <HeartIcon className="size-7" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Vendor/Box">
                                 <VendorBoxIcon className="size-6" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Group Users">
                                 <GroupUsersIcon className="size-7" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_menu'} 
+                                size={"nav-icon"}
+                                variant={'nav_menu'}
                                 title="Menu">
                                 <CustomMenuIcon className="size-6" />
                             </Button>

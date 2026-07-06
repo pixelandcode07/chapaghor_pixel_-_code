@@ -67,7 +67,6 @@ export default function HeroSection() {
                     }}
                     className="w-full"
                 >
-                    {/* ✅ FIX 1: স্ট্রাকচারাল গ্যাপ একদম কমিয়ে দেওয়া হয়েছে */}
                     <CarouselContent className="flex items-center -ml-2 md:-ml-3">
                         {images.map((image, index) => {
                             const isActive = index === current;
@@ -78,10 +77,9 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-3 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[980px] aspect-[967/307] ${
+                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] aspect-[967/307] lg:w-[967px] lg:aspect-[967/307] 3xl:w-[1288px] 3xl:aspect-[1288/400] ${
                                             isActive
                                                 ? "blur-0 opacity-100 scale-100 shadow-2xl z-20"
-                                                // ✅ FIX 2: সাইড ব্যানারের scale-100 করা হয়েছে যাতে গ্যাপ একদম না থাকে, শুধু opacity ও blur দিয়ে আলাদা করা হয়েছে।
                                                 : "blur-[5px] opacity-40 scale-100 z-0"
                                             }`}
                                     >
@@ -100,7 +98,7 @@ export default function HeroSection() {
                 </Carousel>
 
                 {/* ✅ FIX 3: Nav Arrows - Positioned EXACTLY on the middle edges */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] 3xl:w-[1288px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
