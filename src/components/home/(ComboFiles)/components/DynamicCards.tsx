@@ -39,7 +39,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
             </div>
 
             {/* Title */}
-            <div className="relative z-10 text-white font-medium text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
+            <div className="relative z-10 text-white font-medium text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5  border-b border-[#686868] flex justify-between items-center">
                 <h3>
                     {item.title}
                 </h3>
