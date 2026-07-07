@@ -16,10 +16,10 @@ const products = [
     { id: 8, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
     { id: 9, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
     { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 13, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 14, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 13, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+    // { id: 14, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
     // { id: 15, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
     // { id: 16, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
     // { id: 17, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
@@ -29,32 +29,13 @@ const products = [
 
 export default function OurService() {
     return (
-        // <section className="max-w-[60vw] mx-auto w-full bg-white">
-        <section className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto py-3.75 bg-white">
+        <section className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto bg-white xl:pt-[64px] 3xl:pt-[70px] xl:pb-[37px] 3xl:pb-[111px]">
             {/* Title Section */}
-            <div className="pt-[64px] pb-[37px] flex flex-col items-center justify-center">
-                <h4
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '25px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }}
-                    className="text-[#E06045] uppercase mb-2">
+            <div className="pb-[100px] flex flex-col items-center justify-center">
+                <h4 className="text-[#012C60] lg:text-[25px] 3xl:text-[33px] leading-normal font-light uppercase mb-2">
                     Our Service
                 </h4>
-                <h2
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '36px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }}
-                    className="text-[#1C3E6E] xl:text-[36px] 3xl:text-[40px] uppercase">
+                <h2 className="text-[#511B95] xl:text-[36px] 3xl:text-[48px] leading-normal font-normal uppercase">
                     What We Print
                 </h2>
             </div>
@@ -62,13 +43,13 @@ export default function OurService() {
             {/* Image Grid Section */}
             <div className="">
                 {/* Grid with exact requested gaps */}
-                <div className="grid grid-cols-3 md:grid-cols-5 3xl:grid-cols-7 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
                     {products.map((product, index) => {
                         // Determine if the item is in the 1st, 3rd, or 5th column (0-indexed: 0, 2, 4)
-                        const isOddColumn = index % 7 === 0 || index % 7 === 2 || index % 7 === 4;
+                        const isOddColumn = index % 5 === 0 || index % 5 === 2 || index % 5 === 4;
 
                         // Apply padding top for 1st, 3rd, 5th and padding bottom for 2nd, 4th
-                        const staggerClass = isOddColumn ? 'pt-[44px]' : 'pb-[44px]';
+                        const staggerClass = isOddColumn ? 'pt-[61px]' : 'pb-[61px]';
 
                         return (
                             <div key={product.id} className={`${staggerClass} w-full flex justify-center`}>
@@ -81,7 +62,7 @@ export default function OurService() {
             </div>
 
             {/* Button Section */}
-            <div className="flex justify-center mt-12 pb-16">
+            <div className="flex justify-center mt-24.25">
                 <LandingPageBtn />
             </div>
         </section>

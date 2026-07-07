@@ -19,10 +19,11 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
         return () => clearInterval(timer);
     }, [item.images.length]);
     return (
-        <div className="relative group cursor-pointer pt-2">
+        <div className="relative group cursor-pointer">
 
             {/* Background Wrapper with Magic UI BorderBeam */}
-            <div className="absolute top-0 left-0 w-full h-[90%] rounded-[18px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
+            <div className="absolute top-0 left-0 3xl:w-[283px] 3xl:aspect-[283/283] rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
+                {/* w-full h-[90%] */}
                 <BorderBeam
                     duration={6}
                     size={400}
@@ -38,13 +39,13 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
             </div>
 
             {/* Title */}
-            <div className="relative z-10 text-white font-medium text-[16px] 3xl:text-[18px] p-4 mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
+            <div className="relative z-10 text-white font-medium text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5 border-b border-[#686868] flex justify-between items-center">
                 <h3>
                     {item.title}
                 </h3>
                 <h3 className='flex justify-center items-center text-[#FD7034]'>
                     <span>
-                       <TakaIcon className='w-6 h-6' />
+                        <TakaIcon className='w-6 h-6' />
                     </span>
                     {item.price}
                 </h3>
@@ -73,7 +74,7 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
                                     zIndex: isFront ? 30 : isMiddle ? 20 : 10,
                                 }}
                                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                                className="absolute inset-0 rounded-[20px] overflow-hidden bg-[#000000] shadow-lg origin-top"
+                                className="3xl:w-[283px] 3xl:aspect-[283/209] absolute inset-0 rounded-[20px] overflow-hidden bg-[#000000] shadow-lg origin-top"
                             >
                                 <Image
                                     src={src}
@@ -96,27 +97,24 @@ export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
                     {/* --- Static Front Cutout UI (Always sits on top of all images) --- */}
 
                     {/* Bottom-right Cutout Block */}
-                    <div className="absolute bottom-0 right-0 bg-black w-[76px] h-[76px] rounded-tl-[38px] rounded-br-[18px] z-40 pointer-events-none overflow-hidden">
-                        {/* <div className="absolute bottom-0 right-0 bg-black w-[76px] h-[76px] rounded-tl-[38px] z-40 pointer-events-none overflow-hidden"> */}
-                        {/* <BorderBeam duration={8} size={100} /> */}
-                    </div>
+                    <div className="absolute bottom-0 right-0 3xl:bottom-auto 3xl:right-auto 3xl:left-[207px] 3xl:top-[133px] bg-black w-[76px] h-[76px] rounded-tl-[38px] rounded-br-[18px] 3xl:rounded-br-[20px] z-40 pointer-events-none overflow-hidden" />
 
                     {/* Concave Curve (Top edge) */}
-                    <div className="absolute bottom-[75px] -right-[0px] w-6 h-6 z-40 pointer-events-none">
+                    <div className="absolute bottom-[75px] -right-[0px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[109px] 3xl:left-[259px] w-6 h-6 z-40 pointer-events-none">
                         <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
-                            <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
+                            <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
                         </svg>
                     </div>
 
                     {/* Concave Curve (Left edge) */}
-                    <div className="absolute -bottom-[0.5px] right-[75.5px] w-6 h-6 z-40 pointer-events-none">
+                    <div className="absolute -bottom-[0.5px] right-[75.5px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[185.5px] 3xl:left-[183.5px] w-6 h-6 z-40 pointer-events-none">
                         <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
-                            <path d="M0 32 A 32 32 0 0 0 32 0 L 32 32 Z" fill="currentColor" />
+                            <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
                         </svg>
                     </div>
 
                     {/* Orange Arrow Button */}
-                    <div className="absolute bottom-[2px] right-[2px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-50">
+                    <div className="absolute bottom-[2px] right-[2px] 3xl:bottom-auto 3xl:right-auto 3xl:left-[217px] 3xl:top-[143px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-50">
                         <ArrowUpRight size={28} strokeWidth={2} />
                     </div>
 

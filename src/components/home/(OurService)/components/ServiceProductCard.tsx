@@ -19,7 +19,7 @@ export default function ServiceProductCard({ product }) {
     };
     return (
         <div
-            className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-none w-[200px] h-[200px] md:w-[200px] md:h-[200px] lg:w-[260px] lg:h-[265px] xl:w-[300px] xl:h-[310px]"
+            className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-none 3xl:w-[296px] 3xl:aspect-[296/349] "
             style={{
                 // width: '300px',
                 // height: '304px',
@@ -56,11 +56,8 @@ export default function ServiceProductCard({ product }) {
 
             {/* Inside Image Text */}
             <span
-                className="relative z-20 text-white pb-5 drop-shadow-md pointer-events-none"
+                className="relative z-20 text-white text-base xl:text-[18.23px] 3xl:text-[23px] font-bold pb-5 drop-shadow-md pointer-events-none"
                 style={{
-                    fontFamily: 'Rubik, sans-serif',
-                    fontWeight: 700,
-                    fontSize: '18.23px',
                     lineHeight: '150%',
                     textAlign: 'center',
                 }}

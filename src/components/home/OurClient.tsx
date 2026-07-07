@@ -15,18 +15,13 @@ const logos = [
 
 export default function OurClient() {
   return (
-    // সম্পূর্ণ সেকশনের ব্যাকগ্রাউন্ড
     <section className="w-full bg-[#FDF4EE] py-5">
-
-      {/* ন্যাভবারের এলাইনমেন্ট। 
-        এখানে justify-between সরিয়ে শুধু flex রাখা হয়েছে যাতে আমরা নির্দিষ্ট 178px গ্যাপ দিতে পারি।
-      */}
-      <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex items-center justify-center lg:px-2.5 xl:px-0">
+      <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex items-center justify-center">
 
         {/* Left Side: Static Stats & Handshake Icon */}
         <div className="flex items-center gap-4 z-10 shrink-0">
           {/* Icon Container (Handshake + Shield) */}
-          <div className="w-14 h-14 md:w-16 md:h-16 text-[#F05A28]">
+          <div className="w-14 h-14 md:w-16 md:h-16 3xl:w-24.5 3xl:h-24.5 text-[#F05A28]">
             <Image
               src="/images/hand_icon.png"
               alt="Handshake Icon"
@@ -38,19 +33,16 @@ export default function OurClient() {
 
           {/* Text Container */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-2xl md:text-[32px] font-extrabold text-[#F05A28] leading-tight tracking-tight">
+            <h2 className="text-2xl md:text-[32px] 3xl:text-[48px] font-extrabold text-[#F05A28] leading-tight tracking-tight">
               4,200+
             </h2>
-            <p className="text-sm md:text-[17px] text-[#4A5D77] font-medium mt-0.5">
+            <p className="text-sm md:text-[17px] 3xl:text-[25px] text-[#4A5D77] font-medium mt-0.5">
               Our Trusted Clients
             </p>
           </div>
         </div>
 
-        {/* Right Side: Animated Marquee Logos 
-          আপনার চাহিদা অনুযায়ী এখানে lg:ml-[254px] দেওয়া হয়েছে। 
-          মোবাইলের জন্য গ্যাপ ছোট (ml-8) রাখা হয়েছে যাতে ডিজাইন ভেঙে না যায়। 
-        */}
+        {/* Right Side: Animated Marquee Logos */}
         <div
           className="flex-1 overflow-hidden relative ml-8 lg:ml-[254px]"
           style={{
