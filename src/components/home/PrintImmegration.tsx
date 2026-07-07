@@ -103,7 +103,7 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-4 xl:gap-[24px]"
+            className="flex flex-wrap justify-center gap-4 xl:gap-[24px] 3xl:gap-[33px]"
             // w-full 3xl:max-w-[70vw] mx-auto
           >
             {categories.map((category) => (
