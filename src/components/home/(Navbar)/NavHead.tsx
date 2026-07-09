@@ -73,11 +73,11 @@ export default function NavHead() {
           
           background-image:
             linear-gradient(#ffffff, #ffffff),
-            conic-gradient(
-              from 0deg, 
-              #FD7034 var(--nav-sweep),
-              transparent var(--nav-sweep)
-            );
+  conic-gradient(
+    from 0deg,
+    #511902 var(--nav-sweep),
+    transparent var(--nav-sweep)
+  );
           background-origin: border-box;
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
@@ -93,17 +93,36 @@ export default function NavHead() {
         /* ═══════════════════════════════════════════════════════
            Phase 2 — ::after  →  solid orange FILL
         ═══════════════════════════════════════════════════════ */
-        .nav-pill::after {
-          content: '';
-          position: absolute;
-          inset: -1px; 
-          border-radius: 20px;
-          background: #FD7034; 
-          opacity: 0;
-          z-index: 0;
-          pointer-events: none;
-          transition: opacity 0.15s ease 0s;
-        }
+     .nav-pill::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  border: 1px solid #511902;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,120,40,.18) 28%,
+      rgba(255,120,40,.45) 46%,
+      rgba(255,120,40,.12) 58%,
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      #511902 0%,
+      #6b2305 18%,
+      #D4531C 48%,
+      #B84516 68%,
+      #7A2806 84%,
+      #511902 100%
+    );
+
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
 
         .nav-pill:hover::after {
           opacity: 1;
@@ -202,7 +221,7 @@ export default function NavHead() {
                                                     </Link>
                                                 </div>
 
-                                                <span className="absolute -bottom-4.5 left-1/2 -translate-x-1/2 w-full h-[2.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
+                                                <span className="absolute -bottom-4.5 left-1/2 -translate-x-1/2 w-full h-[2.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                 <MegaMenu
                                                     isHovered={isHovered}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Loader2, SquareArrowOutUpRight } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { CustomSquareArrowOutUpRight } from "./(Navbar)/components/custom/icons";
 
 type Category = {
   _id: string;
@@ -120,7 +121,7 @@ export default function PrintImmegration() {
                     variants={face2Variants}
                     className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0 "
                   >
-                     <h2 className="flex justify-center items-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[18px] font-light text-white"> ORDER  <SquareArrowOutUpRight className="h-3.5 3xl:h-4 w-3.5 3xl:w-4 3xl:mb-[1px]" /></h2>
+                     <h2 className="flex justify-center items-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[22px] font-light text-white"> ORDER  <CustomSquareArrowOutUpRight className="size-4.5 ml-1" /></h2>
                   </motion.div>
 
                   <motion.div

@@ -13,7 +13,7 @@ export default function BestSelling() {
         { name: "Photo Frame", src: "/best/frame.jpg" },
         { name: "ID Card", src: "/best/id.jpg" },
         { name: "X-Stand", src: "/best/stand.jpg" },
-        // { name: "X-Stand", src: "/best/stand.jpg" },
+        { name: "X-Stand", src: "/best/stand.jpg" },
         // { name: "X-Stand", src: "/best/stand.jpg" },
     ];
 
@@ -29,7 +29,7 @@ export default function BestSelling() {
                 </div>
 
                 {/* --- Cards Grid --- */}
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 justify-center items-start">
+                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 3xl:grid-cols-6 gap-4 md:gap-5 xl:gap-6.25 justify-center items-start">
                     <DynamicCardsReuse products={products} />
                 </div>
 
