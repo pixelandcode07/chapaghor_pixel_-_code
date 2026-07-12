@@ -6,16 +6,9 @@ import MegaMenuWrapper from './MegaMenuWrapper';
 
 export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
     return (
-        // <motion.div
-        //     initial={{ opacity: 0, y: 15 }}
-        //     animate={{ opacity: 1, y: 0 }}
-        //     exit={{ opacity: 0, y: 15 }}
-        //     transition={{ duration: 0.2, ease: "easeOut" }}
-        //     className="absolute top-[168%] lg:-left-[480px] xl:-left-[443px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-28 lg:pl-[80px] xl:pl-[90px] flex justify-start cursor-default"
-        // >
-         <MegaMenuWrapper className="border-t lg:-left-[480px] xl:-left-[500px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-28 lg:pl-[80px] xl:pl-[90px] flex justify-start cursor-default">
+         <MegaMenuWrapper className="border-t lg:-left-[480px] xl:-left-[500px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-12.75 lg:pl-[80px] xl:pl-[57px] flex justify-start cursor-default">
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
-            <div className="grid lg:grid-cols-[repeat(4,200px)] 3xl:grid-cols-[repeat(4,280px)] 3xl:auto-rows-[145px] gap-[8px]">
+            <div className="grid lg:grid-cols-[repeat(4,200px)] 3xl:grid-cols-[repeat(4,274px)] 3xl:auto-rows-[147px] gap-[8px]">
                 {relatedSubCats.map((subCat, i) => {
                     // Index 0: Text Description Card
                     if (i === 0 || i === 6 || i === 9) {
@@ -23,7 +16,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
                             <Link
                                 key={subCat._id}
                                 href={`/category/${category.slug}/${subCat.slug}`}
-                                className="col-span-1 row-span-1 lg:w-[200px] 3xl:w-[280px] 3xl:h-[145px] bg-gray-50 border border-gray-100 rounded-lg p-6 flex flex-col justify-center "
+                                className="col-span-1 row-span-1 lg:w-[200px] 3xl:w-[274px] 3xl:h-[147px] bg-gray-50 border border-gray-100 rounded-lg p-6 flex flex-col justify-center "
                             >
                                 {/* hover:bg-orange-50 transition-colors group */}
                                 <h3 className="text-[#000000] font-normal text-[16px] leading-5">
@@ -35,10 +28,10 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
 
                     // Index 1 to 5: Image Layout Configurations
                     // Added explicit width and height as requested
-                    let gridClass = "col-span-1 row-span-1 lg:w-[200px] 3xl:w-[280px] 3xl:h-[145px]";
+                    let gridClass = "col-span-1 row-span-1 lg:w-[200px] 3xl:w-[274px] 3xl:h-[147px]";
 
-                    if (i === 4) gridClass = "col-span-1 row-span-2 lg:w-[200px] 3xl:w-[280px] 3xl:h-[300px]"; // Tall portrait
-                    if (i === 5) gridClass = "col-span-1 row-span-2 lg:w-[200px] 3xl:w-[280px] 3xl:h-[300px]"; // Tall portrait
+                    if (i === 4) gridClass = "col-span-1 row-span-2 lg:w-[200px] 3xl:w-[274px] 3xl:h-[300px]"; // Tall portrait
+                    if (i === 5) gridClass = "col-span-1 row-span-2 lg:w-[200px] 3xl:w-[274px] 3xl:h-[300px]"; // Tall portrait
 
                     return (
                         <Link
@@ -50,7 +43,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
                                 src={subCat.icon || '/banners/nav-alter.png'}
                                 alt={subCat.name}
                                 fill
-                                sizes="(max-width: 768px) 3100vxl:w, 280px"
+                                sizes="(max-width: 768px) 3100vxl:w, 274px"
                                 // Added `grayscale group-hover:grayscale-0` and updated to `transition-all`
                                 className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
                                 onError={(e) => {
