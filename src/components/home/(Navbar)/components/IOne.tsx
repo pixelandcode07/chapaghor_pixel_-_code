@@ -67,7 +67,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
                 </span>
               </Link>
             ))}
-            <button className="w-full bg-[#FD7034] text-white font-normal cursor-pointer flex items-center justify-center p-0.5 rounded-md">View all <ArrowRight/> </button>
+             <button className="w-full bg-[#FD7034] text-white font-normal cursor-pointer flex items-center justify-center gap-1.5 p-0.5 rounded-md">View all <ArrowRight size={18}/> </button>
             </div>
         </motion.div>
     )
