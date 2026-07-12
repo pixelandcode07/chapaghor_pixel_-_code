@@ -61,6 +61,29 @@ export const CustomMenuIcon = ({ className, ...props }: React.SVGProps<SVGSVGEle
     </svg>
 
 );
+
+export const GraphicIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+  <svg 
+    width="25" 
+    height="27" 
+    viewBox="0 0 25 27" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className={cn("size-5", className)}
+    {...props}
+  >
+    <rect width="24.5405" height="26.4907" fill="url(#pattern0_1004_288)"/>
+    <defs>
+      <pattern id="pattern0_1004_288" patternContentUnits="objectBoundingBox" width="1" height="1">
+        {/* Changed xlink:href to xlinkHref */}
+        <use xlinkHref="#image0_1004_288" transform="scale(0.000703235 0.000651466)"/>
+      </pattern>
+    </defs>
+  </svg>
+);
+
+
+
 export const CustomSquareArrowOutUpRight = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
     <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
         className={cn("size-5", className)}

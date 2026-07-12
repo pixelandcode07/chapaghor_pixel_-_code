@@ -28,12 +28,12 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
                 className="block break-inside-avoid font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#012C60] hover:text-[#F05A28] whitespace-nowrap group relative w-full overflow-hidden "
               >
                 {/* FRONT OF BUTTON */}
-                <span className="relative flex h-full w-full items-start text-[#012C60] transition-all duration-500 [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)]">
+                <span className="relative flex h-full w-full items-start text-[#012C60] transition-all duration-200 [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)]">
                   {subCat.name}
                 </span>
 
                 {/* BACK OF BUTTON */}
-                <span className="absolute left-0 top-0 flex h-full w-full items-start text-[#012C60] opacity-0 transition-all duration-500 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)]">
+                <span className="absolute left-0 top-0 flex h-full w-full items-start text-[#012C60] opacity-0 transition-all duration-200 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)]">
                   {subCat.name}
                 </span>
               </Link>

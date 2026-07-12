@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 
-import { useState } from "react";
-import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
+// import { useState } from "react";
+// import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
 import OurClient from "@/components/home/OurClient";
 import BestSelling from "@/components/home/(BestSellingFiles)/BestSelling";
@@ -13,18 +13,18 @@ import Footer from "@/components/home/Footer";
 import PrintImmegration from "@/components/home/PrintImmegration";
 import OurService from "@/components/home/(OurService)/OurService";
 import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
+import GraphicResourcesButton from "@/components/home/GraphicResourcesButton";
 
 export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  // const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
     <main className=" flex flex-col relative">
-
       {/* Modal Logic */}
       {/* {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
       )} */}
-
+      <GraphicResourcesButton />
       <NavHead />
       <PrintImmegration />
       <HeroSection />

@@ -136,6 +136,7 @@ export default function NavHead() {
           position: relative;
           z-index: 10;
           display: inline-flex;
+          font-family: Helvetica Neue;
           align-items: center;
           color: #012C60; 
           text-decoration: none;
@@ -215,13 +216,13 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21px]  tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
                                                 </div>
 
-                                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[0.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
+                                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[1.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                 <MegaMenu
                                                     isHovered={isHovered}
