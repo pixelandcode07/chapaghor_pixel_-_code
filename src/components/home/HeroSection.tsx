@@ -79,9 +79,9 @@ export default function HeroSection() {
                                     <div
                                         className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] aspect-[967/307] lg:w-[967px] lg:aspect-[967/307] 3xl:w-[1288px] 3xl:aspect-[1288/400] ${
                                             isActive
-                                                ? "blur-0 opacity-100 scale-100 shadow-2xl z-20"
+                                                ? "blur-0 opacity-100 scale-100 z-20"
                                                 : "blur-[5px] opacity-40 scale-100 z-0"
-                                            }`}
+                                        }`}
                                     >
                                         <Image
                                             src={image.src}
@@ -97,7 +97,7 @@ export default function HeroSection() {
                     </CarouselContent>
                 </Carousel>
 
-                {/* ✅ FIX 3: Nav Arrows - Positioned EXACTLY on the middle edges */}
+                {/* Nav Arrows - Positioned EXACTLY on the middle edges */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] 3xl:w-[1288px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}

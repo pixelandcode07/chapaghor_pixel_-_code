@@ -1,69 +1,118 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import React, { useState } from 'react'
+type Product = {
+  title: string;
+  imageUrl: string;
+};
 
-export default function ServiceProductCard({ product }) {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+type ServiceProductCardProps = {
+  product: Product;
+};
 
-    // Track mouse movement relative to the card boundaries
-    const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setMousePos({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
-        });
-    };
-    return (
-        <div
-            className="relative overflow-hidden border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl cursor-none 3xl:w-[296px] 3xl:aspect-[296/349] "
-            style={{
-                // width: '300px',
-                // height: '304px',
-                borderRadius: '10px',
-                borderWidth: '1.03px',
-                opacity: 1,
-            }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            onMouseMove={handleMouseMove}
-        >
-            {/* Custom Mouse Pointer (Arrow) */}
-            <div
-                className={`absolute z-50 pointer-events-none flex items-center justify-center w-12 h-12 bg-black backdrop-blur-sm rounded-full border border-white/50 transition-opacity duration-300 shadow-lg ${isHovering ? 'opacity-100' : 'opacity-0'}`}
-                style={{
-                    left: mousePos.x,
-                    top: mousePos.y,
-                    transform: 'translate(-50%, -50%)',
-                }}
-            >
-                <ArrowRight className="text-white" />
-            </div>
+export default function ServiceProductCard({
+  product,
+}: ServiceProductCardProps) {
+  const [isHovering, setIsHovering] = useState(false);
 
-            {/* Product Image */}
-            <Image
-                src={product.imageUrl}
-                alt={product.title}
-                fill
-                className="absolute inset-0 w-full h-full object-cover z-0"
-            />
+  // Motion values (no React re-render)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-            {/* Gradient Overlay for Text Readability */}
-            <div className="absolute top-36 inset-0 bg-linear-to-t from-[#FF6633] via-[#EA4335] to-transparent z-10 opacity-90" />
+  // Smooth spring animation
+  const springX = useSpring(mouseX, {
+    stiffness: 250,
+    damping: 22,
+    mass: 0.4,
+  });
 
-            {/* Inside Image Text */}
-            <span
-                className="relative z-20 text-white text-base xl:text-[18.23px] 3xl:text-[23px] font-bold pb-5 drop-shadow-md pointer-events-none"
-                style={{
-                    lineHeight: '150%',
-                    textAlign: 'center',
-                }}
-            >
-                {product.title}
-            </span>
+  const springY = useSpring(mouseY, {
+    stiffness: 250,
+    damping: 22,
+    mass: 0.4,
+  });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+
+    // Hide global cursor
+    window.dispatchEvent(new Event("hide-custom-cursor"));
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+
+    // Show global cursor
+    window.dispatchEvent(new Event("show-custom-cursor"));
+  };
+
+  return (
+    <div
+      className="relative overflow-visible border border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 hover:scale-105 hover:shadow-xl cursor-none 3xl:w-[267px] 3xl:aspect-[267/304]"
+      style={{
+        borderRadius: "10px",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Custom Arrow Cursor */}
+      <motion.div
+        style={{
+          x: springX,
+          y: springY,
+        }}
+        animate={{
+          opacity: isHovering ? 1 : 0,
+          scale: isHovering ? 1 : 0.6,
+        }}
+        transition={{
+          opacity: { duration: 0.15 },
+          scale: { duration: 0.2 },
+        }}
+        className="pointer-events-none absolute left-0 top-0 z-50
+             h-14 w-14
+             -ml-7 -mt-7
+             flex items-center justify-center
+             rounded-full bg-black shadow-xl"
+      >
+        <ArrowRight className="text-white" size={24} strokeWidth={2.5} />
+      </motion.div>
+
+      {/* Image Wrapper */}
+      <div className="relative h-full w-full overflow-hidden rounded-[10px]">
+        {/* Image */}
+        <Image
+          src={product.imageUrl}
+          alt={product.title}
+          fill
+          className="object-cover"
+        />
+
+        {/* Gradient */}
+        <div className="absolute inset-x-0 bottom-0 top-36 z-10 bg-gradient-to-t from-[#FF6633] via-[#EA4335] to-transparent" />
+
+        {/* Title */}
+        <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center">
+          <span
+            className="pointer-events-none text-center text-base font-bold text-white drop-shadow-md xl:text-[18px] 3xl:text-[21px]"
+            style={{ lineHeight: "150%" }}
+          >
+            {product.title}
+          </span>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
