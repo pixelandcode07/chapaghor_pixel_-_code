@@ -221,7 +221,7 @@ export default function NavHead() {
                                                     </Link>
                                                 </div>
 
-                                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[2.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
+                                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[0.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                 <MegaMenu
                                                     isHovered={isHovered}
