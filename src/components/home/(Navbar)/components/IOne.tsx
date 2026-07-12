@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
+import { ArrowRight } from "lucide-react";
 
 export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
     return (
@@ -10,7 +11,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[168%] lg:-left-48 xl:-left-64 w-[1600px] lg:h-[380px] xl:h-[485px] bg-white shadow-[0px_4px_15px_7px_#0000001C] pt-7.5 lg:pl-12 xl:pl-20 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+            className="absolute top-[168%] lg:-left-48 xl:-left-64 w-[1600px] lg:h-[380px] xl:h-[485px] bg-white pt-7.5 lg:pl-12 xl:pl-20 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
         >
             {/* Left: Image Cards */}
             <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-5 flex-1 justify-between pl-5">
@@ -50,14 +51,23 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
             {/* Right: Text List */}
             <div className="w-[200px] flex flex-col gap-3 border-l border-gray-100 lg:pl-4 xl:pl-8 shrink-0 py-2">
                 {relatedSubCats.map((subCat) => (
-                    <Link
-                        key={subCat._id}
-                        href={`/category/${category.slug}/${subCat.slug}`}
-                        className="text-[14px] text-[#012C60] font-normal hover:text-[#F05A28] transition-colors whitespace-nowrap"
-                    >
-                        {subCat.name}
-                    </Link>
-                ))}
+              <Link
+                key={subCat._id}
+                href={`/category/${category.slug}/${subCat.slug}`}
+                className="block break-inside-avoid font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#012C60] hover:text-[#F05A28] whitespace-nowrap group relative w-full overflow-hidden "
+              >
+                {/* FRONT OF BUTTON */}
+                <span className="relative flex h-full w-full items-start text-[#012C60] transition-all duration-500 [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)]">
+                  {subCat.name}
+                </span>
+
+                {/* BACK OF BUTTON */}
+                <span className="absolute left-0 top-0 flex h-full w-full items-start text-[#012C60] opacity-0 transition-all duration-500 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)]">
+                  {subCat.name}
+                </span>
+              </Link>
+            ))}
+            <button className="w-full bg-[#FD7034] text-white font-normal cursor-pointer flex items-center justify-center p-0.5 rounded-md">View all <ArrowRight/> </button>
             </div>
         </motion.div>
     )
