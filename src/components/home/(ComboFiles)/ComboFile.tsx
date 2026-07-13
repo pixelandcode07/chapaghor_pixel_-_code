@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import DynamicCards from './components/DynamicCards';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 // Data array now holds 3 images per card for the stacked rotation
 export const comboData = [
@@ -33,12 +33,12 @@ export default function Combo() {
             </div>
 
             {/* Main Content Container */}
-            <div className="relative z-10 w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto px-1 md:px-15 xl:px-25 pt-[52px] pb-[83px]">
+            <div className="relative z-10 w-full md:max-w-[90vw] 3xl:max-w-[78.80vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto  pt-[69px] pb-[115px]">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10">
                     <div className="flex gap-2.5">
-                        <h1 className="text-2xl md:text-[28px] lg:text-[38px] xl:text-[45px] 3xl:text-[47px] font-normal text-white leading-tight tracking-wide">
+                        <h1 className="text-2xl md:text-[28px] lg:text-[38px] xl:text-[45px] 3xl:text-[60px] font-normal text-white leading-tight tracking-wide">
                             Exclusive Combo <span className="text-[#F05A28]">Deals</span>
                         </h1>
                     </div>
@@ -46,13 +46,13 @@ export default function Combo() {
                         style={{
                             letterSpacing: '1.3px'
                         }}
-                        className="text-white lg:text-[16px] xl:text-[22px] font-light leading-relaxed cursor-pointer flex justify-center items-center">
+                        className="text-white lg:text-[16px] xl:text-[22px] 3xl:text-[29px] font-light leading-relaxed cursor-pointer flex justify-center items-center">
                         View All<ArrowRight className="w-5 h-5 ml-2" />
                     </button>
                 </div>
 
                 {/* Cards Grid Section */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4.5">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4.5 3xl:gap-6.25">
                     {comboData.map((item) => (
                         <DynamicCards key={item.id} item={item} />
                     ))}

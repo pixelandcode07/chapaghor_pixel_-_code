@@ -73,11 +73,11 @@ export default function NavHead() {
           
           background-image:
             linear-gradient(#ffffff, #ffffff),
-            conic-gradient(
-              from 0deg, 
-              #FD7034 var(--nav-sweep),
-              transparent var(--nav-sweep)
-            );
+  conic-gradient(
+    from 0deg,
+    #511902 var(--nav-sweep),
+    transparent var(--nav-sweep)
+  );
           background-origin: border-box;
           background-clip: padding-box, border-box;
           --nav-sweep: 0%;
@@ -93,17 +93,36 @@ export default function NavHead() {
         /* ═══════════════════════════════════════════════════════
            Phase 2 — ::after  →  solid orange FILL
         ═══════════════════════════════════════════════════════ */
-        .nav-pill::after {
-          content: '';
-          position: absolute;
-          inset: -1px; 
-          border-radius: 20px;
-          background: #FD7034; 
-          opacity: 0;
-          z-index: 0;
-          pointer-events: none;
-          transition: opacity 0.15s ease 0s;
-        }
+     .nav-pill::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  border: 1px solid #511902;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,120,40,.18) 28%,
+      rgba(255,120,40,.45) 46%,
+      rgba(255,120,40,.12) 58%,
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      #511902 0%,
+      #6b2305 18%,
+      #D4531C 48%,
+      #B84516 68%,
+      #7A2806 84%,
+      #511902 100%
+    );
+
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
 
         .nav-pill:hover::after {
           opacity: 1;
@@ -117,6 +136,7 @@ export default function NavHead() {
           position: relative;
           z-index: 10;
           display: inline-flex;
+          font-family: Helvetica Neue;
           align-items: center;
           color: #012C60; 
           text-decoration: none;
@@ -135,10 +155,7 @@ export default function NavHead() {
 
             <header className=" bg-white sticky top-0 z-50">
                 {/* <div className="container xl:max-w-[80vw] 2xl:max-w-[80vw] mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
-                {/* 2xl:max-w-[90vw] 3xl:max-w-[90vw] 4xl:max-w-[90vw] */}
-                <div className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[15px]">
-                    {/* w-[calc(100vw-100px)] */}
-                    {/* <div className="w-full py-[15px] px-4 md:px-10 xl:px-[100px] flex justify-between items-center"> */}
+                <div className=" w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[23.5px]">
 
                     {/* ── Logo ── */}
                     <div className="shrink-0 flex items-center justify-start">
@@ -199,13 +216,13 @@ export default function NavHead() {
                                                 <div className="nav-pill flex items-center justify-center">
                                                     <Link
                                                         href={`/category/${category.slug}`}
-                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[18px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                                                        className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21px]  tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
                                                         <span>{category.name}</span>
                                                     </Link>
                                                 </div>
 
-                                                <span className="absolute -bottom-4.5 left-1/2 -translate-x-1/2 w-full h-[2.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
+                                                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[1.5px] bg-[#511902] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
 
                                                 <MegaMenu
                                                     isHovered={isHovered}
@@ -263,29 +280,29 @@ export default function NavHead() {
 
                         <div className="flex items-center justify-between text-[#012C60] lg:gap-1 xl:gap-0 ">
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Wishlist">
                                 <HeartIcon className="size-7" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Vendor/Box">
                                 <VendorBoxIcon className="size-6" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_user'} 
+                                size={"nav-icon"}
+                                variant={'nav_user'}
                                 title="Group Users">
                                 <GroupUsersIcon className="size-7" />
                             </Button>
 
                             <Button
-                                size={"nav-icon"} 
-                                variant={'nav_menu'} 
+                                size={"nav-icon"}
+                                variant={'nav_menu'}
                                 title="Menu">
                                 <CustomMenuIcon className="size-6" />
                             </Button>

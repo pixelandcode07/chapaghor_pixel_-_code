@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Loader2, SquareArrowOutUpRight } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { CustomSquareArrowOutUpRight } from "./(Navbar)/components/custom/icons";
 
 type Category = {
   _id: string;
@@ -91,10 +92,10 @@ export default function PrintImmegration() {
 
   return (
     <div className="w-full bg-[#FFFFFF]">
-      <div className="w-full pt-10 pb-[65px] relative flex flex-col items-center">
+      <div className="w-full pt-[55px] pb-[86px] relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
 
-          <h1 className="lg:text-3xl 3xl:text-[40px] font-light text-[#012C60] mb-10 text-center tracking-normal">
+          <h1 className="lg:text-3xl 3xl:text-[48px] font-light text-[#012C60] mb-[60px] text-center tracking-normal">
             PRINT YOUR IMAGINATION
           </h1>
 
@@ -103,7 +104,8 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[900px] xl:w-[1006px] flex flex-wrap justify-center gap-4 xl:gap-[24px]"
+            className="flex flex-wrap justify-center gap-4 xl:gap-[24px] 3xl:gap-[33px]"
+            // w-full 3xl:max-w-[70vw] mx-auto
           >
             {categories.map((category) => (
               <button
@@ -113,20 +115,20 @@ export default function PrintImmegration() {
                 <motion.div
                   variants={itemVariants}
                   whileHover="hover"
-                  className="relative w-[130px] h-[140px] xl:w-[147.4px] xl:h-[159.76px] rounded-[17.5px] cursor-pointer group z-10 hover:z-50 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
+                  className="relative w-[130px] h-[140px] xl:w-[147.4px] xl:h-[159.76px] 3xl:w-[196.39px] 3xl:h-[212.87px] rounded-[17.5px] 3xl:rounded-[23.35px] cursor-pointer group z-10 hover:z-50 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                 >
                   <motion.div
                     variants={face2Variants}
                     className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0 "
                   >
-                     <h2 className="flex justify-center items-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[18px] font-light text-white"> ORDER  <SquareArrowOutUpRight className="h-3.5 3xl:h-4 w-3.5 3xl:w-4 3xl:mb-[1px]" /></h2>
+                     <h2 className="flex justify-center items-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white"> ORDER  <CustomSquareArrowOutUpRight className="size-4.5 ml-1" /></h2>
                   </motion.div>
 
                   <motion.div
                     variants={face1Variants}
                     className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300   "
                   >
-                    <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-110">
+                    <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] 3xl:w-[107px] 3xl:h-[107px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
                       <Image
                         src={category.icon || "/icons/card.svg"}
                         alt={`${category.name} icon`}
@@ -134,7 +136,7 @@ export default function PrintImmegration() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm xl:text-[16px] 3xl:text-[18px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
+                    <span className="text-sm xl:text-[16px] 3xl:text-[22px] whitespace-nowrap font-light text-[#012C60] text-center tracking-normal">
                       {category.name}
                     </span>
                   </motion.div>

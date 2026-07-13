@@ -1,3 +1,75 @@
+// // import { KineticText } from "@/components/ui/kinetic-text";
+// // import { CoolMode } from "@/components/ui/cool-mode";
+// import { Button } from "@/components/ui/button";
+// import ServiceProductCard from "./components/ServiceProductCard";
+// import Link from "next/dist/client/link";
+// import LandingPageBtn from "../LandingPageBtn";
+
+// const products = [
+//     { id: 1, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
+//     { id: 2, title: 'Letterhead', imageUrl: '/our-service/letter.jpg' },
+//     { id: 3, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
+//     { id: 4, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
+//     { id: 5, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     { id: 6, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
+//     { id: 7, title: 'Letterhead', imageUrl: '/our-service/letter.jpg' },
+//     { id: 8, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
+//     { id: 9, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
+//     { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     // { id: 13, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     // { id: 14, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     // { id: 15, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     // { id: 16, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+//     // { id: 17, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+// ];
+
+
+
+// export default function OurService() {
+//     return (
+//         <section className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto bg-white xl:pt-[64px] 3xl:pt-[70px] xl:pb-[37px] 3xl:pb-[111px]">
+//             {/* Title Section */}
+//             <div className="pb-[100px] flex flex-col items-center justify-center">
+//                 <h4 className="text-[#012C60] lg:text-[25px] 3xl:text-[33px] leading-normal font-light uppercase mb-2">
+//                     Our Service
+//                 </h4>
+//                 <h2 className="text-[#511B95] xl:text-[36px] 3xl:text-[48px] leading-normal font-normal uppercase">
+//                     What We Print
+//                 </h2>
+//             </div>
+
+//             {/* Image Grid Section */}
+//             <div className="">
+//                 {/* Grid with exact requested gaps */}
+//                 <div className="grid grid-cols-3 md:grid-cols-5 3xl:grid-cols-6 gap-x-[10px] gap-y-[20px] lg:gap-x-[23px] lg:gap-y-[28px] justify-items-center items-start">
+//                     {products.map((product, index) => {
+//                         // Determine if the item is in the 1st, 3rd, or 5th column (0-indexed: 0, 2, 4)
+//                         const isOddColumn = index % 6 === 0 || index % 6 === 2 || index % 6 === 4;
+
+//                         // Apply padding top for 1st, 3rd, 5th and padding bottom for 2nd, 4th
+//                         const staggerClass = isOddColumn ? 'pb-[53px]' : 'pt-[53px]';
+
+//                         return (
+//                             <div key={product.id} className={`${staggerClass} w-full flex justify-center`}>
+//                                 {/* 2. Render the isolated ProductCard component */}
+//                                 <ServiceProductCard product={product} />
+//                             </div>
+//                         );
+//                     })}
+//                 </div>
+//             </div>
+
+//             {/* Button Section */}
+//             <div className="flex justify-center mt-24.25">
+//                 <LandingPageBtn />
+//             </div>
+//         </section>
+//     );
+// }
+
+
 // import { KineticText } from "@/components/ui/kinetic-text";
 // import { CoolMode } from "@/components/ui/cool-mode";
 import { Button } from "@/components/ui/button";
@@ -18,43 +90,17 @@ const products = [
     { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
     { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
     { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 13, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    { id: 14, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    // { id: 15, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    // { id: 16, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
-    // { id: 17, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
 ];
-
-
 
 export default function OurService() {
     return (
-        // <section className="max-w-[60vw] mx-auto w-full bg-white">
-        <section className="w-full md:max-w-[90vw]  7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto py-3.75 bg-white">
+        <section className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto bg-white xl:pt-[64px] 3xl:pt-[70px] xl:pb-[37px] 3xl:pb-[111px]">
             {/* Title Section */}
-            <div className="pt-[64px] pb-[37px] flex flex-col items-center justify-center">
-                <h4
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '25px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }}
-                    className="text-[#E06045] uppercase mb-2">
+            <div className="pb-[100px] flex flex-col items-center justify-center">
+                <h4 className="text-[#012C60] lg:text-[25px] 3xl:text-[33px] leading-normal font-light uppercase mb-2">
                     Our Service
                 </h4>
-                <h2
-                    style={{
-                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                        fontWeight: 300,
-                        fontSize: '36px',
-                        lineHeight: '100%',
-                        textAlign: 'center',
-                        verticalAlign: 'middle',
-                    }}
-                    className="text-[#1C3E6E] xl:text-[36px] 3xl:text-[40px] uppercase">
+                <h2 className="text-[#511B95] xl:text-[36px] 3xl:text-[48px] leading-normal font-normal uppercase">
                     What We Print
                 </h2>
             </div>
@@ -62,17 +108,18 @@ export default function OurService() {
             {/* Image Grid Section */}
             <div className="">
                 {/* Grid with exact requested gaps */}
-                <div className="grid grid-cols-3 md:grid-cols-5 3xl:grid-cols-7 gap-x-[10px] gap-y-[20px] lg:gap-x-[30px] lg:gap-y-[40px] justify-items-center items-start">
+                <div className="grid grid-cols-3 md:grid-cols-5 3xl:grid-cols-6 gap-x-[10px] gap-y-[20px] lg:gap-x-[23px] lg:gap-y-[28px] justify-items-center items-start">
                     {products.map((product, index) => {
-                        // Determine if the item is in the 1st, 3rd, or 5th column (0-indexed: 0, 2, 4)
-                        const isOddColumn = index % 7 === 0 || index % 7 === 2 || index % 7 === 4;
+                        // Check if the item is in an odd column (1, 3, 5...)
+                        const isOddIndex = index % 2 !== 0;
 
-                        // Apply padding top for 1st, 3rd, 5th and padding bottom for 2nd, 4th
-                        const staggerClass = isOddColumn ? 'pt-[44px]' : 'pb-[44px]';
+                        // Use translate-y to shift ONLY alternate columns down
+                        // This prevents grid rows from stretching and eliminates dead padding space
+                        const staggerClass = isOddIndex ? 'translate-y-[35px] lg:translate-y-[45px]' : '';
 
                         return (
-                            <div key={product.id} className={`${staggerClass} w-full flex justify-center`}>
-                                {/* 2. Render the isolated ProductCard component */}
+                            <div key={product.id} className={`${staggerClass} w-full flex justify-center transition-transform duration-300`}>
+                                {/* Render the isolated ProductCard component */}
                                 <ServiceProductCard product={product} />
                             </div>
                         );
@@ -81,7 +128,7 @@ export default function OurService() {
             </div>
 
             {/* Button Section */}
-            <div className="flex justify-center mt-12 pb-16">
+            <div className="flex justify-center mt-24.25">
                 <LandingPageBtn />
             </div>
         </section>

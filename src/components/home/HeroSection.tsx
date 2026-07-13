@@ -13,12 +13,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 const images = [
-    { id: 1, src: "/banners/home-banner3.png", alt: "Cama de casal mariah banner" },
-    { id: 2, src: "/banners/home-banner4.png", alt: "Frete grátis banner" },
-    { id: 3, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 4, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 5, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
-    { id: 6, src: "/banners/home-banner5.png", alt: "Receba suas compras banner" },
+    { id: 1, src: "/banners/Banner-Design.gif", alt: "Cama de casal mariah banner" },
+    { id: 2, src: "/banners/Banner-Design.gif", alt: "Frete grátis banner" },
+    { id: 3, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 4, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 5, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
+    { id: 6, src: "/banners/Banner-Design.gif", alt: "Receba suas compras banner" },
 ];
 
 export default function HeroSection() {
@@ -56,7 +56,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full bg-white pb-12 relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-[84px] relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
@@ -67,7 +67,6 @@ export default function HeroSection() {
                     }}
                     className="w-full"
                 >
-                    {/* ✅ FIX 1: স্ট্রাকচারাল গ্যাপ একদম কমিয়ে দেওয়া হয়েছে */}
                     <CarouselContent className="flex items-center -ml-2 md:-ml-3">
                         {images.map((image, index) => {
                             const isActive = index === current;
@@ -78,19 +77,18 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-3 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[980px] aspect-[967/307] ${
+                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-[92vw] sm:w-[85vw] md:w-[75vw] aspect-[967/307] lg:w-[967px] lg:aspect-[967/307] 3xl:w-[1288px] 3xl:aspect-[1288/400] ${
                                             isActive
-                                                ? "blur-0 opacity-100 scale-100 shadow-2xl z-20"
-                                                // ✅ FIX 2: সাইড ব্যানারের scale-100 করা হয়েছে যাতে গ্যাপ একদম না থাকে, শুধু opacity ও blur দিয়ে আলাদা করা হয়েছে।
+                                                ? "blur-0 opacity-100 scale-100 z-20"
                                                 : "blur-[5px] opacity-40 scale-100 z-0"
-                                            }`}
+                                        }`}
                                     >
                                         <Image
                                             src={image.src}
                                             alt={image.alt}
                                             fill
                                             priority={index === 0}
-                                            className="object-cover pointer-events-none"
+                                            className="object-fill pointer-events-none"
                                         />
                                     </div>
                                 </CarouselItem>
@@ -99,14 +97,14 @@ export default function HeroSection() {
                     </CarouselContent>
                 </Carousel>
 
-                {/* ✅ FIX 3: Nav Arrows - Positioned EXACTLY on the middle edges */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                {/* Nav Arrows - Positioned EXACTLY on the middle edges */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] 3xl:w-[1288px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6  mb-5"
+                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6 mb-8"
                         onClick={() => api?.scrollPrev()}
                     >
                         <ChevronLeft className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
@@ -116,7 +114,7 @@ export default function HeroSection() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7 mb-5"
+                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7 mb-8"
                         onClick={() => api?.scrollNext()}
                     >
                         <ChevronRight className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
@@ -124,7 +122,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center items-center gap-2 mt-4">
+                <div className="flex justify-center items-center gap-2 mt-8">
                     {Array.from({ length: count }).map((_, index) => {
                         const isActive = index === current;
                         return (
