@@ -56,7 +56,7 @@ export default function Footer() {
 
             {/* ================= MAIN FOOTER SECTION ================= */}
             <footer className=" bg-gradient-to-r from-[#79301A] via-[#151515] to-[#762F1A] text-white mt-56 pt-24 pb-8 relative overflow-hidden">
-                 {/* <div className="absolute inset-0 " /> */}
+                 
 
                 {/* Background Watermark Text */}
                 <div className="absolute -bottom-15 left-15 max-w-[90vw] mx-auto flex justify-center items-center pointer-events-none select-none">
