@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
 import MegaMenuWrapper from "./MegaMenuWrapper";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
   return (
@@ -28,7 +28,7 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
                 className="group relative flex items-start gap-2 break-inside-avoid overflow-hidden whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#012C60] hover:text-[#F05A28] space-y-2"
               >
                 {/* Fixed Icon */}
-                <MoveRight size={18} className="mt-0.5 shrink-0" />
+                <ArrowRight size={18} className="mt-0.5 shrink-0" />
 
                 {/* Animated Text Container */}
                 <div className="relative overflow-hidden h-6 ">
@@ -46,8 +46,7 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
             ))}
             <button className="flex items-start gap-2 break-inside-avoid overflow-hidden whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer">
               {/* bg-[#FD7034] */}
-              <MoveRight size={18} className="mt-0.5 shrink-0" /> View all 
-              {/* <ArrowRight size={18} />{" "} */}
+              <ArrowRight size={18} className="mt-0.5 shrink-0" /> View all
             </button>
           </div>
         </div>
