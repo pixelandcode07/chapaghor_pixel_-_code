@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Loader2, Mic, Heart } from "lucide-react";
+import { Search, Loader2, Mic } from "lucide-react";
 import { motion } from "framer-motion";
 import SearchOverlay from "../SearchOverlay";
 import MegaMenu from "./components/MegaMenu";
@@ -218,7 +218,7 @@ export default function NavHead() {
                                                         href={`/category/${category.slug}`}
                                                         className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21px]  tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
                                                     >
-                                                        <span>{category.name}</span>
+                                                       <span>{category.name}</span>
                                                     </Link>
                                                 </div>
 
