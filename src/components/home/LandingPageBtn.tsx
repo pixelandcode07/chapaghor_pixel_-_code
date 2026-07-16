@@ -33,7 +33,7 @@ export default function LandingPageBtn() {
   return (
     <Link
       href="/view-all-product"
-      className="group inline-flex items-center justify-center gap-2 bg-orange-500 text-white px-6 py-3 3xl:px-[42px] 3xl:py-[21px] border border-orange-500 border-solid rounded-[10px] font-medium transition-all duration-[400ms] ease-in-out hover:bg-orange-400 hover:border-white hover:text-white shadow-sm cursor-pointer"
+      className="group inline-flex items-center justify-center gap-2 bg-[#FFE0D085] text-[#FD7034] px-6 py-3 3xl:px-[42px] 3xl:py-[21px] border border-[#FD7034] border-solid rounded-[10px] font-medium transition-all duration-[400ms] ease-in-out hover:bg-orange-400 hover:border-white hover:text-white shadow-sm cursor-pointer"
     >
       <span className="text-[21px]">View All Products</span>
 

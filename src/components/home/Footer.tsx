@@ -59,7 +59,7 @@ export default function Footer() {
                  
 
                 {/* Background Watermark Text */}
-                <div className="absolute -bottom-15 left-15 max-w-[90vw] mx-auto flex justify-center items-center pointer-events-none select-none">
+                <div className="absolute -bottom-15 lg: xl md: left-15 max-w-[90vw] mx-auto flex justify-center items-center pointer-events-none select-none">
                     <h1 className="text-[10vw] font-black tracking-widest m-0 leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
                         CHAPAGHOR.COM
                     </h1>
