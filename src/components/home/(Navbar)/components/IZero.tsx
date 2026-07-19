@@ -25,7 +25,7 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
               <Link
                 key={subCat._id}
                 href={`/category/${category.slug}/${subCat.slug}`}
-                className="group relative flex items-start gap-2 break-inside-avoid overflow-hidden whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#012C60] hover:text-[#F05A28] space-y-2"
+                className="group relative flex items-start gap-2 break-inside-avoid overflow-hidden whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#012C60] hover:text-[#F05A28] space-y-3"
               >
                 {/* Fixed Icon */}
                 <ArrowRight size={18} className="mt-0.5 shrink-0" />

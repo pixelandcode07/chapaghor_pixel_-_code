@@ -14,6 +14,7 @@ import PrintImmegration from "@/components/home/PrintImmegration";
 import OurService from "@/components/home/(OurService)/OurService";
 import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
 import GraphicResourcesButton from "@/components/home/GraphicResourcesButton";
+import PromoBanner from "@/components/home/PromoBanner";
 
 export default function HomePage() {
   // const [isModalOpen, setIsModalOpen] = useState(true);
@@ -32,6 +33,7 @@ export default function HomePage() {
       <BestSelling />
       <ComboFile />
       <OurService />
+      <PromoBanner />
       <ChooseUs />
       <HowToOrder />
       <Footer />
