@@ -101,7 +101,7 @@ export default function ServiceProductCard({
         />
 
         {/* Gradient */}
-        <div className="absolute inset-x-0 bottom-0 top-36 z-10 bg-gradient-to-t from-[#FF6633] via-[#EA4335] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 top-48 z-10 bg-gradient-to-t from-[#FF6633] via-[#EA4335] to-transparent" />
 
         {/* Title */}
         <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center">

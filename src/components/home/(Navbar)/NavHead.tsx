@@ -200,9 +200,9 @@ export default function NavHead() {
                         <div className="nav-pill flex items-center justify-center">
                           <Link
                             href={`/category/${category.slug}`}
-                            className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21.32px] font-normal tracking-normal whitespace-nowrap lg:px-0.5 xl:px-2.5"
+                            className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21.32px] font-light whitespace-nowrap  lg:px-0.5 xl:px-2.5"
                           >
-                            <span>{category.name}</span>
+                            <span className="tracking-[0.5px]">{category.name}</span>
                           </Link>
                         </div>
 
