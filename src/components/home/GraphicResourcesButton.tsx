@@ -8,14 +8,14 @@ export default function GraphicResourcesButton() {
       */}
       <a
         href="#graphic-resources"
-        className="group flex flex-col items-center gap-3 bg-[#6E36B4] text-white py-5 px-2.5 rounded-l-[10px] shadow-lg border-l border-t border-b border-white/10 transition-all duration-300  cursor-pointer"
+        className="group flex flex-col items-center gap-3 bg-[#FD7034] text-white py-5 px-2.5 rounded-l-[10px] shadow-lg border-l border-t border-b border-white/10 transition-all duration-300  cursor-pointer"
         // hover:-translate-x-1
         aria-label="Graphic Resources"
       >
         {/* Top Icon */}
         {/* <GraphicIcon/> */}
         <Image
-          src="/nav-logo/graphic.png"
+          src="/nav-logo/graphic2.png"
           alt="Graphic Resources"
           width={25}
           height={27}
