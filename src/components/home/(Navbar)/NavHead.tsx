@@ -15,9 +15,11 @@ import {
   CustomMenuIcon,
   GroupUsersIcon,
   HeartIcon,
+  NotificationIcon,
   VendorBoxIcon,
 } from "./components/custom/icons";
 import { Button } from "@/components/ui/button";
+import NavLinks from "./components/NavLinks";
 
 export default function NavHead() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -139,9 +141,9 @@ export default function NavHead() {
         onClose={() => setIsSearchOpen(false)}
       />
 
-      <header className=" bg-white sticky top-0 z-50">
+      <header className=" bg-white xl:sticky top-0 z-50">
         {/* <div className="container xl:max-w-[80vw] 2xl:max-w-[80vw] mx-auto py-3.75 px-1 md:px-2.5 flex justify-between items-center "> */}
-        <div className=" w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center  py-[23.5px]">
+        <div className=" w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center px-2.25 md:px-0 py-3.5 md:py-3 xl:py-4.25 3xl:py-[23.5px]">
           {/* ── Logo ── */}
           <div className="shrink-0 flex items-center justify-start">
             <Link href="/">
@@ -151,13 +153,13 @@ export default function NavHead() {
                 // fill
                 width={180}
                 height={35}
-                className="object-contain w-[180px] h-[35px] 3xl:w-[200px] 3xl:h-[40px]"
+                className="object-contain w-[157px] h-[29px] md:w-[188px] md:h-[35px] xl:w-[144px] xl:h-[26px] 3xl:w-[200px] 3xl:h-[40px]"
               />
             </Link>
           </div>
 
           {/* ── Category Nav with Framer Motion ── */}
-          <nav className="hidden lg:flex items-center justify-center lg:pl-10.5 xl:pl-[140px]">
+          <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[140px]">
             {isLoading ? (
               <motion.h1
                 initial={{ opacity: 0 }}
@@ -186,103 +188,99 @@ export default function NavHead() {
                   const isHovered = hoveredCategory === category._id;
 
                   return (
-                    <motion.li
-                      variants={{
-                        hidden: { opacity: 0, y: -10 },
-                        visible: { opacity: 1, y: 0 },
-                      }}
-                      key={category._id}
-                      className={`flex items-center justify-center relative ${isHovered ? "z-[99]" : "z-50"}`}
+                    // <></>
+                    <NavLinks
+                    key={category._id}
+                      category={category}
+                      relatedSubCats={relatedSubCats}
+                      index={index}
+                      totalCategories={categories.length}
+                      isHovered={isHovered}
                       onMouseEnter={() => setHoveredCategory(category._id)}
                       onMouseLeave={() => setHoveredCategory(null)}
-                    >
-                      <div className="nav-outer relative h-full flex items-center group/nav">
-                        <div className="nav-pill flex items-center justify-center">
-                          <Link
-                            href={`/category/${category.slug}`}
-                            className="nav-pill-text w-full h-full xl:text-[16px] 3xl:text-[21.32px] font-light whitespace-nowrap  lg:px-0.5 xl:px-2.5"
-                          >
-                            <span className="tracking-[0.5px]">{category.name}</span>
-                          </Link>
-                        </div>
-
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full h-[1.5px] bg-[#FD7034] rounded-full opacity-0 scale-x-0 group-hover/nav:opacity-100 group-hover/nav:scale-x-100 transition-all duration-300 ease-out pointer-events-none" />
-                        {/* #511902  */}
-                        <MegaMenu
-                          isHovered={isHovered}
-                          relatedSubCats={relatedSubCats}
-                          category={category}
-                          index={index}
-                        />
-                      </div>
-
-                      {index !== categories.length - 1 && (
-                        <span className="text-[#012C60] pointer-events-none select-none text-xs lg:px-0.5 xl:px-2">
-                          |
-                        </span>
-                      )}
-                    </motion.li>
+                    />
                   );
                 })}
               </motion.ul>
             )}
           </nav>
 
-          {/* ── Search + Icons ── */}
-          <div className="flex items-center justify-end xl:gap-4 shrink-0">
-            <div
-              onClick={() => setIsSearchOpen(true)}
-              className="hidden md:flex items-center gap-4 xl:gap-6 3xl:gap-8 bg-[#FFFFFF] border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-3.5 pr-2.5 cursor-text hover:border-gray-300 hover:shadow-sm transition-all h-[36px] group"
-            >
-              <span className="text-[14px] 3xl:text-base text-[#9CA3AF] select-none font-normal leading-none">
-                Search
-              </span>
+         {/* ── Search + Icons ── */}
+<div className="flex items-center justify-end gap-0 md:gap-3 xl:gap-4 shrink-0">
+  {/* Search */}
+  <div
+    onClick={() => setIsSearchOpen(true)}
+    className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group"
+  >
+    {/* Hide text only on mobile */}
+    <span className="hidden sm:block text-[14px] 3xl:text-base text-[#9CA3AF] font-normal leading-none select-none">
+      Search
+    </span>
 
-              <div className="flex items-center">
-                <Search
-                  // size={16}
-                  className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
-                  strokeWidth={2}
-                />
+    <div className="flex items-center">
+      <Search
+        className="w-5 h-5 3xl:w-5 3xl:h-5 text-[#012C60] md:text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
+        strokeWidth={2}
+      />
 
-                <div className="h-[18px] w-[1.5px] bg-[#E5E7EB] mx-1.5"></div>
+      <div className="hidden sm:block h-[18px] w-[1.5px] bg-[#E5E7EB] mx-1.5" />
 
-                <Mic
-                  // size={16}
-                  className="w-4 h-4 3xl:w-5 3xl:h-5 text-[#6839A3] cursor-pointer hover:opacity-80 transition-opacity"
-                  strokeWidth={2}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                />
-              </div>
-            </div>
-            {/* px-2.5 size-11 hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer */}
+      <Mic
+        className="hidden sm:block w-4 h-4 3xl:w-5 3xl:h-5 text-[#6839A3] cursor-pointer hover:opacity-80 transition-opacity"
+        strokeWidth={2}
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  </div>
 
-            <div className="flex items-center justify-between text-[#012C60] lg:gap-1 xl:gap-0 ">
-              <Button size={"nav-icon"} variant={"nav_user"} title="Wishlist">
-                <HeartIcon className="size-7" />
-              </Button>
+  {/* Icons */}
+  <div className="flex items-center text-[#012C60] gap-0.5 sm:gap-1">
+    <Button size="nav-icon" variant="nav_user_laptop" title="Wishlist">
+      <HeartIcon className="size-6 sm:size-7" />
+    </Button>
 
-              <Button size={"nav-icon"} variant={"nav_user"} title="Vendor/Box">
-                <VendorBoxIcon className="size-6" />
-              </Button>
+    <Button size="nav-icon" variant="nav_user_laptop" title="Vendor/Box">
+      <VendorBoxIcon className="size-5 sm:size-6" />
+    </Button>
 
-              <Button
-                size={"nav-icon"}
-                variant={"nav_user"}
-                title="Group Users"
-              >
-                <GroupUsersIcon className="size-7" />
-              </Button>
+    <Button size="nav-icon" variant="nav_user_laptop" title="Group Users">
+      <GroupUsersIcon className="size-6 sm:size-7" />
+    </Button>
 
-              <Button size={"nav-icon"} variant={"nav_menu"} title="Menu">
-                <CustomMenuIcon className="size-6" />
-              </Button>
-            </div>
-          </div>
+    <Button size="nav-icon" variant="nav_user_mobile" title="Menu">
+      <NotificationIcon className="size-5 sm:size-6" />
+    </Button>
+    <Button size="nav-icon" variant="nav_menu" title="Menu">
+      <CustomMenuIcon className="size-5 sm:size-6" />
+    </Button>
+  </div>
+</div>
         </div>
       </header>
+      <div className="hidden md:flex xl:hidden md:sticky top-0 z-50 border-y bg-white">
+  <div className="container mx-auto">
+    <ul className="flex items-center justify-center py-2">
+      {categories.map((category, index) => {
+        const relatedSubCats = subCategories.filter(
+          (sub) => sub.category?._id === category._id
+        );
+
+        return (
+          <NavLinks
+            key={category._id}
+            category={category}
+            relatedSubCats={relatedSubCats}
+            index={index}
+            totalCategories={categories.length}
+            isHovered={hoveredCategory === category._id}
+            onMouseEnter={() => setHoveredCategory(category._id)}
+            onMouseLeave={() => setHoveredCategory(null)}
+          />
+        );
+      })}
+    </ul>
+  </div>
+</div>
     </>
   );
 }
