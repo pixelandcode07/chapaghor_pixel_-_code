@@ -92,10 +92,10 @@ export default function PrintImmegration() {
 
   return (
     <div className="w-full bg-[#FFFFFF]">
-      <div className="w-full pt-[55px] pb-[86px] relative flex flex-col items-center">
+      <div className="w-full md:pt-9 xl:pt-13.5 pb-8 xl:pb-13.75 3xl:pb-21.5 relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
 
-          <h1 className="lg:text-3xl 3xl:text-[48px] font-light text-[#012C60] mb-[60px] text-center tracking-normal">
+          <h1 className="text-[23px] md:text-[26px] xl:text-3xl 3xl:text-[48px] font-light text-[#012C60] mb-5.25 md:mb-6.75 xl:mb-9.75 3xl:mb-15 text-center tracking-normal">
             PRINT YOUR IMAGINATION
           </h1>
 
@@ -104,8 +104,7 @@ export default function PrintImmegration() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-4 xl:gap-[24px] 3xl:gap-[33px]"
-            // w-full 3xl:max-w-[70vw] mx-auto
+            className="flex flex-wrap justify-center gap-4 xl:gap-6 3xl:gap-8.25"
           >
             {categories.map((category) => (
               <button
