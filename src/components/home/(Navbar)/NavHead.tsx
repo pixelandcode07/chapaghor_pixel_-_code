@@ -158,7 +158,7 @@ export default function NavHead() {
           </div>
 
           {/* ── Category Nav with Framer Motion ── */}
-          <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[140px]">
+          <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[140px] ">
             {isLoading ? (
               <motion.h1
                 initial={{ opacity: 0 }}
@@ -178,7 +178,7 @@ export default function NavHead() {
                     transition: { staggerChildren: 0.05 },
                   },
                 }}
-                className="flex items-center"
+                className="flex items-center "
               >
                 {categories.map((category, index) => {
                   const relatedSubCats = subCategories.filter(

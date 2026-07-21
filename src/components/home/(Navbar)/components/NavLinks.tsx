@@ -19,7 +19,7 @@ export default function NavLinks({
         hidden: { opacity: 0, y: -10 },
         visible: { opacity: 1, y: 0 },
       }}
-      className={`relative flex items-center justify-center ${
+      className={` relative flex items-center justify-center ${
         isHovered ? "z-99" : "z-50"
       }`}
       onMouseEnter={onMouseEnter}
