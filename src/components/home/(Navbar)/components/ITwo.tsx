@@ -85,13 +85,13 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
     <MegaMenuWrapper className="border-t lg:translate-x-[-15%] xl:translate-x-[-44%] lg:w-[1500px] xl:w-[2000px] 3xl_v2:w-[2400px] 4xl:w-[3500px] 10xl:w-[6000px] lg:h-[255px] xl:h-[320px] flex justify-center py-[40px]">
       <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto h-full flex items-stretch">
         {/* Image */}
-        <div className="w-44 h-full 3xl:w-[431px] shrink-0 flex items-center justify-center">
+        <div className="w-44 h-full 3xl:w-107.75 shrink-0  flex items-center justify-center">
           <Image
-            src="/nav-logo/stationary.png"
+            src="/nav-logo/nav.jpg"
             alt="Category 2 Machine"
             width={431}
             height={271}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-[21px]"
           />
         </div>
 
@@ -104,19 +104,19 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
                   <Link
                     key={subCat._id}
                     href={`/category/${category.slug}/${subCat.slug}`}
-                    className="group relative flex items-start gap-4 whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 tracking-[1px]"
+                    className="group relative flex items-start gap-[6.5px] whitespace-nowrap font-normal text-[16px] 3xl:text-[18px] leading-6.25 tracking-[1px]"
                   >
                     <ArrowRight
                       size={18}
-                      className="mt-0.5 shrink-0 text-gray-500"
+                      className="mt-0.5 shrink-0 text-[#757575]"
                     />
 
                     <div className="relative overflow-hidden h-6">
-                      <span className="block transition-all tracking-[0.5px] duration-200 [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)] text-[#0a0a0ab3]">
+                      <span className="block transition-all tracking-[0.5px] duration-200 [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)] text-[#3C3C3C]">
                         {subCat.name}
                       </span>
 
-                      <span className="absolute left-0 top-0 tracking-[0.5px] block opacity-0 transition-all duration-200 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)] text-[#0a0a0ab3]">
+                      <span className="absolute left-0 top-0 tracking-[0.5px] block opacity-0 transition-all duration-200 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)] text-[#3C3C3C]">
                         {subCat.name}
                       </span>
                     </div>
@@ -124,7 +124,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
                 ))}
 
                 {columnIndex === columns.length - 1 && (
-                  <button className="flex items-start tracking-[0.5px] gap-4 font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer">
+                  <button className="flex items-start tracking-[0.5px] gap-[6.5px] font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer">
                     <ArrowRight
                       size={18}
                       className="mt-0.5 shrink-0 text-orange-500"
