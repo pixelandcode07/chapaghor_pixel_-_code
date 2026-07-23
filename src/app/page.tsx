@@ -15,6 +15,7 @@ import OurService from "@/components/home/(OurService)/OurService";
 import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
 import GraphicResourcesButton from "@/components/home/GraphicResourcesButton";
 import PromoBanner from "@/components/home/PromoBanner";
+import GraphicResource from "@/components/home/GraphicResource";
 
 export default function HomePage() {
   // const [isModalOpen, setIsModalOpen] = useState(true);
@@ -34,6 +35,7 @@ export default function HomePage() {
       <ComboFile />
       <OurService />
       <PromoBanner />
+      {/* <GraphicResource /> */}
       <ChooseUs />
       <HowToOrder />
       <Footer />

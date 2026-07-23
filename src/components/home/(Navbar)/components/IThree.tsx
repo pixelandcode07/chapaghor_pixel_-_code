@@ -19,7 +19,7 @@ export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
                                 className="col-span-1 row-span-1 lg:w-[200px] 3xl:w-[274px] 3xl:h-[147px] bg-gray-50 border border-gray-100 rounded-lg p-6 flex flex-col justify-center "
                             >
                                 {/* hover:bg-orange-50 transition-colors group */}
-                                <h3 className="text-[#000000] font-normal text-[16px] leading-5">
+                                <h3 className="text-[#000000] font-normal text-[16px] leading-5 tracking-[0.5px]">
                                     {subCat.name}
                                 </h3>
                             </Link>

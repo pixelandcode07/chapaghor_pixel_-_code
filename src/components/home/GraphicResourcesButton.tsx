@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function GraphicResourcesButton() {
   return (
-    <div className="fixed right-0 top-1/3 -translate-y-1/2 z-50">
+    <div className="fixed right-0 lg:top-1/4 3xl:top-1/3 -translate-y-1/2 z-50 hidden lg:block">
       {/* Replace href with your actual link or onClick handler.
         Using group and hover effects for a smooth slide-left animation.
       */}
       <a
         href="#graphic-resources"
-        className="group flex flex-col items-center gap-3 bg-[#FD7034] text-white py-5 px-2.5 rounded-l-[10px] shadow-lg border-l border-t border-b border-white/10 transition-all duration-300  cursor-pointer"
+        className="group flex flex-col items-center gap-3 bg-[#FD7034] text-white py-5 px-1 xl:px-2 rounded-l-[10px] shadow-lg border-l border-t border-b border-white/10 transition-all duration-300  cursor-pointer"
         // hover:-translate-x-1
         aria-label="Graphic Resources"
       >

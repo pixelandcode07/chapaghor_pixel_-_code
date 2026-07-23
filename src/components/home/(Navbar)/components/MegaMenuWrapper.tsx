@@ -16,7 +16,7 @@ export default function MegaMenuWrapper({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 15 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`absolute top-[168%] bg-[#FFFFFF] rounded-b-xl z-50 cursor-default ${className}`}
+      className={`absolute top-[167%] bg-[#FFFFFF] rounded-b-xl z-50 cursor-default ${className}`}
     >
       {children}
     </motion.div>

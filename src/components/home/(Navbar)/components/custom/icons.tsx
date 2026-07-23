@@ -44,6 +44,21 @@ export const GroupUsersIcon = ({ className, ...props }: React.SVGProps<SVGSVGEle
 
 );
 
+export const NotificationIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+   <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+className={cn("size-5", className)}
+        {...props}>
+<path d="M7.56348 16.3281H10.0676" stroke="#012C60" stroke-width="1.35307" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.8239 6.937C13.8239 5.60871 13.2963 4.33484 12.357 3.3956C11.4177 2.45637 10.1439 1.92871 8.81559 1.92871C7.48731 1.92871 6.21344 2.45637 5.2742 3.3956C4.33497 4.33484 3.80731 5.60871 3.80731 6.937V11.3192C3.80731 11.8173 3.60943 12.2951 3.25722 12.6473C2.90501 12.9995 2.4273 13.1974 1.9292 13.1974H15.702C15.2039 13.1974 14.7261 12.9995 14.3739 12.6473C14.0217 12.2951 13.8239 11.8173 13.8239 11.3192V6.937Z" stroke="#012C60" stroke-width="1.35307" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.676758 6.77435C0.677433 5.58255 0.961647 4.40802 1.50593 3.34776C2.05021 2.28751 2.83892 1.37197 3.80694 0.676758" stroke="#012C60" stroke-width="1.35307" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.9534 6.77435C16.9528 5.58255 16.6686 4.40802 16.1243 3.34776C15.58 2.28751 14.7912 1.37197 13.8232 0.676758" stroke="#012C60" stroke-width="1.35307" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+);
+
+
+
+
 
 
 
