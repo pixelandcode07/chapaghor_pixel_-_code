@@ -37,7 +37,8 @@ export default function NavLinks({
           </Link>
         </div>
 
-        <span className="pointer-events-none absolute -bottom-6 left-1/2 h-[1.5px] w-full -translate-x-1/2 scale-x-0 rounded-full bg-[#FD7034] opacity-0 transition-all duration-300 ease-out group-hover/nav:scale-x-100 group-hover/nav:opacity-100" />
+        <span className="pointer-events-none absolute -bottom-6 left-1/2 h-[1.5px] w-full -translate-x-1/2 scale-x-0 rounded-full bg-[#3f1301bd] opacity-0 transition-all duration-300 ease-out group-hover/nav:scale-x-100 group-hover/nav:opacity-100" />
+        {/* bg-[#FD7034] */}
 
         <MegaMenu
           isHovered={isHovered}
