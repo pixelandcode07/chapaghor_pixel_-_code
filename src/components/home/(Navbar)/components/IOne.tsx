@@ -2,18 +2,23 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
+import MegaMenuWrapper from "./MegaMenuWrapper";
 
 export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 15 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-      className="border-t absolute md:top-[132%] xl:top-[167%] lg:-left-48 xl:-left-36 w-350 md:h-125 xl:h-133 bg-white pt-10.25 pb-14.25 lg:pl-12 xl:pl-30.5 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
-    >
-      {/* Left: Image Cards */}
-      <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-4.25 flex-1 justify-between pl-5">
+    // <motion.div
+    //   initial={{ opacity: 0, y: 15 }}
+    //   animate={{ opacity: 1, y: 0 }}
+    //   exit={{ opacity: 0, y: 15 }}
+    //   transition={{ duration: 0.2, ease: "easeOut" }}
+    //   className="border-t absolute md:top-[132%] xl:top-[167%] lg:-left-48 xl:-left-36 w-350 md:h-125 xl:h-133 bg-white pt-10.25 pb-14.25 lg:pl-12 xl:pl-30.5 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+    // >
+     
+    // </motion.div>
+   <MegaMenuWrapper className="w-full py-10">
+    <div className="flex gap-8">
+       {/* Left: Image Cards */}
+      <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-4.25 flex-1 justify-between pl-30">
         {relatedSubCats.slice(0, 4).map((subCat) => (
           <Link
             key={subCat._id}
@@ -74,6 +79,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
 
        
       </div>
-    </motion.div>
+    </div>
+    </MegaMenuWrapper>
   );
 }

@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import MegaMenu from "./MegaMenu";
 import { NavLinksProps } from "./types-of-navhead/NavHeadType";
 
 export default function NavLinks({
   category,
-  relatedSubCats,
   index,
   totalCategories,
   isHovered,
   onMouseEnter,
-  onMouseLeave,
 }: NavLinksProps) {
   return (
     <motion.li
@@ -23,7 +20,6 @@ export default function NavLinks({
         isHovered ? "z-99" : "z-50"
       }`}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
       <div className="nav-outer relative flex h-full items-center group/nav">
         <div className="nav-pill">
@@ -39,13 +35,6 @@ export default function NavLinks({
 
         <span className="pointer-events-none absolute -bottom-6 left-1/2 h-[1.5px] w-full -translate-x-1/2 scale-x-0 rounded-full bg-[#3f1301bd] opacity-0 transition-all duration-300 ease-out group-hover/nav:scale-x-100 group-hover/nav:opacity-100" />
         {/* bg-[#FD7034] */}
-
-        <MegaMenu
-          isHovered={isHovered}
-          relatedSubCats={relatedSubCats}
-          category={category}
-          index={index}
-        />
       </div>
 
       {index !== totalCategories - 1 && (

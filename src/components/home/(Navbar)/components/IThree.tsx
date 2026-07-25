@@ -6,7 +6,7 @@ import MegaMenuWrapper from './MegaMenuWrapper';
 
 export default function IThree({ relatedSubCats, category }: MegaMenuProps) {
     return (
-         <MegaMenuWrapper className="border-t lg:-left-[480px] xl:-left-[500px] lg:w-[1100px] xl:w-[1380px] bg-[#FFFFFF] rounded-b-xl z-50 lg:py-5 xl:pt-7.5 3xl:pb-12.75 lg:pl-[80px] xl:pl-[57px] flex justify-start cursor-default">
+        <MegaMenuWrapper className="w-full py-10 pl-10">
             {/* Updated grid to support exact dimensions and a 2px gap (135 + 135 + 2 = exactly 272px for tall images) */}
             <div className="grid md:grid-cols-[repeat(4,200px)] 3xl:grid-cols-[repeat(4,274px)] auto-rows-[147px] 3xl:auto-rows-[147px] gap-[8px]">
                 {relatedSubCats.map((subCat, i) => {

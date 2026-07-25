@@ -25,10 +25,11 @@ export default function IFour({ relatedSubCats, category }: MegaMenuProps) {
   });
 
   return (
-    <MegaMenuWrapper className="border-t md:translate-x-[-61%] xl:translate-x-[-66%] lg:w-[1500px] xl:w-[2200px] 3xl_v2:w-[2400px] 4xl:w-[3500px] 10xl:w-[6000px] lg:h-[255px] xl:h-[388px] flex justify-center py-[40px]">
-      <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto h-full flex items-stretch xl:pl-44">
+    <MegaMenuWrapper className="w-full py-10">
+     {/* <div className="w-full h-full flex items-stretch xl:pl-44"> */}
+     <div className="w-full h-full flex items-stretch">
         {/* Image */}
-        <div className="md:w-72.5 xl:w-107.75 h-full shrink-0  flex items-center justify-center">
+        <div className="md:w-72.5 xl:w-107.75 h-76.25 shrink-0  flex items-center justify-center">
           <Image
             src="/nav-logo/nav.jpg"
             alt="Category 4 Machine"

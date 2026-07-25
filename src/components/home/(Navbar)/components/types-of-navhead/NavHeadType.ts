@@ -3,7 +3,7 @@ export type SubCategory = {
   name: string;
   slug: string;
   category: { _id: string; name: string };
-  image?: string;
+  icon?: string;
 };
 
 export type Category = {
@@ -21,5 +21,5 @@ export interface NavLinksProps {
   totalCategories: number;
   isHovered: boolean;
   onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  // onMouseLeave: () => void;
 }

@@ -25,16 +25,20 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
   });
 
   return (
-    <MegaMenuWrapper className="border-t md:translate-x-[-35%] xl:translate-x-[-33%] lg:w-375 xl:w-500 3xl_v2:w-600 4xl:w-875 10xl:w-1500 md:h-97 flex justify-center py-10">
-      <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto h-full flex items-stretch">
+    // <MegaMenuWrapper className="border-t md:translate-x-[-35%] xl:translate-x-[-33%] lg:w-375 xl:w-500 3xl_v2:w-600 4xl:w-875 10xl:w-1500 md:h-97 flex justify-center py-10">
+    <MegaMenuWrapper
+      className="w-full border-t py-10
+  "
+    >
+      <div className="w-full h-full flex items-stretch">
         {/* Image */}
-        <div className="md:w-72.5 xl:w-107.75 h-full shrink-0  flex items-center justify-center">
+        <div className="md:w-72.5 xl:w-107.75 h-76.25 shrink-0  flex items-center justify-center">
           <Image
             src="/nav-logo/nav.jpg"
             alt="Offset Print Machine"
             // fill
             width={431}
-            height={270}
+            height={287}
             className="w-full h-full object-fill rounded-[21px]"
           />
         </div>
@@ -51,7 +55,10 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
                     className="group relative flex items-start gap-[6.5px] whitespace-nowrap font-light text-[16px] 3xl:text-[18px] leading-6 tracking-[1px] "
                   >
                     {/* Icon */}
-                    <ArrowRight size={13} className="mt-1.25 shrink-0 text-[#757575]" />
+                    <ArrowRight
+                      size={13}
+                      className="mt-1.25 shrink-0 text-[#757575]"
+                    />
 
                     {/* Animated Text */}
                     <div className="relative overflow-hidden h-6">
@@ -68,7 +75,10 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
 
                 {columnIndex === columns.length - 1 && (
                   <button className="flex items-start gap-[6.5px] font-normal text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer tracking-[0.5px]">
-                    <ArrowRight size={18} className="mt-0.5 shrink-0 text-orange-500" />
+                    <ArrowRight
+                      size={18}
+                      className="mt-0.5 shrink-0 text-orange-500"
+                    />
                     View all
                   </button>
                 )}
