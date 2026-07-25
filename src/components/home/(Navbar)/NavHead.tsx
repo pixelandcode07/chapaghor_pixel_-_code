@@ -187,6 +187,7 @@ export default function NavHead() {
                   const isHovered = hoveredCategory === category._id;
 
                   return (
+                    // <></>
                     <NavLinks
                     key={category._id}
                       category={category}
