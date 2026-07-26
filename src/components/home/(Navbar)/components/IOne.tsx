@@ -2,24 +2,28 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
-import { ArrowRight } from "lucide-react";
+import MegaMenuWrapper from "./MegaMenuWrapper";
 
 export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 15 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-      className="border-t absolute top-[167%] lg:-left-48 xl:-left-36 w-350 lg:h-95 xl:h-[532px] bg-white pt-10.25 pb-14.25 lg:pl-12 xl:pl-30.5 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
-    >
-      {/* Left: Image Cards */}
-      <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-4.25 flex-1 justify-between pl-5">
+    // <motion.div
+    //   initial={{ opacity: 0, y: 15 }}
+    //   animate={{ opacity: 1, y: 0 }}
+    //   exit={{ opacity: 0, y: 15 }}
+    //   transition={{ duration: 0.2, ease: "easeOut" }}
+    //   className="border-t absolute md:top-[132%] xl:top-[167%] lg:-left-48 xl:-left-36 w-350 md:h-125 xl:h-133 bg-white pt-10.25 pb-14.25 lg:pl-12 xl:pl-30.5 pr-27.5 rounded-b-xl z-50 flex gap-0 cursor-default"
+    // >
+     
+    // </motion.div>
+   <MegaMenuWrapper className="w-full py-10">
+    <div className="flex gap-8">
+       {/* Left: Image Cards */}
+      <div className="max-w-[670px] xl:max-w-[870px] flex lg:gap-2 xl:gap-4.25 flex-1 justify-between pl-30">
         {relatedSubCats.slice(0, 4).map((subCat) => (
           <Link
             key={subCat._id}
             href={`/category/${category.slug}/${subCat.slug}`}
-            className="relative w-[169px] h-[434px] shrink-0 bg-gray-100 group overflow-hidden block border border-gray-200 rounded-[15px]"
+            className="relative md:w-[150px] md:h-[380px] xl:w-[169px] xl:h-[434px] shrink-0 bg-gray-100 group overflow-hidden block border border-gray-200 rounded-[15px]"
           >
             <Image
               src={subCat.icon || "/banners/nav-alter.png"}
@@ -40,7 +44,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
 
             {/* Rotated Vertical Text */}
             <div className="absolute inset-y-0 right-3 w-[24px] z-20 pointer-events-none">
-              <span className="absolute tracking-[0.5px] -bottom-1 left-15.5 origin-bottom-left -rotate-90 text-white font-black text-[50px] uppercase whitespace-nowrap">
+              <span className="absolute tracking-[0.5px] -bottom-1 left-15 xl:left-15.5 origin-bottom-left -rotate-90 text-white font-black md:text-[42px] xl:text-[50px] uppercase whitespace-nowrap">
                 {subCat.name}
               </span>
             </div>
@@ -75,6 +79,7 @@ export default function IOne({ relatedSubCats, category }: MegaMenuProps) {
 
        
       </div>
-    </motion.div>
+    </div>
+    </MegaMenuWrapper>
   );
 }

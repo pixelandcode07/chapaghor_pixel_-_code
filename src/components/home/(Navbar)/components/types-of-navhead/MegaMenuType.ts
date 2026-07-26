@@ -1,25 +1,23 @@
-type SubCategory = {
-    _id: string;
-    name: string;
-    slug: string;
-    category: {
-        _id: string;
-        name: string;
-    };
-    icon?: string;
-};
-
-type Category = {
-    _id: string;
-    name: string;
-    slug: string;
-    isActive: boolean;
-    isNavhead: boolean;
-};
+import { Category, SubCategory } from "./NavHeadType";
 
 export interface MegaMenuProps {
-    isHovered: boolean;
-    relatedSubCats: SubCategory[];
-    category: Category;
-    index: number;
+  isHovered: boolean;
+  relatedSubCats: SubCategory[];
+  category: Category;
+  index: number;
+}
+
+export interface ActiveMenu {
+  category: Category;
+  relatedSubCats: SubCategory[];
+  index: number;
+}
+
+export interface MegaMenuPanelProps {
+  activeMenu: ActiveMenu | null;
+}
+
+export interface MegaMenuShellProps {
+  activeMenu: ActiveMenu | null;
+//   headerHeight: number;
 }
