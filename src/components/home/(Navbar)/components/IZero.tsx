@@ -25,7 +25,6 @@ export default function IZero({ relatedSubCats, category }: MegaMenuProps) {
   });
 
   return (
-    // <MegaMenuWrapper className="border-t md:translate-x-[-35%] xl:translate-x-[-33%] lg:w-375 xl:w-500 3xl_v2:w-600 4xl:w-875 10xl:w-1500 md:h-97 flex justify-center py-10">
     <MegaMenuWrapper
       className="w-full border-t py-10
   "

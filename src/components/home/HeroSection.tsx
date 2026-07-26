@@ -56,7 +56,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full bg-white pb-[84px] relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-5.25 md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
@@ -98,7 +98,7 @@ export default function HeroSection() {
                 </Carousel>
 
                 {/* Nav Arrows - Positioned EXACTLY on the middle edges */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] 3xl:w-[1288px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-212.5 xl:w-241.75 3xl:w-322 h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center items-center gap-2 mt-8">
+                <div className="flex justify-center items-center gap-2 mt-2 md:mt-5 xl:mt-8">
                     {Array.from({ length: count }).map((_, index) => {
                         const isActive = index === current;
                         return (
@@ -131,8 +131,8 @@ export default function HeroSection() {
                                 onClick={() => api?.scrollTo(index)}
                                 aria-label={`Go to slide ${index + 1}`}
                                 className={`transition-all duration-300 ease-in-out rounded-full ${isActive
-                                    ? "w-8 h-2 bg-[#F05A28]"
-                                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                                    ? "w-4 h-1 md:w-8 md:h-1.5 xl:w-8 xl:h-2 bg-[#F05A28]"
+                                    : "w-1 h-1 md:w-1.5 md:h-1.5 xl:w-2 xl:h-2 bg-gray-300 hover:bg-gray-400"
                                     }`}
                             />
                         );

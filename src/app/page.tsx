@@ -3,7 +3,6 @@
 // import { useState } from "react";
 // import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
-import OurClient from "@/components/home/OurClient";
 import BestSelling from "@/components/home/(BestSellingFiles)/BestSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
 // import OurService from "@/components/home/OurService";
@@ -16,6 +15,7 @@ import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
 import GraphicResourcesButton from "@/components/home/GraphicResourcesButton";
 import PromoBanner from "@/components/home/PromoBanner";
 import GraphicResource from "@/components/home/GraphicResource";
+import Client from "@/components/home/Client";
 
 export default function HomePage() {
   // const [isModalOpen, setIsModalOpen] = useState(true);
@@ -30,7 +30,7 @@ export default function HomePage() {
       <NavHead />
       <PrintImmegration />
       <HeroSection />
-      <OurClient />
+      <Client />
       <BestSelling />
       <ComboFile />
       <OurService />

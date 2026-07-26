@@ -25,8 +25,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
   });
 
   return (
-    // <MegaMenuWrapper className="border-t md:translate-x-[-48%] xl:translate-x-[-44%] lg:w-[1500px] xl:w-[2000px] 3xl_v2:w-[2400px] 4xl:w-[3500px] 10xl:w-[6000px] lg:h-[255px] xl:h-[388px] flex justify-center py-[40px]">
-   <MegaMenuWrapper className="w-full py-10">
+     <MegaMenuWrapper className="w-full py-10">
       <div className="w-full h-full flex items-stretch">
         {/* Image */}
         <div className="md:w-72.5 xl:w-107.75 h-76.25 shrink-0  flex items-center justify-center">

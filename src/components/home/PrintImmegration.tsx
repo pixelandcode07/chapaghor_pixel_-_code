@@ -55,6 +55,11 @@ const face2Variants: Variants = {
 export default function PrintImmegration() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  const canHover =
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: hover)").matches;
 
   useEffect(() => {
     const fetchFeaturedCategories = async () => {
@@ -109,7 +114,17 @@ export default function PrintImmegration() {
                   <button key={category._id} className="block outline-none">
                     <motion.div
                       variants={itemVariants}
-                      whileHover="hover"
+                      whileHover={canHover ? "hover" : undefined}
+                      animate={
+                        activeCard === category._id ? "hover" : "visible"
+                      }
+                      onTap={() => {
+                        if (!canHover) {
+                          setActiveCard(
+                            activeCard === category._id ? null : category._id,
+                          );
+                        }
+                      }}
                       className="relative justify-self-center w-27.5 h-29.75 md:w-32.75 md:h-35.5 xl:w-32.25 xl:h-35 3xl:w-[196.39px] 3xl:h-[212.87px] rounded-[13.06px] md:rounded-[15.54px] xl:rounded-[15.23px] 3xl:rounded-[23.35px] cursor-pointer group z-10 hover:z-50 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
                     >
                       <motion.div
@@ -118,7 +133,7 @@ export default function PrintImmegration() {
                       >
                         <h2 className="flex items-center justify-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white tracking-[0.5px]">
                           ORDER
-                          <CustomSquareArrowOutUpRight className="size-4.5 ml-1" />
+                          <CustomSquareArrowOutUpRight className="size-3 xl:size-4.5 mb-1 xl:mt-1 ml-1" />
                         </h2>
                       </motion.div>
 

@@ -8,6 +8,11 @@ export const comboData = [
     { id: 1, title: 'Exclusive', images: ['/combo/one.jpg', '/combo/two.jpg', '/combo/three.jpg'], price: '1000' },
     { id: 2, title: 'Combo', images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'], price: '1000' },
     { id: 3, title: 'Business Card', images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'], price: '1000' },
+    { id: 2, title: 'Combo', images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'], price: '1000' },
+    { id: 3, title: 'Business Card', images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'], price: '1000' },
+    { id: 4, title: 'Letterhead', images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'], price: '1000' },
+    { id: 5, title: 'Letterhead', images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'], price: '1000' },
+    { id: 3, title: 'Business Card', images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'], price: '1000' },
     { id: 4, title: 'Letterhead', images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'], price: '1000' },
     { id: 5, title: 'Letterhead', images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'], price: '1000' },
 ];
@@ -52,11 +57,45 @@ export default function Combo() {
                 </div>
 
                 {/* Cards Grid Section */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4.5 3xl:gap-6.25">
+                {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4.5 3xl:gap-6.25">
                     {comboData.map((item) => (
                         <DynamicCards key={item.id} item={item} />
                     ))}
-                </div>
+                </div> */}
+
+                {/* Mobile / Tablet / LG */}
+<div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+  <div className="flex gap-4 w-max pb-2">
+    {comboData.map((item) => (
+      <DynamicCards
+        key={item.id}
+        item={item}
+        isHorizontal
+      />
+    ))}
+
+    {/* View All Card */}
+    <div className="w-[72px] shrink-0 snap-start flex flex-col items-center justify-center">
+      <button className="w-12 h-12 rounded-full border border-[#5A5A5A] bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-[#F05A28] transition-colors">
+        <ArrowRight className="w-5 h-5" />
+      </button>
+
+      <span className="mt-3 text-xs text-white">
+        View All
+      </span>
+    </div>
+  </div>
+</div>
+
+{/* Desktop */}
+<div className="hidden xl:grid xl:grid-cols-5 gap-4.5 3xl:gap-6.25">
+  {comboData.map((item) => (
+    <DynamicCards
+      key={item.id}
+      item={item}
+    />
+  ))}
+</div>
 
             </div>
         </section>

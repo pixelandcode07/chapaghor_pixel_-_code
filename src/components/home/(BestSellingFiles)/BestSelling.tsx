@@ -1,43 +1,66 @@
-"use client";
-
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import DynamicCardsReuse from "./components/DynamicCardsReuse";
 import LandingPageBtn from "../LandingPageBtn";
 
 export default function BestSelling() {
-    const products = [
-        { name: "Mug", src: "/best/mug.jpg" },
-        { name: "Business Card", src: "/best/card.jpg" },
-        { name: "Photo Frame", src: "/best/frame.jpg" },
-        { name: "ID Card", src: "/best/id.jpg" },
-        { name: "X-Stand", src: "/best/stand.jpg" },
-        { name: "X-Stand", src: "/best/stand.jpg" },
-        // { name: "X-Stand", src: "/best/stand.jpg" },
-    ];
+  const products = [
+    { name: "Mug", src: "/best/mug.jpg" },
+    { name: "Business Card", src: "/best/card.jpg" },
+    { name: "Photo Frame", src: "/best/frame.jpg" },
+    { name: "ID Card", src: "/best/id.jpg" },
+    { name: "X-Stand", src: "/best/stand.jpg" },
+    { name: "Letterhead", src: "/best/mug.jpg" },
+    { name: "Envelope", src: "/best/stand.jpg" },
+    { name: "Envelope", src: "/best/id.jpg" },
+    { name: "Envelope", src: "/best/stand.jpg" },
+  ];
 
-    return (
-        <section className="w-full bg-white pt-[90px] pb-[83px]">
-            <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex flex-col items-center justify-center">
+  return (
+    <section className="w-full bg-white pt-[21px] md:pt-[48px] xl:pt-[90px] pb-[28px] md:pb-[43px] lg:pb-[83px]">
+      <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto">
 
-                {/* --- Title --- */}
-                <div className="w-full flex justify-center items-center mb-11">
-                    <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] text-center tracking-normal uppercase">
-                        TOP SELLING ITEMS
-                    </h1>
-                </div>
+        {/* Title */}
+        <div className="flex items-center justify-between mb-4 xl:mb-8 xl:justify-center px-2">
+          <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase">
+            TOP SELLING ITEMS
+          </h1>
 
-                {/* --- Cards Grid --- */}
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 3xl:grid-cols-6 gap-4 md:gap-5 xl:gap-6.25 justify-center items-start">
-                    <DynamicCardsReuse products={products} />
-                </div>
+          <button className="xl:hidden text-[#FD7034] text-sm font-medium">
+            View All
+          </button>
+        </div>
 
-                {/* --- View All Products Button --- */}
-                <div className="mt-13.75">
-                    <LandingPageBtn />
-                </div>
+        {/* Mobile / Tablet / LG */}
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+          <div className="flex gap-4 w-max pb-2 px-2">
+            <DynamicCardsReuse
+              products={products}
+              isHorizontal
+            />
+
+            {/* View All Card */}
+            <div className="w-[72px] shrink-0 flex flex-col items-center justify-center">
+              <button className="w-12 h-12 rounded-full border border-[#D6D6D6] bg-white flex items-center justify-center hover:bg-[#FD7034] hover:text-white transition-all">
+                <ArrowRight className="w-5 h-5" />
+              </button>
+
+              <span className="mt-3 text-xs text-[#012C60]">
+                View All
+              </span>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+
+        {/* Desktop */}
+        <div className="hidden xl:grid grid-cols-6 gap-6 items-start">
+          <DynamicCardsReuse products={products} />
+        </div>
+
+        {/* Desktop Button */}
+        <div className="hidden xl:flex justify-center mt-14">
+          <LandingPageBtn />
+        </div>
+      </div>
+    </section>
+  );
 }
