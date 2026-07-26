@@ -38,7 +38,9 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-light text-base leading-relaxed antialiased"
         style={{ fontFamily: '"Helvetica Neue"' }}
       >
-        <CustomCursor />
+        <div className="hidden md:flex">
+          <CustomCursor />
+        </div>
         {children}
         <ScrollToTop />
       </body>

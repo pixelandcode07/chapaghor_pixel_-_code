@@ -320,13 +320,15 @@ export default function NavHead() {
                 onMouseLeave={() => setActiveMenu(null)}
               /> */}
           </div>
-          <MegaMenuShell activeMenu={activeMenu} />
+         <div className="hidden xl:block">
+  <MegaMenuShell activeMenu={activeMenu} />
+</div>
         </div>
 
         {/* Tablet Version */}
         <div className="hidden md:flex xl:hidden border-y bg-white">
           <div
-            className="relative w-full md:max-w-[92vw] mx-auto"
+            className="relative w-full"
             onMouseLeave={() => setActiveMenu(null)}
           >
             <ul className="flex items-center justify-center py-2">

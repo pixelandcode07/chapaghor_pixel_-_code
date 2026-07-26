@@ -2,17 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Loader2, SquareArrowOutUpRight } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { CustomSquareArrowOutUpRight } from "./(Navbar)/components/custom/icons";
-
-type Category = {
-  _id: string;
-  name: string;
-  slug: string;
-  icon: string;
-  isFeatured: boolean;
-};
+import { Category } from "./(Navbar)/components/types-of-navhead/NavHeadType";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -103,41 +96,14 @@ export default function PrintImmegration() {
             PRINT YOUR IMAGINATION
           </h1>
 
-          <div
-            className="
-    w-full
-    max-w-[92vw]
-    md:max-w-149
-    
-    lg:max-w-187.5
-    xl:max-w-[73vw]
-    3xl:max-w-[71vw]
-    mx-auto
-    rounded-xl
-  "
-          >
+          <div className="w-full max-w-[92vw] md:max-w-149 lg:max-w-187.5 xl:max-w-[73vw] 3xl:max-w-[71vw] mx-auto rounded-xl">
             <div className="w-full md:overflow-x-auto xl:overflow-visible scrollbar-hide">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="
-        grid
-        grid-cols-3
-        md:grid-cols-6
-        xl:grid-cols-6
-gap-5
-        md:gap-5.75
-        xl:gap-6.25
-        3xl:gap-8.5
-md:h-50
-  justify-between
-        items-center
-
-        md:w-max
-        xl:w-full
-      "
+                className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-6 gap-5 md:gap-5.75 xl:gap-6.25 3xl:gap-8.5 md:h-50 justify-between items-center md:w-max xl:w-full"
               >
                 {categories.map((category) => (
                   <button key={category._id} className="block outline-none">
@@ -148,7 +114,7 @@ md:h-50
                     >
                       <motion.div
                         variants={face2Variants}
-                        className="absolute bottom-0 left-0 right-0 h-[95px] bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0"
+                        className="absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0"
                       >
                         <h2 className="flex items-center justify-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white tracking-[0.5px]">
                           ORDER
@@ -160,7 +126,7 @@ md:h-50
                         variants={face1Variants}
                         className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
                       >
-                        <div className="relative w-14 h-14 xl:w-[80px] xl:h-[80px] 3xl:w-[107px] 3xl:h-[107px] mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
+                        <div className="relative w-14 h-14 xl:w-20 xl:h-20 3xl:w-26.75 3xl:h-26.75 mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
                           <Image
                             src={category.icon || "/icons/card.svg"}
                             alt={`${category.name} icon`}

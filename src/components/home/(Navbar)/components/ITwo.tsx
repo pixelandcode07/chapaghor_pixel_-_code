@@ -41,7 +41,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
 
         {/* Content */}
         <div className="md:ml-6 xl:ml-16 flex-1 h-full overflow-hidden">
-          <div className="grid h-full grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-x-4.5">
+          <div className="grid h-full grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4.5">
             {columns.map((column, columnIndex) => (
               <div key={columnIndex} className="space-y-[7.5px]">
                 {column.map((subCat) => (
@@ -66,11 +66,11 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
                   </Link>
                 ))}
 
-                {columnIndex === columns.length - 1 && (
-                  <button className="flex items-start tracking-[0.5px] gap-[6.5px] font-light text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer">
+                 {columnIndex === columns.length - 1 && (
+                  <button className="flex items-start gap-[6.5px] font-light text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer tracking-[1px]">
                     <ArrowRight
-                      size={18}
-                      className="mt-0.5 shrink-0 text-orange-500"
+                      size={13}
+                      className="mt-1.25 shrink-0 text-orange-500"
                     />
                     View all
                   </button>
