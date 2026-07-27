@@ -17,10 +17,10 @@ export default function BestSelling() {
 
   return (
     <section className="w-full bg-white pt-[21px] md:pt-[48px] xl:pt-[90px] pb-[28px] md:pb-[43px] lg:pb-[83px]">
-      <div className="w-full md:max-w-[90vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto">
+      <div className="w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-4 xl:mb-8 xl:justify-center px-2">
+        <div className="flex items-center justify-between mb-4 xl:mb-8 xl:justify-center px-2 md:px-0">
           <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase">
             TOP SELLING ITEMS
           </h1>
