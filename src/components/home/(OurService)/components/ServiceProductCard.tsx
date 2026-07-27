@@ -90,7 +90,10 @@ aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-267/304"
              flex items-center justify-center
              rounded-full bg-black shadow-xl"
       >
-        <ArrowRight className="text-white w-3.5 h-3.5 md:w-5.5 md:h-5.5"  strokeWidth={2.5} />
+        <ArrowRight
+          className="text-white w-3.5 h-3.5 md:w-5.5 md:h-5.5"
+          strokeWidth={2.5}
+        />
       </motion.div>
 
       {/* Image Wrapper */}
