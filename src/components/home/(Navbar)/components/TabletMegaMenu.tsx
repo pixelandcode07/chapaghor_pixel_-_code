@@ -9,7 +9,7 @@ import BlurBackdrop from "./BlurBackdrop";
 export default function TabletMegaMenu({
   activeMenu,
 }: MegaMenuPanelProps) {
-    console.log(activeMenu);
+    // console.log(activeMenu);
   return (
     
     <AnimatePresence>
