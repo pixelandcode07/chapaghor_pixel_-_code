@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GraphicResourcesButton() {
   return (
-    <div className="fixed right-0 lg:top-1/4 3xl:top-1/3 -translate-y-1/2 z-50 hidden lg:block">
+    <div className="fixed right-0 lg:top-2/5 3xl:top-1/3 -translate-y-1/2 z-50 hidden lg:block">
       {/* Replace href with your actual link or onClick handler.
         Using group and hover effects for a smooth slide-left animation.
       */}

@@ -10,8 +10,10 @@ export type Category = {
   _id: string;
   name: string;
   slug: string;
+  icon?: string;
   isActive: boolean;
   isNavhead: boolean;
+  isFeatured: boolean;
 };
 
 export interface NavLinksProps {

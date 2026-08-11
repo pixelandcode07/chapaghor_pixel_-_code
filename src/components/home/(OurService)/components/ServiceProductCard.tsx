@@ -59,7 +59,8 @@ export default function ServiceProductCard({
 
   return (
     <div
-      className="relative overflow-visible border border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 hover:scale-105 hover:shadow-xl cursor-none 3xl:w-[267px] 3xl:aspect-[267/304]"
+      className="relative overflow-visible border border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 hover:scale-105 hover:shadow-xl cursor-none w-full
+aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-267/304"
       style={{
         borderRadius: "10px",
       }}
@@ -82,12 +83,17 @@ export default function ServiceProductCard({
           scale: { duration: 0.2 },
         }}
         className="pointer-events-none absolute left-0 top-0 z-50
-             h-14 w-14
+        h-8 w-8
+        md:h-11 md:w-11
+             xl:h-14 xl:w-14
              -ml-7 -mt-7
              flex items-center justify-center
              rounded-full bg-black shadow-xl"
       >
-        <ArrowRight className="text-white" size={24} strokeWidth={2.5} />
+        <ArrowRight
+          className="text-white w-3.5 h-3.5 md:w-5.5 md:h-5.5"
+          strokeWidth={2.5}
+        />
       </motion.div>
 
       {/* Image Wrapper */}

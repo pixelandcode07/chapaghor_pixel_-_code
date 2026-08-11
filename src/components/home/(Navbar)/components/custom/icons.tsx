@@ -9,7 +9,8 @@ export function HeartIcon({ className, ...props }: React.SVGProps<SVGSVGElement>
             className={cn("size-5 ", className)}
             {...props}
         >
-            <path d="M10.1117 16.605L2.04865 9.23532C-2.33344 4.81344 4.10822 -3.67655 10.1117 3.19209C16.1151 -3.67655 22.5276 4.84293 18.1747 9.23532L10.1117 16.605Z" stroke="#012C60" stroke-width="1.21" stroke-linejoin="round" />
+            <path d="M10.1117 16.605L2.04865 9.23532C-2.33344 4.81344 4.10822 -3.67655 10.1117 3.19209C16.1151 -3.67655 22.5276 4.84293 18.1747 9.23532L10.1117 16.605Z"
+             stroke="#012C60" stroke-width="1.21" stroke-linejoin="round" />
         </svg>
 
     )

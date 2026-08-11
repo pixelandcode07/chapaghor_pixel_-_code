@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, Loader2, Mic } from "lucide-react";
@@ -28,16 +28,7 @@ export default function NavHead() {
   const [subCategories, setSubCategories] = useState<SubCategory[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  // const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  // const headerRef = useRef<HTMLElement>(null);
-  // const [headerHeight, setHeaderHeight] = useState(0);
   const [activeMenu, setActiveMenu] = useState<ActiveMenu | null>(null);
-
-  // const [activeMenu, setActiveMenu] = useState<{
-  //   category: Category;
-  //   relatedSubCats: SubCategory[];
-  //   index: number;
-  // } | null>(null);
 
   useEffect(() => {
     const fetchNavData = async () => {
@@ -65,22 +56,6 @@ export default function NavHead() {
     };
     fetchNavData();
   }, []);
-
-  //   useEffect(() => {
-  //   const updateHeaderHeight = () => {
-  //     if (headerRef.current) {
-  //       setHeaderHeight(headerRef.current.offsetHeight);
-  //     }
-  //   };
-
-  //   updateHeaderHeight();
-
-  //   window.addEventListener("resize", updateHeaderHeight);
-
-  //   return () => {
-  //     window.removeEventListener("resize", updateHeaderHeight);
-  //   };
-  // }, []);
 
   return (
     <>
@@ -167,12 +142,7 @@ export default function NavHead() {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
       />
-
-      {/* <header className="relative bg-white xl:sticky top-0 z-50"> */}
-      <header
-        // ref={headerRef}
-        className="relative bg-white sticky top-0 z-50"
-      >
+      <header className="relative bg-white sticky top-0 z-50">
         <div className="relative" onMouseLeave={() => setActiveMenu(null)}>
           <div className="w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex justify-between items-center px-2.25 md:px-0 py-3.5 md:py-3 xl:py-4.25 3xl:py-[23.5px]">
             {/* ── Logo ── */}
@@ -181,15 +151,12 @@ export default function NavHead() {
                 <Image
                   src={"/nav-logo/Logo.png"}
                   alt="Chapaghor Logo"
-                  // fill
                   width={180}
                   height={35}
                   className="object-contain w-[157px] h-[29px] md:w-[188px] md:h-[35px] xl:w-[144px] xl:h-[26px] 3xl:w-[200px] 3xl:h-[40px]"
                 />
               </Link>
             </div>
-
-            {/* <div className="relative" onMouseLeave={() => setActiveMenu(null)}> */}
             {/* ── Category Nav with Framer Motion ── */}
             <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[140px] ">
               {isLoading ? (
@@ -217,19 +184,13 @@ export default function NavHead() {
                     const relatedSubCats = subCategories.filter(
                       (sub) => sub.category?._id === category._id,
                     );
-                    // const isHovered = hoveredCategory === category._id;
-
                     return (
-                      // <></>
                       <NavLinks
                         key={category._id}
                         category={category}
                         relatedSubCats={relatedSubCats}
                         index={index}
                         totalCategories={categories.length}
-                        // isHovered={isHovered}
-                        // onMouseEnter={() => setHoveredCategory(category._id)}
-                        // onMouseLeave={() => setHoveredCategory(null)}
                         isHovered={activeMenu?.category._id === category._id}
                         onMouseEnter={() =>
                           setActiveMenu({
@@ -238,15 +199,12 @@ export default function NavHead() {
                             index,
                           })
                         }
-                        // onMouseLeave={() => setActiveMenu(null)}
                       />
                     );
                   })}
                 </motion.ul>
               )}
             </nav>
-
-            {/* </div> */}
 
             {/* ── Search + Icons ── */}
             <div className="flex items-center justify-end gap-0 md:gap-3 xl:gap-4 shrink-0">
@@ -256,7 +214,7 @@ export default function NavHead() {
                 className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group"
               >
                 {/* Hide text only on mobile */}
-                <span className="hidden sm:block text-[14px] 3xl:text-base text-[#9CA3AF] font-normal leading-none select-none">
+                <span className="hidden sm:block text-[14px] 3xl:text-base text-[#9CA3AF] font-light leading-none select-none">
                   Search
                 </span>
 
@@ -310,23 +268,17 @@ export default function NavHead() {
                 </Button>
               </div>
             </div>
-
-            {/* ONE SHARED PANEL */}
-            {/* <MegaMenuPanel
-                activeMenu={activeMenu}
-                onMouseEnter={() => {
-                  // keep menu alive
-                }}
-                onMouseLeave={() => setActiveMenu(null)}
-              /> */}
           </div>
-          <MegaMenuShell activeMenu={activeMenu} />
+          {/* ONE SHARED PANEL */}
+          <div className="hidden xl:block">
+            <MegaMenuShell activeMenu={activeMenu} />
+          </div>
         </div>
 
         {/* Tablet Version */}
         <div className="hidden md:flex xl:hidden border-y bg-white">
           <div
-            className="relative w-full md:max-w-[92vw] mx-auto"
+            className="relative w-full"
             onMouseLeave={() => setActiveMenu(null)}
           >
             <ul className="flex items-center justify-center py-2">
@@ -334,7 +286,6 @@ export default function NavHead() {
                 const relatedSubCats = subCategories.filter(
                   (sub) => sub.category?._id === category._id,
                 );
-
                 return (
                   <NavLinks
                     key={category._id}
