@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import DynamicCardsReuse from "./components/DynamicCardsReuse";
 import LandingPageBtn from "../LandingPageBtn";
 
-export default function BestSelling() {
+export default function TopSelling() {
   const products = [
     { name: "Mug", src: "/best/mug.jpg" },
     { name: "Business Card", src: "/best/card.jpg" },
@@ -32,14 +32,14 @@ export default function BestSelling() {
 
         {/* Mobile / Tablet / LG */}
         <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
-          <div className="flex gap-4 w-max pb-2 px-2">
+          <div className="flex gap-3.75 md:gap-5 w-max pb-2 pl-5">
             <DynamicCardsReuse
               products={products}
               isHorizontal
             />
 
             {/* View All Card */}
-            <div className="w-[72px] shrink-0 flex flex-col items-center justify-center">
+            <div className="w-18 shrink-0 flex flex-col items-center justify-center">
               <button className="w-12 h-12 rounded-full border border-[#D6D6D6] bg-white flex items-center justify-center hover:bg-[#FD7034] hover:text-white transition-all">
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -52,7 +52,7 @@ export default function BestSelling() {
         </div>
 
         {/* Desktop */}
-        <div className="hidden xl:grid grid-cols-6 gap-6 items-start">
+        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-7 items-start">
           <DynamicCardsReuse products={products} />
         </div>
 

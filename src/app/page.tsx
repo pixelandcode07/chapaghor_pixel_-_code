@@ -3,7 +3,7 @@
 // import { useState } from "react";
 // import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
-import BestSelling from "@/components/home/(BestSellingFiles)/BestSelling";
+import TopSelling from "@/components/home/(BestSellingFiles)/TopSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
 // import OurService from "@/components/home/OurService";
 import ChooseUs from "@/components/home/ChooseUs";
@@ -31,7 +31,7 @@ export default function HomePage() {
       <PrintImmegration />
       <HeroSection />
       <Client />
-      <BestSelling />
+      <TopSelling />
       <ComboFile />
       <OurService />
       <PromoBanner />
