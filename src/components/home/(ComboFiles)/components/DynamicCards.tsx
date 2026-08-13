@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { useEffect, useState } from "react";
 import { comboData } from "../ComboFile";
-import { TakaIcon } from "../../(Navbar)/components/custom/icons";
+import { TakaIcon } from "../../../custom/icons";
 
 export default function DynamicCards({
   item,
