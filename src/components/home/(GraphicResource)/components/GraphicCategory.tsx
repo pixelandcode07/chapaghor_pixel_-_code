@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const categories = [
@@ -23,7 +23,7 @@ export default function GraphicCategory({
   onCategoryChange,
 }: GraphicCategoryProps) {
   return (
-    <div className="mb-5 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+    <div className="flex items-center gap-2 py-4 md:py-5 xl:py-8 overflow-x-auto scrollbar-none">
       {categories.map((category) => {
         const active = category === activeCategory;
 
@@ -33,9 +33,9 @@ export default function GraphicCategory({
             variant="outline"
             onClick={() => onCategoryChange(category)}
             className={`
-              h-7 shrink-0 rounded-full border px-4
-              text-[9px] font-medium shadow-none
-              transition-all
+              shrink-0 rounded-[15px] border px-4
+              text-[12px] md:text-[15px] font-normal shadow-none
+              transition-all cursor-pointer
               ${
                 active
                   ? "border-[#ff6b32] bg-[#ff6b32] text-white hover:bg-[#ff6b32] hover:text-white"
@@ -51,10 +51,10 @@ export default function GraphicCategory({
       {/* Browse Library */}
       <Button
         variant="ghost"
-        className="ml-auto hidden h-7 shrink-0 rounded-full border border-[#ff7043] px-3 text-[9px] font-medium text-[#ff7043] hover:bg-[#fff2ed] hover:text-[#ff7043] sm:flex"
+        className=" hidden shrink-0 text-[12px] md:text-[15px] rounded-full border border-[#ff7043] px-3 cursor-pointer font-normal text-[#ff7043] hover:bg-[#fff2ed] hover:text-[#ff7043] sm:flex"
       >
         Browse Library
-        <ChevronRight size={12} />
+        <MoveRight size={12} />
       </Button>
     </div>
   );
