@@ -102,8 +102,8 @@ export default function Combo() {
 
         
         {/*  Mobile / Tablet / LG */}
-        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
-          <div className="flex gap-4 w-max pb-2">
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pl-5">
+          <div className="flex gap-3 w-max pb-2">
             {comboData.map((item) => (
               <DynamicCards key={item.id} item={item} isHorizontal />
             ))}
@@ -120,8 +120,8 @@ export default function Combo() {
         </div>
 
         {/* Cards Grid Section Desktop */}
-        <div className="hidden xl:grid xl:grid-cols-5 gap-4.5 3xl:gap-6.25">
-          {comboData.map((item) => (
+        <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-4.75 3xl:gap-6.25">
+          {comboData.slice(0,5).map((item) => (
             <DynamicCards key={item.id} item={item} />
           ))}
         </div>

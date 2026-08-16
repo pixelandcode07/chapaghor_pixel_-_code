@@ -77,7 +77,7 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-3 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-91.25 aspect-389/143 md:w-177.75 md:aspect-711/225 lg:w-214.25 lg:aspect-857/272 3xl:w-322 3xl:aspect-1288/400 ${
+                                        className={`relative overflow-hidden rounded-[8px] md:rounded-[15px] xl:rounded-[18px] 1xl:rounded-[20px] 3xl:rounded-[27px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-85.75 aspect-343/126 md:w-178 md:aspect-712/226 xl:w-210 xl:aspect-840/267 1xl:w-241.25 1xl:aspect-965/307 3xl:w-322 3xl:aspect-1288/409 ${
                                             isActive
                                                 ? "blur-0 opacity-100 scale-100 z-20"
                                                 : "blur-[5px] opacity-40 scale-100 z-0"

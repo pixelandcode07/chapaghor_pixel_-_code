@@ -115,7 +115,8 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --breakpoint-3xl: 120rem;
+  --breakpoint-1xl: 90rem;  /* 1440px */
+  --breakpoint-3xl: 120rem;  /* 1920px */
   --breakpoint-3xl_v2: 128rem;
   --breakpoint-4xl: 144rem;
   --breakpoint-7xl: 192rem;
