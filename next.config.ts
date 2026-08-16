@@ -1,5 +1,3 @@
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -18,8 +16,4 @@ const nextConfig = {
   },
 };
 
-<<<<<<< HEAD
-export default nextConfig; // Use `module.exports = nextConfig;` if you are using older CommonJS
-=======
-export default nextConfig; 
->>>>>>> ea5595f4e292ff54fe83a5712be3a2946111c541
+export default nextConfig;
