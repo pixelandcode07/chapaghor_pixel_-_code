@@ -1,3 +1,7 @@
+import * as React from "react"
+import { cn } from "@/lib/utils"
+
+
 export function HeartIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
@@ -43,6 +47,44 @@ export const GroupUsersIcon = ({ className, ...props }: React.SVGProps<SVGSVGEle
         <path d="M21.5833 23.4572H25.3611V22.4337C25.3459 20.995 24.9663 19.5835 24.2574 18.3313C23.5485 17.0789 22.5336 16.0266 21.3073 15.2726C20.5148 14.7851 19.6504 14.4326 18.75 14.2258" stroke="#012C60" stroke-width="1.61221" stroke-linejoin="round" />
     </svg>
 
+);
+
+export const PremiumQltyIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+
+    <svg width="68" height="70" viewBox="0 0 68 70" fill="none" xmlns="http://www.w3.org/2000/svg"
+     className={cn("size-5", className)}
+        {...props}
+        >
+        <path d="M14 3H6C4.34315 3 3 4.34315 3 6V14M54 3H62C63.6569 3 65 4.34315 65 6V14M3 54V62C3 63.6569 4.34315 65 6 65H14M65 54V62C65 63.6569 63.6569 65 62 65H54" stroke="#FF5A00" strokeWidth="5" strokeLinecap="round"/>
+        <path d="M34 16L38.2 27.8L50.5 28.1L40.7 35.6L44.2 47.5L34 40.5L23.8 47.5L27.3 35.6L17.5 28.1L29.8 27.8L34 16Z" stroke="#FF5A00" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+
+
+);
+export const EditIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+   className={cn("size-5 lucide lucide-square-pen-icon lucide-square-pen", className)}
+        {...props}
+  ><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+);
+
+export const PrintIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+
+ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+  className={cn("size-5 lucide lucide-printer-check-icon lucide-printer-check", className)}
+        {...props}
+ ><path d="M13.5 22H7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v.5"/><path d="m16 19 2 2 4-4"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/></svg>
+
+
+);
+
+export const DownloadCloudIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+  className={cn("size-5 lucide lucide-download-cloud-icon lucide-download-cloud", className)}
+        {...props}
+ ><path d="M12 13v8l-4-4"/><path d="m12 21 4-4"/><path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284"/></svg>
 );
 
 export const NotificationIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
@@ -124,8 +166,8 @@ export const CustomSquareArrowOutUpRight = ({ className, ...props }: React.SVGPr
 
 
 
-import * as React from "react"
-import { cn } from "@/lib/utils"
+
+
 
 export function TakaIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
     return (

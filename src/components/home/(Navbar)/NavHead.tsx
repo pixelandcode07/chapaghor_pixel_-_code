@@ -16,7 +16,7 @@ import {
   HeartIcon,
   NotificationIcon,
   VendorBoxIcon,
-} from "./components/custom/icons";
+} from "../../custom/icons";
 import { Button } from "@/components/ui/button";
 import NavLinks from "./components/NavLinks";
 import { ActiveMenu } from "./components/types-of-navhead/MegaMenuType";

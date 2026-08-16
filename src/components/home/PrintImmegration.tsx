@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
-import { CustomSquareArrowOutUpRight } from "./(Navbar)/components/custom/icons";
+import { CustomSquareArrowOutUpRight } from "../custom/icons";
 import { Category } from "./(Navbar)/components/types-of-navhead/NavHeadType";
 
 const containerVariants: Variants = {
