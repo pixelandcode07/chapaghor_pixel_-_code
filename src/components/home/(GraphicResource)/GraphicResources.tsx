@@ -252,7 +252,7 @@ export default function GraphicResources() {
           ))}
         </div>
         {/* Button Section */}
-        <div className="flex justify-center lg:mt-20">
+        <div className="flex justify-center mt-10 lg:mt-20">
           <LandingPageBtn />
         </div>
       </div>

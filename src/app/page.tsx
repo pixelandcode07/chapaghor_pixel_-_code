@@ -16,6 +16,7 @@ import PromoBanner from "@/components/home/PromoBanner";
 import Client from "@/components/home/Client";
 import GraphicResources from "@/components/home/(GraphicResource)/GraphicResources";
 import ChooseUs from "@/components/home/(ChooseUs)/ChooseUs";
+import StayConnected from "@/components/home/(StayConnected)/StayConnected";
 
 export default function HomePage() {
   // const [isModalOpen, setIsModalOpen] = useState(true);
@@ -37,6 +38,7 @@ export default function HomePage() {
       <PromoBanner />
       <GraphicResources />
       <ChooseUs />
+      <StayConnected />
       <HowToOrder />
       <Footer />
     </main>
