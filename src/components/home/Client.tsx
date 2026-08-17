@@ -37,7 +37,7 @@ const logos: Logo[] = [
 export default function Client() {
   return (
     <section className="w-full bg-[#FDF4EE] py-5">
-      <div className="w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto flex items-center">
+      <div className="container-custom flex items-center">
 
        {/* Left Section */}
 <div className="flex items-center gap-2 md:gap-4 shrink-0">

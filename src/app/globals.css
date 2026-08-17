@@ -3,15 +3,11 @@
 @import "shadcn/tailwind.css";
 
 
-/* @media (pointer: fine) {
-  body {
-    cursor: none; 
+@layer components {
+  .container-custom {
+    @apply w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto;
   }
-  
-  a, button {
-    cursor: none; 
-  }
-} */
+}
 
 @font-face {
   font-family: 'Helvetica Neue';
