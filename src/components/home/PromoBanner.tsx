@@ -3,7 +3,6 @@ import Image from "next/image";
 
 interface PromoBanner {
   id: number;
-  title: string;
   heading: string;
   test_duration: string;
   description: string;
@@ -15,7 +14,6 @@ interface PromoBanner {
 const banners: PromoBanner[] = [
   {
     id: 1,
-    title: "Premium Printing Solutions",
     heading: "20% OFF",
     test_duration: "During The Weekend",
     description: "On All Printing Products",
@@ -25,7 +23,6 @@ const banners: PromoBanner[] = [
   },
   {
     id: 2,
-    title: "Premium Printing Solutions",
     heading: "20% OFF",
     test_duration: "During The Weekend",
     description: "On All Printing Products",
@@ -47,7 +44,7 @@ export default function PromoBanner() {
 
               <div className="relative z-10 flex h-full items-center pl-5 md:pl-6">
                 <div>
-                  <p className="text-[7px] md:text-[10px] font-medium uppercase tracking-[1px] text-white">{banner.title}</p>
+                  {/* <p className="text-[7px] md:text-[10px] font-medium uppercase tracking-[1px] text-white">{banner.title}</p> */}
 
                   <h2 className="mt-1 text-[18px] md:text-[28px] font-bold leading-[1.05] uppercase tracking-[0.3px] text-white">{banner.heading}</h2>
 
@@ -76,7 +73,7 @@ export default function PromoBanner() {
 
             <div className="relative z-10 flex h-full items-center pl-7 1xl:pl-8 3xl:pl-10">
               <div>
-                <p className="xl:text-[7px] 1xl:text-[8px] 3xl:text-[10px] font-medium uppercase tracking-[1px] text-white">{banner.title}</p>
+                {/* <p className="xl:text-[7px] 1xl:text-[8px] 3xl:text-[10px] font-medium uppercase tracking-[1px] text-white">{banner.title}</p> */}
 
                 <h2 className="mt-1 xl:text-[30px] 1xl:text-[35px] 3xl:text-[46px] font-extrabold leading-none uppercase tracking-[0.5px] text-white">{banner.heading}</h2>
 
@@ -84,10 +81,9 @@ export default function PromoBanner() {
 
                 <p className="mt-1 xl:text-[12px] 1xl:text-[15px] text-white">{banner.description}</p>
 
-                <button className={`mt-3 1xl:mt-3.5 3xl:mt-5 flex items-center gap-2 rounded-full px-4 py-1.5 1xl:px-5 1xl:py-2 3xl:px-6 3xl:py-2.5 text-[8px] 1xl:text-[9px] 3xl:text-[12px] font-medium leading-none transition-transform duration-300 hover:scale-105 ${banner.button_text_bg_color} ${banner.button_text_color}`}>
+                <button className={`mt-3 1xl:mt-3.5 3xl:mt-5 flex items-center gap-2 rounded-full px-4 py-1.5 1xl:px-5 1xl:py-2 3xl:px-6 3xl:py-2.5 text-[8px] lg:text-[12px] xl:text-[16px] font-medium leading-none transition-transform duration-300 hover:scale-105 ${banner.button_text_bg_color} ${banner.button_text_color}`}>
                   Order Now
-                  <MoveRight className="w-5 h-5" />
-                  {/* <span className="text-[12px] 3xl:text-[15px]">→</span> */}
+                  <MoveRight className="w-5 h-5 mt-0.5" />
                 </button>
               </div>
             </div>
