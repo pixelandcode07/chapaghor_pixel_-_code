@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import ActionButton from "../../landing-page-btn-gorguse";
 
 const customers = [
   { id: 1, image: "/community/first.png" },
@@ -38,15 +39,14 @@ export default function JoinCommunity() {
           </div>
         </div>
 
-        <div className="flex h-[48px] w-[155px] shrink-0 items-center overflow-hidden rounded-[6px] rounded-br-[12px] bg-white shadow-sm md:h-[54px] md:w-[190px] md:rounded-[7px] md:rounded-br-[14px] lg:h-[58px] lg:w-[210px] xl:h-[62px] xl:w-[230px] 1xl:h-[70px] 1xl:w-[260px] 1xl:rounded-[8px] 1xl:rounded-br-[17px] 3xl:h-[78px] 3xl:w-[310px]">
-          <span className="whitespace-nowrap px-3 text-[8px] font-medium text-[#012C60] md:px-4 md:text-[10px] lg:px-5 lg:text-[11px] xl:px-5 xl:text-[12px] 1xl:px-6 1xl:text-[14px] 3xl:px-7 3xl:text-[18px]">
-            Join Our Community
-          </span>
-
-          <button className="ml-auto mr-1.5 flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-[3px] rounded-br-[9px] bg-[#FF4F00] px-2 text-white transition-colors hover:bg-[#d94300] md:mr-2 md:h-[42px] md:w-[42px] md:rounded-[4px] md:rounded-br-[11px] lg:h-[46px] lg:w-[46px] xl:h-[50px] xl:w-[50px] 1xl:h-[56px] 1xl:w-[56px] 1xl:rounded-[4px] 1xl:rounded-br-[13px] 3xl:h-[64px] 3xl:w-[64px]">
-            <FaArrowRight className="size-3 md:size-3.5 lg:size-4 xl:size-4 1xl:size-5 3xl:size-6" />
-          </button>
-        </div>
+         <ActionButton
+  title="Join Our Community"
+  cardWidth="h-[48px] w-[155px] md:h-[54px] md:w-[190px] lg:h-[58px] lg:w-[210px] xl:h-[62px] xl:w-[230px] 1xl:h-[70px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[320px]"
+  buttonBg="bg-white"
+  titleColor="text-black font-normal"
+  arrowBg="bg-[#F05A28]"
+  arrowColor="text-white"
+/>
       </div>
     </section>
   );
