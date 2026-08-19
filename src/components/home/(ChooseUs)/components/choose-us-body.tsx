@@ -59,7 +59,7 @@ export default function ChooseUsBody() {
                 Trust
               </h1>
             </div>
-            <p className="mt-1 max-w-4xl text-center text-[11px] font-normal leading-tight tracking-wide text-white/90 md:text-[14px] xl:text-[18px] 3xl:text-[24px]">
+            <p className="mt-1 text-center text-[11px] font-normal leading-tight tracking-wide text-white/90 md:text-[14px] xl:text-[18px] 3xl:text-[24px]">
               We use the best materials and latest technology to deliver the
               perfect printing quality
             </p>

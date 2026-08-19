@@ -186,15 +186,44 @@ export const CustomSquareArrowOutUpRight = ({ className, ...props }: React.SVGPr
 
 export function TakaIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className={cn("size-5", className)}
+       <svg
+  width="46"
+  height="58"
+  viewBox="0 0 46 58"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  className={cn("size-5", className)}
             {...props}
-        >
-            <path d="M8.72 5.75c-.39 0-.76.17-1.02.48a1.59 1.59 0 0 0-.28 1.43.75.75 0 1 1-1.46.34 3.09 3.09 0 0 1 .55-2.78c.56-.66 1.38-1.03 2.21-1.03 1.56 0 2.78 1.16 2.78 2.65v1.41h3.75a.75.75 0 0 1 0 1.5h-3.75v3.23c0 2.12 1.43 3.52 3.25 3.52 1.04 0 1.75-.46 2.13-1.09a1.75 1.75 0 1 1 2.53 2.41 4.56 4.56 0 0 1-4.66 1.18c-2.48-.68-4-2.77-4-5.34v-3.91H6.75a.75.75 0 0 1 0-1.5h4.25V7.04c0-.72-.56-1.29-1.28-1.29Z" />
-        </svg>
+>
+  <path
+    d="M22 9
+       H24
+       C27.8 9 30.8 12 30.8 15.8
+       C30.8 17.2 30.3 18.6 29.5 19.7
+       H37.5
+       V24
+       H30.8
+       V40.8
+       H38
+       C41.2 40.8 43.5 38.2 43.5 35
+       C43.5 31.8 41.2 29.2 38 29.2
+       H34.5
+       V25
+       H38
+       C43.5 25 46 29.5 46 35
+       C46 40.5 42.5 44.5 37.5 44.5
+       H27
+       V24
+       H22
+       V19.7
+       H27
+       C28.2 19.7 29 18.8 29 17.5
+       C29 15.2 27.2 13.5 25 13.5
+       H22
+       V9Z"
+    fill="#FD7034"
+  />
+</svg>
     )
 }
 
