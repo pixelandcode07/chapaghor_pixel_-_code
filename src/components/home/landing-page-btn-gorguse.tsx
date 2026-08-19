@@ -1,3 +1,4 @@
+import { MoveRight } from "lucide-react";
 import { FaArrowRight } from "react-icons/fa";
 
 interface ActionButtonProps {
@@ -26,7 +27,7 @@ export default function ActionButton({
       </span>
 
       <button className={`ml-auto mr-1.5 flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-[3px] rounded-br-[9px] md:mr-2 md:h-[44px] md:w-[44px] md:rounded-[4px] md:rounded-br-[11px] lg:h-[52px] lg:w-[52px] lg:rounded-[4px] lg:rounded-br-[13px] xl:h-[64px] xl:w-[64px] xl:rounded-[4px] xl:rounded-br-[13px] xl:px-5 3xl:h-[72px] 3xl:w-[72px] ${arrowBg} ${arrowColor}`}>
-        <FaArrowRight className="size-3.5 md:size-4 lg:size-4.5 xl:size-5 3xl:size-6" />
+        <MoveRight  />
       </button>
     </div>
   );

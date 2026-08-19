@@ -271,25 +271,39 @@ export default function ConnectedFeatureBar() {
   return (
     <section className="w-full px-2 py-2 md:px-0 md:py-3 lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
       {/* Mobile / MD / LG */}
-      <div className="xl:hidden container-custom overflow-hidden rounded-[14px] border border-[#EEEEEE] bg-white shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
-        <div className="flex min-w-max items-stretch justify-center md:min-w-0 md:grid md:grid-cols-4">
-          {highlights.map((item, index) => (
-            <div key={item.id} className={`flex h-[125px] w-[180px] shrink-0 flex-col items-center justify-center px-3 text-center md:h-[145px] md:w-auto md:px-2.5 lg:h-[155px] lg:px-4 ${index !== highlights.length - 1 ? "border-r border-[#E5E5E5]" : ""}`}>
-              <div className="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-[#FFF0E9] md:h-[52px] md:w-[52px] lg:h-[58px] lg:w-[58px]">
-                {item.icon}
-              </div>
-
-              <h3 className="mt-3 text-[11px] font-semibold leading-tight text-black md:mt-3 md:text-[13px] lg:mt-4 lg:text-[14px]">
-                {item.title}
-              </h3>
-
-              <p className="mt-1.5 text-[8px] font-normal leading-[1.3] text-[#757575] md:mt-2 md:text-[9px] lg:text-[10px]">
-                {item.description}
-              </p>
-            </div>
-          ))}
+<div className="xl:hidden container-custom overflow-hidden rounded-[14px] border border-[#EEEEEE] bg-white shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
+  <div className="grid grid-cols-4">
+    {highlights.map((item, index) => (
+      <div
+        key={item.id}
+        className={`flex h-[125px] min-w-0 flex-col items-center justify-center px-1 text-center md:h-[145px] md:px-2.5 lg:h-[155px] lg:px-4 ${
+          index !== highlights.length - 1
+            ? "border-r border-[#E5E5E5]"
+            : ""
+        }`}
+      >
+        <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] md:h-[52px] md:w-[52px] lg:h-[58px] lg:w-[58px]">
+          {item.icon}
         </div>
+
+        {/* <h3 className="mt-3 truncate max-w-full text-[11px] font-semibold leading-tight text-black md:mt-3 md:text-[13px] lg:mt-4 lg:text-[14px]">
+          {item.title}
+        </h3>
+
+        <p className="mt-1.5 text-[8px] font-normal leading-[1.3] text-[#757575] md:mt-2 md:text-[9px] lg:text-[10px]">
+          {item.description}
+        </p> */}
+        <h3 className="mt-3 font-medium text-[#000000] text-[8px] leading-none tracking-[0.5px] md:mt-3 md:text-[15px] lg:mt-4 lg:text-[16px]">
+  {item.title}
+</h3>
+
+<p className="mt-1.5 font-normal leading-[1.3] text-black text-[8px] tracking-[0.5px] md:mt-2 md:text-[9px] lg:text-[10px]">
+  {item.description}
+</p>
       </div>
+    ))}
+  </div>
+</div>
 
       {/* XL / 1XL / 3XL */}
       <div className="container-custom hidden items-stretch rounded-[14px] border border-[#EEEEEE] bg-white px-4 py-5 shadow-[0_5px_16px_rgba(0,0,0,0.08)] xl:flex 1xl:px-6 1xl:py-6 3xl:px-8 3xl:py-7">
@@ -300,13 +314,20 @@ export default function ConnectedFeatureBar() {
             </div>
 
             <div className="min-w-0">
-              <h4 className="text-[12px] font-semibold leading-tight text-gray-900 1xl:text-[14px] 3xl:text-[18px]">
+              {/* <h4 className="text-[12px] font-semibold leading-tight text-gray-900 1xl:text-[14px] 3xl:text-[18px]">
                 {item.title}
               </h4>
 
               <p className="mt-1 text-[9px] leading-[1.3] text-gray-500 1xl:text-[10px] 3xl:text-[13px]">
                 {item.description}
-              </p>
+              </p> */}
+              <h4 className="font-medium text-[#000000] text-[12px] leading-tight tracking-[0.5px] 1xl:text-[14px] 3xl:text-[19px]">
+  {item.title}
+</h4>
+
+<p className="mt-1 font-normal text-black text-[10px] leading-[1.3] tracking-[0.5px] 1xl:text-[12px] 3xl:text-[15px]">
+  {item.description}
+</p>
             </div>
           </div>
         ))}
