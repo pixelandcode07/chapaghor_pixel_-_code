@@ -237,7 +237,7 @@ export default function GraphicResources() {
       : resources.filter((resource) => resource.category === activeCategory);
 
   return (
-    <section className="bg-[linear-gradient(to_bottom,#E5EEF999_0%,#FFFFFF_100%)] px-4 py-6 sm:px-6 lg:px-8">
+    <section className="bg-[linear-gradient(to_bottom,#E5EEF999_0%,#FFFFFF_100%)] px-4 py-3.75 md:py-13.5 xl:py-7.5 3xl:py-10.5 sm:px-6 lg:px-8">
       <div className="container-custom">
         <GraphicHeader />
 
@@ -246,7 +246,7 @@ export default function GraphicResources() {
           onCategoryChange={setActiveCategory}
         />
 
-        <div className="grid grid-cols-3 gap-2 auto-rows-[58px] md:grid-cols-4 xl:grid-cols-7 md:auto-rows-[70px] lg:auto-rows-[90px] xl:auto-rows-[68px] 1xl:auto-rows-[82px] 3xl:auto-rows-[105px]">
+        <div className="grid grid-cols-3 gap-2  md:grid-cols-4 xl:grid-cols-7 auto-rows-[65px] md:auto-rows-[80px] lg:auto-rows-[100px] xl:auto-rows-[90px] 1xl:auto-rows-[100px] 3xl:auto-rows-[120px]">
           {filteredResources.map((resource) => (
             <GraphicCard key={resource.id} resource={resource} />
           ))}

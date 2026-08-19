@@ -84,12 +84,12 @@ const layoutClasses: Record<number, string> = {
   3: "hidden md:block md:col-span-1 md:row-span-4 xl:col-span-1 xl:row-span-4",
   4: "hidden md:block md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-2",
   5: "hidden md:block md:col-span-1 md:row-span-2 xl:col-span-2 xl:row-span-2",
-  6: "col-span-2 row-span-2 md:col-span-2 md:row-span-2 xl:col-span-2 xl:row-span-2",
-  7: "col-span-2 row-span-2 md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-2",
+  6: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-2 xl:row-span-2",
+  7: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-1 xl:row-span-2",
   8: "hidden xl:block xl:col-span-3 xl:row-span-2",
-  9: "col-span-4 row-span-2 md:hidden xl:block xl:col-span-3 xl:row-span-2",
-  10: "hidden xl:block xl:col-span-2 xl:row-span-2",
-  11: "hidden xl:block xl:col-span-2 xl:row-span-2",
+  9: "col-span-4 row-span-3 md:hidden xl:block xl:col-span-3 xl:row-span-3",
+  10: "hidden xl:block xl:col-span-2 xl:row-span-3",
+  11: "hidden xl:block xl:col-span-2 xl:row-span-3",
 };
 
 export default function GraphicCard({ resource }: GraphicCardProps) {
@@ -105,8 +105,12 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
 
       {resource.premium && (
-        <div className="absolute left-1.5 top-1.5 z-10 flex h-4 w-4 items-center justify-center rounded-full bg-[#ffbd16] text-[8px] text-white shadow">
-          ★
+        <div className="absolute left-2 top-1.5 z-10 flex h-6 w-6 items-center justify-center rounded-full  text-[8px] border border-white/20 p-1 shadow">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.93086 0L4.9616 5.95389L2.86102e-05 1.98463L1.98466 11.9078H15.8771L17.8617 1.98463L12.9001 5.95389L8.93086 0Z" fill="#F09F33"/>
+</svg>
+
+
         </div>
       )}
     </div>
