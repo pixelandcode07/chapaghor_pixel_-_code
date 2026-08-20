@@ -31,26 +31,14 @@ import React from "react";
 
 export default function LandingPageBtn() {
   return (
-    <Link
-      href="/view-all-product"
-      className="group inline-flex items-center justify-center gap-2 bg-[#FFE0D085] text-[#FD7034] px-6 py-3 3xl:px-[42px] 3xl:py-[21px] border border-[#FD7034] border-solid rounded-[10px] font-medium transition-all duration-[400ms] ease-in-out hover:bg-orange-400 hover:border-white hover:text-white shadow-sm cursor-pointer"
-    >
-      <span className="text-[21px]">View All Products</span>
+    <Link href="/view-all-product" className="group inline-flex items-center justify-center gap-1.5 rounded-[6px] border border-[#FD7034] border-solid bg-[#FFE0D085] px-3.5 py-1.5 text-[#FD7034] font-medium shadow-sm cursor-pointer transition-all duration-[400ms] ease-in-out hover:bg-orange-400 hover:border-white hover:text-white sm:gap-2 sm:px-4 sm:py-2 md:rounded-[7px] md:px-5 md:py-2.5 lg:rounded-[8px] lg:px-5.5 lg:py-2.5 xl:rounded-[8px] xl:px-6 xl:py-3 1xl:px-7 1xl:py-3.5 3xl:rounded-[10px] 3xl:px-[42px] 3xl:py-[21px]">
+      <span className="text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 1xl:text-[18px] 3xl:text-[21px]">
+        View All Products
+      </span>
 
-      {/* Lucide Arrow Right Icon */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="transform w-[20px] h-[20px] transition-transform duration-[400ms] ease-in-out group-hover:translate-x-1"
-        aria-hidden="true"
-      >
-        <path d="M5 12h14"></path>
-        <path d="m12 5 7 7-7 7"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 transform transition-transform duration-[400ms] ease-in-out group-hover:translate-x-1 md:h-4 md:w-4 lg:h-4.5 lg:w-4.5 xl:h-5 xl:w-5 1xl:h-5.5 1xl:w-5.5 3xl:h-5 3xl:w-5" aria-hidden="true">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
       </svg>
     </Link>
   );

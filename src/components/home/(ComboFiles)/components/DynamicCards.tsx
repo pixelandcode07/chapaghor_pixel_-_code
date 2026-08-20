@@ -66,7 +66,7 @@ export default function DynamicCards({
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
           <span>
-            <TakaIcon className="w-6 h-6" />
+            <TakaIcon className="w-8 h-6" />
           </span>
           {item.price}
         </h3>
@@ -125,56 +125,60 @@ export default function DynamicCards({
                   <>
                     {/* Bottom-right Cutout */}
                     <div 
-                      className="absolute bottom-0 right-0 bg-black z-40 pointer-events-none
-                                 w-[50px] h-[50px] md:w-[68px] md:h-[68px] xl:w-[84px] xl:h-[84px] 1xl:w-[92px] 1xl:h-[92px] 3xl:w-[110px] 3xl:h-[110px]
-                                 rounded-tl-[24px] md:rounded-tl-[36px] xl:rounded-tl-[42px] 1xl:rounded-tl-[46px] 3xl:rounded-tl-[54px]" 
-                    />
+                className="absolute bottom-0 right-0 bg-black z-10 pointer-events-none
+                           w-[44px] h-[44px] md:w-[50px] md:h-[50px] xl:w-[56px] xl:h-[56px] 1xl:w-[62px] 1xl:h-[62px] 3xl:w-[76px] 3xl:h-[76px]
+                           rounded-tl-[22px] md:rounded-tl-[23px] xl:rounded-tl-[26px] 1xl:rounded-tl-[28px] 3xl:rounded-tl-[39px]" 
+              />
 
                     {/* Top Curve */}
-                    <div 
-                      className="absolute right-0 z-40 pointer-events-none 
-                                 bottom-[50px] md:bottom-[68px] xl:bottom-[84px] 1xl:bottom-[92px] 3xl:bottom-[110px] 
-                                 w-4 h-4 md:w-5 md:h-5 xl:w-8 xl:h-8 1xl:w-9 1xl:h-9 3xl:w-10 3xl:h-10"
-                    >
-                      <svg
-                        viewBox="0 0 32 32"
-                        className="w-full h-full text-black"
-                      >
-                        <path
-                          d="M0 32 C22 32 32 22 32 0 L32 32 Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </div>
+                   <div 
+                className="absolute right-0 z-10 pointer-events-none 
+                           bottom-[43px] md:bottom-[50px] xl:bottom-[55px] 1xl:bottom-[62px] 3xl:bottom-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
 
                     {/* Left Curve */}
                     <div 
-                      className="absolute bottom-0 z-40 pointer-events-none 
-                                 right-[50px] md:right-[68px] xl:right-[84px] 1xl:right-[92px] 3xl:right-[110px] 
-                                 w-4 h-4 md:w-5 md:h-5 xl:w-8 xl:h-8 1xl:w-9 1xl:h-9 3xl:w-10 3xl:h-10"
-                    >
-                      <svg
-                        viewBox="0 0 32 32"
-                        className="w-full h-full text-black"
-                      >
-                        <path
-                          d="M0 32 C22 32 32 22 32 0 L32 32 Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </div>
+                className="absolute bottom-0 z-10 pointer-events-none 
+                           right-[43px] md:right-[50px] xl:right-[55px] 1xl:right-[62px] 3xl:right-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
 
                     {/* Arrow */}
+                    {/* bg-[#F05A28] */}
                     <div 
-                      className="absolute rounded-full bg-[#F05A28] flex items-center justify-center z-50 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1
-                                 bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[12px] 3xl:right-[12px] 
-                                 w-[40px] h-[40px] md:w-[50px] md:h-[50px] xl:w-[60px] xl:h-[60px] 1xl:w-[68px] 1xl:h-[68px] 3xl:w-[80px] 3xl:h-[80px]"
-                    >
-                      <ArrowUpRight
-                        className="text-white w-5 h-5 md:w-6 md:h-6 xl:w-7 xl:h-7 1xl:w-8 1xl:h-8 3xl:w-10 3xl:h-10"
-                        strokeWidth={2}
-                      />
-                    </div>
+              className="absolute rounded-full bg-[#F05A28] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md bottom-0 right-0
+                          
+                         w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
+            >
+              {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              <ArrowUpRight 
+                className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
+                strokeWidth={2} 
+              />
+            </div>
                   </>
                 )}
               </motion.div>

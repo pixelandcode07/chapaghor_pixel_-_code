@@ -18,7 +18,7 @@ const products = [
 
 export default function OurService() {
     return (
-        <section className="w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto bg-white py-7.25 md:py-10.75 3xl:py-12.75 px-2 md:px-0">
+        <section className="container-custom bg-white py-7.25 md:py-10.75 3xl:py-12.75 px-2 md:px-0">
             {/* Title Section */}
             <div className=" flex flex-col items-center justify-center">
                 <h4 className="text-[#012C60] text-[16px] md:text-[20px] xl:text-[22px] 3xl:text-[33px] leading-normal font-light uppercase">
