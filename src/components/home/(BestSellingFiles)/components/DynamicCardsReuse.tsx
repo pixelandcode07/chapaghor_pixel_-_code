@@ -29,7 +29,8 @@ export default function DynamicCardsReuse({
             className={`relative ${
               isHorizontal
                 ? "w-full aspect-140/139 md:w-46.75 md:aspect-187/194"
-                : "xl:w-full xl:aspect-189/207 1xl:w-49.75 1xl:aspect-199/207 3xl:w-66.5 3xl:aspect-266/278"
+                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207  3xl:aspect-266/278"
+                // 1xl:w-49.75 3xl:w-66.5
             }`}
           >
             <div className="absolute inset-0 overflow-hidden rounded-[16px] 3xl:rounded-[20px] bg-white border border-gray-100">
@@ -86,11 +87,10 @@ export default function DynamicCardsReuse({
 
             {/* Arrow */}
             <div 
-              className="absolute rounded-full bg-[#1D2939] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md bottom-0 right-0
-                          
-                         w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
+              className="absolute rounded-full bg-[#1D2939] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 z-20 bottom-0 right-0 w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
             >
               {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
               <ArrowUpRight 
                 className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
                 strokeWidth={2} 
@@ -99,12 +99,12 @@ export default function DynamicCardsReuse({
           </div>
 
           {/* Title */}
-          <div className="mt-3 xl:mt-4 flex justify-center">
+          <div className="mt-2 xl:mt-3 flex justify-center">
             <span
               className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
                 isHorizontal
-                  ? "w-full text-xs py-2 px-2"
-                  : "w-full text-[13px] md:text-[16px] xl:text-[18px] 3xl:text-[22px] px-2 py-2.5 xl:py-2.75 tracking-[0.5px]"
+                  ? "w-full text-xs p-1 lg:p-1.5"
+                  : "w-full text-[13px] md:text-[10px] xl:text-[12px] 3xl:text-[15px] p-1 lg:p-1.5 tracking-[0.5px]"
               }`}
             >
               {product.name}

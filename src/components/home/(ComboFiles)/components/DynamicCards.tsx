@@ -33,7 +33,7 @@ export default function DynamicCards({
     >
       {/* Background Wrapper with Magic UI BorderBeam */}
       <div
-        className={`absolute top-0 left-0 rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
+        className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
             ? "w-full aspect-140/139 md:w-47 md:aspect-188/194"
             : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-full 3xl:aspect-283/283"
@@ -61,7 +61,7 @@ export default function DynamicCards({
             : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5"
         }`}
       >
-        <h3 className="truncate xl:truncate 1xl:overflow-visible 1xl:whitespace-normal">
+        <h3 className="truncate xl:truncate 3xl:overflow-visible 3xl:whitespace-normal">
           {item.title}
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
@@ -74,7 +74,7 @@ export default function DynamicCards({
 
       {/* Stacked Image Container */}
       <div className="relative z-10 pb-4 mt-2">
-        <div className="relative w-full aspect-5/4.5 mt-4">
+        <div className="relative w-full aspect-416/307 mt-0">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
           {/* The 3 Image Layers */}
@@ -98,7 +98,7 @@ export default function DynamicCards({
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 rounded-[20px] overflow-hidden bg-black shadow-lg origin-top"
+                className="absolute inset-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top"
               >
                 <Image
                   src={src}
@@ -169,11 +169,10 @@ export default function DynamicCards({
                     {/* Arrow */}
                     {/* bg-[#F05A28] */}
                     <div 
-              className="absolute rounded-full bg-[#F05A28] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md bottom-0 right-0
-                          
-                         w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
-            >
+              className="absolute rounded-full bg-[#F05A28] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300  z-20  bottom-0 right-0
+               w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]">
               {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
               <ArrowUpRight 
                 className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
                 strokeWidth={2} 
