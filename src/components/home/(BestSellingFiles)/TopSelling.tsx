@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import DynamicCardsReuse from "./components/DynamicCardsReuse";
-import LandingPageBtn from "../LandingPageBtn";
+import LandingPageBtn from "@/components/home/LandingPageBtn";
 
 export default function TopSelling() {
   const products = [
@@ -16,11 +16,11 @@ export default function TopSelling() {
   ];
 
   return (
-    <section className="w-full bg-white pt-[21px] md:pt-[48px] xl:pt-[90px] pb-[28px] md:pb-[43px] lg:pb-[83px]">
-      <div className="w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto">
+    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:py-11.5">
+      <div className="container-custom">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-4 xl:mb-8 xl:justify-center px-2 md:px-0">
+        <div className="flex items-center justify-between mb-2 xl:mb-8 xl:justify-center px-2 md:px-0">
           <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase">
             TOP SELLING ITEMS
           </h1>
@@ -57,8 +57,10 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden xl:flex justify-center mt-14">
-          <LandingPageBtn />
+        <div className="hidden xl:flex justify-center mt-10">
+          <LandingPageBtn href="#" >
+            View All Products
+          </LandingPageBtn>
         </div>
       </div>
     </section>

@@ -12,20 +12,20 @@ export default function GraphicHeader() {
     <div className=" w-full xl:flex  justify-between gap-5 xl:gap-0">
       {/* Heading */}
      <div className="flex justify-between ">
-       <div className="w-full md:w-[70%] xl:w-full space-y-2">
-        <p className="text-[10px] md:text-[17px] xl:text-[15px] 1xl:text-[18px] 3xl:text-[23px] font-light uppercase tracking-[0.5px] text-[#757575]">
+       <div className="w-full md:w-[70%] xl:w-full space-y-0">
+        <p className="text-[10px] md:text-[17px] xl:text-[15px] 1xl:text-[18px] 3xl:text-[23px] font-light uppercase tracking-[0.5px] text-[#757575] leading-none mb-3">
           Professional Quality
         </p>
 
-        <h1 className="text-[19px] md:text-[38px] xl:text-[34px] 1xl:text-[39px] 3xl:text-[52px] font-medium leading-none tracking-[0.5px] text-[#202020]">
+        <h1 className="text-[19px] md:text-[38px] xl:text-[34px] 1xl:text-[39px] 3xl:text-[52px] font-medium leading-none mb-3 tracking-[0.5px] text-[#202020]">
           GRAPHIC{" "}
           <span className="text-[#FD7034]">
             RESOURCES
           </span>
         </h1>
 
-        <p className="text-[10px] md:text-[16px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[22px] font-light leading-none text-[#757575]">
-          High quality editable templates and mockups to
+        <p className="text-[10px] md:text-[16px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[22px] font-light leading-none mb-3 text-[#757575] tracking-[0.5px]">
+          High quality editable templates and mockups to <br />
           make your brand look professional.
         </p>
       </div>
@@ -41,7 +41,7 @@ export default function GraphicHeader() {
      </div>
 
       {/* Feature Cards */}
-      <div className="grid w-full xl:w-[50%] grid-cols-4 overflow-hidden bg-white rounded-xl mt-4 md:mt-7 lg:mt-8.5 xl:mt-0 md:h-24 xl:h-20 shadow-md">
+      <div className="grid w-full xl:w-[50%] grid-cols-4 overflow-hidden bg-white rounded-xl 3xl:px-7.5 mt-4 md:mt-7 lg:mt-8.5 xl:mt-0 md:h-24 xl:h-20 3xl:h-28.5 shadow-md">
         <FeatureCard
           icon={
             <PremiumQltyIcon className="size-3.5 md:size-7 xl:size-5.5 1xl:size-6.5 3xl:size-8.5" />

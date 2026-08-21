@@ -84,9 +84,12 @@ export default function Combo() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full md:max-w-[90vw] 3xl:max-w-[78.80vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17.25 pb-6.5 md:pb-12.75 xl:pb-20.25 3xl:pb-28.75">
+      <div className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-[calc(100vw-300px)] 7xl:container mx-auto py-6 md:py-12 xl:py-16 3xl:py-20">
+        {/* md:max-w-[92vw] xl:max-w-[89vw] 1xl:max-w-[86.11vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] */}
+        {/* pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17  */}
         {/* Header Section */}
-        <div className="flex md:flex-row justify-between items-center mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 px-2 md:px-0">
+        <div className="flex md:flex-row justify-between items-center mb-4 md:mb-6 xl:mb-8 3xl:mb-10 px-2 md:px-0">
+          {/* mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 */}
           <div className="flex gap-2.5">
             <h1 className="text-xl md:text-[28px] lg:text-[38px] xl:text-[40px] 3xl:text-[60px] font-normal text-white leading-tight tracking-wide">
               Exclusive Combo <span className="text-[#F05A28]">Deals</span>
