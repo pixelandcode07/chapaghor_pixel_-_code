@@ -1,49 +1,46 @@
-"use client";
+// "use client";
 
-import { useState } from "react";
-import CategoryNeeds from "@/components/home/CategoryNeeds";
-import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
+// import { useState } from "react";
+// import UnderDevelopmentModal from "@/components/home/UnderDevelopmentModal";
 import HeroSection from "@/components/home/HeroSection";
-import OurClient from "@/components/home/OurClient";
-import BestSelling from "@/components/home/BestSelling";
+import TopSelling from "@/components/home/(BestSellingFiles)/TopSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
+import HowToOrder from "@/components/home/HowToOrder";
+import Footer from "@/components/home/Footer";
+import PrintImmegration from "@/components/home/PrintImmegration";
+import OurService from "@/components/home/(OurService)/OurService";
+import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
+import GraphicResourcesButton from "@/components/home/GraphicResourcesButton";
+import PromoBanner from "@/components/home/PromoBanner";
+// import GraphicResource from "@/components/home/(GraphicResource)/OldGraphicResource";
+import Client from "@/components/home/Client";
+import GraphicResources from "@/components/home/(GraphicResource)/GraphicResources";
+import ChooseUs from "@/components/home/(ChooseUs)/ChooseUs";
+import StayConnected from "@/components/home/(StayConnected)/StayConnected";
 
 export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  // const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col relative">
-
+    <main className=" flex flex-col relative">
       {/* Modal Logic */}
       {/* {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
       )} */}
-
-      {/* Header */}
+      <GraphicResourcesButton />
       <NavHead />
-
-      {/* Category Needs */}
-      <CategoryNeeds />
-
-      {/* Hero Section */}
+      <PrintImmegration />
       <HeroSection />
-      <OurClient />
-      <BestSelling />
-
-      {/* Main content */}
-      <div className="flex-grow">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="text-center py-20">
-            <h1 className="text-3xl font-bold text-[#003B5C] mb-4">
-              Welcome to Chapaghor
-            </h1>
-            <p className="text-gray-500">
-              Header and Needs section are ready!
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <Client />
+      <TopSelling />
+      <ComboFile />
+      <OurService />
+      <PromoBanner />
+      <GraphicResources />
+      <ChooseUs />
+      <StayConnected />
+      <HowToOrder />
+      <Footer />
     </main>
   );
 }

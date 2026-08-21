@@ -1,11 +1,11 @@
 import { NextRequest } from 'next/server';
-import { BannerController } from '@/server/modules/banner/banner.controller';
+import { CategoryController } from '@/server/modules/category/category.controller';
 
-// params কে Promise হিসেবে গ্রহণ করতে হবে
+// params কে Promise হিসেবে গ্রহণ করতে হবে (Next.js 15 update)
 export async function PATCH(req: NextRequest, context: { params: Promise<{ id: string }> }) {
-  return BannerController.updateBanner(req, context);
+  return CategoryController.updateCategory(req, context);
 }
 
 export async function DELETE(req: NextRequest, context: { params: Promise<{ id: string }> }) {
-  return BannerController.deleteBanner(req, context);
+  return CategoryController.deleteCategory(req, context);
 }

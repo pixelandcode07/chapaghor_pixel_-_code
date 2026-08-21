@@ -1,0 +1,118 @@
+// "use client";
+
+// import Image from "next/image";
+// import { Button } from "@/components/ui/button";
+
+// export interface GraphicResource {
+//   id: number;
+//   title: string;
+//   category: string;
+//   image: string;
+//   className?: string;
+//   premium?: boolean;
+// }
+
+// interface GraphicCardProps {
+//   resource: GraphicResource;
+// }
+
+// export default function GraphicCard({
+//   resource,
+// }: GraphicCardProps) {
+//   return (
+//     <div
+//       className={`
+//         group relative
+//         overflow-hidden
+//         rounded-lg
+//         bg-gray-200
+//         ${resource.className ?? ""}
+//       `}
+//     >
+//       {/* Image */}
+//       <Image
+//         src={resource.image}
+//         alt={resource.title}
+//         fill
+//         sizes="
+//           (max-width: 640px) 100vw,
+//           (max-width: 1024px) 50vw,
+//           33vw
+//         "
+//         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+//       />
+
+//       {/* Premium Badge */}
+//       {resource.premium && (
+//         <div className="absolute left-1.5 top-1.5 z-10 flex h-4 w-4 items-center justify-center rounded-full bg-[#ffbd16] text-[8px] text-white shadow">
+//           ★
+//         </div>
+//       )}
+
+//       {/* Hover Overlay */}
+//       <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+//         <div className="w-full p-3">
+//           <p className="text-xs font-semibold text-white">
+//             {resource.title}
+//           </p>
+
+//           <Button
+//             size="sm"
+//             className="mt-2 h-7 rounded-full bg-white px-3 text-[10px] text-gray-800 hover:bg-gray-100"
+//           >
+//             View Resource
+//           </Button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+"use client";
+
+import Image from "next/image";
+import { GraphicResource } from "../GraphicResources";
+
+interface GraphicCardProps {
+  resource: GraphicResource;
+}
+
+const layoutClasses: Record<number, string> = {
+  1: "col-span-1 row-span-2 md:col-span-1 md:row-span-2 xl:col-span-1 xl:row-span-2",
+  2: "col-span-2 row-span-2 md:col-span-2 md:row-span-2 xl:col-span-2 xl:row-span-2",
+  3: "hidden md:block md:col-span-1 md:row-span-4 xl:col-span-1 xl:row-span-4",
+  4: "hidden md:block md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-2",
+  5: "hidden md:block md:col-span-1 md:row-span-2 xl:col-span-2 xl:row-span-2",
+  6: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-2 xl:row-span-2",
+  7: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-1 xl:row-span-2",
+  8: "hidden xl:block xl:col-span-3 xl:row-span-2",
+  9: "col-span-4 row-span-3 md:hidden xl:block xl:col-span-3 xl:row-span-3",
+  10: "hidden xl:block xl:col-span-2 xl:row-span-3",
+  11: "hidden xl:block xl:col-span-2 xl:row-span-3",
+};
+
+export default function GraphicCard({ resource }: GraphicCardProps) {
+  const layoutClass = layoutClasses[resource.id] ?? "";
+
+  return (
+    <div className={`group relative min-h-0 overflow-hidden rounded-lg bg-gray-200 ${layoutClass}`}>
+      <Image 
+      src={resource.image} 
+      alt={resource.category} 
+      fill 
+      sizes="(max-width: 639px) 50vw, (max-width: 1023px) 25vw, (max-width: 1535px) 25vw, 20vw" 
+      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+
+      {resource.premium && (
+        <div className="absolute left-2 top-1.5 z-10 flex h-6 w-6 items-center justify-center rounded-full  text-[8px] border border-white/20 p-1 shadow">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.93086 0L4.9616 5.95389L2.86102e-05 1.98463L1.98466 11.9078H15.8771L17.8617 1.98463L12.9001 5.95389L8.93086 0Z" fill="#F09F33"/>
+</svg>
+
+
+        </div>
+      )}
+    </div>
+  );
+}

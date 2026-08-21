@@ -1,41 +1,85 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import { MegaMenuProps } from "./types-of-navhead/MegaMenuType";
+import MegaMenuWrapper from "./MegaMenuWrapper";
 
 export default function IFour({ relatedSubCats, category }: MegaMenuProps) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-[137.5%] lg:translate-x-[-30%] xl:translate-x-[-56%] w-637.5 max-w-[100vw] h-[235px] bg-[#FFFFFF] shadow-[0px_4px_15px_7px_#0000001C] rounded-b-xl z-50 flex justify-center cursor-default"
-        >
-            <div className="w-360 max-w-full h-full relative flex items-start pl-[168px] pt-[28px]">
-                <div className="w-44 h-44.75 shrink-0">
-                    <Image
-                        src={'/nav-logo/stationary.png'}
-                        alt='Category 4 Machine'
-                        width={176}
-                        height={179}
-                        className='w-full h-full object-contain'
+  const COLUMN_COUNT = 4;
+  const ITEMS_PER_COLUMN = 10;
+
+  const columns = Array.from({ length: COLUMN_COUNT }, (_, index) => {
+    // Last column: reserve one slot for "View all"
+    const maxItems =
+      index === COLUMN_COUNT - 1
+        ? ITEMS_PER_COLUMN - 1
+        : ITEMS_PER_COLUMN;
+
+    const start =
+      index < COLUMN_COUNT - 1
+        ? index * ITEMS_PER_COLUMN
+        : (COLUMN_COUNT - 1) * ITEMS_PER_COLUMN;
+
+    return relatedSubCats.slice(start, start + maxItems);
+  });
+
+  return (
+    <MegaMenuWrapper className="w-full py-10">
+     {/* <div className="w-full h-full flex items-stretch xl:pl-44"> */}
+     <div className="w-full h-full flex items-stretch">
+        {/* Image */}
+        <div className="md:w-72.5 xl:w-107.75 h-76.25 shrink-0  flex items-center justify-center">
+          <Image
+            src="/nav-logo/nav.jpg"
+            alt="Category 4 Machine"
+            width={431}
+            height={271}
+            className="w-full h-full object-fill rounded-[21px]"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="md:ml-4 xl:ml-16 flex-1 h-full overflow-hidden">
+          <div className="grid h-full grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4.5">
+            {columns.map((column, columnIndex) => (
+              <div key={columnIndex} className="space-y-[7.5px]">
+                {column.map((subCat) => (
+                  <Link
+                    key={subCat._id}
+                    href={`/category/${category.slug}/${subCat.slug}`}
+                    className="group relative flex items-start gap-[6.5px] whitespace-nowrap font-light text-[16px] 3xl:text-[18px] leading-5 tracking-[1px]"
+                  >
+                    <ArrowRight
+                      size={13} className="mt-1.25 shrink-0 text-[#757575]" 
                     />
-                </div>
-                <div className="ml-[136px] mt-[14px] h-[157px] pr-8">
-                    <div className="columns-2 md:columns-4 lg:columns-6 gap-x-12 [column-rule:1px_solid_#E5E7EB]">
-                        {relatedSubCats.map((subCat) => (
-                            <Link
-                                key={subCat._id}
-                                href={`/category/${category.slug}/${subCat.slug}`}
-                                className="block break-inside-avoid w-[110px] font-['Helvetica_Neue',_sans-serif] font-normal text-[16px] leading-6.25 text-[#012C60] hover:text-[#F05A28] transition-colors whitespace-nowrap"
-                            >
-                                {subCat.name}
-                            </Link>
-                        ))}
+
+                    <div className="relative overflow-hidden h-6">
+                      <span className="block transition-all duration-200 tracking-[0.5px] [transform:translateY(0)_rotateX(0)] group-hover:opacity-0 group-hover:[transform:translateY(50%)_rotateX(90deg)] text-[#3C3C3C] ">
+                        {subCat.name}
+                      </span>
+
+                      <span className="absolute left-0 top-0 block text-[#3C3C3C] tracking-[0.5px] opacity-0 transition-all duration-200 [transform:translateY(-50%)_rotateX(90deg)] group-hover:opacity-100 group-hover:[transform:translateY(0)_rotateX(0)] ">
+                        {subCat.name}
+                      </span>
                     </div>
-                </div>
-            </div>
-        </motion.div>
-    )
+                  </Link>
+                ))}
+
+                 {columnIndex === columns.length - 1 && (
+                  <button className="flex items-start gap-[6.5px] font-light text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer tracking-[1px]">
+                    <ArrowRight
+                      size={13}
+                      className="mt-1.25 shrink-0 text-orange-500"
+                    />
+                    View all
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </MegaMenuWrapper>
+  );
 }

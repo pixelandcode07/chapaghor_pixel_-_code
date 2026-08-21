@@ -1,0 +1,68 @@
+import { ArrowRight } from "lucide-react";
+import DynamicCardsReuse from "./components/DynamicCardsReuse";
+import LandingPageBtn from "@/components/home/LandingPageBtn";
+
+export default function TopSelling() {
+  const products = [
+    { name: "Mug", src: "/best/mug.jpg" },
+    { name: "Business Card", src: "/best/card.jpg" },
+    { name: "Photo Frame", src: "/best/frame.jpg" },
+    { name: "ID Card", src: "/best/id.jpg" },
+    { name: "X-Stand", src: "/best/stand.jpg" },
+    { name: "Letterhead", src: "/best/mug.jpg" },
+    { name: "Envelope", src: "/best/stand.jpg" },
+    { name: "Envelope", src: "/best/id.jpg" },
+    { name: "Envelope", src: "/best/stand.jpg" },
+  ];
+
+  return (
+    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:py-11.5">
+      <div className="container-custom">
+
+        {/* Title */}
+        <div className="flex items-center justify-between mb-2 xl:mb-8 xl:justify-center px-2 md:px-0">
+          <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase">
+            TOP SELLING ITEMS
+          </h1>
+
+          <button className="xl:hidden text-[#FD7034] text-sm font-medium">
+            View All
+          </button>
+        </div>
+
+        {/* Mobile / Tablet / LG */}
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+          <div className="flex gap-3.75 md:gap-5 w-max pb-2 pl-5">
+            <DynamicCardsReuse
+              products={products}
+              isHorizontal
+            />
+
+            {/* View All Card */}
+            <div className="w-18 shrink-0 flex flex-col items-center justify-center">
+              <button className="w-12 h-12 rounded-full border border-[#D6D6D6] bg-white flex items-center justify-center hover:bg-[#FD7034] hover:text-white transition-all">
+                <ArrowRight className="w-5 h-5" />
+              </button>
+
+              <span className="mt-3 text-xs text-[#012C60]">
+                View All
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop */}
+        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-7 items-start">
+          <DynamicCardsReuse products={products} />
+        </div>
+
+        {/* Desktop Button */}
+        <div className="hidden xl:flex justify-center mt-10">
+          <LandingPageBtn href="#" >
+            View All Products
+          </LandingPageBtn>
+        </div>
+      </div>
+    </section>
+  );
+}

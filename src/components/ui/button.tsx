@@ -21,8 +21,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         nav_sun: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
         nav_cart: "hover:text-[#F05A28] transition-colors relative flex items-center cursor-pointer",
-        nav_user: "hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer",
+        nav_user_laptop: "hover:text-[#F05A28] transition-colors hidden sm:flex items-center cursor-pointer",
+        nav_user_mobile: "hover:text-[#F05A28] transition-colors flex items-center md:hidden  cursor-pointer",
         nav_menu: "hover:text-[#F05A28] transition-colors flex items-center cursor-pointer",
+        landing_page_view_btn: "text-[#FD7034] text-base font-semibold border border-[#FD7034] rounded-[8px] bg-[#FFFFFF] cursor-pointer",
       },
       size: {
         default:
@@ -30,12 +32,14 @@ const buttonVariants = cva(
         xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+        landing_page_view_btn_size: "lg:w-52 lg:h-12 xl:w-60.75 xl:h-16.5 lg:px-7 xl:px-10 lg:py-3 xl:py-5 lg: xl:gap-2.5",
         icon: "size-8",
         "icon-xs":
           "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
-        "icon-lg": "size-9",
+        // "nav-icon": "size-9 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5",
+        "nav-icon": "px-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-5 3xl:[&_svg:not([class*='size-'])]:size-6",
       },
     },
     defaultVariants: {
