@@ -39,7 +39,7 @@ export default function JoinCommunity() {
 
          <ActionButton
   title="Join Our Community"
-  cardWidth="h-[40px] w-[126px] md:h-[54px] md:w-[190px] lg:h-[58px] lg:w-[210px] xl:h-[62px] xl:w-[230px] 1xl:h-[70px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[320px]"
+  cardWidth="h-[40px] w-[140px] md:h-[54px] md:w-[190px] lg:h-[58px] lg:w-[210px] xl:h-[62px] xl:w-[230px] 1xl:h-[70px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[320px]"
   buttonBg="bg-white"
   titleColor="text-black font-normal text-[8px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
   arrowBg="bg-[#F05A28]"
