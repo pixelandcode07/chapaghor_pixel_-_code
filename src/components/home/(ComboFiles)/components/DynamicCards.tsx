@@ -28,15 +28,15 @@ export default function DynamicCards({
   return (
     <div
       className={`relative group cursor-pointer ${
-        isHorizontal ? "w-35 md:w-47 shrink-0 snap-start" : ""
+        isHorizontal ? "w-[151px] md:w-47 shrink-0 snap-start" : ""
       }`}
     >
       {/* Background Wrapper with Magic UI BorderBeam */}
       <div
         className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
-            ? "w-full aspect-140/139 md:w-47 md:aspect-188/194"
-            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-full 3xl:aspect-283/283"
+            ? "w-full aspect-151/157 md:w-47 md:aspect-188/194"
+            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[286px] 3xl:aspect-286/283"
         }`}
       >
         <BorderBeam
@@ -61,7 +61,8 @@ export default function DynamicCards({
             : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5"
         }`}
       >
-        <h3 className="truncate xl:truncate 3xl:overflow-visible 3xl:whitespace-normal">
+        <h3 className="truncate ">
+          {/* xl:truncate 3xl:overflow-visible 3xl:whitespace-normal */}
           {item.title}
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
@@ -105,7 +106,8 @@ export default function DynamicCards({
                   alt={`${item.title} ${index}`}
                   fill
                   className={`object-cover transition-transform duration-700 ${
-                    isFront ? "group-hover:scale-105" : ""
+                    isFront ? "" : ""
+                    // group-hover:scale-105
                   }`}
                 />
 

@@ -84,7 +84,7 @@ export default function Combo() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-[calc(100vw-300px)] 7xl:container mx-auto py-6 md:py-12 xl:py-16 3xl:py-20">
+      <div className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-none 7xl:container mx-auto py-6 md:py-12 xl:py-16 3xl:py-20 3xl:px-[202px]">
         {/* md:max-w-[92vw] xl:max-w-[89vw] 1xl:max-w-[86.11vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] */}
         {/* pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17  */}
         {/* Header Section */}
@@ -102,6 +102,7 @@ export default function Combo() {
             <ArrowRight className="w-3.5 h-3.5 xl:w-5 xl:h-5 ml-2" />
           </button>
         </div>
+        
 
         
         {/*  Mobile / Tablet / LG */}
