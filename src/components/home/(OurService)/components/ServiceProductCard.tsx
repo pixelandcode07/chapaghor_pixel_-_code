@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+// import { ArrowRight } from "lucide-react";
+// import { motion, useMotionValue, useSpring } from "framer-motion";
 
 type Product = {
   title: string;
@@ -17,45 +17,53 @@ type ServiceProductCardProps = {
 export default function ServiceProductCard({
   product,
 }: ServiceProductCardProps) {
-  const [isHovering, setIsHovering] = useState(false);
+  // const [isHovering, setIsHovering] = useState(false);
 
-  // Motion values (no React re-render)
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  // // Motion values (no React re-render)
+  // const mouseX = useMotionValue(0);
+  // const mouseY = useMotionValue(0);
 
-  // Smooth spring animation
-  const springX = useSpring(mouseX, {
-    stiffness: 250,
-    damping: 22,
-    mass: 0.4,
-  });
+  // // Smooth spring animation
+  // const springX = useSpring(mouseX, {
+  //   stiffness: 250,
+  //   damping: 22,
+  //   mass: 0.4,
+  // });
 
-  const springY = useSpring(mouseY, {
-    stiffness: 250,
-    damping: 22,
-    mass: 0.4,
-  });
+  // const springY = useSpring(mouseY, {
+  //   stiffness: 250,
+  //   damping: 22,
+  //   mass: 0.4,
+  // });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   const rect = e.currentTarget.getBoundingClientRect();
 
-    mouseX.set(e.clientX - rect.left);
-    mouseY.set(e.clientY - rect.top);
-  };
+  //   mouseX.set(e.clientX - rect.left);
+  //   mouseY.set(e.clientY - rect.top);
+  // };
+
+  // const handleMouseEnter = () => {
+  //   setIsHovering(true);
+
+  //   // Hide global cursor
+  //   window.dispatchEvent(new Event("hide-custom-cursor"));
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsHovering(false);
+
+  //   // Show global cursor
+  //   window.dispatchEvent(new Event("show-custom-cursor"));
+  // };
 
   const handleMouseEnter = () => {
-    setIsHovering(true);
+  window.dispatchEvent(new Event("service-card-cursor-enter"));
+};
 
-    // Hide global cursor
-    window.dispatchEvent(new Event("hide-custom-cursor"));
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-
-    // Show global cursor
-    window.dispatchEvent(new Event("show-custom-cursor"));
-  };
+const handleMouseLeave = () => {
+  window.dispatchEvent(new Event("service-card-cursor-leave"));
+};
 
   return (
     <div
@@ -64,12 +72,12 @@ aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-267/304"
       style={{
         borderRadius: "10px",
       }}
-      onMouseMove={handleMouseMove}
+      // onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+  onMouseLeave={handleMouseLeave}
     >
       {/* Custom Arrow Cursor */}
-      <motion.div
+      {/* <motion.div
         style={{
           x: springX,
           y: springY,
@@ -94,7 +102,7 @@ aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-267/304"
           className="text-white w-3.5 h-3.5 md:w-5.5 md:h-5.5"
           strokeWidth={2.5}
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Image Wrapper */}
       <div className="relative h-full w-full overflow-hidden rounded-[10px]">
