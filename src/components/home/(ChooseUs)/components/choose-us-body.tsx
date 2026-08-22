@@ -160,16 +160,12 @@ export default function ChooseUsBody() {
   const { theme } = useTheme()
   return (
     <section className="w-full bg-white">
-      <MagicCard
-  // mode="orb"
-  // glowFrom="#F05A28"
-  // glowTo="#FF8D28"
-  // glowAngle={45}
-  // glowSize={500}
-  // glowBlur={100}
-  // glowOpacity={0.7}
-  // gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+     <MagicCard
+  gradientSize={800}
   gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+  gradientOpacity={0.8}
+  gradientFrom="#F05A28"
+  gradientTo="#FF8D28"
   className="relative container-custom overflow-hidden !bg-white p-0 shadow-none lg:!bg-black xl:rounded-[24px]"
 >
         <div className="relative z-10 px-4 py-10 md:px-6 md:py-12 xl:px-8 xl:py-16 3xl:px-12 3xl:py-12.5">
