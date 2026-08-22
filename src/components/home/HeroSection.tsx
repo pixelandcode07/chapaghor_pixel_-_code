@@ -56,7 +56,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full bg-white pb-[84px] relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-5.25 md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
@@ -77,7 +77,7 @@ export default function HeroSection() {
                                     className="pl-2 md:pl-3 basis-auto"
                                 >
                                     <div
-                                        className={`relative overflow-hidden rounded-[24px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-91.25 aspect-389/143 md:w-177.75 md:aspect-711/225 lg:w-214.25 lg:aspect-857/272 3xl:w-322 3xl:aspect-1288/400 ${
+                                        className={`relative overflow-hidden rounded-[8px] md:rounded-[15px] xl:rounded-[18px] 1xl:rounded-[20px] 3xl:rounded-[27px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-85.75 aspect-343/126 md:w-178 md:aspect-712/226 xl:w-210 xl:aspect-840/267 1xl:w-241.25 1xl:aspect-965/307 3xl:w-322 3xl:aspect-1288/409 ${
                                             isActive
                                                 ? "blur-0 opacity-100 scale-100 z-20"
                                                 : "blur-[5px] opacity-40 scale-100 z-0"
@@ -98,7 +98,7 @@ export default function HeroSection() {
                 </Carousel>
 
                 {/* Nav Arrows - Positioned EXACTLY on the middle edges */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[850px] xl:w-[967px] 3xl:w-[1288px] h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-212.5 xl:w-241.75 3xl:w-322 h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center items-center gap-2 mt-8">
+                <div className="flex justify-center items-center gap-2 mt-2 md:mt-5 xl:mt-8">
                     {Array.from({ length: count }).map((_, index) => {
                         const isActive = index === current;
                         return (
@@ -131,8 +131,8 @@ export default function HeroSection() {
                                 onClick={() => api?.scrollTo(index)}
                                 aria-label={`Go to slide ${index + 1}`}
                                 className={`transition-all duration-300 ease-in-out rounded-full ${isActive
-                                    ? "w-8 h-2 bg-[#F05A28]"
-                                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                                    ? "w-4 h-1 md:w-8 md:h-1.5 xl:w-8 xl:h-2 bg-[#F05A28]"
+                                    : "w-1 h-1 md:w-1.5 md:h-1.5 xl:w-2 xl:h-2 bg-gray-300 hover:bg-gray-400"
                                     }`}
                             />
                         );

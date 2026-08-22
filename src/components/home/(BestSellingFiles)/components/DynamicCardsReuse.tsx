@@ -1,74 +1,3 @@
-// import { ArrowUpRight } from 'lucide-react'
-// import Image from 'next/image'
-
-// type Product = {
-//     name: string;
-//     src: string;
-// }
-
-// type DynamicCardsReuseProps = {
-//     products: Product[];
-//     index?: number;
-// }
-
-// export default function DynamicCardsReuse({ products, index }: DynamicCardsReuseProps) {
-//     return (
-//         <>
-//             {products.map((product, idx) => (
-//                 <div
-//                     key={idx}
-//                     className="relative flex flex-col group cursor-pointer w-full  mx-auto"
-//                 >
-
-//                     {/* Image & Cutout Wrapper */}
-//                     <div className="relative 3xl:w-[266px] 3xl:aspect-[266/277]">
-
-//                         {/* Inner image box */}
-//                         <div className="absolute inset-0 rounded-[16px] xl:rounded-[30px] overflow-hidden bg-white border border-gray-100">
-//                             <Image
-//                                 src={product.src}
-//                                 alt={product.name}
-//                                 fill
-//                                 className="object-cover rounded-br-[50px] hover:rounded-br-[80px] group-hover:scale-105 transition-transform duration-700"
-//                             />
-
-//                             {/* White block for the cutout */}
-//                             <div className="absolute -bottom-1 -right-1 3xl:bottom-auto 3xl:right-auto 3xl:left-[239px] 3xl:top-[251px] w-[68px] h-[68px] xl:w-[80px] xl:h-[80px] bg-white rounded-tl-[32px] xl:rounded-tl-[38px] z-10 pointer-events-none" />
-
-//                             {/* Concave curve (Top edge) */}
-//                             <div className="absolute bottom-[63px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[219px] 3xl:left-[283px] w-5 h-5 xl:w-8 xl:h-8 z-10 pointer-events-none">
-//                                 <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-white">
-//                                     <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
-//                                 </svg>
-//                             </div>
-
-//                             {/* Concave curve (Left edge) */}
-//                             <div className="absolute -bottom-0.5 right-[63px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[295px] 3xl:left-[207px] w-5 h-5 xl:w-8 xl:h-8 z-10 pointer-events-none ">
-//                                 <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-white">
-//                                     <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
-//                                 </svg>
-//                             </div>
-//                         </div>
-
-//                         {/* Circular Button */}
-//                         <div className="absolute bottom-[4px] right-[4px] xl:bottom-[6px] xl:right-[6px] 3xl:bottom-auto 3xl:right-auto 3xl:left-[249px] 3xl:top-[261px] w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] bg-[#111827] group-hover:bg-[#FD7034] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md">
-//                             <ArrowUpRight className="w-6 h-6 xl:w-7 xl:h-7" strokeWidth={2} />
-//                         </div>
-//                     </div>
-
-//                     {/* Product Title Pill */}
-//                     <div className="mt-3 xl:mt-4 flex items-center justify-center w-full">
-//                         <span className="w-full text-center bg-[#F4F4F5] text-[#012C60] text-[14px] xl:text-[16px] 3xl:text-[27px] font-normal px-2 py-2.5 xl:py-2.75 rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors tracking-wide block truncate">
-//                             {product.name}
-//                         </span>
-//                     </div>
-//                 </div>
-//             ))}
-//         </>
-//     )
-// }
-
-
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
@@ -79,74 +8,105 @@ type Product = {
 
 type DynamicCardsReuseProps = {
   products: Product[];
-  index?: number;
+  isHorizontal?: boolean;
 };
 
 export default function DynamicCardsReuse({
   products,
+  isHorizontal = false,
 }: DynamicCardsReuseProps) {
   return (
     <>
-      {products.map((product, idx) => (
+      {products.slice(0, 6).map((product, idx) => (
         <div
           key={idx}
-          className="relative flex flex-col group cursor-pointer w-full mx-auto"
+          className={`relative flex flex-col group cursor-pointer mx-auto snap-start ${
+            isHorizontal ? "w-35 md:w-46.75 shrink-0" : "w-full"
+          }`}
         >
-          {/* Image Wrapper */}
-          <div className="relative xl:w-[266px] xl:aspect-[266/277]">
-            {/* Image */}
-            <div className="absolute inset-0 rounded-[16px] xl:rounded-[30px] overflow-hidden bg-white border border-gray-100">
+          {/* Image Container */}
+          <div
+            className={`relative ${
+              isHorizontal
+                ? "w-full aspect-140/139 md:w-46.75 md:aspect-187/194"
+                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207  3xl:aspect-266/278"
+                // 1xl:w-49.75 3xl:w-66.5
+            }`}
+          >
+            <div className="absolute inset-0 overflow-hidden rounded-[16px] 3xl:rounded-[20px] bg-white border border-gray-100">
               <Image
                 src={product.src}
                 alt={product.name}
                 fill
-                className="object-cover rounded-br-[50px] hover:rounded-br-[80px] group-hover:scale-105 transition-all duration-700"
+                className="object-cover rounded-br-[50px] group-hover:rounded-br-[80px] group-hover:scale-105 transition-all duration-700"
               />
 
               {/* White Cutout */}
-              <div className="absolute bottom-0 right-0 w-[68px] h-[68px] xl:w-[84px] xl:h-[84px] bg-white rounded-tl-[36px] xl:rounded-tl-[42px] z-10 pointer-events-none" />
+              <div 
+                className="absolute bottom-0 right-0 bg-white z-10 pointer-events-none
+                           w-[44px] h-[44px] md:w-[50px] md:h-[50px] xl:w-[56px] xl:h-[56px] 1xl:w-[62px] 1xl:h-[62px] 3xl:w-[76px] 3xl:h-[76px]
+                           rounded-tl-[24px] md:rounded-tl-[25px] xl:rounded-tl-[28px] 1xl:rounded-tl-[30px] 3xl:rounded-tl-[41px]" 
+              />
 
-              {/* Top Concave Curve */}
-              <div className="absolute bottom-[68px] right-0 xl:bottom-[84px] w-5 h-5 xl:w-8 xl:h-8 z-10 pointer-events-none">
+              {/* Top Curve */}
+              <div 
+                className="absolute right-0 z-10 pointer-events-none 
+                           bottom-[43px] md:bottom-[50px] xl:bottom-[55px] 1xl:bottom-[62px] 3xl:bottom-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
                 <svg
                   viewBox="0 0 32 32"
                   fill="none"
                   className="w-full h-full text-white"
                 >
                   <path
-                    d="M0 32 C22 32, 32 22, 32 0 L32 32 Z"
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
                     fill="currentColor"
                   />
                 </svg>
               </div>
 
-              {/* Left Concave Curve */}
-              <div className="absolute bottom-0 right-[68px] xl:right-[84px] w-5 h-5 xl:w-8 xl:h-8 z-10 pointer-events-none">
+              {/* Left Curve */}
+              <div 
+                className="absolute bottom-0 z-10 pointer-events-none 
+                           right-[43px] md:right-[50px] xl:right-[55px] 1xl:right-[62px] 3xl:right-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
                 <svg
                   viewBox="0 0 32 32"
                   fill="none"
                   className="w-full h-full text-white"
                 >
                   <path
-                    d="M0 32 C22 32, 32 22, 32 0 L32 32 Z"
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
                     fill="currentColor"
                   />
                 </svg>
               </div>
             </div>
 
-            {/* Arrow Button */}
-            <div className="absolute bottom-[4px] right-[4px] xl:bottom-[8px] xl:right-[8px] w-[50px] h-[50px] xl:w-[60px] xl:h-[60px] bg-[#111827] group-hover:bg-[#FD7034] text-white flex items-center justify-center rounded-full transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-20 shadow-md">
-              <ArrowUpRight
-                className="w-6 h-6 xl:w-7 xl:h-7"
-                strokeWidth={2}
+            {/* Arrow */}
+            <div 
+              className="absolute rounded-full bg-[#1D2939] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 z-20 bottom-0 right-0 w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
+            >
+              {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
+              <ArrowUpRight 
+                className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
+                strokeWidth={2} 
               />
             </div>
           </div>
 
-          {/* Product Title */}
-          <div className="mt-3 xl:mt-4 flex items-center justify-center w-full">
-            <span className="w-full text-center bg-[#F4F4F5] text-[#012C60] text-[14px] xl:text-[22px] font-normal px-2 py-2.5 xl:py-2.75 rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors tracking-wide block truncate">
+          {/* Title */}
+          <div className="mt-2 xl:mt-3 flex justify-center">
+            <span
+              className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
+                isHorizontal
+                  ? "w-full text-xs p-1 lg:p-1.5"
+                  : "w-full text-[13px] md:text-[10px] xl:text-[12px] 3xl:text-[15px] p-1 lg:p-1.5 tracking-[0.5px]"
+              }`}
+            >
               {product.name}
             </span>
           </div>

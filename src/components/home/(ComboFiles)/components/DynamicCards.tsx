@@ -1,127 +1,190 @@
-'use client';
+"use client";
 
-import { ArrowUpRight } from 'lucide-react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { BorderBeam } from '@/components/ui/border-beam';
-import { useEffect, useState } from 'react';
-import { comboData } from '../ComboFile';
-import { TakaIcon } from '../../(Navbar)/components/custom/icons';
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { useEffect, useState } from "react";
+import { comboData } from "../ComboFile";
+import { TakaIcon } from "../../../custom/icons";
 
+export default function DynamicCards({
+  item,
+  isHorizontal = false,
+}: {
+  item: (typeof comboData)[0];
+  isHorizontal?: boolean;
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Cycles the layers every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % item.images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [item.images.length]);
 
-export default function DynamicCards({ item }: { item: typeof comboData[0] }) {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  return (
+    <div
+      className={`relative group cursor-pointer ${
+        isHorizontal ? "w-35 md:w-47 shrink-0 snap-start" : ""
+      }`}
+    >
+      {/* Background Wrapper with Magic UI BorderBeam */}
+      <div
+        className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
+          isHorizontal
+            ? "w-full aspect-140/139 md:w-47 md:aspect-188/194"
+            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-full 3xl:aspect-283/283"
+        }`}
+      >
+        <BorderBeam
+          duration={6}
+          size={400}
+          className="from-transparent via-red-500 to-transparent"
+        />
+        <BorderBeam
+          duration={6}
+          delay={3}
+          size={400}
+          borderWidth={2}
+          className="from-transparent via-blue-500 to-transparent"
+        />
+      </div>
 
-    // Cycles the layers every 5 seconds
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % item.images.length);
-        }, 5000);
-        return () => clearInterval(timer);
-    }, [item.images.length]);
-    return (
-        <div className="relative group cursor-pointer">
+      {/* Title */}
+      <div
+        className={`relative z-10 text-white font-medium flex justify-between items-center border-b border-[#686868] ${
+          isHorizontal
+            ? "text-sm pt-5 px-4 pb-3 mb-10"
+            : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5"
+        }`}
+      >
+        <h3 className="truncate xl:truncate 3xl:overflow-visible 3xl:whitespace-normal">
+          {item.title}
+        </h3>
+        <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
+          <span>
+            <TakaIcon className="w-8 h-6" />
+          </span>
+          {item.price}
+        </h3>
+      </div>
 
-            {/* Background Wrapper with Magic UI BorderBeam */}
-            <div className="absolute top-0 left-0 3xl:w-[283px] 3xl:aspect-[283/283] rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden">
-                {/* w-full h-[90%] */}
-                <BorderBeam
-                    duration={6}
-                    size={400}
-                    className="from-transparent via-red-500 to-transparent"
+      {/* Stacked Image Container */}
+      <div className="relative z-10 pb-4 mt-2">
+        <div className="relative w-full aspect-416/307 mt-0">
+          {" "}
+          {/* mt-4 gives room for back layers to peek out top */}
+          {/* The 3 Image Layers */}
+          {item.images.map((src, index) => {
+            const offset =
+              (index - currentIndex + item.images.length) % item.images.length;
+
+            const isFront = offset === 0;
+            const isMiddle = offset === 1;
+
+            return (
+              <motion.div
+                key={src}
+                initial={false}
+                animate={{
+                  y: isFront ? 0 : isMiddle ? -12 : -24,
+                  scale: isFront ? 1 : isMiddle ? 0.92 : 0.84,
+                  zIndex: isFront ? 30 : isMiddle ? 20 : 10,
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top"
+              >
+                <Image
+                  src={src}
+                  alt={`${item.title} ${index}`}
+                  fill
+                  className={`object-cover transition-transform duration-700 ${
+                    isFront ? "group-hover:scale-105" : ""
+                  }`}
                 />
-                <BorderBeam
-                    duration={6}
-                    delay={3}
-                    size={400}
-                    borderWidth={2}
-                    className="from-transparent via-blue-500 to-transparent"
+
+                <motion.div
+                  initial={false}
+                  animate={{
+                    opacity: isFront ? 0 : isMiddle ? 0.3 : 0.6,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 bg-black"
                 />
+
+                {isFront && (
+                  <>
+                    {/* Bottom-right Cutout */}
+                    <div 
+                className="absolute bottom-0 right-0 bg-black z-10 pointer-events-none
+                           w-[44px] h-[44px] md:w-[50px] md:h-[50px] xl:w-[56px] xl:h-[56px] 1xl:w-[62px] 1xl:h-[62px] 3xl:w-[76px] 3xl:h-[76px]
+                           rounded-tl-[22px] md:rounded-tl-[23px] xl:rounded-tl-[26px] 1xl:rounded-tl-[28px] 3xl:rounded-tl-[39px]" 
+              />
+
+                    {/* Top Curve */}
+                   <div 
+                className="absolute right-0 z-10 pointer-events-none 
+                           bottom-[43px] md:bottom-[50px] xl:bottom-[55px] 1xl:bottom-[62px] 3xl:bottom-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+                    {/* Left Curve */}
+                    <div 
+                className="absolute bottom-0 z-10 pointer-events-none 
+                           right-[43px] md:right-[50px] xl:right-[55px] 1xl:right-[62px] 3xl:right-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+                    {/* Arrow */}
+                    {/* bg-[#F05A28] */}
+                    <div 
+              className="absolute rounded-full bg-[#F05A28] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300  z-20  bottom-0 right-0
+               w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]">
+              {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
+              <ArrowUpRight 
+                className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
+                strokeWidth={2} 
+              />
             </div>
-
-            {/* Title */}
-            <div className="relative z-10 text-white font-medium text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5  border-b border-[#686868] flex justify-between items-center">
-                <h3>
-                    {item.title}
-                </h3>
-                <h3 className='flex justify-center items-center text-[#FD7034]'>
-                    <span>
-                        <TakaIcon className='w-6 h-6' />
-                    </span>
-                    {item.price}
-                </h3>
-            </div>
-
-            {/* Stacked Image Container */}
-            <div className="relative z-10 pb-4 mt-2">
-                <div className="relative w-full aspect-5/4.5 mt-4"> {/* mt-4 gives room for back layers to peek out top */}
-
-                    {/* The 3 Image Layers */}
-                    {item.images.map((src, index) => {
-                        // Logic to calculate which layer is front, middle, or back based on currentIndex
-                        const offset = (index - currentIndex + item.images.length) % item.images.length;
-
-                        const isFront = offset === 0;
-                        const isMiddle = offset === 1;
-                        const isBack = offset === 2;
-
-                        return (
-                            <motion.div
-                                key={src}
-                                initial={false}
-                                animate={{
-                                    y: isFront ? 0 : isMiddle ? -12 : -24, // Pushes back layers up
-                                    scale: isFront ? 1 : isMiddle ? 0.92 : 0.84, // Shrinks back layers
-                                    zIndex: isFront ? 30 : isMiddle ? 20 : 10,
-                                }}
-                                transition={{ duration: 0.8, ease: "easeInOut" }}
-                                className="3xl:w-[283px] 3xl:aspect-[283/209] absolute inset-0 rounded-[20px] overflow-hidden bg-[#000000] shadow-lg origin-top"
-                            >
-                                <Image
-                                    src={src}
-                                    alt={`${item.title} slide ${index + 1}`}
-                                    fill
-                                    className={` object-cover transition-transform duration-700 ${isFront ? 'group-hover:scale-105' : ''}`}
-                                />
-
-                                {/* Black Overlay to create depth/shadow for images pushed to the back */}
-                                <motion.div
-                                    initial={false}
-                                    animate={{ opacity: isFront ? 0 : isMiddle ? 0.3 : 0.6 }}
-                                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                                    className="absolute inset-0 bg-black pointer-events-none"
-                                />
-                            </motion.div>
-                        );
-                    })}
-
-                    {/* --- Static Front Cutout UI (Always sits on top of all images) --- */}
-
-                    {/* Bottom-right Cutout Block */}
-                    <div className="absolute bottom-0 right-0 3xl:bottom-auto 3xl:right-auto 3xl:left-[207px] 3xl:top-[133px] bg-black w-[76px] h-[76px] rounded-tl-[38px] rounded-br-[18px] 3xl:rounded-br-[20px] z-40 pointer-events-none overflow-hidden" />
-
-                    {/* Concave Curve (Top edge) */}
-                    <div className="absolute bottom-[75px] -right-[0px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[109px] 3xl:left-[259px] w-6 h-6 z-40 pointer-events-none">
-                        <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
-                            <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
-                        </svg>
-                    </div>
-
-                    {/* Concave Curve (Left edge) */}
-                    <div className="absolute -bottom-[0.5px] right-[75.5px] 3xl:bottom-auto 3xl:right-auto 3xl:top-[185.5px] 3xl:left-[183.5px] w-6 h-6 z-40 pointer-events-none">
-                        <svg viewBox="0 0 32 32" fill="none" className="w-full h-full text-black">
-                            <path d="M0 32 C 22 32, 32 22, 32 0 L 32 32 Z" fill="currentColor" />
-                        </svg>
-                    </div>
-
-                    {/* Orange Arrow Button */}
-                    <div className="absolute bottom-[2px] right-[2px] 3xl:bottom-auto 3xl:right-auto 3xl:left-[217px] 3xl:top-[143px] w-[64px] h-[64px] bg-[#F05A28] text-white flex items-center justify-center rounded-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 z-50">
-                        <ArrowUpRight size={28} strokeWidth={2} />
-                    </div>
-
-                </div>
-            </div>
+                  </>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
-    )
+      </div>
+    </div>
+  );
 }

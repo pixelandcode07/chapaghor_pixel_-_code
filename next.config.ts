@@ -1,16 +1,4 @@
-// import type { NextConfig } from "next";
 
-// const nextConfig: NextConfig = {
-//   /* config options here */
-//   reactCompiler: true,
-
-//   // TypeScript এরর ইগনোর করার জন্য
-//   typescript: {
-//     ignoreBuildErrors: true,
-//   },
-// };
-
-// export default nextConfig;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -29,4 +17,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig; // Use `module.exports = nextConfig;` if you are using older CommonJS
+export default nextConfig; 

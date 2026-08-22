@@ -25,8 +25,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
   });
 
   return (
-    // <MegaMenuWrapper className="border-t md:translate-x-[-48%] xl:translate-x-[-44%] lg:w-[1500px] xl:w-[2000px] 3xl_v2:w-[2400px] 4xl:w-[3500px] 10xl:w-[6000px] lg:h-[255px] xl:h-[388px] flex justify-center py-[40px]">
-   <MegaMenuWrapper className="w-full py-10">
+     <MegaMenuWrapper className="w-full py-10">
       <div className="w-full h-full flex items-stretch">
         {/* Image */}
         <div className="md:w-72.5 xl:w-107.75 h-76.25 shrink-0  flex items-center justify-center">
@@ -41,7 +40,7 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
 
         {/* Content */}
         <div className="md:ml-6 xl:ml-16 flex-1 h-full overflow-hidden">
-          <div className="grid h-full grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-x-4.5">
+          <div className="grid h-full grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4.5">
             {columns.map((column, columnIndex) => (
               <div key={columnIndex} className="space-y-[7.5px]">
                 {column.map((subCat) => (
@@ -66,11 +65,11 @@ export default function ITwo({ relatedSubCats, category }: MegaMenuProps) {
                   </Link>
                 ))}
 
-                {columnIndex === columns.length - 1 && (
-                  <button className="flex items-start tracking-[0.5px] gap-[6.5px] font-light text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer">
+                 {columnIndex === columns.length - 1 && (
+                  <button className="flex items-start gap-[6.5px] font-light text-[16px] 3xl:text-[18px] leading-6.25 text-[#F05A28] hover:underline underline-offset-4 cursor-pointer tracking-[1px]">
                     <ArrowRight
-                      size={18}
-                      className="mt-0.5 shrink-0 text-orange-500"
+                      size={13}
+                      className="mt-1.25 shrink-0 text-orange-500"
                     />
                     View all
                   </button>
