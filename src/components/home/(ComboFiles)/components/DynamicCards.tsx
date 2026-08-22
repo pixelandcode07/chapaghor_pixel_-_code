@@ -36,7 +36,7 @@ export default function DynamicCards({
         className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
             ? "w-full aspect-151/157 md:w-47 md:aspect-188/194"
-            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-full 3xl:aspect-283/283"
+            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[286px] 3xl:aspect-286/283"
         }`}
       >
         <BorderBeam
