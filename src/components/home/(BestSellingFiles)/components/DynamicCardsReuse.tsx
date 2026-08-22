@@ -38,7 +38,8 @@ export default function DynamicCardsReuse({
                 src={product.src}
                 alt={product.name}
                 fill
-                className="object-cover rounded-br-[50px] group-hover:rounded-br-[80px] group-hover:scale-105 transition-all duration-700"
+                className="object-cover rounded-br-[50px] group-hover:rounded-br-[80px] "
+                // group-hover:scale-105 transition-all duration-700
               />
 
               {/* White Cutout */}
@@ -87,8 +88,9 @@ export default function DynamicCardsReuse({
 
             {/* Arrow */}
             <div 
-              className="absolute rounded-full bg-[#1D2939] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300 z-20 bottom-0 right-0 w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
+              className="absolute rounded-full bg-[#1D2939]  text-white flex items-center justify-center transition-all duration-300 z-20 bottom-0 right-0 w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]"
             >
+              {/* group-hover:bg-[#FD7034] */}
               {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
               {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
               <ArrowUpRight 
@@ -104,7 +106,7 @@ export default function DynamicCardsReuse({
               className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
                 isHorizontal
                   ? "w-full text-xs p-1 lg:p-1.5"
-                  : "w-full text-[13px] md:text-[10px] xl:text-[12px] 3xl:text-[15px] p-1 lg:p-1.5 tracking-[0.5px]"
+                  : "w-full text-[13px] md:text-[10px] xl:text-[12px] 3xl:text-[18px] p-1 lg:py-1 tracking-[0.5px]"
               }`}
             >
               {product.name}

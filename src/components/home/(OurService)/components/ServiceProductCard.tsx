@@ -107,12 +107,14 @@ aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-267/304"
         />
 
         {/* Gradient */}
-        <div className="absolute inset-x-0 bottom-0 top-48 z-10 bg-gradient-to-t from-[#FF6633] via-[#EA4335] to-transparent" />
+        {/* <div className="absolute inset-x-0 bottom-0 top-36 md:top-48 xl:top-48 z-10 bg-gradient-to-t from-[#FF6633] via-[#EA4335] to-transparent" /> */}
+        {/* Gradient */}
+<div className="absolute inset-x-0 bottom-0 top-32 md:top-48 xl:top-48 z-10 bg-[linear-gradient(to_top,#FF3D16_0%,#FF3D16_18%,rgba(255,69,25,0.92)_35%,rgba(255,92,50,0.58)_52%,rgba(255,120,85,0.20)_68%,transparent_82%)] " />
 
         {/* Title */}
-        <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center">
+        <div className="absolute inset-x-0 bottom-1 md:bottom-2 xl:bottom-3 z-20 flex justify-center">
           <span
-            className="pointer-events-none text-center text-base font-bold text-white drop-shadow-md xl:text-[18px] 3xl:text-[21px]"
+            className="pointer-events-none text-center text-[15px] font-bold text-white drop-shadow-md xl:text-[18px] 3xl:text-[21px] uppercase tracking-[0.5px]"
             style={{ lineHeight: "150%" }}
           >
             {product.title}
