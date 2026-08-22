@@ -1,203 +1,3 @@
-// import React from 'react';
-
-// export default function ConnectedFeatureBar() {
-//   return (
-//     <div className="px-2 xl:px-0 py-0 my-0 mx-auto">
-//       <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-stretch justify-between gap-4 sm:gap-0">
-//         {/* Design Tips */}
-//         <div className="flex items-center gap-3 flex-1 sm:border-r sm:border-gray-100 sm:pr-4 lg:pr-6">
-//           <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
-//             <svg
-//               className="w-5 h-5 text-orange-500"
-//               fill="none"
-//               stroke="currentColor"
-//               strokeWidth="1.8"
-//               viewBox="0 0 24 24">
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-//               />
-//             </svg>
-//           </div>
-//           <div>
-//             <h4 className="text-sm font-semibold text-gray-900">Design Tips</h4>
-//             <p className="text-xs text-gray-500 leading-tight mt-0.5">
-//               Helpful tips & tricks
-//               <br className="hidden sm:block" />
-//               for perfect prints
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Daily Offers */}
-//         <div className="flex items-center gap-3 flex-1 sm:border-r sm:border-gray-100 sm:px-4 lg:px-6">
-//           <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
-//             <svg
-//               className="w-5 h-5 text-orange-500"
-//               fill="none"
-//               stroke="currentColor"
-//               strokeWidth="1.8"
-//               viewBox="0 0 24 24">
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-//               />
-//             </svg>
-//           </div>
-//           <div>
-//             <h4 className="text-sm font-semibold text-gray-900">
-//               Daily Offers
-//             </h4>
-//             <p className="text-xs text-gray-500 leading-tight mt-0.5">
-//               Exclusive discounts
-//               <br className="hidden sm:block" />
-//               and seasonal offers
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Customer Reviews */}
-//         <div className="flex items-center gap-3 flex-1 sm:border-r sm:border-gray-100 sm:px-4 lg:px-6">
-//           <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
-//             <svg
-//               className="w-5 h-5 text-orange-500"
-//               fill="none"
-//               stroke="currentColor"
-//               strokeWidth="1.8"
-//               viewBox="0 0 24 24">
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-//               />
-//             </svg>
-//           </div>
-//           <div>
-//             <h4 className="text-sm font-semibold text-gray-900">
-//               Customer Reviews
-//             </h4>
-//             <p className="text-xs text-gray-500 leading-tight mt-0.5">
-//               Real experiences from
-//               <br className="hidden sm:block" />
-//               our happy customers
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* Latest Projects */}
-//         <div className="flex items-center gap-3 flex-1 sm:pl-4 lg:pl-6">
-//           <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
-//             <svg
-//               className="w-5 h-5 text-orange-500"
-//               fill="none"
-//               stroke="currentColor"
-//               strokeWidth="1.8"
-//               viewBox="0 0 24 24">
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-//               />
-//             </svg>
-//           </div>
-//           <div>
-//             <h4 className="text-sm font-semibold text-gray-900">
-//               Latest Projects
-//             </h4>
-//             <p className="text-xs text-gray-500 leading-tight mt-0.5">
-//               Explore our latest
-//               <br className="hidden sm:block" />
-//               creative works
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// // "use client";
-
-// // import { Lightbulb, UserRound, MessagesSquare, Image as ImageIcon } from "lucide-react";
-// // import { FaFacebookF, FaInstagram, FaYoutube, FaPinterestP, FaLinkedinIn } from "react-icons/fa6";
-
-// // const socialLinks = [
-// //   { id: 1, name: "Facebook", icon: FaFacebookF, color: "#1877F2", buttonBg: "#EEF5FF", action: "Follow Us", description: <>Updates, news and<br />latest offers</> },
-// //   { id: 2, name: "Instagram", icon: FaInstagram, color: "#E1306C", buttonBg: "#FFF0F6", action: "Follow Us", description: <>See our latest designs<br />& daily updates</> },
-// //   { id: 3, name: "YouTube", icon: FaYoutube, color: "#FF0000", buttonBg: "#FFF0F0", action: "Subscribe", description: <>Watch tutorials, behind<br />the scenes & more.</> },
-// //   { id: 4, name: "Pinterest", icon: FaPinterestP, color: "#E60023", buttonBg: "#FFF0F2", action: "Follow Us", description: <>Explore creative ideas<br />and design inspiration.</> },
-// //   { id: 5, name: "LinkedIn", icon: FaLinkedinIn, color: "#0A66C2", buttonBg: "#EEF6FF", action: "Connect", description: <>Connect with us for business<br />news and opportunities</> },
-// // ];
-
-// // const highlights = [
-// //   { id: 1, title: "Design Tips", description: <>Helpful tips & tricks<br />for perfect prints</>, icon: Lightbulb },
-// //   { id: 2, title: "Daily Offers", description: <>Exclusive discounts<br />and seasonal offers</>, icon: UserRound },
-// //   { id: 3, title: "Customer Reviews", description: <>Real experiences from<br />our happy customers</>, icon: MessagesSquare },
-// //   { id: 4, title: "Latest Projects", description: <>Explore our latest<br />creative works</>, icon: ImageIcon },
-// // ];
-
-// // export default function ConnectedCard() {
-// //   return (
-// //     <section className="container-custom my-1 w-full px-2 py-4 shadow-[1.06px_1.06px_4.13px_2px_#0000001A] md:px-0 md:py-5 xl:py-6 1xl:py-8 3xl:py-10 rounded-xl">
-// //         {/* box-shadow: ; */}
-
-// //       <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-5 3xl:gap-6">
-// //         {socialLinks.map((social) => {
-// //           const Icon = social.icon;
-
-// //           return (
-// //             <div key={social.id} className="flex flex-col items-center rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
-// //               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full text-white" style={{ backgroundColor: social.color }}>
-// //                 <Icon className="h-6 w-6" />
-// //               </div>
-
-// //               <h3 className="mb-1 text-base font-semibold text-gray-900">
-// //                 {social.name}
-// //               </h3>
-
-// //               <p className="mb-5 text-sm leading-snug text-gray-500">
-// //                 {social.description}
-// //               </p>
-
-// //               <a href="#" className="inline-flex items-center gap-1 text-sm font-medium transition-all hover:gap-2" style={{ color: social.color }}>
-// //                 {social.action} <span>→</span>
-// //               </a>
-// //             </div>
-// //           );
-// //         })}
-// //       </div>
-
-//     //   <div className="xl:hidden overflow-x-auto scrollbar-hide">
-//     //     <div className="flex min-w-max items-stretch justify-center md:min-w-0 md:grid md:grid-cols-4">
-//     //       {highlights.map((item, index) => {
-//     //         const Icon = item.icon;
-
-//     //         return (
-//     //           <div key={item.id} className={`flex h-[170px] w-[180px] shrink-0 flex-col items-center justify-center px-3 text-center md:h-[175px] md:w-auto lg:h-[185px] lg:px-4 ${index !== highlights.length - 1 ? "border-r border-[#E5E5E5]" : ""}`}>
-//     //             <div className="flex h-[58px] w-[58px] items-center justify-center rounded-full bg-[#FFF0E9] md:h-[62px] md:w-[62px] lg:h-[66px] lg:w-[66px]">
-//     //               <Icon className="h-8 w-8 text-[#F05A28] md:h-9 md:w-9" strokeWidth={1.8} />
-//     //             </div>
-
-//     //             <h3 className="mt-4 text-[14px] font-semibold leading-tight text-black md:text-[15px] lg:text-[16px]">
-//     //               {item.title}
-//     //             </h3>
-
-//     //             <p className="mt-2 text-[11px] font-normal leading-[1.35] text-[#757575] md:text-[12px] lg:text-[13px]">
-//     //               {item.description}
-//     //             </p>
-//     //           </div>
-//     //         );
-//     //       })}
-//     //     </div>
-// //       </div>
-// //     </section>
-// //   );
-// // }
-
-
 "use client";
 
 const highlights = [
@@ -212,7 +12,7 @@ const highlights = [
       </>
     ),
     icon: (
-      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9 xl:h-10 xl:w-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
@@ -228,7 +28,7 @@ const highlights = [
       </>
     ),
     icon: (
-      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9 xl:h-10 xl:w-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
     ),
@@ -244,7 +44,7 @@ const highlights = [
       </>
     ),
     icon: (
-      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9 xl:h-10 xl:w-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
       </svg>
     ),
@@ -260,7 +60,7 @@ const highlights = [
       </>
     ),
     icon: (
-      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 text-[#F05A28] md:h-9 md:w-9 xl:h-10 xl:w-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
@@ -285,14 +85,6 @@ export default function ConnectedFeatureBar() {
         <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] md:h-[52px] md:w-[52px] lg:h-[58px] lg:w-[58px]">
           {item.icon}
         </div>
-
-        {/* <h3 className="mt-3 truncate max-w-full text-[11px] font-semibold leading-tight text-black md:mt-3 md:text-[13px] lg:mt-4 lg:text-[14px]">
-          {item.title}
-        </h3>
-
-        <p className="mt-1.5 text-[8px] font-normal leading-[1.3] text-[#757575] md:mt-2 md:text-[9px] lg:text-[10px]">
-          {item.description}
-        </p> */}
         <h3 className="mt-3 font-medium text-[#000000] text-[8px] leading-none tracking-[0.5px] md:mt-3 md:text-[15px] lg:mt-4 lg:text-[16px]">
   {item.title}
 </h3>
@@ -309,18 +101,11 @@ export default function ConnectedFeatureBar() {
       <div className="container-custom hidden items-stretch rounded-[14px] border border-[#EEEEEE] bg-white px-4 py-5 shadow-[0_5px_16px_rgba(0,0,0,0.08)] xl:flex 1xl:px-6 1xl:py-6 3xl:px-8 3xl:py-7">
         {highlights.map((item, index) => (
           <div key={item.id} className={`flex flex-1 items-center justify-center gap-3 px-4 1xl:gap-4 1xl:px-5 3xl:gap-5 3xl:px-6 ${index !== highlights.length - 1 ? "border-r border-[#E5E5E5]" : ""}`}>
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] 1xl:h-12 1xl:w-12 3xl:h-14 3xl:w-14">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] 1xl:h-12 1xl:w-12 3xl:h-18 3xl:w-18">
               {item.icon}
             </div>
 
             <div className="min-w-0">
-              {/* <h4 className="text-[12px] font-semibold leading-tight text-gray-900 1xl:text-[14px] 3xl:text-[18px]">
-                {item.title}
-              </h4>
-
-              <p className="mt-1 text-[9px] leading-[1.3] text-gray-500 1xl:text-[10px] 3xl:text-[13px]">
-                {item.description}
-              </p> */}
               <h4 className="font-medium text-[#000000] text-[12px] leading-tight tracking-[0.5px] 1xl:text-[14px] 3xl:text-[19px]">
   {item.title}
 </h4>

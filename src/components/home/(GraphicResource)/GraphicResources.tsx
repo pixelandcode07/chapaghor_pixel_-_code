@@ -91,7 +91,8 @@ export default function GraphicResources() {
       : resources.filter((resource) => resource.category === activeCategory);
 
   return (
-    <section className="bg-[linear-gradient(to_bottom,#E5EEF999_0%,#FFFFFF_100%)] px-4 py-3.75 md:py-13.5 xl:py-7.5 3xl:py-10.5 sm:px-6 lg:px-8">
+    <section className="bg-[linear-gradient(to_bottom,#E5EEF999_0%,#FFFFFF_100%)] px-2 py-3.75 md:py-13.5 xl:py-7.5 3xl:py-10.5">
+      
       <div className="container-custom">
         <GraphicHeader />
 
@@ -106,7 +107,7 @@ export default function GraphicResources() {
           ))}
         </div>
         {/* Button Section */}
-        <div className="flex justify-center mt-10 lg:mt-20">
+        <div className="flex justify-center mt-10">
           <LandingPageBtn />
         </div>
       </div>
