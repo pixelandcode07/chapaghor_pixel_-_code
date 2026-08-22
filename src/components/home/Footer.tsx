@@ -117,132 +117,137 @@ export default function Footer() {
                         "
                     >
                         {/* =============================================
-                            WHATSAPP
-                        ============================================= */}
+    WHATSAPP
+============================================= */}
 
-                        <div
-                            className="
-                                flex
-                                min-h-[180px]
-                                items-center
-                                rounded-t-[19px]
-                                bg-[#FD7034]
-                                px-6
-                                py-7
-                                text-white
+<div
+    className="
+        flex
+        min-h-[180px]
+        items-center
+        rounded-t-[19px]
+        bg-[#FD7034]
+        px-6
+        py-7
+        text-white
 
-                                xl:h-[180px]
-                                xl:min-h-[180px]
-                                xl:rounded-tr-none
+        xl:h-[180px]
+        xl:min-h-[180px]
+        xl:rounded-tr-none
 
-                                min-[1400px]:h-[184px]
-                                min-[1400px]:min-h-[184px]
-                                min-[1400px]:px-8
+        min-[1400px]:h-[184px]
+        min-[1400px]:min-h-[184px]
+        min-[1400px]:px-8
 
-                                min-[1536px]:h-[180px]
-                                min-[1536px]:min-h-[180px]
-                                min-[1536px]:px-[38px]
-                            "
-                        >
-                            <div
-                                className="
-                                    flex
-                                    w-full
-                                    items-start
-                                    gap-4
+        min-[1536px]:h-[180px]
+        min-[1536px]:min-h-[180px]
+        min-[1536px]:px-[28px]
+    "
+>
+    <div
+        className="
+            flex
+            w-full
+            min-w-0
+            items-start
+            gap-4
 
-                                    min-[1400px]:gap-5
+            min-[1400px]:gap-5
 
-                                    min-[1536px]:gap-[22px]
-                                "
-                            >
-                                <FaWhatsapp
-                                    className="
-                                        mt-1
-                                        shrink-0
-                                        text-[40px]
+            min-[1536px]:gap-[16px]
+        "
+    >
+        <FaWhatsapp
+            className="
+                mt-1
+                shrink-0
+                text-[40px]
 
-                                        min-[1400px]:text-[46px]
+                min-[1400px]:text-[46px]
 
-                                        min-[1536px]:text-[48px]
-                                    "
-                                />
+                min-[1536px]:text-[46px]
+            "
+        />
 
-                                <div className="min-w-0">
-                                    <h3
-                                        className="
-                                            whitespace-nowrap
-                                            text-[14px]
-                                            font-medium
-                                            leading-tight
+        <div className="min-w-0 flex-1">
+            <h3
+                className="
+                    whitespace-nowrap
+                    text-[14px]
+                    font-medium
+                    leading-tight
 
-                                            min-[1400px]:text-[16px]
+                    min-[1400px]:text-[16px]
 
-                                            min-[1536px]:text-[20px]
-                                        "
-                                    >
-                                        Need Help? Chat With Us
-                                    </h3>
+                    min-[1536px]:text-[18px]
+                "
+            >
+                Need Help? Chat With Us
+            </h3>
 
-                                    <p
-                                        className="
-                                            mt-[6px]
-                                            whitespace-nowrap
-                                            text-[11px]
-                                            font-medium
+            <p
+                className="
+                    mt-[6px]
+                    whitespace-nowrap
+                    text-[11px]
+                    font-medium
 
-                                            min-[1400px]:text-[13px]
+                    min-[1400px]:text-[13px]
 
-                                            min-[1536px]:text-[17px]
-                                        "
-                                    >
-                                        We are ready to help you anytime.
-                                    </p>
+                    min-[1536px]:text-[15px]
+                "
+            >
+                We are ready to help you anytime.
+            </p>
 
-                                    <a
-                                        href="https://wa.me/8801818992244"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="
-                                            mt-5
-                                            flex
-                                            h-[42px]
-                                            w-[180px]
-                                            items-center
-                                            justify-between
-                                            rounded-[5px]
-                                            bg-white
-                                            px-4
-                                            text-[12px]
-                                            font-medium
-                                            text-[#FD612D]
-                                            transition-colors
+            <a
+                href="https://wa.me/8801818992244"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                    mt-5
+                    flex
+                    h-[42px]
+                    w-[180px]
+                    items-center
+                    justify-between
+                    rounded-[5px]
+                    bg-white
+                    px-4
+                    text-[12px]
+                    font-medium
+                    text-[#FD612D]
+                    transition-colors
 
-                                            hover:bg-gray-50
+                    hover:bg-gray-50
 
-                                            min-[1400px]:h-[45px]
-                                            min-[1400px]:w-[205px]
-                                            min-[1400px]:text-[14px]
+                    min-[1400px]:h-[45px]
+                    min-[1400px]:w-[205px]
+                    min-[1400px]:text-[14px]
 
-                                            min-[1536px]:h-[46px]
-                                            min-[1536px]:w-[205px]
-                                            min-[1536px]:text-[16px]
-                                        "
-                                    >
-                                        <span>Chat on WhatsApp</span>
+                    min-[1536px]:h-[46px]
+                    min-[1536px]:w-[205px]
+                    min-[1536px]:px-[16px]
+                    min-[1536px]:text-[15px]
+                "
+            >
+                <span className="whitespace-nowrap">
+                    Chat on WhatsApp
+                </span>
 
-                                        <FaArrowRight
-                                            className="
-                                                shrink-0
-                                                text-[12px]
+                <FaArrowRight
+                    className="
+                        ml-3
+                        shrink-0
+                        text-[12px]
 
-                                                min-[1536px]:text-[16px]
-                                            "
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        min-[1536px]:text-[15px]
+                    "
+                />
+            </a>
+        </div>
+    </div>
+</div>
 
                         {/* =============================================
                             NEWSLETTER
