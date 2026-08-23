@@ -53,7 +53,11 @@ export default function OurService() {
 
             {/* Button Section */}
             <div className="flex justify-center lg:mt-20">
-                <LandingPageBtn />
+                <LandingPageBtn href="/view">
+                <span className="hidden xl:flex">View All Template</span>
+                <span className="hidden md:flex xl:hidden">Load More Template</span>
+                <span className="lg:hidden">Load  More Resources</span>
+                </LandingPageBtn>
             </div>
         </section>
     );

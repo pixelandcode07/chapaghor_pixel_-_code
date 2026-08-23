@@ -97,7 +97,7 @@ export default function PrintImmegration() {
     <div className="w-full bg-[#FFFFFF]">
       <div className="w-full md:pt-9 xl:pt-13.5 pb-8 xl:pb-13.75 3xl:pb-21.5 relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
-          <h1 className="text-[23px] md:text-[26px] xl:text-3xl 3xl:text-[48px] tracking-[0.5px] font-light text-[#012C60] mb-5.25 md:mb-6.75 xl:mb-9.75 3xl:mb-15 text-center">
+          <h1 className="leading-none text-[23px] md:text-[26px] xl:text-3xl 3xl:text-[48px] tracking-[0.5px] font-light text-[#012C60] mb-5.25 md:mb-6.75 xl:mb-9.75 3xl:mb-15 text-center">
             PRINT YOUR IMAGINATION
           </h1>
 
