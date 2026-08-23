@@ -74,7 +74,7 @@ const LandingPageBtn = ({
         border border-[#FD7034]
         px-6.75 py-3.5
         text-[14px] font-bold text-[#FD7034]
-        transition-all duration-300 tracking-[0.5px]
+        transition-all duration-300 tracking-[0.5px] hover:bg-[#F05A28]/15 hover:text-black
         ${className}
       `}
     >

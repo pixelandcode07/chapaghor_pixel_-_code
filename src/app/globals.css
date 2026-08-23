@@ -5,10 +5,19 @@
 
 @layer components {
   .container-custom {
-    @apply w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-20px)] 1xl:max-w-[calc(100vw-160px)] 3xl:max-w-[calc(100vw-180px)] 7xl:container mx-auto;
+    @apply w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-20px)] 1xl:max-w-[calc(100vw-160px)] 3xl:max-w-[calc(100vw-264px)] 7xl:container mx-auto;
   }
 }
 
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
 
 
 @font-face {

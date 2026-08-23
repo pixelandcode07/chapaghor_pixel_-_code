@@ -12,11 +12,11 @@ export default function StayConnectedHead() {
       STAY CONNECTED
     </h5>
 
-    <h1 className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-1 pb-1 md:pb-4.25 font-semibold leading-tight tracking-wide">
+    <h1 className="flex flex-col md:flex-row items-center justify-center gap-0 md:gap-4 pb-1 md:pb-4.25 font-semibold leading-tight tracking-wide">
       <span className="text-[#FD7034] md:text-black text-[18px] md:text-[28px] lg:text-[34px] xl:text-[31px] 1xl:text-[35px] 3xl:text-[47px]">
-        Follow Chapaghor
+        Follow Chapaghor 
       </span>
-      <span className="text-[#757575] md:text-black text-[15px] md:text-[28px] lg:text-[34px] xl:text-[31px] 1xl:text-[35px] 3xl:text-[47px]">
+      <span className="text-[#757575] md:text-black text-[15px] md:text-[28px] lg:text-[34px] xl:text-[31px] 1xl:text-[35px] 3xl:text-[47px] ">
         For Daily Inspiration
       </span>
     </h1>
