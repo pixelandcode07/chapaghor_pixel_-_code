@@ -151,13 +151,13 @@ export default function Footer() {
 
       {/* ================= MAIN FOOTER ================= */}
       <section className="w-full bg-[#0F1722] text-white">
-        <div className="mx-auto w-full px-5 sm:px-7 lg:max-w-[90vw] lg:px-0">
+        <div className="w-full">
 
           {/* Desktop fixed compact height */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:h-[300px] lg:grid-cols-[1.55fr_0.95fr_0.95fr_1.15fr_1.4fr]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:h-[300px] lg:grid-cols-[1.55fr_0.75fr_0.75fr_0.75fr_1.15fr] lg:overflow-hidden lg:border-b lg:border-white/15 2xl:h-[360px]">
 
             {/* ================= BRAND ================= */}
-            <div className="border-b border-white/15 py-8 sm:col-span-2 lg:col-span-1 lg:border-b-0 lg:border-r lg:px-6 lg:py-7 xl:px-7 2xl:px-10">
+            <div className="border-b border-white/15 py-8 sm:col-span-2 lg:col-span-1 lg:border-b-0 lg:border-r lg:border-white/15 lg:py-7 lg:pl-[7.3vw] lg:pr-[3vw]">
 
               <div className="relative h-[62px] w-[275px] max-w-full sm:w-[310px] lg:h-[55px] lg:w-[240px] xl:h-[60px] xl:w-[270px] 2xl:h-[72px] 2xl:w-[360px]">
                 <Image
@@ -168,11 +168,11 @@ export default function Footer() {
                 />
               </div>
 
-              <p className="mt-4 max-w-[420px] text-[14px] font-medium leading-[1.45] text-white sm:text-[15px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
+              <p className="mt-4 max-w-[420px] text-[14px] font-medium leading-[1.45] text-white sm:text-[15px] lg:text-[12px] xl:text-[14px] 2xl:mt-8 2xl:text-[17px]">
                 We provide high quality printing services for you business, event and personal needs
               </p>
 
-              <div className="mt-6 flex items-center gap-3 text-white">
+              <div className="mt-10 flex items-center gap-3 text-white 2xl:mt-8 2xl:gap-4">
 
                 <a
                   href="#"
@@ -228,20 +228,20 @@ export default function Footer() {
             />
 
             {/* ================= CONTACT ================= */}
-            <div className="border-t border-white/15 py-8 sm:border-l sm:border-t-0 sm:pl-6 lg:border-l-0 lg:px-5 lg:py-7 xl:px-6 2xl:px-10">
+            <div className="border-t border-white/15 py-8 sm:border-l sm:border-t-0 sm:pl-6 lg:border-l-0 lg:px-[2.7vw] lg:pb-6 lg:pt-16">
 
-              <h4 className="mb-5 text-[18px] font-medium text-white lg:text-[15px] xl:text-[17px] 2xl:text-[20px]">
+              <h4 className="mb-3 text-[18px] font-medium text-white lg:text-[15px] xl:text-[17px] 2xl:text-[20px]">
                 Contact
               </h4>
 
-              <div className="flex flex-col gap-4 text-[14px] font-medium text-white lg:gap-3 lg:text-[12px] xl:text-[14px] 2xl:gap-4 2xl:text-[18px]">
+              <div className="flex flex-col gap-4 text-[14px] font-medium text-white lg:gap-1 lg:text-[12px] xl:text-[14px] 2xl:text-[18px]">
 
                 {/* Phone */}
                 <a
                   href="tel:+8801818992244"
-                  className="flex items-center gap-3 transition-colors hover:text-gray-200 2xl:gap-4"
+                  className="flex items-center gap-3 transition-colors hover:text-gray-200"
                 >
-                  <div className="relative h-9 w-9 shrink-0 lg:h-8 lg:w-8 xl:h-9 xl:w-9 2xl:h-11 2xl:w-11">
+                  <div className="relative h-9 w-9 shrink-0 lg:h-8 lg:w-8 xl:h-9 xl:w-9">
                     <Image
                       src="/footer/Icon (1).png"
                       alt="Phone"
@@ -258,9 +258,9 @@ export default function Footer() {
                 {/* Email */}
                 <a
                   href="mailto:info@chapaghor.com"
-                  className="flex items-center gap-3 transition-colors hover:text-gray-200 2xl:gap-4"
+                  className="flex items-center gap-3 transition-colors hover:text-gray-200"
                 >
-                  <div className="relative h-9 w-9 shrink-0 lg:h-8 lg:w-8 xl:h-9 xl:w-9 2xl:h-11 2xl:w-11">
+                  <div className="relative h-9 w-9 shrink-0 lg:h-8 lg:w-8 xl:h-9 xl:w-9">
                     <Image
                       src="/footer/Icon.png"
                       alt="Email"
@@ -277,7 +277,7 @@ export default function Footer() {
               </div>
 
               {/* ================= PAYMENT METHODS ================= */}
-              <div className="mt-5 flex items-center gap-2 lg:mt-4 2xl:mt-5">
+              <div className="mt-5 flex items-center gap-2 lg:mt-3">
 
                 {/* Verified By */}
                 <div className="flex shrink-0 items-center gap-1">
@@ -286,7 +286,7 @@ export default function Footer() {
                     Verified By
                   </span>
 
-                  <div className="relative h-[72px] w-[20px] shrink-0 lg:h-[66px] lg:w-[18px] xl:h-[72px] xl:w-[20px] 2xl:h-[82px] 2xl:w-[23px]">
+                  <div className="relative h-[72px] w-[20px] shrink-0 lg:h-[66px] lg:w-[18px] xl:h-[72px] xl:w-[20px]">
                     <Image
                       src="/footer/payment/sslcommerz_verified.png"
                       alt="SSLCommerz"
@@ -321,16 +321,18 @@ export default function Footer() {
           </div>
 
           {/* ================= COPYRIGHT ================= */}
-          <div className="flex min-h-[92px] flex-col items-center justify-center gap-1 border-t border-white/15 px-3 py-5 text-center lg:h-[108px] lg:min-h-0 lg:py-0">
+          <div className="flex w-full min-h-[92px] flex-col items-center justify-center gap-1 px-3 py-5 text-center lg:grid lg:h-[116px] lg:min-h-0 lg:grid-cols-[1.55fr_0.75fr_0.75fr_0.75fr_1.15fr] lg:items-center lg:justify-items-start lg:py-0">
 
-            <p className="text-[12px] font-medium text-[#8F8080] sm:text-[13px] lg:text-[13px] xl:text-[14px] 2xl:text-[16px]">
-              Copyright © 2026. Bornil Printing Press. All rights reserved.
-            </p>
+            <div className="lg:col-start-2 lg:col-span-2 lg:w-full lg:px-[2.2vw] lg:text-left">
+            <p className="text-[15px] font-medium text-white/90 sm:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[17px]">
+  Copyright © 2026. Bornil Printing Press. All rights reserved.
+</p>
 
-            <p className="text-[10px] font-normal text-[#8F8080] sm:text-[11px] lg:text-[11px] xl:text-[12px] 2xl:text-[13px]">
+            <p className="text-[10px] font-normal text-white/70 sm:text-[11px] lg:text-[11px] xl:text-[12px] 2xl:text-[13px]">
               Chapaghor.com is the online platform of Bornil Printing Press
             </p>
 
+            </div>
           </div>
 
         </div>
@@ -406,7 +408,7 @@ function TabletFooter() {
           </div>
         </div>
 
-        <div className="border-t border-white/15 px-4 py-4 text-center text-[12px] text-[#8F8B8B]">Copyright © 2026. Bornil Printing Press. All rights reserved.</div>
+        <div className="border-t border-white/15 px-4 py-4 text-center text-[12px] text-white">Copyright © 2026. Bornil Printing Press. All rights reserved.</div>
       </div>
     </footer>
   );
@@ -490,8 +492,8 @@ function MobileFooter() {
       </div>
 
       <div className="bg-[#0F1722] px-3 pb-3.5 pt-3 text-center">
-        <p className="text-[11px] font-medium leading-relaxed text-[#8F8B8B]">© 2026. Bornil Printing Press. All rights reserved.</p>
-        <p className="text-[9px] font-normal leading-relaxed text-[#777D84]">Chapaghor.com is the online platform of Bornil Printing Press</p>
+        <p className="text-[11px] font-medium leading-relaxed text-white">© 2026. Bornil Printing Press. All rights reserved.</p>
+        <p className="text-[9px] font-normal leading-relaxed text-white">Chapaghor.com is the online platform of Bornil Printing Press</p>
       </div>
     </footer>
   );
@@ -529,13 +531,13 @@ function FooterLinks({
   links: string[];
 }) {
   return (
-    <div className="border-b border-white/15 py-8 sm:border-r sm:px-6 lg:border-b-0 lg:px-5 lg:py-7 xl:px-6 2xl:px-8">
+    <div className="border-b border-white/15 py-8 sm:border-r sm:px-6 lg:border-b-0 lg:border-r lg:border-white/15 lg:px-[2.2vw] lg:pb-6 lg:pt-16">
 
-      <h4 className="mb-5 text-[18px] font-medium text-white lg:text-[15px] xl:text-[17px] 2xl:text-[20px]">
+      <h4 className="mb-6 text-[18px] font-medium text-white lg:text-[15px] xl:text-[17px] 2xl:text-[20px]">
         {title}
       </h4>
 
-      <ul className="flex flex-col gap-2 text-[14px] font-medium text-[#A19A9A] lg:gap-1.5 lg:text-[11px] xl:text-[13px] 2xl:gap-2 2xl:text-[15px]">
+      <ul className="flex flex-col gap-2 text-[14px] font-medium text-white/90 lg:gap-1 lg:text-[11px] xl:text-[13px] 2xl:text-[15px]">
 
         {links.map((link) => (
           <li
