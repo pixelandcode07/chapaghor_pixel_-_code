@@ -32,7 +32,7 @@ export default function OurService() {
             {/* Image Grid Section */}
             <div className="my-7.5 md:my-9 xl:my-10.75 3xl:my-14">
                 {/* Grid with exact requested gaps */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-6 gap-2.5 lg:gap-x-5.75 lg:gap-y-7 justify-items-center items-start">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 3xl:grid-cols-6 gap-2.5 lg:gap-x-6 lg:gap-y-7 justify-items-center items-start">
                     {products.map((product, index) => {
                         // Check if the item is in an odd column (1, 3, 5...)
                         const isOddIndex = index % 2 !== 0;

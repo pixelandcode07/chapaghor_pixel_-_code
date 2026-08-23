@@ -29,7 +29,7 @@ export default function DynamicCardsReuse({
             className={`relative ${
               isHorizontal
                 ? "w-full aspect-151/157 md:w-46.75 md:aspect-187/194"
-                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207  3xl:aspect-266/278"
+                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207  3xl:aspect-265/275"
                 // 1xl:w-49.75 3xl:w-66.5
             }`}
           >
