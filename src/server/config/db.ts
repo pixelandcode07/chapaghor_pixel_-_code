@@ -31,18 +31,21 @@ export async function connectDB(): Promise<typeof mongoose> {
   if (!cached.promise) {
     console.log("🔄 Connecting to MongoDB...");
 
-    cached.promise = mongoose.connect(MONGODB_URI, {
+    // 🔴 FIX 1: TypeScript-কে বোঝানো হলো যে এটি একটি string (as string)
+    cached.promise = mongoose.connect(MONGODB_URI as string, {
+      dbName: "chapaghor", // 🔴 FIX 2: ডেটাবেসের নাম ফিক্স করে দেওয়া হলো
       bufferCommands: false,
       maxPoolSize: 10,
       serverSelectionTimeoutMS: 10000,
       socketTimeoutMS: 45000,
       connectTimeoutMS: 10000,
+      family: 4, // 🔴 FIX 3: লোকালহোস্টের ECONNREFUSED এরর সমাধানের জন্য IPv4 ফোর্স করা হলো
     });
   }
 
   try {
     cached.conn = await cached.promise;
-    console.log("✅ MongoDB Connected");
+    console.log("✅ MongoDB Connected Successfully");
     return cached.conn;
   } catch (error) {
     cached.promise = null;
