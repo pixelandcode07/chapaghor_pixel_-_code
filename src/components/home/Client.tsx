@@ -36,7 +36,7 @@ const logos: Logo[] = [
 
 export default function Client() {
   return (
-    <section className="w-full bg-[#FDF4EE] py-2.25 3xl:py-4.5 ">
+    <section className="w-full 3xl:h-30 flex items-center bg-[#FDF4EE] py-2.25 3xl:py-4.5 ">
       <div className="w-full flex items-center">
         {/* Left Section */}
         <div className="flex items-center gap-2 md:gap-4 shrink-0 w-[116px] md:w-[233px] 3xl:w-[581px] pl-4.5 md:pl-8.5 3xl:pl-[100px]">
@@ -51,7 +51,7 @@ export default function Client() {
           </div>
 
           <div>
-            <h2 className="text-[10px] md:text-[22px] 3xl:text-[40px] font-bold leading-tight text-[#F05A28]">
+            <h2 className="text-[10px] 3xl:mb[6px] md:text-[22px] 3xl:text-[40px] font-bold leading-tight text-[#F05A28]">
               4,200+
             </h2>
 

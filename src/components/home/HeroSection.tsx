@@ -56,7 +56,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full bg-white pb-5.25 md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-5.25 pt-[46px] md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
