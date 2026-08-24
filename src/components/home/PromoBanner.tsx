@@ -34,10 +34,10 @@ const banners: PromoBanner[] = [
 
 export default function PromoBanner() {
   return (
-    <section className="container-custom px-2 md:px-0 pb-5 xl:pb-12">
+    <section className=" ml-1 md:ml-7 lg:ml-0 px-2 md:px-0 pb-5 xl:pb-12">
       {/* Mobile / Tablet */}
       <div className="lg:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
-        <div className="flex gap-2 md:gap-4 w-max">
+        <div className="flex gap-2 md:gap-4 w-max md:w-[548px]">
           {banners.map((banner) => (
             <div key={banner.id} className="relative shrink-0 w-[264px] h-[123px] md:w-full md:h-[224px] overflow-hidden rounded-[12px] md:rounded-[14px] snap-start">
               <Image src={banner.card_image} alt={banner.heading} fill sizes="(max-width: 767px) 264px, 548px" className="object-cover" />
@@ -64,7 +64,7 @@ export default function PromoBanner() {
       </div>
 
       {/* XL & Above */}
-      <div className="hidden lg:grid lg:grid-cols-2 lg:gap-4 1xl:gap-4.5 3xl:gap-6">
+      <div className="hidden lg:grid lg:grid-cols-2 lg:gap-4 1xl:gap-4.5 3xl:gap-6 container-custom">
         {banners.map((banner) => (
           // <div key={banner.id} className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-[552px] h-[160px] 1xl:w-[635px] 1xl:h-[184px] 3xl:w-full 3xl:h-[246px]">
           <div key={banner.id} className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-full lg:h-[224px] 1xl:h-[184px] 3xl:h-[246px]">

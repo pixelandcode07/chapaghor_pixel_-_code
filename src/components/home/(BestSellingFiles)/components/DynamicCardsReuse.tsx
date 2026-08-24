@@ -29,7 +29,7 @@ export default function DynamicCardsReuse({
             className={`relative ${
               isHorizontal
                 ? "w-full aspect-151/157 md:w-46.75 md:aspect-187/194"
-                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207  3xl:aspect-265/275"
+                : "xl:w-full xl:aspect-189/207  1xl:aspect-199/207 3xl:aspect-265/275"
                 // 1xl:w-49.75 3xl:w-66.5
             }`}
           >
@@ -105,8 +105,8 @@ export default function DynamicCardsReuse({
             <span
               className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
                 isHorizontal
-                  ? "w-full text-xs p-1 lg:p-1.5"
-                  : "w-full text-[13px] md:text-[10px] xl:text-[12px] 3xl:text-[24px] p-1 lg:py-1 tracking-[0.5px]"
+                  ? "w-full text-xs p-1 md:py-2 lg:p-1.5 md:text-[15px]"
+                  : "w-full text-[13px]  xl:text-[12px] 3xl:text-[24px] p-1 lg:py-1 tracking-[0.5px]"
               }`}
             >
               {product.name}
