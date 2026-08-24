@@ -196,7 +196,7 @@ export function MagicCard(props: MagicCardProps) {
   return (
     <motion.div
       className={cn(
-        "group relative isolate overflow-hidden rounded-[inherit] border border-transparent bg-white lg:bg-black",
+        "group relative isolate overflow-hidden rounded-[inherit] border border-transparent bg-white xl:bg-black",
         className
       )}
       onPointerMove={handlePointerMove}
@@ -217,7 +217,7 @@ export function MagicCard(props: MagicCardProps) {
       }}
     >
       {/* Background */}
-      <div className="absolute inset-px z-20 rounded-[inherit] bg-white lg:bg-black" />
+      <div className="absolute inset-px z-20 rounded-[inherit] bg-white xl:bg-black" />
 
       {/* Gradient Mode */}
       {mode === "gradient" && (

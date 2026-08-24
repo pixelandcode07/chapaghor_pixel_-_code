@@ -41,7 +41,7 @@ export default function GraphicHeader() {
      </div>
 
       {/* Feature Cards */}
-      <div className="grid w-full xl:w-[50%] grid-cols-4 overflow-hidden bg-white rounded-xl 3xl:px-7.5 mt-4 md:mt-7 lg:mt-8.5 xl:mt-0 md:h-24 xl:h-20 3xl:h-28.5 shadow-md">
+      <div className="grid w-full xl:w-[45%] 1xl:w-[50%] grid-cols-4 overflow-hidden bg-white rounded-xl xl:px-6.5 1xl:px-7.5 mt-4 md:mt-4 lg:mt-8.5 xl:mt-0 md:h-36.5 xl:h-18.75 1xl:h-22 3xl:h-28.5 shadow-md">
         <FeatureCard
           icon={
             <PremiumQltyIcon className="size-3.5 md:size-7 xl:size-5.5 1xl:size-6.5 3xl:size-8.5" />

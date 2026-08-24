@@ -542,13 +542,13 @@ function FooterLinks({
             key={link}
             className="flex items-start gap-2"
           >
-            <span className="mt-[1px] shrink-0 text-[#FF3020]">
+            <span className=" shrink-0 text-[#FF3020]">
               {">"}
             </span>
 
             <a
               href="#"
-              className="leading-tight transition-colors hover:text-white"
+              className="tracking-[0.5px] transition-colors hover:text-white"
             >
               {link}
             </a>
