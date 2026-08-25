@@ -131,7 +131,7 @@ export default function GraphicCategory({
 
   return (
     <div className="flex items-center gap-1 1xl:gap-1.5 3xl:gap-2 py-4 md:py-5 xl:py-10">
-      <div className="flex min-w-0 flex-1 items-center gap-1 1xl:gap-1.5 3xl:gap-2 overflow-x-auto scrollbar-none">
+      <div className="flex min-w-0 flex-1 items-center gap-1 1xl:gap-1.5 3xl:gap-[9px] overflow-x-auto scrollbar-none">
         {/* Static All Resources Button */}
         <Button
           variant="outline"

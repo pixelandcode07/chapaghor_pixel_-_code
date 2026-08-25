@@ -24,16 +24,13 @@ export default function ServiceProductCard({
 
   return (
     <div
-      className="relative overflow-visible border border-[#E5E5E5] bg-gray-100 shadow-sm flex flex-col justify-end transition-all duration-500 hover:scale-105 hover:shadow-xl cursor-none w-full
-aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-263/299"
-      style={{
-        borderRadius: "10px",
-      }}
+      className="relative overflow-visible border border-white bg-gray-100 flex flex-col justify-end transition-all duration-500 hover:scale-105 cursor-none w-full
+aspect-174/185 md:aspect-219/250 xl:aspect-213/242 3xl:aspect-263/299 shadow-[4.67px_9.34px_18.68px_0px_#FF663333] rounded-[20px] "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {/* Image Wrapper */}
-      <div className="relative h-full w-full overflow-hidden rounded-[10px]">
+      <div className="relative h-full w-full overflow-hidden rounded-[20px]">
         {/* Image */}
         <Image
           src={product.imageUrl}

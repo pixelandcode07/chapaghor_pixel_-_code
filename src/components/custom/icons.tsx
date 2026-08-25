@@ -198,6 +198,55 @@ export const TopNComboIcon = ({ className, ...props }: React.SVGProps<SVGSVGElem
 <path d="M13.2153 13.2153H32.0943V32.0943" stroke="white" stroke-width="2.5172" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
+);
+
+
+export const GraphiCloneIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+   <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className={cn("size-5", className)}
+        {...props}
+   >
+<path d="M5.16711 1.50049H2.66689C1.56223 1.50049 0.666718 2.396 0.666718 3.50066V11.0013C0.666718 12.106 1.56223 13.0015 2.66689 13.0015H10.6676C11.7723 13.0015 12.6678 12.106 12.6678 11.0013V9.00115M7.66733 8.5011V4.50075C7.66733 3.39608 8.56284 2.50058 9.66751 2.50058H12.6678" stroke="white" stroke-width="1.33345" stroke-linecap="square"/>
+<path d="M14.667 2.50022L11.6667 0V5.00044L14.667 2.50022Z" fill="white"/>
+</svg>
+
+
+
+
+);
+
+
+export const GraphicHeartIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+ <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+  className={cn("size-5", className)}
+        {...props}>
+<path d="M14.1407 1.63211C13.7797 1.27444 13.351 0.990704 12.8792 0.797124C12.4073 0.603543 11.9016 0.503906 11.3909 0.503906C10.8802 0.503906 10.3744 0.603543 9.90261 0.797124C9.43078 0.990704 9.0021 1.27444 8.64105 1.63211L7.89173 2.37406L7.14242 1.63211C6.41312 0.909973 5.42397 0.504281 4.39258 0.504281C3.36119 0.504281 2.37205 0.909973 1.64274 1.63211C0.913441 2.35425 0.503723 3.33367 0.503723 4.35493C0.503723 5.37618 0.913441 6.35561 1.64274 7.07775L2.39206 7.8197L7.89173 13.2653L13.3914 7.8197L14.1407 7.07775C14.5019 6.72024 14.7885 6.29577 14.984 5.82858C15.1795 5.36139 15.2801 4.86064 15.2801 4.35493C15.2801 3.84922 15.1795 3.34847 14.984 2.88128C14.7885 2.41409 14.5019 1.98962 14.1407 1.63211V1.63211Z" stroke="white" stroke-width="1.00748" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+
+);
+export const GraphicDonwloadIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className={cn("size-5", className)}
+        {...props}>
+<g filter="url(#filter0_d_2268_5161)">
+<path d="M9.07633 10.5574L9.07633 2.21289M9.07633 10.5574C8.52903 10.5574 7.5065 8.89329 7.12231 8.4713M9.07633 10.5574C9.62363 10.5574 10.6462 8.89329 11.0303 8.4713" stroke="white" stroke-width="1.25168" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.3285 12.2266C15.3285 14.2977 14.9236 14.7299 12.9837 14.7299H5.16763C3.22769 14.7299 2.82281 14.2977 2.82281 12.2266" stroke="white" stroke-width="1.25168" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_2268_5161" x="-1.85966e-05" y="0.000206947" width="19.3719" height="19.3835" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="0.610272" dy="1.22054"/>
+<feGaussianBlur stdDeviation="1.40363"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2268_5161"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2268_5161" result="shape"/>
+</filter>
+</defs>
+</svg>
 
 
 
