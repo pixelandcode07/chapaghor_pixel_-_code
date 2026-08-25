@@ -34,9 +34,9 @@ const banners: PromoBanner[] = [
 
 export default function PromoBanner() {
   return (
-    <section className=" ml-1 md:ml-7 lg:ml-0 px-2 md:px-0 pb-5 xl:pb-12">
+    <section className=" ml-1 md:ml-7 xl:ml-0 px-2 md:px-0 pb-5 xl:pb-12">
       {/* Mobile / Tablet */}
-      <div className="lg:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+      <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
         <div className="flex gap-2 md:gap-4 w-max md:w-[548px]">
           {banners.map((banner) => (
             <div key={banner.id} className="relative shrink-0 w-[264px] h-[123px] md:w-full md:h-[224px] overflow-hidden rounded-[12px] md:rounded-[14px] snap-start">
@@ -89,7 +89,7 @@ export default function PromoBanner() {
       </div>
 
       {/* XL & Above */}
-      <div className="hidden lg:grid lg:grid-cols-2 lg:px-[65px] 3xl:px-0 1xl:gap-4.5 3xl:gap-[24px] 3xl:max-w-[1719px] 3xl:mx-auto">
+      <div className="hidden xl:grid xl:grid-cols-2 xl:px-[65px] 3xl:px-0 1xl:gap-4.5 3xl:gap-[24px] 3xl:max-w-[1719px] 3xl:mx-auto">
         {banners.map((banner) => (
           // <div key={banner.id} className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-[552px] h-[160px] 1xl:w-[635px] 1xl:h-[184px] 3xl:w-full 3xl:h-[246px]">
           <div key={banner.id} className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-[552px] h-[160px] 1xl:w-full 1xl:h-[185px] 3xl:w-full 3xl:h-[245px]">

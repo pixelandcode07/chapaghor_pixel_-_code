@@ -47,11 +47,13 @@ export default function ChooseUsBody() {
         gradientOpacity={0.8}
         gradientFrom="#F05A28"
         gradientTo="#FF8D28"
-        className="relative container-custom overflow-hidden !bg-white p-0 shadow-none lg:!bg-black xl:rounded-[24px]"
+        className="relative container-custom overflow-hidden !bg-white p-0 shadow-none xl:!bg-black xl:rounded-[24px]"
       >
-        <div className="relative z-10 px-4 py-10 md:px-6 md:py-12 xl:px-8 xl:py-16 3xl:px-12 3xl:py-12.5">
+        <div className="relative z-10 px-4 py-4.5 md:px-0 md:py-0 xl:px-0 xl:py-16 3xl:px-12 3xl:py-9.25">
+          
           {/* Heading */}
-          <div className="mb-8 flex flex-col items-center justify-center px-2 text-center md:mb-10 xl:mb-12">
+          <div className=" flex flex-col items-center justify-center px-2 text-center mb-2 md:mb-4.5 xl:mb-12">
+           
             <div className="flex w-full items-center justify-center gap-2 xl:gap-4">
               <span className="h-[2px] w-12 bg-[#FF8D28] xl:w-16 3xl:w-20" />
 
@@ -63,7 +65,7 @@ export default function ChooseUsBody() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <h1 className="pb-2 text-[22px] font-normal leading-tight tracking-wide text-black md:text-[28px] lg:text-white xl:text-[39px] 3xl:text-[52px]">
+              <h1 className="pb-2 text-[22px] font-normal leading-tight tracking-wide text-black md:text-[28px] xl:text-white xl:text-[39px] 3xl:text-[52px]">
                 Quality Printing You Can
               </h1>
 
@@ -72,68 +74,57 @@ export default function ChooseUsBody() {
               </h1>
             </div>
 
-            <p className="mt-1 text-center text-[11px] font-normal leading-tight tracking-wide text-black/70 md:text-[14px] lg:text-white/90 xl:text-[18px] 3xl:text-[24px]">
+            <p className="mt-1 mx-8 md:mx-42.5 lg:mx-0 text-center text-[11px] font-normal leading-tight tracking-wide text-black/70 md:text-[14px] xl:text-white/90 xl:text-[18px] 3xl:text-[24px]">
               We use the best materials and latest technology to deliver the
               perfect printing quality
             </p>
           </div>
 
-          {/* =========================
-              Mobile / Tablet Version
-              2 Large Horizontal Cards
-             ========================= */}
-          <div className="flex flex-col gap-3 xl:hidden">
-            {featurePairs.map((pair, pairIndex) => (
-              <div
-                key={pairIndex}
-                className="flex min-h-[88px] w-full items-center rounded-[8px] bg-[#1B1C20] px-3 py-3 md:min-h-[105px] md:rounded-[10px] md:px-5 md:py-4 lg:min-h-[115px]"
-              >
-                {pair.map((feature, index) => (
-                  <div
-                    key={feature.id}
-                    className={`flex min-w-0 flex-1 items-center gap-3 md:gap-4 ${
-                      index === 0
-                        ? "border-r border-white/10 pr-2 md:pr-5"
-                        : "pl-3 md:pl-5"
-                    }`}
-                  >
-                    {/* Icon Box - Exactly 47px × 47px on Mobile */}
-                    <div className="flex h-[47px] w-[47px] shrink-0 items-center justify-center rounded-full bg-[#25262B] md:h-[58px] md:w-[58px] lg:h-[64px] lg:w-[64px]">
-                      <Image
-                        src={feature.iconUrl}
-                        alt={feature.title}
-                        width={64}
-                        height={64}
-                        className="h-full w-full object-contain p-2 md:p-2.5"
-                      />
-                    </div>
+         {/* =========================
+    Mobile / Tablet Version
+    Separate Individual Cards
+========================= */}
+<div className="grid grid-cols-2 gap-3 md:gap-4 xl:hidden">
+  {features.map((feature) => (
+    <div
+      key={feature.id}
+      className="flex min-h-[63px] w-full items-center gap-3 rounded-[8px] bg-[#1B1C20] px-3 py-3 md:min-h-[134px] md:gap-4 md:rounded-[10px] md:px-5 md:py-4 lg:min-h-[140px]"
+    >
+      {/* Icon Box */}
+      <div className="flex h-[41px] w-[41px] shrink-0 items-center justify-center rounded-full bg-[#25262B] md:h-[86px] md:w-[86px]">
+        <Image
+          src={feature.iconUrl}
+          alt={feature.title}
+          width={64}
+          height={64}
+          className="h-full w-full object-contain p-2"
+        />
+      </div>
 
-                    {/* Content */}
-                    <div className="min-w-0 text-left">
-                      <h4 className="text-[10px] font-semibold leading-[1.25] text-white md:text-[13px] lg:text-[15px]">
-                        {feature.title}
-                      </h4>
+      {/* Content */}
+      <div className="min-w-0 text-left">
+        <h4 className="text-[8.79px] font-bold leading-[1.25] text-white md:text-[18.51px]">
+          {feature.title}
+        </h4>
 
-                      <p className="mt-1 whitespace-pre-line text-[8px] font-normal leading-[1.35] text-white/70 md:text-[10px] lg:text-[11px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+        <p className="mt-1 whitespace-pre-line text-[7.85px] font-light leading-[1.35] text-white/70 md:text-[16.53px]">
+          {feature.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
 
           {/* =========================
               XL / 1XL / 3XL Version
              ========================= */}
-          <div className="mx-auto hidden grid-cols-4 gap-6 xl:grid 3xl:gap-8 xl:max-w-[62vw] 1xl:max-w-[68vw] 3xl:max-w-[66vw]">
+          <div className="mx-auto hidden grid-cols-4 gap-6 xl:grid 1xl:gap-10 3xl:gap-13.75 xl:max-w-[62vw] 1xl:max-w-[63.6806vw] 3xl:max-w-[64vw]">
             {features.map((feature) => (
               <div
                 key={feature.id}
                 className="flex items-center justify-center"
               >
-                <div className="group relative flex w-full flex-col items-center justify-start overflow-hidden rounded-[13px] border border-white/[0.22] bg-white/[0.045] px-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(255,255,255,0.05),0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-[24px] backdrop-saturate-[180%] xl:min-h-[160px] xl:py-4 1xl:min-h-[182px] 1xl:py-5 3xl:min-h-[244px] 3xl:py-7 3xl:backdrop-blur-[28px]">
+                <div className="group relative flex w-full flex-col items-center justify-start overflow-hidden rounded-[13px] border border-white/[0.22] bg-white/[0.045] px-0 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(255,255,255,0.05),0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-[24px] backdrop-saturate-[180%] xl:min-h-[160px] xl:py-4 1xl:min-h-[182px] 1xl:py-5 3xl:min-h-[244px] 3xl:py-7 3xl:backdrop-blur-[28px]">
                   {/* Top glass reflection */}
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/[0.12] to-transparent opacity-70" />
 
@@ -144,7 +135,7 @@ export default function ChooseUsBody() {
                   <div className="pointer-events-none absolute -bottom-12 -left-10 h-24 w-24 rounded-full bg-[#F05A28]/[0.08] blur-3xl" />
 
                   {/* Icon */}
-                  <div className="relative z-10 flex h-[72px] w-[72px] shrink-0 items-center justify-center border-b-2 border-[#F05A28] xl:h-[72px] xl:w-[72px] 1xl:h-[80px] 1xl:w-[80px] 3xl:h-[96px] 3xl:w-[96px]">
+                  <div className="relative z-10 flex h-[72px] w-[72px] shrink-0 items-center justify-center border-b-2 border-[#F05A28] xl:h-[72px] xl:w-[72px] 1xl:h-[63px] 1xl:w-[45px] 3xl:h-[96px] 3xl:w-[96px]">
                     <Image
                       src={feature.iconUrl}
                       alt={feature.title}
