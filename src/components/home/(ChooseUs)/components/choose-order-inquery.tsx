@@ -40,7 +40,8 @@ export default function CustomOrderInquiry() {
 
         <ActionButton
           title="Send Request"
-          cardWidth="h-[48px] w-[128px] md:h-[58px] md:w-[160px] lg:h-[64px] lg:w-[180px]"
+          cardWidth="h-[25px] w-[95px] md:h-[53px] md:w-[196px] lg:h-[64px] lg:w-[210px]"
+          iconCardWidth="h-[20px] w-[20px] md:h-[41px] md:w-[41px] lg:h-[52px] lg:w-[52px]"
           buttonBg="bg-[#FF4900]"
           titleColor="text-white"
           arrowBg="bg-white"
@@ -83,7 +84,8 @@ export default function CustomOrderInquiry() {
 
         <ActionButton
           title="Send Request"
-          cardWidth="h-[84px] w-[220px] 1xl:w-[250px] 3xl:h-[92px] 3xl:w-[280px]"
+          cardWidth="xl:h-[56px] xl:w-[206px] 1xl:w-[230px] 1xl:h-[63px] 3xl:w-[316px] 3xl:h-[87px]"
+          iconCardWidth="h-[41px] w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
           buttonBg="bg-[#FF4900]"
           titleColor="text-white"
           arrowBg="bg-white"

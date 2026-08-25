@@ -176,6 +176,17 @@ export const CustomSquareArrowOutUpRight = ({ className, ...props }: React.SVGPr
 
 );
 
+export const GorguseBtnIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
+   <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg"
+   className={cn("size-5", className)}
+        {...props}>
+<path d="M0.319424 2.23389L5.31641 2.23389" stroke="#012C60" stroke-width="0.638826" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.65048 4.14763L5.59375 2.23348L3.65048 0.319335" stroke="#012C60" stroke-width="0.638826" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+);
+
 
 
 
