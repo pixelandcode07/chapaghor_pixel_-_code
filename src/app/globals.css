@@ -5,7 +5,7 @@
 
 @layer components {
   .container-custom {
-    @apply w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-60px)] 1xl:max-w-[calc(100vw-152px)] 3xl:max-w-[calc(100vw-200px)] 7xl:container mx-auto;
+    @apply w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-128px)] 1xl:max-w-[calc(100vw-194px)] 3xl:max-w-[calc(100vw-200px)] 7xl:container mx-auto;
   }
 }
 

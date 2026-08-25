@@ -158,7 +158,7 @@ export default function NavHead() {
               </Link>
             </div>
             {/* ── Category Nav with Framer Motion ── */}
-            <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[140px] ">
+            <nav className="hidden xl:flex items-center justify-center lg:pl-10.5 xl:pl-[113px] 1xl:pl-[140px] ">
               {isLoading ? (
                 <motion.h1
                   initial={{ opacity: 0 }}
@@ -263,7 +263,7 @@ export default function NavHead() {
                 <Button size="nav-icon" variant="nav_user_mobile" title="Menu">
                   <NotificationIcon className="size-5 sm:size-6" />
                 </Button>
-                <Button size="nav-icon" variant="nav_menu" title="Menu">
+                <Button size="nav-icon" variant="nav_menu" title="Menu" className="px-0">
                   <CustomMenuIcon className="size-5 sm:size-6" />
                 </Button>
               </div>
