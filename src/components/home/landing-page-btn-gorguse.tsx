@@ -1,9 +1,9 @@
-import { MoveRight } from "lucide-react";
-import { FaArrowRight } from "react-icons/fa";
+import { GorguseBtnIcon } from "../custom/icons";
 
 interface ActionButtonProps {
   title: string;
   cardWidth?: string;
+  iconCardWidth?: string;
   buttonBg?: string;
   titleColor?: string;
   arrowBg?: string;
@@ -14,6 +14,7 @@ interface ActionButtonProps {
 export default function ActionButton({
   title,
   cardWidth = "",
+  iconCardWidth = "",
   buttonBg = "bg-[#FF4900]",
   titleColor = "text-white",
   arrowBg = "bg-white",
@@ -21,13 +22,13 @@ export default function ActionButton({
   className = "",
 }: ActionButtonProps) {
   return (
-    <div className={`flex shrink-0 items-center overflow-hidden rounded-[6px] rounded-br-[12px] shadow-sm md:rounded-[7px] md:rounded-br-[14px] lg:rounded-[8px] lg:rounded-br-[16px] xl:rounded-[8px] xl:rounded-br-[17px] ${cardWidth} ${buttonBg} ${className}`}>
-      <span className={`whitespace-nowrap px-2.5 text-[10px] font-medium md:px-4 md:text-[12px] lg:px-5 xl:px-6 xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px] ${titleColor}`}>
+    <div className={`flex shrink-0 items-center overflow-hidden rounded-[2px] rounded-br-[5px] shadow-sm md:rounded-[5px] md:rounded-br-[11px] lg:rounded-[8px] lg:rounded-br-[16px] xl:rounded-[8px] xl:rounded-br-[17px] ${cardWidth} ${buttonBg} ${className}`}>
+      <span className={`whitespace-nowrap pl-2.5 text-[8px] font-medium md:pl-4 md:text-[16px] lg:pl-5 xl:pl-6 3xl:pl-[39px] xl:text-[14px] 1xl:text-[18px] 3xl:text-[25px] ${titleColor}`}>
         {title}
       </span>
 
-      <button className={`ml-auto mr-1.5 flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-[3px] rounded-br-[9px] md:mr-2 md:h-[44px] md:w-[44px] md:rounded-[4px] md:rounded-br-[11px] lg:h-[52px] lg:w-[52px] lg:rounded-[4px] lg:rounded-br-[13px] xl:h-[64px] xl:w-[64px] xl:rounded-[4px] xl:rounded-br-[13px] xl:px-5 3xl:h-[72px] 3xl:w-[72px] ${arrowBg} ${arrowColor}`}>
-        <MoveRight  />
+      <button className={`ml-auto mr-1 flex  shrink-0 items-center justify-center rounded-[1px] rounded-br-[4px] md:mr-2 xl:mr-3.75  md:rounded-[3px] md:rounded-br-[9px] lg:rounded-[4px] lg:rounded-br-[11px] xl:rounded-[4px] xl:rounded-br-[13px] xl:px-0  ${iconCardWidth} ${arrowBg} ${arrowColor}`}>
+        <GorguseBtnIcon className="w-4 h-1.25 md:w-4 md:h-2.25 lg:w-5 lg:h-3.25 xl:w-4 xl:h-2.25 3xl:w-5 3xl:h-5" />
       </button>
     </div>
   );

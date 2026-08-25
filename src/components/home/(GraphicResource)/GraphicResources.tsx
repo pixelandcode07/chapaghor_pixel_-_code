@@ -23,7 +23,7 @@ const resources: GraphicResource[] = [
   {
     id: 2,
     category: "Social Media",
-    image: "/promobanner/Image2.jpg",
+    image: "/promobanner/Image11.jpg",
     premium: true,
   },
   {
@@ -101,7 +101,7 @@ export default function GraphicResources() {
           onCategoryChange={setActiveCategory}
         />
 
-        <div className="grid grid-cols-3 gap-2  md:grid-cols-4 xl:grid-cols-7 auto-rows-[65px] md:auto-rows-[80px] lg:auto-rows-[100px] xl:auto-rows-[90px] 1xl:auto-rows-[100px] 3xl:auto-rows-[120px]">
+        <div className="grid grid-cols-3 gap-x-[15px] gap-y-[13px] md:grid-cols-4 xl:grid-cols-7 auto-rows-[65px] md:auto-rows-[80px] lg:auto-rows-[100px] xl:auto-rows-[90px] 1xl:auto-rows-[100px] 3xl:auto-rows-[120px]">
           {filteredResources.map((resource) => (
             <GraphicCard key={resource.id} resource={resource} />
           ))}

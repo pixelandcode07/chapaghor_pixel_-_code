@@ -16,12 +16,12 @@ export default function TopSelling() {
   ];
 
   return (
-    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:py-11.5">
+    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-20 3xl:pt-19">
       <div className="container-custom">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-2 xl:mb-8 xl:justify-center px-2 md:px-0">
-          <h1 className="text-[28px] md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase">
+        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-2 md:px-0">
+          <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none  tracking-[0.5]">
             TOP SELLING ITEMS
           </h1>
 
@@ -57,7 +57,7 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden xl:flex justify-center mt-10">
+        <div className="hidden xl:flex justify-center mt-10  3xl:mt-16.25">
           <LandingPageBtn href="#" >
             View All Products
           </LandingPageBtn>
