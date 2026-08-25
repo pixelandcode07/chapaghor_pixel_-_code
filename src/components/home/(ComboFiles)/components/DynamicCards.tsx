@@ -74,7 +74,7 @@ export default function DynamicCards({
       </div>
 
       {/* Stacked Image Container */}
-      <div className="relative z-10 pb-4 mt-[60px]">
+      <div className="relative z-10 pb-4 mt-[44px] xl:mt-[45px] 1xl:mt-[50px] 3xl:mt-[60px]">
         <div className="relative w-full aspect-212/152 mt-0">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
