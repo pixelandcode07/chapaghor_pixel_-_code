@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from "next/image";
@@ -9,10 +7,7 @@ import ActionButton from "@/components/home/landing-page-btn-gorguse";
 export default function CustomOrderInquiry() {
   return (
     <section className="w-full">
-      {/* =========================
-          Mobile / Tablet / LG
-          Full Width
-      ========================= */}
+      {/* ========================= Mobile / Tablet / LG Full Width ========================= */}
       <div className="flex w-full items-center justify-between gap-2 rounded-[8px] bg-[linear-gradient(to_right,#FEF1E8_0%,#FFFFFF_50%,#FEF1E8_100%)] px-2 py-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)] md:gap-4 md:px-7.5 md:py-4 lg:gap-5 lg:rounded-[10px] lg:py-5 xl:hidden">
         <div className="flex min-w-0 flex-1 items-center gap-2 md:gap-4 lg:gap-5">
           {/* Icon */}
@@ -30,9 +25,7 @@ export default function CustomOrderInquiry() {
             {/* Content title */}
             <h3 className="whitespace-nowrap text-[12px] font-semibold leading-tight tracking-[0.5px] text-[#012C60] md:text-[27px] md:text-black">
               Custom Order{" "}
-              <span className="text-[#012C60] md:text-[#F05A28]">
-                Inquiry
-              </span>
+              <span className="text-[#012C60] md:text-[#F05A28]">Inquiry</span>
             </h3>
 
             {/* Content description */}
@@ -75,8 +68,7 @@ export default function CustomOrderInquiry() {
           <div className="min-w-0">
             {/* Content title */}
             <h3 className="whitespace-nowrap text-[17px] font-semibold leading-tight tracking-[0.5px] text-black 1xl:text-[20px] 3xl:text-[26px]">
-              Custom Order{" "}
-              <span className="text-[#F05A28]">Inquiry</span>
+              Custom Order <span className="text-[#F05A28]">Inquiry</span>
             </h3>
 
             {/* Content description */}
