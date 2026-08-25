@@ -55,7 +55,7 @@ export default function Client() {
               4,200+
             </h2>
 
-            <p className="text-[5px] leading-3 md:text-[12px] 3xl:text-[21px] font-light text-[#4A5D77]">
+            <p className="text-[5px] leading-3 md:text-[12px] 3xl:text-[21px] font-light text-[#4A5D77] mt-1.75">
               Our Trusted Clients
               {/* <br className="md:hidden" /> */}
               {/* <span className="md:ml-1">Clients</span> */}

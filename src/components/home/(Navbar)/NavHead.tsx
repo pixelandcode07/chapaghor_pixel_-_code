@@ -14,6 +14,8 @@ import {
   CustomMenuIcon,
   GroupUsersIcon,
   HeartIcon,
+  NavMickIcon,
+  NavSearchIcon,
   NotificationIcon,
   VendorBoxIcon,
 } from "../../custom/icons";
@@ -211,7 +213,7 @@ export default function NavHead() {
               {/* Search */}
               <div
                 onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[12px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group"
+                className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[18px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group"
               >
                 {/* Hide text only on mobile */}
                 <span className="hidden sm:block text-[14px] 3xl:text-base text-[#9CA3AF] font-light leading-none select-none">
@@ -219,15 +221,16 @@ export default function NavHead() {
                 </span>
 
                 <div className="flex items-center">
-                  <Search
+                  {/* <Search
                     className="w-5 h-5 3xl:w-5 3xl:h-5 text-[#012C60] md:text-[#6B7280] group-hover:text-[#2D264B] transition-colors"
                     strokeWidth={2}
-                  />
+                  /> */}
+                  <NavSearchIcon className="w-3.25 h-3.25 3xl:w-5 3xl:h-5 text-[#012C60] md:text-[#6B7280] group-hover:text-[#2D264B] transition-colors" />
 
                   <div className="hidden sm:block h-[18px] w-[1.5px] bg-[#E5E7EB] mx-1.5" />
 
-                  <Mic
-                    className="hidden sm:block w-4 h-4 3xl:w-5 3xl:h-5 text-[#6839A3] cursor-pointer hover:opacity-80 transition-opacity"
+                  <NavMickIcon
+                    className="hidden sm:block w-2.25 h-3.5 3xl:w-5 3xl:h-5 text-[#FD7034] cursor-pointer hover:opacity-80 transition-opacity"
                     strokeWidth={2}
                     onClick={(e) => e.stopPropagation()}
                   />
@@ -235,7 +238,7 @@ export default function NavHead() {
               </div>
 
               {/* Icons */}
-              <div className="flex items-center text-[#012C60] gap-0.5 sm:gap-1">
+              <div className="flex items-center text-[#012C60] gap-0.5 md:gap-1">
                 <Button
                   size="nav-icon"
                   variant="nav_user_laptop"
