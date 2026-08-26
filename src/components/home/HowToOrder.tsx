@@ -291,11 +291,11 @@ export default function HowToOrder() {
       <div className="hidden md:block">
         <div className="relative mx-auto w-full px-4 py-12 md:max-w-[90vw] lg:max-w-[90vw] 3xl:max-w-[76vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw]">
           <div className="mb-12 flex flex-col items-center justify-center text-center md:mb-16">
-            <h5 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }} className="mb-2 text-[16px] font-normal uppercase leading-none tracking-normal text-[#FF8D28] lg:text-[14px] xl:text-[33.33px]">
+            <h5 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }} className="mb-2 text-[16px] uppercase leading-none tracking-normal text-[#012C60] lg:text-[14px] xl:text-[33.33px]">
               How To Order
             </h5>
 
-            <h1 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }} className="text-[28px] font-light capitalize leading-none text-[#1C3E6E] md:text-[36px] lg:text-[28px] xl:text-[36px] 3xl:text-[48px]">
+            <h1 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }} className="text-[28px] font-normal capitalize leading-none text-[#6839A3] md:text-[36px] lg:text-[28px] xl:text-[36px] 3xl:text-[48px]">
               Easy Steps To Order
             </h1>
           </div>
@@ -317,20 +317,20 @@ export default function HowToOrder() {
                   <Image src={step.iconUrl} alt={step.title} width={44} height={44} className="h-[40px] w-[40px] object-contain md:h-[38px] md:w-[38px] lg:h-[38px] lg:w-[38px] xl:h-[43px] xl:w-[43px]" />
 
                   {/* Number */}
-                  <div className="absolute -bottom-[8px] left-1/2 z-10 flex h-[24px] w-[24px] -translate-x-1/2 items-center justify-center rounded-full bg-[#FF8D28] text-[11px] font-medium text-white xl:-bottom-[10px] xl:left-[35%] xl:h-[33px] xl:w-[33px] xl:text-[21px]">
+                  <div className="absolute -bottom-[8px] left-1/2 z-10 flex h-[24px] w-[24px] -translate-x-1/2 items-center justify-center rounded-full bg-[#7D7C7D] text-[11px] font-medium text-white xl:-bottom-[10px] xl:left-[35%] xl:h-[33px] xl:w-[33px] xl:text-[21px]">
                     {step.id}
                   </div>
                 </div>
 
                 {/* Step Content */}
-                <div className="mt-2 w-full min-w-0 px-1 md:mt-3 lg:mt-3 xl:mt-0">
+                <div className="mt-1 w-full min-w-0 px-1 md:mt-3 lg:mt-3 xl:mt-0">
                   <h4 className="mb-1 text-center text-[13px] font-medium leading-tight text-[#6838A2] md:text-[13px] lg:text-[14px] xl:mb-2 xl:whitespace-nowrap xl:text-[16px] 3xl:text-[21.33px]">
                     {step.title}
                   </h4>
 
-                  <p className="mx-auto max-w-[125px] text-center text-[10px] font-light leading-snug text-[#012C60] md:max-w-[130px] md:text-[10px] lg:max-w-[145px] lg:text-[11px] xl:max-w-none xl:text-[14px] xl:leading-relaxed 3xl:text-[21.33px]">
-                    {step.description}
-                  </p>
+                  <p className="mx-auto max-w-[125px] text-center text-[10px] font-light leading-[1.1] text-[#012C60] md:max-w-[130px] 3xl:max-w-[194px] md:text-[10px] tracking-[1px] lg:max-w-[145px] lg:text-[11px] xl:max-w-none xl:text-[14px] xl:leading-[1.2] 3xl:text-[17.5px]">
+  {step.description}
+</p>
                 </div>
               </div>
             ))}
