@@ -36,7 +36,7 @@ export default function DynamicCards({
         className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
             ? "w-full aspect-151/157 md:w-47 md:aspect-188/194"
-            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[286px] 3xl:aspect-286/283"
+            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[284px] 3xl:h-[345px]"
         }`}
       >
         <BorderBeam
@@ -75,7 +75,7 @@ export default function DynamicCards({
 
       {/* Stacked Image Container */}
       <div className="relative z-10 pb-4 mt-[44px] xl:mt-[45px] 1xl:mt-[50px] 3xl:mt-[60px]">
-        <div className="relative w-full aspect-212/152 mt-0">
+        <div className="relative w-full aspect-212/152 mt-0 3xl:w-[284px] 3xl:h-[209px]">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
           {/* The 3 Image Layers */}
@@ -85,22 +85,24 @@ export default function DynamicCards({
 
             const isFront = offset === 0;
             const isMiddle = offset === 1;
+            const layerOffset = 15;
+
 
             return (
-              <motion.div
+               <motion.div
                 key={src}
                 initial={false}
                 animate={{
-                  y: isFront ? 0 : isMiddle ? -12 : -24,
-                  scale: isFront ? 1 : isMiddle ? 0.92 : 0.84,
+                  y: isFront ? 0 : isMiddle ? -layerOffset : -(layerOffset * 2),
+                  width: isFront ? "100%" : isMiddle ? "255px" : "223px",
                   zIndex: isFront ? 30 : isMiddle ? 20 : 10,
                 }}
                 transition={{
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top"
-              >
+                  className="absolute top-0 left-1/2 -translate-x-1/2 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top h-full"
+                >
                 <Image
                   src={src}
                   alt={`${item.title} ${index}`}
