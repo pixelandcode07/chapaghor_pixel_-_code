@@ -47,12 +47,12 @@ export default function ChooseUsBody() {
         gradientOpacity={0.8}
         gradientFrom="#F05A28"
         gradientTo="#FF8D28"
-        className="relative container-custom overflow-hidden !bg-white p-0 shadow-none xl:!bg-black xl:rounded-[24px]"
+        className="relative container-custom overflow-hidden !bg-white p-0 shadow-none xl:!bg-black xl:rounded-[24px] border-none"
       >
-        <div className="relative z-10 px-4 py-4.5 md:px-0 md:py-0 xl:px-0 xl:py-16 3xl:px-12 3xl:py-9.25">
+        <div className="relative z-10 px-4 py-4.5 md:px-0 md:py-0 xl:px-0 xl:pb-[31px] xl:pt-[35px] 3xl:px-12 1xl:pb-[33px] 1xl:pt-[39px] 3xl:pb-[46px] 3xl:pt-[54px]">
           
           {/* Heading */}
-          <div className=" flex flex-col items-center justify-center px-2 text-center mb-2 md:mb-4.5 xl:mb-12">
+          <div className=" flex flex-col items-center justify-center px-2 text-center mb-2 md:mb-4.5 xl:mb-[30px] 1xl:mb-[34px] 3xl:mb-11.5">
            
             <div className="flex w-full items-center justify-center gap-2 xl:gap-4">
               <span className="h-[2px] w-12 bg-[#FF8D28] xl:w-16 3xl:w-20" />
@@ -65,11 +65,11 @@ export default function ChooseUsBody() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <h1 className="pb-2 text-[22px] font-normal leading-tight tracking-wide text-black md:text-[28px] xl:text-white xl:text-[39px] 3xl:text-[52px]">
+              <h1 className="pb-1.5 md:pb-2 text-[22px] font-normal leading-tight tracking-wide text-black md:text-[28px] xl:text-white xl:text-[39px] 3xl:text-[52px]">
                 Quality Printing You Can
               </h1>
 
-              <h1 className="pb-2 text-[22px] font-normal leading-tight tracking-wide text-[#FF8D28] md:text-[28px] xl:text-[39px] 3xl:text-[52px]">
+              <h1 className="pb-1.5 md:pb-2 text-[22px] font-normal leading-tight tracking-wide text-[#FF8D28] md:text-[28px] xl:text-[39px] 3xl:text-[52px]">
                 Trust
               </h1>
             </div>

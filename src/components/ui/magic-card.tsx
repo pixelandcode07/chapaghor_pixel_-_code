@@ -196,25 +196,25 @@ export function MagicCard(props: MagicCardProps) {
   return (
     <motion.div
       className={cn(
-        "group relative isolate overflow-hidden rounded-[inherit] border border-transparent bg-white xl:bg-black",
+        "group relative isolate overflow-hidden rounded-[inherit]  bg-white xl:bg-black",
         className
       )}
       onPointerMove={handlePointerMove}
       onPointerLeave={() => reset("leave")}
       onPointerEnter={() => reset("enter")}
-      style={{
-        background: useMotionTemplate`
-          linear-gradient(
-            transparent 0 0
-          ) padding-box,
-          radial-gradient(
-            ${gradientSize}px circle at ${mouseX}px ${mouseY}px,
-            ${gradientFrom},
-            ${gradientTo},
-            transparent 100%
-          ) border-box
-        `,
-      }}
+      // style={{
+      //   background: useMotionTemplate`
+      //     linear-gradient(
+      //       transparent 0 0
+      //     ) padding-box,
+      //     radial-gradient(
+      //       ${gradientSize}px circle at ${mouseX}px ${mouseY}px,
+      //       ${gradientFrom},
+      //       ${gradientTo},
+      //       transparent 100%
+      //     ) border-box
+      //   `,
+      // }}
     >
       {/* Background */}
       <div className="absolute inset-px z-20 rounded-[inherit] bg-white xl:bg-black" />

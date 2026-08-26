@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { useEffect, useState } from "react";
 import { comboData } from "../ComboFile";
-import { TakaIcon } from "../../../custom/icons";
+import { TakaIcon, TopNComboIcon } from "../../../custom/icons";
 
 export default function DynamicCards({
   item,
@@ -58,7 +58,7 @@ export default function DynamicCards({
         className={`relative z-10 text-white font-medium flex justify-between items-center border-b border-[#686868] ${
           isHorizontal
             ? "text-sm pt-5 px-4 pb-3 mb-10"
-            : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5"
+            : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-0 mx-0.5"
         }`}
       >
         <h3 className="truncate ">
@@ -74,8 +74,8 @@ export default function DynamicCards({
       </div>
 
       {/* Stacked Image Container */}
-      <div className="relative z-10 pb-4 mt-2">
-        <div className="relative w-full aspect-416/307 mt-0">
+      <div className="relative z-10 pb-4 mt-[44px] xl:mt-[45px] 1xl:mt-[50px] 3xl:mt-[60px]">
+        <div className="relative w-full aspect-212/152 mt-0">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
           {/* The 3 Image Layers */}
@@ -175,10 +175,11 @@ export default function DynamicCards({
                w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]">
               {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
               {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
-              <ArrowUpRight 
+              {/* <ArrowUpRight 
                 className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
                 strokeWidth={2} 
-              />
+              /> */}
+              <TopNComboIcon className="w-5.75 h-5.75 md:w-8 md:h-8 xl:w-7.5 xl:h-7.5 1xl:w-8.25 1xl:h-8.25 3xl:w-11.25 3xl:h-11.25"  />
             </div>
                   </>
                 )}

@@ -13,7 +13,7 @@ export default function FeatureCard({
       </div>
 
       <div className="mt-1 text-center xl:ml-3 xl:mt-0 xl:text-left px-4 md:px-12 xl:px-0">
-        <p className="text-[8px] font-normal text-black md:text-[15px] xl:text-[12px] 1xl:text-[14px] 3xl:text-[18px] tracking-[0.5px]">
+        <p className="text-[8px] font-normal text-black md:text-[15px] xl:text-[12px] 1xl:text-[14px] 3xl:text-[18px] tracking-[0.5px] 3xl:mr-10">
           {title}
         </p>
       </div>

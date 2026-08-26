@@ -105,7 +105,7 @@ export default function ConnectedFeatureBar() {
                 {item.title}
               </h3>
 
-              <p className="mt-1.5 h-8 sm:h-0 px-1 md:px-5 lg:px-8 font-normal leading-[1.3] text-black text-[8px] tracking-[0.5px] md:mt-2 md:text-[9px] lg:text-[10px]">
+              <p className="mt-1.5 h-8 sm:h-0 pb-5 px-1 md:px-5 lg:px-8 font-normal leading-[1.3] text-black text-[8px] tracking-[0.5px] md:mt-2 md:text-[9px] lg:text-[10px]">
                 {item.description}
               </p>
             </div>

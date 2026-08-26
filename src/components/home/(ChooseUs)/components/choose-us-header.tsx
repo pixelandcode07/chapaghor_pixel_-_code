@@ -54,7 +54,7 @@ const stats = [
 export default function ChooseUsHeader() {
   return (
     <section className="w-full">
-      <div className="container-custom overflow-hidden rounded-[10px] border border-[#E5E5E5] bg-white shadow-[0_8px_14px_-6px_rgba(0,0,0,0.3)]">
+      <div className="container-custom overflow-hidden rounded-[10px] bg-white shadow-[3.14px_4.19px_7.86px_0px_#0000000D]">
         {/* XL / 1XL / 3XL */}
         <div className="hidden xl:flex w-full">
           {stats.map((stat, index) => {

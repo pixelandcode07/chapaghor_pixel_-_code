@@ -87,21 +87,21 @@ const products = [
 
 export default function OurService() {
     return (
-        <section className="container-custom bg-white py-7.25 md:py-10.75 3xl:py-12.75 px-2 md:px-0">
+        <section className="container-custom bg-white pb-[20px] md:pt-[19px] md:pb-[38px] md:pt-[43px] xl:pb-[35px] xl:pt-12 1xl:pb-10 1xl:pt-[55px] 1xl:pb-10 1xl:pt-[55px] 3xl:pb-13.5 3xl:pt-18.25 px-2 md:px-0">
 
             {/* Title Section */}
-            <div className="flex flex-col items-center justify-center">
-                <h4 className="text-[#012C60] text-[16px] md:text-[20px] xl:text-[22px] 3xl:text-[33px] leading-normal font-light uppercase">
+            <div className="flex flex-col items-center justify-center gap-2.5 md:gap-3.5 xl:gap-2.5 1xl:gap-2.75 3xl:gap-4">
+                <h4 className="text-[#012C60] text-[16px] md:text-[16px] xl:text-[22px] 3xl:text-[33px] leading-none font-light uppercase">
                     Our Service
                 </h4>
 
-                <h2 className="text-[#511B95] text-[20px] md:text-[32px] xl:text-[31px] 3xl:text-[48px] leading-normal font-normal uppercase">
+                <h2 className="text-[#511B95] text-[20px] md:text-[32px] xl:text-[31px] 3xl:text-[48px] leading-none font-normal uppercase">
                     What We Print
                 </h2>
             </div>
 
             {/* Image Grid Section */}
-            <div className="my-7.5 md:my-9 xl:my-10.75 3xl:my-14">
+            <div className="mt-[30px] mb-[28px] md:mt-[32px] md:mb-[32px] xl:mt-[46px] xl:mb-[37px] 1xl:mt-[54px] 1xl:mb-[44px] 3xl:mt-[57px] 3xl:mb-[71px]">
                 <div
                     className="
                         grid
@@ -109,7 +109,7 @@ export default function OurService() {
                         md:grid-cols-3
                         xl:grid-cols-6
                         gap-2.5
-                        lg:gap-x-6
+                        lg:gap-x-6.25
                         lg:gap-y-7
                         justify-items-center
                         items-start
