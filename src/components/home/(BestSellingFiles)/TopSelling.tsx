@@ -16,7 +16,7 @@ export default function TopSelling() {
   ];
 
   return (
-    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-20 3xl:pt-19">
+    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-10 3xl:pt-19">
       <div className="container-custom">
 
         {/* Title */}
@@ -52,12 +52,12 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop */}
-        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-7 items-start">
+        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start">
           <DynamicCardsReuse products={products} />
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden xl:flex justify-center mt-10  3xl:mt-16.25">
+        <div className="hidden xl:flex justify-center mt-10  3xl:mt-20">
           <LandingPageBtn href="#" >
             View All Products
           </LandingPageBtn>
