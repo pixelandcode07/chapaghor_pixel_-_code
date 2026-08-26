@@ -15,15 +15,17 @@ export default function ActionButton({
   title,
   cardWidth = "",
   iconCardWidth = "",
-  buttonBg = "bg-[#FF4900]",
+  buttonBg="bg-[linear-gradient(90deg,#FF4900_0%,#FF6501_100%)]",
   titleColor = "text-white",
   arrowBg = "bg-white",
-  arrowColor = "text-black",
+  arrowColor="text-white",
   className = "",
 }: ActionButtonProps) {
   return (
-    <div className={`flex shrink-0 items-center overflow-hidden rounded-[2px] rounded-br-[5px] shadow-sm md:rounded-[5px] md:rounded-br-[11px] lg:rounded-[8px] lg:rounded-br-[16px] xl:rounded-[8px] xl:rounded-br-[17px] ${cardWidth} ${buttonBg} ${className}`}>
-      <span className={`whitespace-nowrap pl-2.5 text-[8px] font-medium md:pl-4 md:text-[16px] lg:pl-5 xl:pl-6 3xl:pl-[39px] xl:text-[14px] 1xl:text-[18px] 3xl:text-[25px] ${titleColor}`}>
+    <div
+        className={`flex shrink-0 items-center overflow-hidden rounded-[2px] rounded-br-[5px] shadow-sm md:rounded-[5px] md:rounded-br-[11px] lg:rounded-[8px] 3xl:py-[10px] lg:rounded-br-[16px] xl:rounded-[8px] xl:rounded-br-[17px] ${cardWidth} ${buttonBg} ${className}`}
+      >
+      <span className={`whitespace-nowrap pl-2.5 text-[8px] font-medium md:pl-4 md:text-[16px] lg:pl-5 xl:pl-6 3xl:pl-[39px] xl:text-[14px] 1xl:text-[18px] 3xl:text-[20px] ${titleColor}`}>
         {title}
       </span>
 

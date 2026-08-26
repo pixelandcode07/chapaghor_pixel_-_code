@@ -111,13 +111,13 @@ export default function ConnectedCard() {
                 {social.name}
               </h3>
 
-              <p className="mb-5 xl:mb-[22px] 1xl:mb-[24px] 3xl:mb-[34px] text-sm leading-snug font-light text-[#757575] xl:text-[10px] 1xl:text-[12px] 3xl:text-[15px] tracking-[0.5px]">
+              <p className="mb-5 xl:mb-[22px] 1xl:mb-[24px] 3xl:mb-[34px] text-sm leading-snug font-light text-[#757575] xl:text-[10px] 1xl:text-[12px] 3xl:text-[16px] tracking-[0.5px]">
                 {social.description}
               </p>
 
               <a
                 href="#"
-                className="inline-flex items-center gap-1 xl:text-[12px] 3xl:text-[16px] font-light transition-all hover:gap-2 tracking-[0.5px] xl:pb-[19px] 1xl:pb-[21px] 3xl:pb-[29px]"
+                className="inline-flex items-center gap-1 xl:text-[12px] 3xl:text-[17px] font-light transition-all hover:gap-2 tracking-[0.5px] xl:pb-[19px] 1xl:pb-[21px] 3xl:pb-0"
                 style={{ color: social.color }}
               >
                 {social.action} <span><ArrowRight className="xl:w-3 3xl:w-4 xl:h-3 3xl:h-4" /></span>

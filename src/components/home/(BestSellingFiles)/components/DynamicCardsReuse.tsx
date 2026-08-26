@@ -39,32 +39,52 @@ export default function DynamicCardsReuse({
                 src={product.src}
                 alt={product.name}
                 fill
-                className="object-cover"
+                className="object-cover rounded-br-[50px] group-hover:rounded-br-[80px] "
                 // group-hover:scale-105 transition-all duration-700
               />
 
-              {/* Corner glow behind the arrow button.
-                  Old approach: a solid white square + 2 curve SVGs, each sized
-                  per-breakpoint by hand. The image's own rounded-br radius was
-                  fixed at 50px/80px(hover) while those pieces were sized
-                  separately per breakpoint — they never quite matched, so a
-                  hard white edge/seam showed up against the photo.
-                  New approach: one element, one radial mask. The mask fades
-                  fully to transparent before it reaches the element's own
-                  edge, so there's no hard border to see no matter what's
-                  underneath — and it reads as a soft blur, not a white patch. */}
-              <div
-                className="absolute bottom-0 right-0 z-10 pointer-events-none
-                           backdrop-blur-md bg-white/30
-                           transition-transform duration-300 origin-bottom-right group-hover:scale-110
-                           w-[64px] h-[64px] md:w-[72px] md:h-[72px] xl:w-[84px] xl:h-[84px] 1xl:w-[92px] 1xl:h-[92px] 3xl:w-[112px] 3xl:h-[112px]"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(circle at 100% 100%, black 32%, transparent 68%)",
-                  maskImage:
-                    "radial-gradient(circle at 100% 100%, black 32%, transparent 68%)",
-                }}
+              {/* White Cutout */}
+              <div 
+                className="absolute bottom-0 right-0 bg-white z-10 pointer-events-none
+                           w-[44px] h-[44px] md:w-[50px] md:h-[50px] xl:w-[56px] xl:h-[56px] 1xl:w-[62px] 1xl:h-[62px] 3xl:w-[76px] 3xl:h-[76px]
+                           rounded-tl-[24px] md:rounded-tl-[25px] xl:rounded-tl-[28px] 1xl:rounded-tl-[30px] 3xl:rounded-tl-[41px]" 
               />
+
+              {/* Top Curve */}
+              <div 
+                className="absolute right-0 z-10 pointer-events-none 
+                           bottom-[43px] md:bottom-[50px] xl:bottom-[55px] 1xl:bottom-[62px] 3xl:bottom-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-white"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+              {/* Left Curve */}
+              <div 
+                className="absolute bottom-0 z-10 pointer-events-none 
+                           right-[43px] md:right-[50px] xl:right-[55px] 1xl:right-[62px] 3xl:right-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-white"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
             </div>
 
             {/* Arrow */}
@@ -85,10 +105,10 @@ export default function DynamicCardsReuse({
           {/* Title */}
           <div className="mt-2.75 md:mt-4 xl:mt-3.5 1xl:mt-4 3xl:mt-5 flex justify-center">
             <span
-              className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
+              className={`bg-[#F4F4F5] text-[#012C60] font-normal rounded-[8px] 3xl:rounded-[12px] xl:rounded-[10px] group-hover:bg-[#E5E7EB] transition-colors text-center truncate block ${
                 isHorizontal
                   ? "w-full text-xs p-1 md:py-2 lg:p-1.5 md:text-[15px]"
-                  : "w-full text-[13px]  xl:text-[12px] 3xl:text-[24px] p-1 lg:py-1 tracking-[0.5px]"
+                  : "w-full text-[13px]  xl:text-[12px] 3xl:text-[22px] p-1 lg:py-1 tracking-[0.5px]"
               }`}
             >
               {product.name}
