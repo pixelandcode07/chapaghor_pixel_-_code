@@ -108,7 +108,7 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
 
       {/* Premium Crown */}
       {resource.premium && (
-        <div className="absolute left-2 top-1.5 z-10 opacity-0 transition-all duration-300 group-hover:opacity-100">
+        <div className="absolute left-3 top-3 z-10 opacity-0 transition-all duration-300 group-hover:opacity-100">
           <svg
             width="28"
             height="28"
@@ -126,7 +126,7 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
       )}
 
       {/* Top Right Actions */}
-      <div className="absolute right-2 top-1.5 z-10 flex items-center gap-1 opacity-0 transition-all duration-300 group-hover:opacity-100">
+      <div className="absolute right-3 top-3 z-10 flex items-center gap-1 opacity-0 transition-all duration-300 group-hover:opacity-100">
         <button
           type="button"
           className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer"
@@ -153,8 +153,8 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
       </div>
 
       {/* Category Name */}
-      <div className="absolute bottom-5 left-3 z-10 translate-y-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        <h3 className="text-sm font-bold uppercase tracking-[0.08em] text-white md:text-base">
+      <div className="absolute bottom-4 left-3 z-10 translate-y-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-sm [word-spacing:8px] font-medium uppercase tracking-[0.08em] text-white md:text-base">
           {resource.category}
         </h3>
       </div>
