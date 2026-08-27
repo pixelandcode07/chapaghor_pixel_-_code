@@ -74,7 +74,7 @@ export default function DynamicCards({
       </div>
 
       {/* Stacked Image Container */}
-      <div className="relative z-10 pb-4 mt-[44px] xl:mt-[45px] 1xl:mt-[50px] 3xl:mt-[60px]">
+      <div className="relative z-10 pb-4 mt-[0px] xl:mt-[45px] 1xl:mt-[44px] 3xl:mt-[64px]">
         <div className="relative w-full aspect-212/152 mt-0 3xl:w-[284px] 3xl:h-[209px]">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
@@ -85,22 +85,49 @@ export default function DynamicCards({
 
             const isFront = offset === 0;
             const isMiddle = offset === 1;
-            const layerOffset = 15;
+            const [layerOffset, setLayerOffset] = useState(15);
+            useEffect(() => {
+              const updateLayerOffset = () => {
+                const width = window.innerWidth;
+
+                if (width >= 1536) {
+                  setLayerOffset(15);
+                } else if (width >= 1440) {
+                  setLayerOffset(11);
+                } else if (width >= 768) {
+                  setLayerOffset(10);
+                } else {
+                  setLayerOffset(7);
+                }
+              };
+
+              updateLayerOffset();
+              window.addEventListener("resize", updateLayerOffset);
+
+              return () => window.removeEventListener("resize", updateLayerOffset);
+            }, []);
 
 
             return (
                <motion.div
                 key={src}
                 initial={false}
+                
                 animate={{
-                  y: isFront ? 0 : isMiddle ? -layerOffset : -(layerOffset * 2),
-                  width: isFront ? "100%" : isMiddle ? "255px" : "223px",
-                  zIndex: isFront ? 30 : isMiddle ? 20 : 10,
-                }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeInOut",
-                }}
+                y: isFront ? 0 : isMiddle ? -layerOffset : -(layerOffset * 2),
+
+                width: isFront
+                  ? "100%"
+                  : isMiddle
+                    ? "90%"
+                    : "78.5%",
+
+                zIndex: isFront ? 30 : isMiddle ? 20 : 10,
+              }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
                   className="absolute top-0 left-1/2 -translate-x-1/2 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top h-full"
                 >
                 <Image
