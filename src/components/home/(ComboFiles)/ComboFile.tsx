@@ -1,68 +1,68 @@
-import Image from "next/image";
-import DynamicCards from "./components/DynamicCards";
-import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
+import DynamicCards from './components/DynamicCards';
+import { ArrowRight } from 'lucide-react';
 
 // Data array now holds 3 images per card for the stacked rotation
 export const comboData = [
   {
     id: 1,
-    title: "Exclusive",
-    images: ["/combo/one.jpg", "/combo/two.jpg", "/combo/three.jpg"],
-    price: "1000",
+    title: 'Exclusive',
+    images: ['/combo/one.jpg', '/combo/two.jpg', '/combo/three.jpg'],
+    price: '1000',
   },
   {
     id: 2,
-    title: "Combo",
-    images: ["/combo/two.jpg", "/combo/three.jpg", "/combo/four.jpg"],
-    price: "1000",
+    title: 'Combo',
+    images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'],
+    price: '1000',
   },
   {
     id: 3,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 4,
-    title: "Combo",
-    images: ["/combo/two.jpg", "/combo/three.jpg", "/combo/four.jpg"],
-    price: "1000",
+    title: 'Combo',
+    images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'],
+    price: '1000',
   },
   {
     id: 5,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 6,
-    title: "Letterhead",
-    images: ["/combo/four.jpg", "/combo/five.jpg", "/combo/one.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'],
+    price: '1000',
   },
   {
     id: 7,
-    title: "Letterhead",
-    images: ["/combo/five.jpg", "/combo/one.jpg", "/combo/two.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'],
+    price: '1000',
   },
   {
     id: 8,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 9,
-    title: "Letterhead",
-    images: ["/combo/four.jpg", "/combo/five.jpg", "/combo/one.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'],
+    price: '1000',
   },
   {
     id: 10,
-    title: "Letterhead",
-    images: ["/combo/five.jpg", "/combo/one.jpg", "/combo/two.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'],
+    price: '1000',
   },
 ];
 
@@ -84,43 +84,32 @@ export default function Combo() {
       </div>
 
       {/* Main Content Container */}
-<<<<<<< HEAD
-      <div className="relative z-10 w-full md:max-w-[90vw] 3xl:max-w-[78.80vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17.25 pb-6.5 md:pb-12.75 xl:pb-20.25 3xl:pb-28.75">
-        {/* Header Section */}
-        <div className="flex md:flex-row justify-between items-center mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 px-2 md:px-0">
-=======
-      <div className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-none 7xl:container mx-auto
+      <div
+        className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-none 7xl:container mx-auto
        pb-[10px] md:pb-[40px] xl:pb-[48px] 1xl:pb-[58px] 3xl:pb-[82px] 3xl:px-[202px]">
         {/* md:max-w-[92vw] xl:max-w-[89vw] 1xl:max-w-[86.11vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] */}
         {/* pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17  */}
         {/* Header Section */}
-        <div className="flex md:flex-row justify-between items-center px-2 md:px-0 
+        <div
+          className="flex md:flex-row justify-between items-center px-2 md:px-0 
          pt-[18px] pb-[23px] md:pt-[51px] md:pb-[32px] xl:pt-[44px] xl:pb-[37px] 1xl:pt-[50px] 1xl:pb-[42px] 3xl:pt-[67px] 3xl:pb-[56px]
         ">
           {/* mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 */}
->>>>>>> c2e966d100d3268a89a008c13a5f461138751889
           <div className="flex gap-2.5">
             <h1 className="text-xl md:text-[28px] lg:text-[38px] xl:text-[40px] 3xl:text-[60px] font-normal text-white leading-tight tracking-wide">
               Exclusive Combo <span className="text-[#F05A28]">Deals</span>
             </h1>
           </div>
-          <button
-            className="text-white lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center"
-          >
+          <button className="text-white lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center">
             View All
             <ArrowRight className="w-3.5 h-3.5 xl:w-5 xl:h-5 ml-2" />
           </button>
         </div>
-<<<<<<< HEAD
-=======
-        
->>>>>>> c2e966d100d3268a89a008c13a5f461138751889
 
-        
         {/*  Mobile / Tablet / LG */}
         <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pl-5">
           <div className="flex gap-3 w-max pb-2">
-            {comboData.map((item) => (
+            {comboData.map(item => (
               <DynamicCards key={item.id} item={item} isHorizontal />
             ))}
 
@@ -137,7 +126,7 @@ export default function Combo() {
 
         {/* Cards Grid Section Desktop */}
         <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-4.75 3xl:gap-6.25">
-          {comboData.slice(0,5).map((item) => (
+          {comboData.slice(0, 5).map(item => (
             <DynamicCards key={item.id} item={item} />
           ))}
         </div>

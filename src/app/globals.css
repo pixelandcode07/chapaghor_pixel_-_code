@@ -1,22 +1,6 @@
-<<<<<<< HEAD
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-
-/* @media (pointer: fine) {
-  body {
-    cursor: none; 
-  }
-  
-  a, button {
-    cursor: none; 
-  }
-} */
-=======
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
 
 @layer components {
   .container-custom {
@@ -24,8 +8,8 @@
   }
 }
 
-
-html, body {
+html,
+body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* old Edge */
 }
@@ -33,8 +17,6 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none; /* Chrome, Edge, Safari */
 }
-
->>>>>>> c2e966d100d3268a89a008c13a5f461138751889
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -139,8 +121,8 @@ body::-webkit-scrollbar {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --breakpoint-1xl: 90rem;  /* 1440px */
-  --breakpoint-3xl: 120rem;  /* 1920px */
+  --breakpoint-1xl: 90rem; /* 1440px */
+  --breakpoint-3xl: 120rem; /* 1920px */
   --breakpoint-3xl_v2: 128rem;
   --breakpoint-4xl: 144rem;
   --breakpoint-7xl: 192rem;
@@ -224,14 +206,4 @@ body::-webkit-scrollbar {
   body {
     @apply bg-background text-foreground;
   }
-<<<<<<< HEAD
 }
-
-@layer components {
-  .container-custom {
-    @apply w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto py-7.25 md:py-10.75 3xl:py-12.75 px-2 md:px-0;
-  }
-}
-=======
-}
->>>>>>> c2e966d100d3268a89a008c13a5f461138751889
