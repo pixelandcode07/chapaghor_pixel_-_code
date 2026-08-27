@@ -1,122 +1,119 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type ReactNode } from "react";
 import {
   FaWhatsapp,
-  FaInfoCircle,
-  FaHeadset,
-  FaLink,
-  FaPhoneAlt,
-  FaPlus,
-  FaMinus,
 } from "react-icons/fa";
 import { ArrowIcon, EmailIcon, FacebookIcon, InstagramIcon, LinkedinIcon, PhoneIcon, TwitterIcon } from "../../custom/icons";
-// import { importantLinks, informationLinks, mobilePaymentMethods, paymentMethods, supportLinks } from "./components/footer_suppoter_text";
 import DesktopLinks from "./components/DesktopLinks";
-import { importantLinks, informationLinks, mobilePaymentMethods, paymentMethods, supportLinks } from "./footer_suppoter_text";
-import MobileSocialButton from "./components/MobileSocialButton";
-import MobileAccordion from "./components/MobileAccordion";
-import MobileLinks from "./components/MobileLinks";
-import TabletAccordion from "./components/TabletAccordion";
+import { importantLinks, informationLinks, paymentMethods, supportLinks } from "./footer_suppoter_text";
+import { MobileFooter } from "./components/MobileFooter";
+import { TabletFooter } from "./components/TabletFooter";
+import { ArrowRight } from "lucide-react";
 
 
 export default function Footer() {
   return (
     <>
-      {/* MOBILE */}
-      <div className="sm:hidden">
-        <MobileFooter />
-      </div>
+       {/* MOBILE */}
+  <div className="md:hidden">
+    <MobileFooter />
+  </div>
 
-      {/* TABLET */}
-      <div className="hidden sm:block lg:hidden">
-        <TabletFooter />
-      </div>
+  {/* TABLET + LG */}
+  <div className="hidden md:block xl:hidden">
+    <TabletFooter />
+  </div>
 
-      {/* =====================================================
-          DESKTOP — 1024px+
-      ===================================================== */}
-      <footer className="hidden w-full overflow-hidden bg-white font-sans lg:block">
+  {/* XL / 1XL / 3XL */}
+  <footer className="hidden w-full overflow-hidden bg-white font-sans xl:block">
         {/* ================= TOP NEWSLETTER ================= */}
-        <section className="w-full bg-white">
-          <div className="container-custom flex h-[180px]">
-            {/* ORANGE */}
-            <div className="flex h-full w-[430px] shrink-0 items-center bg-[#FF7037] px-[40px] text-white">
-              <FaWhatsapp className="h-[52px] w-[52px] shrink-0" />
+     <section className="w-full bg-white">
+  <div className="container-custom flex overflow-hidden  xl:h-[140px] 1xl:h-[160px] 3xl:h-[180px]">
+    {/* ORANGE */}
+    <div className=" rounded-t-[18px] 3xl:rounded-t-[20px] flex h-full shrink-0 items-center bg-[#FF7037] text-white xl:w-[300px] xl:px-[24px] 1xl:w-[360px] 1xl:px-[30px] 3xl:w-[430px] 3xl:px-[40px]">
+      <FaWhatsapp className="shrink-0 xl:h-[38px] xl:w-[38px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[52px] 3xl:w-[52px]" />
 
-              <div className="ml-[20px]">
-                <h3 className="text-[20px] font-medium leading-[1.2]">
-                  Need Help? Chat With Us
-                </h3>
+      <div className="xl:ml-[12px] 1xl:ml-[17px] 3xl:ml-[20px]">
+        <h3 className="whitespace-nowrap font-medium leading-[1.2] xl:text-[15px] 1xl:text-[18px] 3xl:text-[20px]">
+          Need Help? Chat With Us
+        </h3>
 
-                <p className="mt-[8px] text-[16px] font-medium">
-                  We are ready to help you anytime.
-                </p>
+        <p className="whitespace-nowrap font-medium xl:mt-[5px] xl:text-[12px] 1xl:mt-[7px] 1xl:text-[14px] 3xl:mt-[8px] 3xl:text-[16px]">
+          We are ready to help you anytime.
+        </p>
 
-                <a
-                  href="https://wa.me/8801818992244"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-[20px] flex h-[48px] w-[255px] items-center justify-between rounded-[6px] bg-white px-[20px] text-[16px] font-semibold text-[#FF7037]"
-                >
-                  <span>Chat on WhatsApp</span>
-                  <ArrowIcon />
-                </a>
-              </div>
-            </div>
+        <a
+          href="https://wa.me/8801818992244"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between rounded-[6px] bg-white font-medium text-[#FF7037] xl:mt-[12px] xl:h-[38px] xl:w-[180px] xl:px-[14px] xl:text-[12px] 1xl:mt-[17px] 1xl:h-[43px] 1xl:w-[225px] 1xl:px-[18px] 1xl:text-[14px] 3xl:mt-[20px] 3xl:h-[48px] 3xl:w-[255px] 3xl:px-[20px] 3xl:text-[16px]"
+        >
+          <span>Chat on WhatsApp</span>
+          {/* <ArrowIcon /> */}
+          <ArrowRight/>
+        </a>
+      </div>
+    </div>
 
-            {/* NEWSLETTER */}
-            <div className="relative h-full min-w-0 flex-1 overflow-hidden bg-[#FEF1E9]">
-              <div className="relative z-20 flex h-full items-center px-[32px] pr-[205px]">
-                <div className="min-w-0 flex-1">
-                  <h3 className="whitespace-nowrap text-[38px] font-medium leading-[1.08] text-[#012C60]">
-                    Subscribe to Our Newsletter
-                  </h3>
+    {/* NEWSLETTER */}
+<div className="relative rounded-t-[18px] 3xl:rounded-t-[20px]  h-full min-w-0 flex-1 overflow-hidden bg-[#FEF1E9]">
+  <div className="relative z-20 grid h-full items-center xl:grid-cols-[360px_290px_minmax(0,1fr)] 1xl:grid-cols-[350px_320px_minmax(0,1fr)] 3xl:grid-cols-[590px_420px_minmax(0,1fr)] xl:gap-[18px] 1xl:gap-[24px] 3xl:gap-[40px] xl:px-[24px] xl:pr-[160px] 1xl:px-[28px] 1xl:pr-[180px] 3xl:px-[32px] 3xl:pr-[205px]">
+    
+    {/* TITLE / CONTENT */}
+    <div className="min-w-0">
+      <h3 className="whitespace-nowrap font-medium leading-[1.08] text-[#012C60] xl:text-[25px] 1xl:text-[26px] 3xl:text-[38px]">
+        Subscribe to Our Newsletter
+      </h3>
 
-                  <p className="mt-[8px] whitespace-nowrap text-[18px] font-light text-[#012C60]">
-                    Get updates on offers, new products and printing tips.
-                  </p>
-                </div>
+      <p className="whitespace-nowrap font-light text-[#012C60] xl:mt-[5px] xl:text-[12px] 1xl:mt-[7px] 1xl:text-[14px] 3xl:mt-[8px] 3xl:text-[18px]">
+        Get updates on offers, new products and printing tips.
+      </p>
+    </div>
 
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="ml-[40px] flex h-[64px] w-[440px] shrink-0 overflow-hidden rounded-[10px] bg-white"
-                >
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="min-w-0 flex-1 px-[24px] text-[14px] text-black outline-none placeholder:text-[#777]"
-                  />
+    {/* FORM */}
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      className="flex w-full overflow-hidden rounded-[10px] bg-white xl:h-[48px] 1xl:h-[56px] 3xl:h-[64px]"
+    >
+      <input
+        type="email"
+        placeholder="Enter your email address"
+        className="min-w-0 flex-1 text-black outline-none placeholder:text-[#777] xl:px-[14px] xl:text-[10px] 1xl:px-[18px] 1xl:text-[12px] 3xl:px-[24px] 3xl:text-[14px]"
+      />
 
-                  <button
-                    type="submit"
-                    className="w-[140px] shrink-0 bg-[#FF4F00] text-[16px] font-semibold text-white"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div>
+      <button
+        type="submit"
+        className="shrink-0 bg-[#FF4F00] font-semibold text-white xl:w-[100px] xl:text-[12px] 1xl:w-[115px] 1xl:text-[14px] 3xl:w-[140px] 3xl:text-[16px]"
+      >
+        Subscribe
+      </button>
+    </form>
 
-              <div className="pointer-events-none absolute bottom-0 right-0 z-10">
-                <img
-                  src="/footer/Mask group.svg"
-                  alt=""
-                  className="h-[180px] w-auto object-contain object-bottom"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+    {/* AUTO REMAINING SPACE */}
+    <div className="min-w-0" />
+  </div>
+
+  <div className="pointer-events-none absolute bottom-0 right-0 z-10">
+    <img
+      src="/footer/Mask group.svg"
+      alt=""
+      className="w-auto object-contain object-bottom xl:h-[140px] 1xl:h-[160px] 3xl:h-[180px]"
+    />
+  </div>
+</div>
+  </div>
+</section>
 
         {/* ================= MAIN FOOTER ================= */}
         <section className="w-full bg-[#0F1722] text-white">
           <div className="w-full">
            <div>
-             <div className="container-custom grid h-full grid-cols-[1.55fr_0.95fr_0.95fr_1.15fr_1.4fr]">
+             {/* <div className="container-custom grid h-full grid-cols-[1.55fr_0.95fr_0.95fr_1.15fr_1.4fr]"> */}
+             <div className="container-custom grid h-full grid-cols-[2fr_1.80fr_1.80fr_1.80fr_2fr]">
               {/* BRAND */}
-              <div className="border-r border-white/15 px-[40px] py-[28px]">
-                <div className="relative h-[72px] w-[360px]">
+              <div className="border-r border-white/15 xl:px-[20px] 1xl:px-[30px] 3xl:px-[40px] py-[28px]">
+                <div className="relative xl:h-[50px] 1xl:h-[58px] 3xl:h-[72px] xl:w-[255px] 1xl:w-[293px] 3xl:w-[360px]">
                   <Image
                     src="/footer/logo-white.png"
                     alt="Chapaghor"
@@ -125,7 +122,7 @@ export default function Footer() {
                   />
                 </div>
 
-                <p className="mt-[8px] max-w-[420px] text-[17px] font-medium leading-[1.45] text-white">
+                <p className="mt-[8px] w-full xl:text-[12px] 1xl:text-[14px] 3xl:text-[18px] font-medium leading-[1.45] text-white">
                   We provide high quality printing services for you business,
                   event and personal needs
                 </p>
@@ -184,7 +181,7 @@ export default function Footer() {
               />
 
               {/* CONTACT */}
-              <div className="px-[32px] py-[28px]">
+              <div className="xl:px-[10px] 1xl:px-[20px] 3xl:px-[32px] py-[28px]">
                 <h4 className="text-[20px] font-medium">
                   Contact
                 </h4>
@@ -266,307 +263,3 @@ export default function Footer() {
     </>
   );
 }
-
-
-
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-function TabletFooter() {
-  const [openedSection, setOpenedSection] =
-    useState<string | null>(null);
-
-  const toggleSection = (section: string) => {
-    setOpenedSection((current) =>
-      current === section ? null : section
-    );
-  };
-
-  return (
-    <footer className="w-full bg-white px-0 pt-5 font-sans">
-      <div className="mx-auto w-full overflow-hidden rounded-t-[20px] bg-[#0F1722] text-white">
-        <div className="flex min-h-[112px] items-center justify-between gap-6 bg-[#FF4F00] px-10 py-5">
-          <div className="flex min-w-0 items-center gap-4">
-            <FaWhatsapp className="h-[54px] w-[54px] shrink-0" />
-
-            <div>
-              <h3 className="text-[22px] font-medium">
-                Need Help? Chat With Us
-              </h3>
-
-              <p className="mt-1 text-[15px]">
-                We are ready to help you anytime.
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://wa.me/8801818992244"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-[62px] w-[260px] shrink-0 items-center justify-between rounded-[10px] bg-white px-7 text-[18px] font-medium text-[#012C60]"
-          >
-            <span>Chat on WhatsApp</span>
-            <ArrowIcon />
-          </a>
-        </div>
-
-        <div className="grid grid-cols-[0.95fr_1.05fr] gap-10 px-8 py-8">
-          <div>
-            <div className="relative h-[66px] w-[310px]">
-              <Image
-                src="/footer/logo-white.png"
-                alt="Chapaghor"
-                fill
-                className="object-contain object-left"
-              />
-            </div>
-
-            <p className="mt-3 max-w-[310px] text-[14px] leading-[1.45]">
-              We provide high quality printing services for you
-              business, event and personal needs
-            </p>
-
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="mt-5 flex h-[52px] max-w-[330px] overflow-hidden rounded-[6px] bg-white"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="min-w-0 flex-1 px-3 text-[12px] text-black outline-none"
-              />
-
-              <button
-                type="submit"
-                className="w-[105px] bg-[#FF4F00] text-[13px] font-semibold"
-              >
-                Subscribe
-              </button>
-            </form>
-
-            <div className="mt-4 grid grid-cols-10 gap-1">
-              {mobilePaymentMethods.map((method) => (
-                <div
-                  key={method}
-                  className="relative aspect-square bg-white"
-                >
-                  <Image
-                    src={`/footer/payment/${method}.png`}
-                    alt={method}
-                    fill
-                    className="object-contain p-[2px]"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2.5">
-            {[
-              ["Information", informationLinks, FaInfoCircle],
-              ["Support", supportLinks, FaHeadset],
-              ["Important Link", importantLinks, FaLink],
-            ].map(([title, links, Icon]) => (
-              <TabletAccordion
-                key={title as string}
-                title={title as string}
-                icon={<Icon />}
-                open={openedSection === title}
-                onClick={() => toggleSection(title as string)}
-              >
-                <MobileLinks links={links as string[]} />
-              </TabletAccordion>
-            ))}
-
-            <TabletAccordion
-              title="Contact"
-              icon={<FaPhoneAlt />}
-              open={openedSection === "Contact"}
-              onClick={() => toggleSection("Contact")}
-            >
-              <div className="flex flex-col gap-3 text-[12px] text-[#D6D6D6]">
-                <a href="tel:+8801818992244">
-                  +88 01818992244
-                </a>
-
-                <a href="mailto:info@chapaghor.com">
-                  info@chapaghor.com
-                </a>
-              </div>
-            </TabletAccordion>
-          </div>
-        </div>
-
-        <div className="border-t border-white/15 px-4 py-4 text-center text-[12px] text-[#8F8B8B]">
-        {/* border-white/15 */}
-          Copyright © 2026. Bornil Printing Press. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-function MobileFooter() {
-  const [openedSection, setOpenedSection] =
-    useState<string | null>(null);
-
-  const toggleSection = (section: string) => {
-    setOpenedSection((current) =>
-      current === section ? null : section
-    );
-  };
-
-  return (
-    <footer className="w-full overflow-hidden bg-[#0F1722] font-sans text-white">
-      <div className="px-2 pb-[18px] pt-[17px]">
-        <div className="relative mx-auto h-[54px] w-[230px]">
-          <Image
-            src="/footer/logo-white.png"
-            alt="Chapaghor"
-            fill
-            className="object-contain"
-          />
-        </div>
-
-        <p className="mx-auto mt-2 max-w-[310px] text-center font-light text-[11px] leading-[1.35]">
-          We provide high quality printing services for you
-          <br />
-          business, event and personal needs
-        </p>
-
-        <div className="mt-2.25 flex items-center justify-center gap-1.5">
-           <span className="text-[#FFFFFF] text-[12px] font-normal">
-            Follow Us:
-          </span>
-          <MobileSocialButton>
-            <FacebookIcon  />
-          </MobileSocialButton>
-
-          <MobileSocialButton>
-            <TwitterIcon />
-          </MobileSocialButton>
-
-          <MobileSocialButton>
-            <LinkedinIcon />
-          </MobileSocialButton>
-
-          <MobileSocialButton>
-            <InstagramIcon />
-          </MobileSocialButton>
-        </div>
-
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="mt-3 flex h-[45px] overflow-hidden rounded-[8px] border border-[#3A414B] bg-[#101822] p-[3px]"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="min-w-0 flex-1 bg-transparent px-3 text-[12px] text-white outline-none"
-          />
-
-          <button
-            type="submit"
-            className="w-[80px] rounded-[7px] bg-[#FF4B0B] text-[11px] font-semibold"
-          >
-            Subscribe
-          </button>
-        </form>
-
-        <div className="my-[15px] h-px bg-[#343D48]" />
-
-        <div className="flex flex-col gap-[7px]">
-         
-          <MobileAccordion
-            title="Information"
-            icon={<FaInfoCircle />}
-            open={openedSection === "Information"}
-            onClick={() => toggleSection("Information")}
-          >
-            <MobileLinks links={informationLinks} />
-          </MobileAccordion>
-
-          <MobileAccordion
-            title="Support"
-            icon={<FaHeadset />}
-            open={openedSection === "Support"}
-            onClick={() => toggleSection("Support")}
-          >
-            <MobileLinks links={supportLinks} />
-          </MobileAccordion>
-
-          <MobileAccordion
-            title="Important Link"
-            icon={<FaLink />}
-            open={openedSection === "Important Link"}
-            onClick={() => toggleSection("Important Link")}
-          >
-            <MobileLinks links={importantLinks} />
-          </MobileAccordion>
-
-          <MobileAccordion
-            title="Contact"
-            icon={<FaPhoneAlt />}
-            open={openedSection === "Contact"}
-            onClick={() => toggleSection("Contact")}
-          >
-            <div className="flex flex-col gap-3 text-[12px] text-[#D6D6D6]">
-              <a href="tel:+8801818992244">
-                +88 01818992244
-              </a>
-
-              <a href="mailto:info@chapaghor.com">
-                info@chapaghor.com
-              </a>
-            </div>
-          </MobileAccordion>
-        </div>
-      </div>
-
-      <div className="bg-white px-2.5 py-3.5">
-        <div className="grid grid-cols-10 gap-1">
-          {mobilePaymentMethods.map((method) => (
-            <div
-              key={method}
-              className="relative aspect-square rounded-[5px] border border-[#D3D3D3] bg-white"
-            >
-              <Image
-                src={`/footer/payment/${method}.png`}
-                alt={method}
-                fill
-                className="object-contain p-[3px]"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="px-3 pb-3.5 pt-3 text-center">
-        <p className="text-[11px] text-[#8F8B8B]">
-          © 2026. Bornil Printing Press. All rights reserved.
-        </p>
-
-        <p className="text-[9px] text-[#777D84]">
-          Chapaghor.com is the online platform of Bornil Printing Press
-        </p>
-      </div>
-    </footer>
-  );
-}
-
-
-
-
-
-
-
-
-
