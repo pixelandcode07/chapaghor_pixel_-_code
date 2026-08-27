@@ -17,10 +17,10 @@ export default function TopSelling() {
 
   return (
     <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-10 3xl:pt-19">
-      <div className="container-custom">
+      <div className="">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-2 md:px-0">
+        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-5 md:px-8">
           <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none  tracking-[0.5]">
             TOP SELLING ITEMS
           </h1>
@@ -52,7 +52,7 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop */}
-        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start">
+        <div className="hidden container-custom xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start">
           <DynamicCardsReuse products={products} />
         </div>
 
