@@ -87,7 +87,7 @@ const products = [
 
 export default function OurService() {
     return (
-        <section className="container-custom bg-white pb-[20px] md:pt-[19px] md:pb-[38px] md:pt-[43px] xl:pb-[35px] xl:pt-12 1xl:pb-10 1xl:pt-[55px] 1xl:pb-10 1xl:pt-[55px] 3xl:pb-13.5 3xl:pt-18.25 px-2 md:px-0">
+        <section className="container-custom bg-white py-[20px] md:pt-[19px] md:pb-[38px] md:pt-[43px] xl:pb-[35px] xl:pt-12 1xl:pb-10 1xl:pt-[55px] 1xl:pb-10 1xl:pt-[55px] 3xl:pb-13.5 3xl:pt-18.25 px-5 md:px-8 xl:px-0">
 
             {/* Title Section */}
             <div className="flex flex-col items-center justify-center gap-2.5 md:gap-3.5 xl:gap-2.5 1xl:gap-2.75 3xl:gap-4">

@@ -84,12 +84,12 @@ export default function Combo() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-none 7xl:container mx-auto
+      <div className="relative z-10 w-full xl:max-w-[calc(100vw-150px)] 1xl:max-w-[calc(100vw-300px)] 3xl:max-w-none 7xl:container mx-auto
        pb-[10px] md:pb-[40px] xl:pb-[48px] 1xl:pb-[58px] 3xl:pb-[82px] 3xl:px-[202px]">
         {/* md:max-w-[92vw] xl:max-w-[89vw] 1xl:max-w-[86.11vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] */}
         {/* pt-5.25 md:pt-12.75 xl:pt-15 3xl:pt-17  */}
         {/* Header Section */}
-        <div className="flex md:flex-row justify-between items-center px-2 md:px-0 
+        <div className="flex md:flex-row justify-between items-center px-5 md:px-8 
          pt-[18px] pb-[23px] md:pt-[51px] md:pb-[32px] xl:pt-[44px] xl:pb-[37px] 1xl:pt-[50px] 1xl:pb-[42px] 3xl:pt-[67px] 3xl:pb-[56px]
         ">
           {/* mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 */}
@@ -109,8 +109,8 @@ export default function Combo() {
 
         
         {/*  Mobile / Tablet / LG */}
-        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pl-5">
-          <div className="flex gap-3 w-max pb-2">
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
+          <div className="flex gap-3 w-max pb-2 px-5 md:px-8">
             {comboData.map((item) => (
               <DynamicCards key={item.id} item={item} isHorizontal />
             ))}

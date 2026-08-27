@@ -21,7 +21,7 @@ export default function TopSelling() {
 
         {/* Title */}
         <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-5 md:px-8">
-          <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none  tracking-[0.5]">
+          <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none tracking-[0.5]">
             TOP SELLING ITEMS
           </h1>
 
@@ -31,8 +31,8 @@ export default function TopSelling() {
         </div>
 
         {/* Mobile / Tablet / LG */}
-        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
-          <div className="flex gap-3.75 md:gap-5 w-max pb-2 pl-5">
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
+          <div className="flex gap-3.75 md:gap-5 w-max pb-2 px-5 md:px-8">
             <DynamicCardsReuse
               products={products}
               isHorizontal
@@ -52,7 +52,7 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop */}
-        <div className="hidden container-custom xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start">
+        <div className="hidden container-custom xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start xl:px-0">
           <DynamicCardsReuse products={products} />
         </div>
 
