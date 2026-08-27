@@ -19,7 +19,7 @@ export default function TabletAccordion({
       <button
         type="button"
         onClick={onClick}
-        className="flex min-h-[61px] w-full items-center justify-between px-5 text-left"
+        className="flex h-[35px] md:h-[49px] w-full items-center justify-between px-5 text-left"
       >
         <span className="flex items-center gap-4">
           <span className="w-6">{icon}</span>

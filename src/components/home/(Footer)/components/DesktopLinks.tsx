@@ -8,16 +8,16 @@ export default function DesktopLinks({
   links: string[];
 }) {
   return (
-    <div className="border-r border-white/15 px-[32px] py-[28px]">
+    <div className="border-r border-white/15 xl:pl-[15px] 3xl:px-[32px] py-[28px]">
       <h4 className="text-[20px] font-medium">
         {title}
       </h4>
 
-      <ul className="mt-[26px] flex flex-col gap-[12px]">
+      <ul className="mt-[26px] flex flex-col xl:gap-[10px] 3xl:gap-[12px]">
         {links.map((link) => (
           <li
             key={link}
-            className="flex items-center gap-[8px]"
+            className="flex items-center xl:gap-[4px] 3xl:gap-[8px]"
           >
             <ArrowIcon />
 
