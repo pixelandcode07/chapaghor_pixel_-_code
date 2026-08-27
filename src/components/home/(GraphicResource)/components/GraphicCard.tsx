@@ -57,43 +57,41 @@
 //   );
 // }
 
+'use client';
 
-"use client";
-
-import Image from "next/image";
+import Image from 'next/image';
+import { Copy, Download, Heart } from 'lucide-react';
+import { GraphicResource } from '../GraphicResources';
 import {
-  Copy,
-  Download,
-  Heart,
-} from "lucide-react";
-import { GraphicResource } from "../GraphicResources";
-import { GraphicDonwloadIcon, GraphicHeartIcon, GraphiCloneIcon } from "@/components/custom/icons";
+  GraphicDonwloadIcon,
+  GraphicHeartIcon,
+  GraphiCloneIcon,
+} from '@/components/custom/icons';
 
 interface GraphicCardProps {
   resource: GraphicResource;
 }
 
 const layoutClasses: Record<number, string> = {
-  1: "col-span-1 row-span-2 md:col-span-1 md:row-span-2 xl:col-span-1 xl:row-span-2",
-  2: "col-span-2 row-span-2 md:col-span-2 md:row-span-2 xl:col-span-2 xl:row-span-2",
-  3: "hidden md:block md:col-span-1 md:row-span-4 xl:col-span-1 xl:row-span-4",
-  4: "hidden md:block md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-2",
-  5: "hidden md:block md:col-span-1 md:row-span-2 xl:col-span-2 xl:row-span-2",
-  6: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-2 xl:row-span-2",
-  7: "col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-1 xl:row-span-2",
-  8: "hidden xl:block xl:col-span-3 xl:row-span-2",
-  9: "col-span-4 row-span-3 md:hidden xl:block xl:col-span-3 xl:row-span-3",
-  10: "hidden xl:block xl:col-span-2 xl:row-span-3",
-  11: "hidden xl:block xl:col-span-2 xl:row-span-3",
+  1: 'col-span-1 row-span-2 md:col-span-1 md:row-span-2 xl:col-span-1 xl:row-span-2',
+  2: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2 xl:col-span-2 xl:row-span-2',
+  3: 'hidden md:block md:col-span-1 md:row-span-4 xl:col-span-1 xl:row-span-4',
+  4: 'hidden md:block md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-2',
+  5: 'hidden md:block md:col-span-1 md:row-span-2 xl:col-span-2 xl:row-span-2',
+  6: 'col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-2 xl:row-span-2',
+  7: 'col-span-2 row-span-2 md:col-span-2 md:row-span-3 xl:col-span-1 xl:row-span-2',
+  8: 'hidden xl:block xl:col-span-3 xl:row-span-2',
+  9: 'col-span-4 row-span-3 md:hidden xl:block xl:col-span-3 xl:row-span-3',
+  10: 'hidden xl:block xl:col-span-2 xl:row-span-3',
+  11: 'hidden xl:block xl:col-span-2 xl:row-span-3',
 };
 
 export default function GraphicCard({ resource }: GraphicCardProps) {
-  const layoutClass = layoutClasses[resource.id] ?? "";
+  const layoutClass = layoutClasses[resource.id] ?? '';
 
   return (
     <div
-      className={`group relative min-h-0 overflow-hidden rounded-lg ${layoutClass}`}
-    >
+      className={`group relative min-h-0 overflow-hidden rounded-lg ${layoutClass}`}>
       {/* Image — always full card */}
       <Image
         src={resource.image}
@@ -114,8 +112,7 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
             height="28"
             viewBox="0 0 28 28"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <circle cx="14" cy="14" r="14" fill="black" fillOpacity="0.23" />
             <path
               d="M14.4016 7.77783L10.4323 13.7317L5.47073 9.76246L7.45536 19.6856H21.3478L23.3324 9.76246L18.3708 13.7317L14.4016 7.77783Z"
@@ -129,23 +126,20 @@ export default function GraphicCard({ resource }: GraphicCardProps) {
       <div className="absolute right-3 top-3 z-10 flex items-center gap-1 opacity-0 transition-all duration-300 group-hover:opacity-100">
         <button
           type="button"
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer"
-        >
+          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer">
           <GraphiCloneIcon className="w-4 h-4 p-px" />
         </button>
 
         <button
           type="button"
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer"
-        >
-           <GraphicHeartIcon className="w-4 h-4 p-px" />
+          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer">
+          <GraphicHeartIcon className="w-4 h-4 p-px" />
         </button>
 
         <button
           type="button"
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer"
-        >
-           <GraphicDonwloadIcon className="w-5 h-5 p-px" />
+          className="flex h-7 w-7 items-center justify-center rounded-full bg-black/20 text-white transition-colors hover:bg-black/40 cursor-pointer">
+          <GraphicDonwloadIcon className="w-5 h-5 p-px" />
         </button>
         {/* <GraphiCloneIcon/> */}
         {/* <GraphicHeartIcon/>

@@ -1,5 +1,5 @@
-import { MoveRight } from "lucide-react";
-import Image from "next/image";
+import { MoveRight } from 'lucide-react';
+import Image from 'next/image';
 
 interface PromoBanner {
   id: number;
@@ -14,21 +14,21 @@ interface PromoBanner {
 const banners: PromoBanner[] = [
   {
     id: 1,
-    heading: "20% OFF",
-    test_duration: "During The Weekend",
-    description: "On All Printing Products",
-    button_text_color: "text-[#F05A28]",
-    button_text_bg_color: "bg-white",
-    card_image: "/promobanner/orange-promo-banner.png",
+    heading: '20% OFF',
+    test_duration: 'During The Weekend',
+    description: 'On All Printing Products',
+    button_text_color: 'text-[#F05A28]',
+    button_text_bg_color: 'bg-white',
+    card_image: '/promobanner/orange-promo-banner.png',
   },
   {
     id: 2,
-    heading: "20% OFF",
-    test_duration: "During The Weekend",
-    description: "On All Printing Products",
-    button_text_color: "text-white",
-    button_text_bg_color: "bg-[#F05A28]",
-    card_image: "/promobanner/black-promo-banner.jpg",
+    heading: '20% OFF',
+    test_duration: 'During The Weekend',
+    description: 'On All Printing Products',
+    button_text_color: 'text-white',
+    button_text_bg_color: 'bg-[#F05A28]',
+    card_image: '/promobanner/black-promo-banner.jpg',
   },
 ];
 
@@ -58,11 +58,20 @@ export default function PromoBanner() {
                   <h2 className="mt-1 text-[18px] md:text-[28px] font-bold leading-[1.05] uppercase tracking-[0.3px] text-white">
                     {banner.heading}
                   </h2>
+                  <h2 className="mt-1 text-[18px] md:text-[28px] font-bold leading-[1.05] uppercase tracking-[0.3px] text-white">
+                    {banner.heading}
+                  </h2>
 
                   <p className="mt-1 text-[11px] md:text-[16px] font-medium leading-none uppercase text-white">
                     {banner.test_duration}
                   </p>
+                  <p className="mt-1 text-[11px] md:text-[16px] font-medium leading-none uppercase text-white">
+                    {banner.test_duration}
+                  </p>
 
+                  <p className="mt-1 text-[8px] md:text-[12px] text-white">
+                    {banner.description}
+                  </p>
                   <p className="mt-1 text-[8px] md:text-[12px] text-white">
                     {banner.description}
                   </p>
@@ -105,13 +114,20 @@ export default function PromoBanner() {
 
       {/* XL & Above */}
       <div className="hidden xl:grid xl:grid-cols-2 xl:px-[65px] 3xl:px-0 1xl:gap-4.5 3xl:gap-[24px] 3xl:max-w-[1719px] 3xl:mx-auto">
-        {banners.map((banner) => (
+        {banners.map(banner => (
           // <div key={banner.id} className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-[552px] h-[160px] 1xl:w-[635px] 1xl:h-[184px] 3xl:w-full 3xl:h-[246px]">
           <div
             key={banner.id}
             className="relative shrink-0 overflow-hidden rounded-[12px] 1xl:rounded-[14px] 3xl:rounded-[16px] w-[552px] h-[160px] 1xl:w-full 1xl:h-[185px] 3xl:w-full 3xl:h-[245px]"
           >
             {/* 3xl:w-full 3xl:aspect-[825/246] */}
+            <Image
+              src={banner.card_image}
+              alt={banner.heading}
+              fill
+              sizes="(max-width: 1535px) 552px, (max-width: 1919px) 635px, 700px"
+              className="object-cover"
+            />
             <Image
               src={banner.card_image}
               alt={banner.heading}
@@ -127,11 +143,20 @@ export default function PromoBanner() {
                 <h2 className="mt-1 xl:text-[30px] 1xl:text-[35px] 3xl:text-[46px] font-extrabold leading-none uppercase tracking-[0.5px] text-white">
                   {banner.heading}
                 </h2>
+                <h2 className="mt-1 xl:text-[30px] 1xl:text-[35px] 3xl:text-[46px] font-extrabold leading-none uppercase tracking-[0.5px] text-white">
+                  {banner.heading}
+                </h2>
 
                 <p className="mt-1 xl:text-[17px] 1xl:text-[19px] 3xl:text-[25px] font-medium leading-none uppercase text-white">
                   {banner.test_duration}
                 </p>
+                <p className="mt-1 xl:text-[17px] 1xl:text-[19px] 3xl:text-[25px] font-medium leading-none uppercase text-white">
+                  {banner.test_duration}
+                </p>
 
+                <p className="mt-1 xl:text-[12px] 1xl:text-[15px] text-white">
+                  {banner.description}
+                </p>
                 <p className="mt-1 xl:text-[12px] 1xl:text-[15px] text-white">
                   {banner.description}
                 </p>
@@ -150,3 +175,4 @@ export default function PromoBanner() {
     </section>
   );
 }
+

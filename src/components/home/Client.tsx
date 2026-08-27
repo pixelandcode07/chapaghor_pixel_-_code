@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import Image from 'next/image';
+import Marquee from 'react-fast-marquee';
 
 interface Logo {
   name: string;
@@ -11,26 +11,26 @@ interface Logo {
 }
 
 const logos: Logo[] = [
-  { name: "breezy", text: "☁️ breezy", color: "#6B7280" },
-  { name: "attio", text: "❖ attio", color: "#111827" },
+  { name: 'breezy', text: '☁️ breezy', color: '#6B7280' },
+  { name: 'attio', text: '❖ attio', color: '#111827' },
   {
-    name: "PayPal",
-    text: "PayPal",
-    color: "#003087",
-    font: "italic font-bold text-lg",
+    name: 'PayPal',
+    text: 'PayPal',
+    color: '#003087',
+    font: 'italic font-bold text-lg',
   },
-  { name: "mparticle", text: "mparticle", color: "#111827" },
+  { name: 'mparticle', text: 'mparticle', color: '#111827' },
   {
-    name: "HubSpot",
-    text: "HubSpot",
-    color: "#FF7A59",
-    font: "font-bold text-lg",
+    name: 'HubSpot',
+    text: 'HubSpot',
+    color: '#FF7A59',
+    font: 'font-bold text-lg',
   },
   {
-    name: "miro",
-    text: "miro",
-    color: "#050038",
-    font: "font-bold text-2xl",
+    name: 'miro',
+    text: 'miro',
+    color: '#050038',
+    font: 'font-bold text-2xl',
   },
 ];
 
@@ -73,11 +73,10 @@ export default function Client() {
           className="flex-1 min-w-0  bg-white"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+              'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
             WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-          }}
-        >
+              'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
+          }}>
           <Marquee speed={45} pauseOnHover autoFill gradient={false}>
             {logos.map((logo, index) => (
               <div key={index} className="mr-2 md:mr-4 ">
@@ -95,9 +94,8 @@ function LogoCard({ logo }: { logo: Logo }) {
   return (
     <div className="flex  w-14 md:w-20 h-5.25 md:h-8.25 3xl:h-[57px] items-center justify-center rounded-[2px] ">
       <span
-        className='font-semibold text-[10px] md:text-base'
-        style={{ color: logo.color }}
-      >
+        className="font-semibold text-[10px] md:text-base"
+        style={{ color: logo.color }}>
         {/* {logo.name === "HubSpot" ? (
           <>
             HubSp<span className="text-[#FF7A59]">o</span>t

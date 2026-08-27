@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react';
 import {
   FaFacebookF,
   FaInstagram,
   FaYoutube,
   FaPinterestP,
   FaLinkedinIn,
-} from "react-icons/fa6";
+} from 'react-icons/fa6';
 
 const socialLinks = [
   {
     id: 1,
-    name: "Facebook",
+    name: 'Facebook',
     icon: FaFacebookF,
-    color: "#1877F2",
-    buttonBg: "#EEF5FF",
-    action: "Follow Us",
+    color: '#1877F2',
+    buttonBg: '#EEF5FF',
+    action: 'Follow Us',
     description: (
       <>
         Updates, news and
@@ -27,11 +27,11 @@ const socialLinks = [
   },
   {
     id: 2,
-    name: "Instagram",
+    name: 'Instagram',
     icon: FaInstagram,
-    color: "#E1306C",
-    buttonBg: "#FFF0F6",
-    action: "Follow Us",
+    color: '#E1306C',
+    buttonBg: '#FFF0F6',
+    action: 'Follow Us',
     description: (
       <>
         See our latest designs
@@ -41,11 +41,11 @@ const socialLinks = [
   },
   {
     id: 3,
-    name: "YouTube",
+    name: 'YouTube',
     icon: FaYoutube,
-    color: "#FF0000",
-    buttonBg: "#FFF0F0",
-    action: "Subscribe",
+    color: '#FF0000',
+    buttonBg: '#FFF0F0',
+    action: 'Subscribe',
     description: (
       <>
         Watch tutorials, behind
@@ -56,11 +56,11 @@ const socialLinks = [
   },
   {
     id: 4,
-    name: "Pinterest",
+    name: 'Pinterest',
     icon: FaPinterestP,
-    color: "#E60023",
-    buttonBg: "#FFF0F2",
-    action: "Follow Us",
+    color: '#E60023',
+    buttonBg: '#FFF0F2',
+    action: 'Follow Us',
     description: (
       <>
         Explore creative ideas
@@ -71,11 +71,11 @@ const socialLinks = [
   },
   {
     id: 5,
-    name: "LinkedIn",
+    name: 'LinkedIn',
     icon: FaLinkedinIn,
-    color: "#0A66C2",
-    buttonBg: "#EEF6FF",
-    action: "Connect",
+    color: '#0A66C2',
+    buttonBg: '#EEF6FF',
+    action: 'Connect',
     description: (
       <>
         Connect with us for business
@@ -91,19 +91,17 @@ export default function ConnectedCard() {
     <section className=" my-1 w-full px-2 py-1 md:px-0">
       {/* XL / 1XL / 3XL */}
       <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-5 3xl:gap-6 container-custom">
-        {socialLinks.map((social) => {
+        {socialLinks.map(social => {
           const Icon = social.icon;
 
           return (
             <div
               key={social.id}
               className="flex flex-col items-center rounded-2xl border border-gray-100 bg-white p-6 3xl:px-6 3xl:pt-[42px] 1xl:pt-[31px] xl:pt-[29px] xl:pt-[29px]  text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 
-              hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]"
-            >
+              hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
               <div
                 className="mb-4 xl:mb-[15px] 1xl:mb-[16px] 3xl:mb-[23px] flex h-12 w-12 items-center justify-center rounded-full text-white"
-                style={{ backgroundColor: social.color }}
-              >
+                style={{ backgroundColor: social.color }}>
                 <Icon className="h-6 w-6" />
               </div>
 
@@ -130,16 +128,18 @@ export default function ConnectedCard() {
 
       {/* Mobile / MD / LG */}
       <div className="grid grid-cols-5 gap-1 md:gap-2 lg:gap-3 xl:hidden">
-        {socialLinks.map((social) => {
+        {socialLinks.map(social => {
           const Icon = social.icon;
 
           return (
             <div
               key={social.id}
-              className="flex h-[83px] w-[64px] flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3"
-            >
+              className="flex h-[83px] w-[64px] flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3">
               <div className="flex h-[19px] w-[26px] shrink-0 items-center justify-center md:h-11 md:w-11">
-                <Icon className="h-4.5 w-4.5 md:h-10 md:w-10" style={{ color: social.color }} />
+                <Icon
+                  className="h-4.5 w-4.5 md:h-10 md:w-10"
+                  style={{ color: social.color }}
+                />
               </div>
 
               <h3 className="mt-2 truncate text-[7px] font-medium leading-none text-black md:text-[15px] lg:text-[16px] tracking-[0.5px]">
@@ -157,9 +157,8 @@ export default function ConnectedCard() {
                 style={{
                   color: social.color,
                   backgroundColor: social.buttonBg,
-                }}
-              >
-                {social.action.replace(" Us", "")}
+                }}>
+                {social.action.replace(' Us', '')}
               </a>
             </div>
           );
@@ -169,10 +168,10 @@ export default function ConnectedCard() {
   );
 }
 
-
-
 // Done By Moinuddin
-{/* Mobile / MD / LG */}
+{
+  /* Mobile / MD / LG */
+}
 //  <div className="grid grid-cols-5 gap-1 md:gap-2 lg:gap-3 xl:hidden">
 //         {socialLinks.map((social) => {
 //           const Icon = social.icon;

@@ -1,68 +1,68 @@
-import Image from "next/image";
-import DynamicCards from "./components/DynamicCards";
-import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
+import DynamicCards from './components/DynamicCards';
+import { ArrowRight } from 'lucide-react';
 
 // Data array now holds 3 images per card for the stacked rotation
 export const comboData = [
   {
     id: 1,
-    title: "Exclusive",
-    images: ["/combo/one.jpg", "/combo/two.jpg", "/combo/three.jpg"],
-    price: "1000",
+    title: 'Exclusive',
+    images: ['/combo/one.jpg', '/combo/two.jpg', '/combo/three.jpg'],
+    price: '1000',
   },
   {
     id: 2,
-    title: "Combo",
-    images: ["/combo/two.jpg", "/combo/three.jpg", "/combo/four.jpg"],
-    price: "1000",
+    title: 'Combo',
+    images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'],
+    price: '1000',
   },
   {
     id: 3,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 4,
-    title: "Combo",
-    images: ["/combo/two.jpg", "/combo/three.jpg", "/combo/four.jpg"],
-    price: "1000",
+    title: 'Combo',
+    images: ['/combo/two.jpg', '/combo/three.jpg', '/combo/four.jpg'],
+    price: '1000',
   },
   {
     id: 5,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 6,
-    title: "Letterhead",
-    images: ["/combo/four.jpg", "/combo/five.jpg", "/combo/one.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'],
+    price: '1000',
   },
   {
     id: 7,
-    title: "Letterhead",
-    images: ["/combo/five.jpg", "/combo/one.jpg", "/combo/two.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'],
+    price: '1000',
   },
   {
     id: 8,
-    title: "Business Card",
-    images: ["/combo/three.jpg", "/combo/four.jpg", "/combo/five.jpg"],
-    price: "1000",
+    title: 'Business Card',
+    images: ['/combo/three.jpg', '/combo/four.jpg', '/combo/five.jpg'],
+    price: '1000',
   },
   {
     id: 9,
-    title: "Letterhead",
-    images: ["/combo/four.jpg", "/combo/five.jpg", "/combo/one.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/four.jpg', '/combo/five.jpg', '/combo/one.jpg'],
+    price: '1000',
   },
   {
     id: 10,
-    title: "Letterhead",
-    images: ["/combo/five.jpg", "/combo/one.jpg", "/combo/two.jpg"],
-    price: "1000",
+    title: 'Letterhead',
+    images: ['/combo/five.jpg', '/combo/one.jpg', '/combo/two.jpg'],
+    price: '1000',
   },
 ];
 
@@ -98,16 +98,12 @@ export default function Combo() {
               Exclusive Combo <span className="text-[#F05A28]">Deals</span>
             </h1>
           </div>
-          <button
-            className="text-white lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center"
-          >
+          <button className="text-white lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center">
             View All
             <ArrowRight className="w-3.5 h-3.5 xl:w-5 xl:h-5 ml-2" />
           </button>
         </div>
-        
 
-        
         {/*  Mobile / Tablet / LG */}
         <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
           <div className="flex gap-3 w-max pb-2 px-5 md:px-8">
@@ -128,7 +124,7 @@ export default function Combo() {
 
         {/* Cards Grid Section Desktop */}
         <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-4.75 3xl:gap-6.25">
-          {comboData.slice(0,5).map((item) => (
+          {comboData.slice(0, 5).map(item => (
             <DynamicCards key={item.id} item={item} />
           ))}
         </div>

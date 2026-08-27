@@ -1,18 +1,18 @@
-import { ArrowRight } from "lucide-react";
-import DynamicCardsReuse from "./components/DynamicCardsReuse";
-import LandingPageBtn from "@/components/home/LandingPageBtn";
+import { ArrowRight } from 'lucide-react';
+import DynamicCardsReuse from './components/DynamicCardsReuse';
+import LandingPageBtn from '@/components/home/LandingPageBtn';
 
 export default function TopSelling() {
   const products = [
-    { name: "Mug", src: "/best/mug.jpg" },
-    { name: "Business Card", src: "/best/card.jpg" },
-    { name: "Photo Frame", src: "/best/frame.jpg" },
-    { name: "ID Card", src: "/best/id.jpg" },
-    { name: "X-Stand", src: "/best/stand.jpg" },
-    { name: "Letterhead", src: "/best/mug.jpg" },
-    { name: "Envelope", src: "/best/stand.jpg" },
-    { name: "Envelope", src: "/best/id.jpg" },
-    { name: "Envelope", src: "/best/stand.jpg" },
+    { name: 'Mug', src: '/best/mug.jpg' },
+    { name: 'Business Card', src: '/best/card.jpg' },
+    { name: 'Photo Frame', src: '/best/frame.jpg' },
+    { name: 'ID Card', src: '/best/id.jpg' },
+    { name: 'X-Stand', src: '/best/stand.jpg' },
+    { name: 'Letterhead', src: '/best/mug.jpg' },
+    { name: 'Envelope', src: '/best/stand.jpg' },
+    { name: 'Envelope', src: '/best/id.jpg' },
+    { name: 'Envelope', src: '/best/stand.jpg' },
   ];
 
   return (
@@ -44,9 +44,7 @@ export default function TopSelling() {
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <span className="mt-3 text-xs text-[#012C60]">
-                View All
-              </span>
+              <span className="mt-3 text-xs text-[#012C60]">View All</span>
             </div>
           </div>
         </div>

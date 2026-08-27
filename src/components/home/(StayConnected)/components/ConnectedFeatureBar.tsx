@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
 const highlights = [
   {
     id: 1,
-    title: "Design Tips",
+    title: 'Design Tips',
     description: 'Helpful tips & tricks for perfect prints',
     icon: (
       <svg
@@ -11,8 +11,7 @@ const highlights = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -23,7 +22,7 @@ const highlights = [
   },
   {
     id: 2,
-    title: "Daily Offers",
+    title: 'Daily Offers',
     description: 'Exclusive discounts and seasonal offers',
     icon: (
       <svg
@@ -31,8 +30,7 @@ const highlights = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -43,7 +41,7 @@ const highlights = [
   },
   {
     id: 3,
-    title: "Customer Reviews",
+    title: 'Customer Reviews',
     description: 'Real experiences from our happy customers',
     icon: (
       <svg
@@ -51,8 +49,7 @@ const highlights = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -63,7 +60,7 @@ const highlights = [
   },
   {
     id: 4,
-    title: "Latest Projects",
+    title: 'Latest Projects',
     description: 'Explore our latest creative works',
     icon: (
       <svg
@@ -71,8 +68,7 @@ const highlights = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -94,10 +90,9 @@ export default function ConnectedFeatureBar() {
               key={item.id}
               className={`flex h-[125px] min-w-0 flex-col items-center justify-center px-1 text-center md:h-[145px] md:px-2.5 lg:h-[155px] lg:px-4 ${
                 index !== highlights.length - 1
-                  ? "border-r border-[#E5E5E5]"
-                  : ""
-              }`}
-            >
+                  ? 'border-r border-[#E5E5E5]'
+                  : ''
+              }`}>
               <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] md:h-[52px] md:w-[52px] lg:h-[58px] lg:w-[58px]">
                 {item.icon}
               </div>
@@ -118,8 +113,7 @@ export default function ConnectedFeatureBar() {
         {highlights.map((item, index) => (
           <div
             key={item.id}
-            className={`flex flex-1 items-center justify-center gap-3 px-4 1xl:gap-4 1xl:px-5 3xl:gap-5 3xl:px-6 ${index !== highlights.length - 1 ? "border-r border-[#E5E5E5]" : ""}`}
-          >
+            className={`flex flex-1 items-center justify-center gap-3 px-4 1xl:gap-4 1xl:px-5 3xl:gap-5 3xl:px-6 ${index !== highlights.length - 1 ? 'border-r border-[#E5E5E5]' : ''}`}>
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFF0E9] 1xl:h-12 1xl:w-12 3xl:h-18 3xl:w-18">
               {item.icon}
             </div>

@@ -66,23 +66,22 @@
 //     );
 // }
 
-
-import ServiceProductCard from "./components/ServiceProductCard";
-import LandingPageBtn from "../LandingPageBtn";
+import ServiceProductCard from './components/ServiceProductCard';
+import LandingPageBtn from '../LandingPageBtn';
 
 const products = [
-    { id: 1, title: "Business Card", imageUrl: "/our-service/Bcard.png" },
-    { id: 2, title: "Letterhead", imageUrl: "/our-service/letter.jpg" },
-    { id: 3, title: "Envelope", imageUrl: "/our-service/envolap.jpg" },
-    { id: 4, title: "Mug", imageUrl: "/our-service/mug.jpg" },
-    { id: 5, title: "Photo Frame", imageUrl: "/our-service/frame.png" },
-    { id: 6, title: "Business Card", imageUrl: "/our-service/Bcard.png" },
-    { id: 7, title: "Letterhead", imageUrl: "/our-service/letter.jpg" },
-    { id: 8, title: "Envelope", imageUrl: "/our-service/envolap.jpg" },
-    { id: 9, title: "Mug", imageUrl: "/our-service/mug.jpg" },
-    { id: 10, title: "Photo Frame", imageUrl: "/our-service/frame.png" },
-    { id: 11, title: "Photo Frame", imageUrl: "/our-service/frame.png" },
-    { id: 12, title: "Photo Frame", imageUrl: "/our-service/frame.png" },
+  { id: 1, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
+  { id: 2, title: 'Letterhead', imageUrl: '/our-service/letter.jpg' },
+  { id: 3, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
+  { id: 4, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
+  { id: 5, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+  { id: 6, title: 'Business Card', imageUrl: '/our-service/Bcard.png' },
+  { id: 7, title: 'Letterhead', imageUrl: '/our-service/letter.jpg' },
+  { id: 8, title: 'Envelope', imageUrl: '/our-service/envolap.jpg' },
+  { id: 9, title: 'Mug', imageUrl: '/our-service/mug.jpg' },
+  { id: 10, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+  { id: 11, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
+  { id: 12, title: 'Photo Frame', imageUrl: '/our-service/frame.png' },
 ];
 
 export default function OurService() {
@@ -95,15 +94,15 @@ export default function OurService() {
                     Our Service
                 </h4>
 
-                <h2 className="text-[#511B95] text-[20px] md:text-[32px] xl:text-[31px] 3xl:text-[48px] leading-none font-normal uppercase">
-                    What We Print
-                </h2>
-            </div>
+        <h2 className="text-[#511B95] text-[20px] md:text-[32px] xl:text-[31px] 3xl:text-[48px] leading-none font-normal uppercase">
+          What We Print
+        </h2>
+      </div>
 
-            {/* Image Grid Section */}
-            <div className="mt-[30px] mb-[28px] md:mt-[32px] md:mb-[32px] xl:mt-[46px] xl:mb-[37px] 1xl:mt-[54px] 1xl:mb-[44px] 3xl:mt-[57px] 3xl:mb-[71px]">
-                <div
-                    className="
+      {/* Image Grid Section */}
+      <div className="mt-[30px] mb-[28px] md:mt-[32px] md:mb-[32px] xl:mt-[46px] xl:mb-[37px] 1xl:mt-[54px] 1xl:mb-[44px] 3xl:mt-[57px] 3xl:mb-[71px]">
+        <div
+          className="
                         grid
                         grid-cols-2
                         md:grid-cols-3
@@ -113,70 +112,64 @@ export default function OurService() {
                         lg:gap-y-7
                         justify-items-center
                         items-start
-                    "
-                >
-                    {products.map((product, index) => {
-                        /*
-                         * Responsive visibility:
-                         *
-                         * Mobile (<768px)
-                         * → Show first 8 cards (index 0-7)
-                         *
-                         * Tablet (768px - 1279px)
-                         * → Show only first 6 cards (index 0-5)
-                         *
-                         * Desktop (1280px+)
-                         * → Show all 12 cards
-                         */
-                        const visibilityClass =
-                            index >= 8
-                                ? "hidden xl:flex"
-                                : index >= 6
-                                    ? "flex md:hidden xl:flex"
-                                    : "flex";
+                    ">
+          {products.map((product, index) => {
+            /*
+             * Responsive visibility:
+             *
+             * Mobile (<768px)
+             * → Show first 8 cards (index 0-7)
+             *
+             * Tablet (768px - 1279px)
+             * → Show only first 6 cards (index 0-5)
+             *
+             * Desktop (1280px+)
+             * → Show all 12 cards
+             */
+            const visibilityClass =
+              index >= 8
+                ? 'hidden xl:flex'
+                : index >= 6
+                  ? 'flex md:hidden xl:flex'
+                  : 'flex';
 
-                        /*
-                         * Desktop only:
-                         * Alternate cards move down by 45px.
-                         *
-                         * No stagger on mobile/tablet.
-                         */
-                        const staggerClass =
-                            index % 2 !== 0
-                                ? "xl:translate-y-[45px]"
-                                : "";
+            /*
+             * Desktop only:
+             * Alternate cards move down by 45px.
+             *
+             * No stagger on mobile/tablet.
+             */
+            const staggerClass = index % 2 !== 0 ? 'xl:translate-y-[45px]' : '';
 
-                        return (
-                            <div
-                                key={product.id}
-                                className={`
+            return (
+              <div
+                key={product.id}
+                className={`
                                     ${visibilityClass}
                                     ${staggerClass}
                                     w-full
                                     justify-center
                                     transition-transform
                                     duration-300
-                                `}
-                            >
-                                <ServiceProductCard product={product} />
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
+                                `}>
+                <ServiceProductCard product={product} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
-             {/* Button Section */}
-            <div className="flex justify-center lg:mt-[126px]">
-                <LandingPageBtn href="/view">
-                {/* Desktop & LG */}
-                <span className="hidden xl:flex">View All Template</span>
-                {/* Tablet */}
-                <span className="hidden md:flex xl:hidden">Load More Template</span>
-                {/* Mobile */}
-                <span className="md:hidden">Load  More Resources</span>
-                </LandingPageBtn>
-            </div>
-
-        </section>
-    );
+      {/* Button Section */}
+      <div className="flex justify-center lg:mt-[126px]">
+        <LandingPageBtn href="/view">
+          {/* Desktop & LG */}
+          <span className="hidden xl:flex">View All Template</span>
+          {/* Tablet */}
+          <span className="hidden md:flex xl:hidden">Load More Template</span>
+          {/* Mobile */}
+          <span className="md:hidden">Load More Resources</span>
+        </LandingPageBtn>
+      </div>
+    </section>
+  );
 }
