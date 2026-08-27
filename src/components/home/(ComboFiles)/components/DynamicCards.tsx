@@ -6,7 +6,11 @@ import { motion } from "framer-motion";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { useEffect, useState } from "react";
 import { comboData } from "../ComboFile";
+<<<<<<< HEAD
 import { TakaIcon } from "../../../custom/icons";
+=======
+import { TakaIcon, TopNComboIcon } from "../../../custom/icons";
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
 
 export default function DynamicCards({
   item,
@@ -28,15 +32,26 @@ export default function DynamicCards({
   return (
     <div
       className={`relative group cursor-pointer ${
+<<<<<<< HEAD
         isHorizontal ? "w-35 md:w-47 shrink-0 snap-start" : ""
+=======
+        isHorizontal ? "w-[151px] md:w-47 shrink-0 snap-start" : ""
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
       }`}
     >
       {/* Background Wrapper with Magic UI BorderBeam */}
       <div
+<<<<<<< HEAD
         className={`absolute top-0 left-0 rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
             ? "w-full aspect-140/139 md:w-47 md:aspect-188/194"
             : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-full 3xl:aspect-283/283"
+=======
+        className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
+          isHorizontal
+            ? "w-full aspect-151/157 md:w-47 md:aspect-188/194"
+            : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[286px] 3xl:aspect-286/283"
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
         }`}
       >
         <BorderBeam
@@ -58,23 +73,40 @@ export default function DynamicCards({
         className={`relative z-10 text-white font-medium flex justify-between items-center border-b border-[#686868] ${
           isHorizontal
             ? "text-sm pt-5 px-4 pb-3 mb-10"
+<<<<<<< HEAD
             : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-12.5 mx-0.5"
         }`}
       >
         <h3 className="truncate xl:truncate 1xl:overflow-visible 1xl:whitespace-normal">
+=======
+            : "text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-0 mx-0.5"
+        }`}
+      >
+        <h3 className="truncate ">
+          {/* xl:truncate 3xl:overflow-visible 3xl:whitespace-normal */}
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
           {item.title}
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
           <span>
+<<<<<<< HEAD
             <TakaIcon className="w-6 h-6" />
+=======
+            <TakaIcon className="w-8 h-6" />
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
           </span>
           {item.price}
         </h3>
       </div>
 
       {/* Stacked Image Container */}
+<<<<<<< HEAD
       <div className="relative z-10 pb-4 mt-2">
         <div className="relative w-full aspect-5/4.5 mt-4">
+=======
+      <div className="relative z-10 pb-4 mt-[44px] xl:mt-[45px] 1xl:mt-[50px] 3xl:mt-[60px]">
+        <div className="relative w-full aspect-212/152 mt-0">
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}
           {/* The 3 Image Layers */}
@@ -98,14 +130,23 @@ export default function DynamicCards({
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
+<<<<<<< HEAD
                 className="absolute inset-0 rounded-[20px] overflow-hidden bg-black shadow-lg origin-top"
+=======
+                className="absolute inset-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] overflow-hidden bg-black shadow-lg origin-top"
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
               >
                 <Image
                   src={src}
                   alt={`${item.title} ${index}`}
                   fill
                   className={`object-cover transition-transform duration-700 ${
+<<<<<<< HEAD
                     isFront ? "group-hover:scale-105" : ""
+=======
+                    isFront ? "" : ""
+                    // group-hover:scale-105
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
                   }`}
                 />
 
@@ -125,6 +166,7 @@ export default function DynamicCards({
                   <>
                     {/* Bottom-right Cutout */}
                     <div 
+<<<<<<< HEAD
                       className="absolute bottom-0 right-0 bg-black z-40 pointer-events-none
                                  w-[50px] h-[50px] md:w-[68px] md:h-[68px] xl:w-[84px] xl:h-[84px] 1xl:w-[92px] 1xl:h-[92px] 3xl:w-[110px] 3xl:h-[110px]
                                  rounded-tl-[24px] md:rounded-tl-[36px] xl:rounded-tl-[42px] 1xl:rounded-tl-[46px] 3xl:rounded-tl-[54px]" 
@@ -175,6 +217,62 @@ export default function DynamicCards({
                         strokeWidth={2}
                       />
                     </div>
+=======
+                className="absolute bottom-0 right-0 bg-black z-10 pointer-events-none
+                           w-[44px] h-[44px] md:w-[50px] md:h-[50px] xl:w-[56px] xl:h-[56px] 1xl:w-[62px] 1xl:h-[62px] 3xl:w-[76px] 3xl:h-[76px]
+                           rounded-tl-[22px] md:rounded-tl-[23px] xl:rounded-tl-[26px] 1xl:rounded-tl-[28px] 3xl:rounded-tl-[39px]" 
+              />
+
+                    {/* Top Curve */}
+                   <div 
+                className="absolute right-0 z-10 pointer-events-none 
+                           bottom-[43px] md:bottom-[50px] xl:bottom-[55px] 1xl:bottom-[62px] 3xl:bottom-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+                    {/* Left Curve */}
+                    <div 
+                className="absolute bottom-0 z-10 pointer-events-none 
+                           right-[43px] md:right-[50px] xl:right-[55px] 1xl:right-[62px] 3xl:right-[76px] 
+                           w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="w-full h-full text-black"
+                >
+                  <path
+                    d="M0 32 C22 32, 32 28, 32 0 L32 32 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+
+                    {/* Arrow */}
+                    {/* bg-[#F05A28] */}
+                    <div 
+              className="absolute rounded-full bg-[#F05A28] group-hover:bg-[#FD7034] text-white flex items-center justify-center transition-all duration-300  z-20  bottom-0 right-0
+               w-[40px] h-[40px] md:w-[45px] md:h-[45px] xl:w-[52px] xl:h-[52px] 1xl:w-[58px] 1xl:h-[58px] 3xl:w-[70px] 3xl:h-[70px]">
+              {/* bottom-[4px] right-[4px] md:bottom-[6px] md:right-[6px] xl:bottom-[8px] xl:right-[8px] 1xl:bottom-[10px] 1xl:right-[10px] 3xl:bottom-[0px] 3xl:right-[0px] */}
+              {/* group-hover:-translate-y-1 group-hover:translate-x-1 shadow-md */}
+              {/* <ArrowUpRight 
+                className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 1xl:w-7 1xl:h-7 3xl:w-8 3xl:h-8" 
+                strokeWidth={2} 
+              /> */}
+              <TopNComboIcon className="w-5.75 h-5.75 md:w-8 md:h-8 xl:w-7.5 xl:h-7.5 1xl:w-8.25 1xl:h-8.25 3xl:w-11.25 3xl:h-11.25"  />
+            </div>
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
                   </>
                 )}
               </motion.div>

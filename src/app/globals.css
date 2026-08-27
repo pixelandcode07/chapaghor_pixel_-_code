@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -11,6 +12,29 @@
     cursor: none; 
   }
 } */
+=======
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+
+@layer components {
+  .container-custom {
+    @apply w-full md:max-w-[calc(100vw-60px)] xl:max-w-[calc(100vw-128px)] 1xl:max-w-[calc(100vw-194px)] 3xl:max-w-[calc(100vw-200px)] 7xl:container mx-auto;
+  }
+}
+
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -200,6 +224,7 @@
   body {
     @apply bg-background text-foreground;
   }
+<<<<<<< HEAD
 }
 
 @layer components {
@@ -207,3 +232,6 @@
     @apply w-full md:max-w-[92vw] xl:max-w-[89vw] 3xl:max-w-[86.56vw] 7xl:max-w-[62vw] 10xl:max-w-[50vw] mx-auto py-7.25 md:py-10.75 3xl:py-12.75 px-2 md:px-0;
   }
 }
+=======
+}
+>>>>>>> c2e966d100d3268a89a008c13a5f461138751889
