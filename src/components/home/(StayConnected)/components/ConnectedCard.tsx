@@ -88,7 +88,7 @@ const socialLinks = [
 
 export default function ConnectedCard() {
   return (
-    <section className=" my-1 w-full px-2 py-1 md:px-0">
+    <section className=" w-full py-2 md:px-0">
       {/* XL / 1XL / 3XL */}
       <div className="hidden xl:grid xl:grid-cols-5 xl:gap-4 1xl:gap-5 3xl:gap-6 container-custom">
         {socialLinks.map((social) => {
@@ -136,8 +136,11 @@ export default function ConnectedCard() {
           return (
             <div
               key={social.id}
-              className="flex h-[83px] w-[64px] flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3"
+              className="flex h-[83px] w-full flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:w-full md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3"
             >
+              {/* w-[64px] 
+              Width full dewa lagbe karon proti PX ei width change hoi, amra jodi 375px jonno ekta fixed width use kori, tahole 375+ or above user ra jkhn dekhbe tkhn card bhenge jabe
+              */}
               <div className="flex h-[19px] w-[26px] shrink-0 items-center justify-center md:h-11 md:w-11">
                 <Icon className="h-4.5 w-4.5 md:h-10 md:w-10" style={{ color: social.color }} />
               </div>

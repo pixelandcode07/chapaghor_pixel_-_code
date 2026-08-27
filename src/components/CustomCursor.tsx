@@ -96,12 +96,11 @@
 //   );
 // }
 
+'use client';
 
-"use client";
-
-import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
@@ -155,61 +154,43 @@ export default function CustomCursor() {
       setIsArrowMode(false);
     };
 
-  const enableArrowCursor = () => {
-  setIsArrowMode(true);
-};
+    const enableArrowCursor = () => {
+      setIsArrowMode(true);
+    };
 
-const disableArrowCursor = () => {
-  setIsArrowMode(false);
-};
+    const disableArrowCursor = () => {
+      setIsArrowMode(false);
+    };
 
-window.addEventListener(
-  "service-card-cursor-enter",
-  enableArrowCursor
-);
+    window.addEventListener('service-card-cursor-enter', enableArrowCursor);
 
-window.addEventListener(
-  "service-card-cursor-leave",
-  disableArrowCursor
-);
+    window.addEventListener('service-card-cursor-leave', disableArrowCursor);
 
-    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener('mousemove', moveCursor);
 
-    window.addEventListener("hide-custom-cursor", hideCursor);
-    window.addEventListener("show-custom-cursor", showCursor);
+    window.addEventListener('hide-custom-cursor', hideCursor);
+    window.addEventListener('show-custom-cursor', showCursor);
 
-    window.addEventListener(
-      "enable-arrow-custom-cursor",
-      enableArrowCursor,
-    );
+    window.addEventListener('enable-arrow-custom-cursor', enableArrowCursor);
 
-    window.addEventListener(
-      "disable-arrow-custom-cursor",
-      disableArrowCursor,
-    );
+    window.addEventListener('disable-arrow-custom-cursor', disableArrowCursor);
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener('mousemove', moveCursor);
+
+      window.removeEventListener('hide-custom-cursor', hideCursor);
+
+      window.removeEventListener('show-custom-cursor', showCursor);
 
       window.removeEventListener(
-        "hide-custom-cursor",
-        hideCursor,
+        'service-card-cursor-enter',
+        enableArrowCursor
       );
 
       window.removeEventListener(
-        "show-custom-cursor",
-        showCursor,
+        'service-card-cursor-leave',
+        disableArrowCursor
       );
-
-      window.removeEventListener(
-    "service-card-cursor-enter",
-    enableArrowCursor
-  );
-
-  window.removeEventListener(
-    "service-card-cursor-leave",
-    disableArrowCursor
-  );
     };
   }, [mouseX, mouseY, isVisible]);
 
@@ -268,8 +249,7 @@ window.addEventListener(
             duration: 0.2,
           },
         }}
-        className="pointer-events-none fixed left-0 top-0 z-[9999] flex h-8 w-8 -ml-4 -mt-4 items-center justify-center rounded-full bg-black shadow-xl md:h-11 md:w-11 md:-ml-[22px] md:-mt-[22px] xl:h-14 xl:w-14 xl:-ml-7 xl:-mt-7"
-      >
+        className="pointer-events-none fixed left-0 top-0 z-[9999] flex h-8 w-8 -ml-4 -mt-4 items-center justify-center rounded-full bg-black shadow-xl md:h-11 md:w-11 md:-ml-[22px] md:-mt-[22px] xl:h-14 xl:w-14 xl:-ml-7 xl:-mt-7">
         <ArrowRight
           className="h-3.5 w-3.5 text-white md:h-5.5 md:w-5.5"
           strokeWidth={2.5}

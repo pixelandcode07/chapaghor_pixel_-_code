@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Search, Loader2, Mic } from "lucide-react";
-import { motion } from "framer-motion";
-import SearchOverlay from "../SearchOverlay";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Search, Loader2, Mic } from 'lucide-react';
+import { motion } from 'framer-motion';
+import SearchOverlay from '../SearchOverlay';
 import {
   Category,
   SubCategory,
-} from "./components/types-of-navhead/NavHeadType";
+} from './components/types-of-navhead/NavHeadType';
 import {
   CustomMenuIcon,
   GroupUsersIcon,
@@ -18,12 +18,12 @@ import {
   NavSearchIcon,
   NotificationIcon,
   VendorBoxIcon,
-} from "../../custom/icons";
-import { Button } from "@/components/ui/button";
-import NavLinks from "./components/NavLinks";
-import { ActiveMenu } from "./components/types-of-navhead/MegaMenuType";
-import MegaMenuShell from "./components/MegaMenuShell";
-import TabletMegaMenu from "./components/TabletMegaMenu";
+} from '../../custom/icons';
+import { Button } from '@/components/ui/button';
+import NavLinks from './components/NavLinks';
+import { ActiveMenu } from './components/types-of-navhead/MegaMenuType';
+import MegaMenuShell from './components/MegaMenuShell';
+import TabletMegaMenu from './components/TabletMegaMenu';
 
 export default function NavHead() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -36,8 +36,8 @@ export default function NavHead() {
     const fetchNavData = async () => {
       try {
         const [catRes, subCatRes] = await Promise.all([
-          fetch("/api/v1/categories"),
-          fetch("/api/v1/sub-categories"),
+          fetch('/api/v1/categories'),
+          fetch('/api/v1/sub-categories'),
         ]);
         const catData = await catRes.json();
         const subCatData = await subCatRes.json();
@@ -45,13 +45,13 @@ export default function NavHead() {
         if (catData.success) {
           setCategories(
             catData.data.filter(
-              (c: Category) => c.isActive && c.isNavhead !== false,
-            ),
+              (c: Category) => c.isActive && c.isNavhead !== false
+            )
           );
         }
         if (subCatData.success) setSubCategories(subCatData.data);
       } catch (error) {
-        console.error("Failed to load navigation data", error);
+        console.error('Failed to load navigation data', error);
       } finally {
         setIsLoading(false);
       }
@@ -146,12 +146,12 @@ export default function NavHead() {
       />
       <header className="relative bg-white sticky top-0 z-50">
         <div className="relative" onMouseLeave={() => setActiveMenu(null)}>
-          <div className="container-custom flex justify-between items-center px-2.25 md:px-0 py-3.5 md:py-3 xl:py-4.25 3xl:py-[23.5px]">
+          <div className="container-custom flex justify-between items-center px-5 md:px-0 py-3.5 md:py-3 xl:py-4.25 3xl:py-[23.5px]">
             {/* ── Logo ── */}
             <div className="shrink-0 flex items-center justify-start">
               <Link href="/">
                 <Image
-                  src={"/nav-logo/Logo.png"}
+                  src={'/nav-logo/Logo.png'}
                   alt="Chapaghor Logo"
                   width={180}
                   height={35}
@@ -165,8 +165,7 @@ export default function NavHead() {
                 <motion.h1
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 text-gray-400 text-sm"
-                >
+                  className="flex items-center gap-2 text-gray-400 text-sm">
                   <Loader2 className="animate-spin" size={16} /> Loading menu...
                 </motion.h1>
               ) : (
@@ -180,11 +179,10 @@ export default function NavHead() {
                       transition: { staggerChildren: 0.05 },
                     },
                   }}
-                  className="flex items-center "
-                >
+                  className="flex items-center ">
                   {categories.map((category, index) => {
                     const relatedSubCats = subCategories.filter(
-                      (sub) => sub.category?._id === category._id,
+                      sub => sub.category?._id === category._id
                     );
                     return (
                       <NavLinks
@@ -213,8 +211,7 @@ export default function NavHead() {
               {/* Search */}
               <div
                 onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[18px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group"
-              >
+                className="flex items-center gap-2 md:gap-4 xl:gap-6 3xl:gap-8 bg-white md:border-[1.5px] border-[#E5E7EB] rounded-[18px] pl-2.5 md:pl-3.5 pr-2 h-[36px] cursor-text hover:border-gray-300 hover:shadow-sm transition-all group">
                 {/* Hide text only on mobile */}
                 <span className="hidden sm:block text-[14px] 3xl:text-base text-[#9CA3AF] font-light leading-none select-none">
                   Search
@@ -232,7 +229,7 @@ export default function NavHead() {
                   <NavMickIcon
                     className="hidden sm:block w-2.25 h-3.5 3xl:w-5 3xl:h-5 text-[#FD7034] cursor-pointer hover:opacity-80 transition-opacity"
                     strokeWidth={2}
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={e => e.stopPropagation()}
                   />
                 </div>
               </div>
@@ -242,31 +239,32 @@ export default function NavHead() {
                 <Button
                   size="nav-icon"
                   variant="nav_user_laptop"
-                  title="Wishlist"
-                >
+                  title="Wishlist">
                   <HeartIcon className="size-6 sm:size-7" />
                 </Button>
 
                 <Button
                   size="nav-icon"
                   variant="nav_user_laptop"
-                  title="Vendor/Box"
-                >
+                  title="Vendor/Box">
                   <VendorBoxIcon className="size-5 sm:size-6" />
                 </Button>
 
                 <Button
                   size="nav-icon"
                   variant="nav_user_laptop"
-                  title="Group Users"
-                >
+                  title="Group Users">
                   <GroupUsersIcon className="size-6 sm:size-7" />
                 </Button>
 
                 <Button size="nav-icon" variant="nav_user_mobile" title="Menu">
                   <NotificationIcon className="size-5 sm:size-6" />
                 </Button>
-                <Button size="nav-icon" variant="nav_menu" title="Menu" className="px-0">
+                <Button
+                  size="nav-icon"
+                  variant="nav_menu"
+                  title="Menu"
+                  className="px-0">
                   <CustomMenuIcon className="size-5 sm:size-6" />
                 </Button>
               </div>
@@ -282,12 +280,11 @@ export default function NavHead() {
         <div className="hidden md:flex xl:hidden border-y bg-white">
           <div
             className="relative w-full"
-            onMouseLeave={() => setActiveMenu(null)}
-          >
+            onMouseLeave={() => setActiveMenu(null)}>
             <ul className="flex items-center justify-center py-2">
               {categories.map((category, index) => {
                 const relatedSubCats = subCategories.filter(
-                  (sub) => sub.category?._id === category._id,
+                  sub => sub.category?._id === category._id
                 );
                 return (
                   <NavLinks

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function GraphicResourcesButton() {
   return (
@@ -10,8 +10,7 @@ export default function GraphicResourcesButton() {
         href="#graphic-resources"
         className="group flex flex-col items-center gap-3 bg-[#FD7034] text-white py-5 px-1 lg:px-px xl:px-0.5 3xl:px-2 rounded-l-[10px] shadow-lg border-l border-t border-b border-white/10 transition-all duration-300  cursor-pointer"
         // hover:-translate-x-1
-        aria-label="Graphic Resources"
-      >
+        aria-label="Graphic Resources">
         {/* Top Icon */}
         {/* <GraphicIcon/> */}
         <Image

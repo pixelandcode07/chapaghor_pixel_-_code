@@ -1,27 +1,27 @@
-import { ArrowRight } from "lucide-react";
-import DynamicCardsReuse from "./components/DynamicCardsReuse";
-import LandingPageBtn from "@/components/home/LandingPageBtn";
+import { ArrowRight } from 'lucide-react';
+import DynamicCardsReuse from './components/DynamicCardsReuse';
+import LandingPageBtn from '@/components/home/LandingPageBtn';
 
 export default function TopSelling() {
   const products = [
-    { name: "Mug", src: "/best/mug.jpg" },
-    { name: "Business Card", src: "/best/card.jpg" },
-    { name: "Photo Frame", src: "/best/frame.jpg" },
-    { name: "ID Card", src: "/best/id.jpg" },
-    { name: "X-Stand", src: "/best/stand.jpg" },
-    { name: "Letterhead", src: "/best/mug.jpg" },
-    { name: "Envelope", src: "/best/stand.jpg" },
-    { name: "Envelope", src: "/best/id.jpg" },
-    { name: "Envelope", src: "/best/stand.jpg" },
+    { name: 'Mug', src: '/best/mug.jpg' },
+    { name: 'Business Card', src: '/best/card.jpg' },
+    { name: 'Photo Frame', src: '/best/frame.jpg' },
+    { name: 'ID Card', src: '/best/id.jpg' },
+    { name: 'X-Stand', src: '/best/stand.jpg' },
+    { name: 'Letterhead', src: '/best/mug.jpg' },
+    { name: 'Envelope', src: '/best/stand.jpg' },
+    { name: 'Envelope', src: '/best/id.jpg' },
+    { name: 'Envelope', src: '/best/stand.jpg' },
   ];
 
   return (
     <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-10 3xl:pt-19">
-      <div className="container-custom">
+      <div className="">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-2 md:px-0">
-          <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none  tracking-[0.5]">
+        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-5 md:px-8">
+          <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none tracking-[0.5]">
             TOP SELLING ITEMS
           </h1>
 
@@ -31,8 +31,8 @@ export default function TopSelling() {
         </div>
 
         {/* Mobile / Tablet / LG */}
-        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
-          <div className="flex gap-3.75 md:gap-5 w-max pb-2 pl-5">
+        <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
+          <div className="flex gap-3.75 md:gap-5 w-max pb-2 px-5 md:px-8">
             <DynamicCardsReuse
               products={products}
               isHorizontal
@@ -44,15 +44,13 @@ export default function TopSelling() {
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <span className="mt-3 text-xs text-[#012C60]">
-                View All
-              </span>
+              <span className="mt-3 text-xs text-[#012C60]">View All</span>
             </div>
           </div>
         </div>
 
         {/* Desktop */}
-        <div className="hidden xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start">
+        <div className="hidden container-custom xl:grid grid-cols-6 xl:gap-4.5 1xl:gap-5.25 3xl:gap-8 items-start xl:px-0">
           <DynamicCardsReuse products={products} />
         </div>
 

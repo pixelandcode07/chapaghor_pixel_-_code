@@ -203,7 +203,7 @@ export default function HeroSection() {
     }, [api]);
 
     return (
-        <section className="w-full bg-white pb-5.25 pt-[46px] md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
+        <section className="w-full bg-white pb-5.25 3xl:pt-[48px] pt-3 md:pt-0 md:pb-6 xl:pb-13 relative overflow-hidden flex flex-col items-center">
             <div className="w-full relative group flex flex-col items-center">
                 <Carousel
                     setApi={setApi}
@@ -245,13 +245,13 @@ export default function HeroSection() {
                 </Carousel>
 
                 {/* Nav Arrows - Positioned EXACTLY on the middle edges */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-212.5 xl:w-241.75 3xl:w-322 h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
+                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-212.5 xl:w-241.75 3xl:w-322 h-0 pointer-events-none z-40 hidden sm:flex items-center justify-between">
                     
                     {/* Left Arrow (iPhone Glassmorphism Style) */}
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-6 mb-8"
+                        className="pointer-events-auto w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -ml-5.5 mb-8"
                         onClick={() => api?.scrollPrev()}
                     >
                         <ChevronLeft className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />
@@ -261,7 +261,7 @@ export default function HeroSection() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-6 xl:-mr-7 mb-8"
+                        className="pointer-events-auto w-12 h-12 xl:w-10 xl:h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-[6px] hover:backdrop-blur-xl border-[1.5px] border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_0_12px_rgba(255,255,255,0.4)] text-gray-700 hover:text-[#F05A28] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 active:scale-95 -mr-4 xl:-mr-5.5 mb-8"
                         onClick={() => api?.scrollNext()}
                     >
                         <ChevronRight className="h-6 w-6 xl:h-7 xl:w-7" strokeWidth={2.5} />

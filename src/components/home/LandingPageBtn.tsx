@@ -23,9 +23,6 @@
 //     )
 // }
 
-
-
-
 // import Link from "next/link";
 // import React from "react";
 
@@ -44,26 +41,23 @@
 //   );
 // }
 
-
-
-
-import Link from "next/link";
-import { ReactNode } from "react";
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 interface LandingPageBtnProps {
   href?: string;
   children?: ReactNode;
   icon?: ReactNode;
-  iconPosition?: "left" | "right";
+  iconPosition?: 'left' | 'right';
   className?: string;
 }
 
 const LandingPageBtn = ({
-  href = "#",
-  children = "View All Products",
+  href = '#',
+  children = 'View All Products',
   icon,
-  iconPosition = "right",
-  className = "",
+  iconPosition = 'right',
+  className = '',
 }: LandingPageBtnProps) => {
   return (
     <Link
@@ -91,14 +85,13 @@ const LandingPageBtn = ({
       //   ${className}
       // `}
     >
-      {icon && iconPosition === "left" && icon}
+      {icon && iconPosition === 'left' && icon}
 
       {children}
 
-      {icon && iconPosition === "right" && icon}
+      {icon && iconPosition === 'right' && icon}
     </Link>
   );
 };
 
 export default LandingPageBtn;
-
