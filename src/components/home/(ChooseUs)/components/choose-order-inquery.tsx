@@ -8,7 +8,7 @@ export default function CustomOrderInquiry() {
   return (
     <section className="w-full">
       {/* ========================= Mobile / Tablet / LG Full Width ========================= */}
-      <div className="flex w-full items-center justify-between gap-2 rounded-[8px] bg-[linear-gradient(to_right,#FEF1E8_0%,#FFFFFF_50%,#FEF1E8_100%)] md:gap-4 md:px-7.5 md:py-4 lg:gap-5 lg:rounded-[10px] lg:py-5 xl:hidden">
+      <div className="flex w-full items-center justify-between gap-2 rounded-[8px] bg-[linear-gradient(to_right,#FEF1E8_0%,#FFFFFF_50%,#FEF1E8_100%)] md:gap-4 py-1.5 px-5 md:px-8 md:py-4 lg:gap-5 lg:rounded-[10px] lg:py-5 xl:hidden">
         <div className="flex min-w-0 flex-1 items-center gap-2 md:gap-4 lg:gap-5">
           {/* Icon */}
           <div className="flex h-[49px] w-[49px] shrink-0 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(240,90,40,0.12)] md:h-[101px] md:w-[101px] lg:h-[68px] lg:w-[68px]">

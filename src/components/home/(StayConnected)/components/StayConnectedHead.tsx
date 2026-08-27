@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function StayConnectedHead() {
   return (
-    <div className="container-custom relative flex items-center justify-center mb-12 px-1 md:px-4">
+    <div className="container-custom relative flex items-center justify-center mb-3.5 md:mb-5.75 1xl:mb-12">
       <div className="absolute left-6 top-1/2 z-0 w-[50px] h-[50px] -translate-y-1/2 md:static md:translate-y-0 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 3xl:w-40 3xl:h-40">
         <Image
           src="/connected/first.png"

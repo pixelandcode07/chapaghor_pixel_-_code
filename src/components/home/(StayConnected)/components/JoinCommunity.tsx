@@ -11,7 +11,7 @@ const customers = [
 
 export default function JoinCommunity() {
   return (
-    <section className="w-full px-2 py-2 md:px-0  md:py-3  lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
+    <section className="w-full px-0 pb-2 md:px-0  md:pb-3  lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
       <div className="container-custom flex h-[90px] items-center justify-between gap-1.5 rounded-[10px] bg-[#FF4F00] px-3 shadow-[0_5px_14px_rgba(0,0,0,0.16)] md:h-[101px] md:gap-5 md:px-7 lg:h-[86px] xl:h-[72px] xl:rounded-[12px] xl:px-10 1xl:h-[80px] 1xl:px-25 3xl:h-[111px] 3xl:rounded-[16px] 3xl:px-30">
         
         {/* Left Side (Fixed Widths per Breakpoint) */}

@@ -5,7 +5,7 @@ import StayConnectedHead from './components/StayConnectedHead';
 
 export default function StayConnected() {
   return (
-    <div className="container-custom">
+    <div className="container-custom px-5 md:px-0">
       <StayConnectedHead />
       <ConnectedCard />
       <ConnectedFeatureBar />

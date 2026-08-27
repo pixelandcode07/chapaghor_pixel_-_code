@@ -40,7 +40,7 @@ export default function ChooseUsBody() {
   const { theme } = useTheme();
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white ">
       <MagicCard
         gradientSize={800}
         gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
@@ -49,7 +49,7 @@ export default function ChooseUsBody() {
         gradientTo="#FF8D28"
         className="relative container-custom overflow-hidden !bg-white p-0 shadow-none xl:!bg-black xl:rounded-[24px] border-none"
       >
-        <div className="relative z-10 px-4 py-4.5 md:px-0 md:py-0 xl:px-0 xl:pb-[31px] xl:pt-[35px] 3xl:px-12 1xl:pb-[33px] 1xl:pt-[39px] 3xl:pb-[46px] 3xl:pt-[54px]">
+        <div className="relative z-10 px-5 md:px-8 xl:px-0 py-4.5 md:py-0 xl:pb-[31px] xl:pt-[35px] 3xl:px-12 1xl:pb-[33px] 1xl:pt-[39px] 3xl:pb-[46px] 3xl:pt-[54px]">
           
           {/* Heading */}
           <div className=" flex flex-col items-center justify-center px-2 text-center mb-2 md:mb-4.5 xl:mb-[30px] 1xl:mb-[34px] 3xl:mb-11.5">

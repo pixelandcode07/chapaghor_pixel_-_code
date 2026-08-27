@@ -81,14 +81,14 @@ const highlights = [
 
 export default function ConnectedFeatureBar() {
   return (
-    <section className="w-full px-2 py-2 md:px-0 md:py-3 lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
+    <section className="w-full mt-4.75 mb-3.25 lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
       {/* Mobile / MD / LG */}
       <div className="xl:hidden container-custom overflow-hidden rounded-[14px] border border-[#EEEEEE] bg-white shadow-[0_3px_12px_rgba(0,0,0,0.08)]">
         <div className="grid grid-cols-4">
           {highlights.map((item, index) => (
             <div
               key={item.id}
-              className={`flex h-[125px] min-w-0 flex-col items-center justify-center px-1 text-center md:h-[145px] md:px-2.5 lg:h-[155px] lg:px-4 ${
+              className={`flex h-[125px] min-w-0 flex-col items-center justify-center px-0 text-center md:h-[145px] md:px-2.5 lg:h-[155px] lg:px-4 ${
                 index !== highlights.length - 1
                   ? 'border-r border-[#E5E5E5]'
                   : ''
