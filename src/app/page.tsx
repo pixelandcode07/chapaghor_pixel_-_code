@@ -6,7 +6,7 @@ import HeroSection from "@/components/home/HeroSection";
 import TopSelling from "@/components/home/(BestSellingFiles)/TopSelling";
 import NavHead from "@/components/home/(Navbar)/NavHead";
 import HowToOrder from "@/components/home/HowToOrder";
-import Footer from "@/components/home/Footer";
+import Footer from "@/components/home/(Footer)/Footer";
 import PrintImmegration from "@/components/home/PrintImmegration";
 import OurService from "@/components/home/(OurService)/OurService";
 import ComboFile from "@/components/home/(ComboFiles)/ComboFile";
