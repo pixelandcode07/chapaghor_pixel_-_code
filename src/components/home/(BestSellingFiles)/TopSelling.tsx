@@ -16,7 +16,7 @@ export default function TopSelling() {
   ];
 
   return (
-    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:pb-10 3xl:pt-19">
+    <section className="w-full bg-white py-4 md:py-6 xl:py-10 3xl:py-15">
       <div className="">
 
         {/* Title */}
@@ -55,7 +55,7 @@ export default function TopSelling() {
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden xl:flex justify-center mt-10  3xl:mt-20">
+        <div className="hidden xl:flex justify-center mt-10  3xl:mt-18">
           <LandingPageBtn href="#" >
             View All Products
           </LandingPageBtn>
