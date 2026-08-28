@@ -20,7 +20,7 @@ export default function TopSelling() {
       <div className="">
 
         {/* Title */}
-        <div className="flex items-center justify-between mb-2 xl:mb-8 3xl:mb-13 xl:justify-center px-5 md:px-8">
+        <div className="flex items-center justify-between mb-2.5 xl:mb-8 3xl:mb-13 xl:justify-center px-5 md:px-8">
           <h1 className="text-xl md:text-[32px] xl:text-[36px] 3xl:text-[48px] font-light text-[#012C60] uppercase leading-none tracking-[0.5]">
             TOP SELLING ITEMS
           </h1>

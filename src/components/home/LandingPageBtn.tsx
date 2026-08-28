@@ -126,15 +126,14 @@ const LandingPageBtn = ({
   className = '',
 }: LandingPageBtnProps) => {
   return (
-    <Link
+    <div className='flex items-center justify-center'>
+      <Link
       href={href}
       className={`
         inline-flex items-center justify-center
-        w-[112px] h-[27px]
-        md:w-[182px] md:h-[41px]
-        xl:w-[167px] xl:h-[41px]
-        1xl:w-[192px] 1xl:h-[48px]
-        3xl:w-[255px] 3xl:h-[62px]
+       w-full
+       px-4.5 md:px-6.75 xl:px-7 1xl:px-8.25 3xl:px-10.5
+       py-2.25 md:py-3.25 xl:py-3.5 1xl:py-4 3xl:py-5.25
         rounded-full
         border border-[#FD7034]
         text-[9px] font-medium
@@ -150,10 +149,16 @@ const LandingPageBtn = ({
         ${className}
       `}
     >
+       {/* w-[122px] h-[27px]
+        md:w-[182px] md:h-[41px]
+        xl:w-[167px] xl:h-[41px]
+        1xl:w-[192px] 1xl:h-[48px]
+        3xl:w-[255px] 3xl:h-[62px] */}
       {icon && iconPosition === 'left' && icon}
       {children}
       {icon && iconPosition === 'right' && icon}
     </Link>
+    </div>
   );
 };
 

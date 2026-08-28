@@ -100,13 +100,13 @@ export default function GraphicResources() {
           onCategoryChange={setActiveCategory}
         />
 
-        <div className="grid grid-cols-3 gap-x-[15px] gap-y-[13px] md:grid-cols-4 xl:grid-cols-7 auto-rows-[65px] md:auto-rows-[80px] lg:auto-rows-[100px] xl:auto-rows-[90px] 1xl:auto-rows-[100px] 3xl:auto-rows-[120px]">
+        <div className="grid grid-cols-3 gap-1.75 md:gap-2.75 1xl:gap-3.5 3xl:gap-x-[15px] 3xl:gap-y-[13px] md:grid-cols-4 xl:grid-cols-7 auto-rows-[65px] md:auto-rows-[80px] lg:auto-rows-[100px] xl:auto-rows-[90px] 1xl:auto-rows-[100px] 3xl:auto-rows-[120px]">
           {filteredResources.map(resource => (
             <GraphicCard key={resource.id} resource={resource} />
           ))}
         </div>
         {/* Button Section */}
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-7 md:mt-10">
           <LandingPageBtn />
         </div>
       </div>

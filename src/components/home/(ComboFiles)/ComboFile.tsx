@@ -94,19 +94,19 @@ export default function Combo() {
         ">
           {/* mb-6.5 md:mb-8 xl:mb-12.75 3xl:mb-19.5 */}
           <div className="flex gap-2.5">
-            <h1 className="text-xl md:text-[28px] lg:text-[38px] xl:text-[40px] 3xl:text-[60px] font-normal text-white leading-tight tracking-wide">
+            <h1 className="text-[18px] md:text-[28px] lg:text-[38px] xl:text-[40px] 3xl:text-[60px] font-normal text-white leading-tight tracking-wide">
               Exclusive Combo <span className="text-[#F05A28]">Deals</span>
             </h1>
           </div>
-          <button className="text-white lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center">
+          <button className="text-white text-sm lg:text-[16px] xl:text-[20px] 3xl:text-[29px] font-light tracking-[1px] cursor-pointer flex justify-center items-center">
             View All
-            <ArrowRight className="w-3.5 h-3.5 xl:w-5 xl:h-5 ml-2" />
+            <ArrowRight className="hidden lg:block w-3.5 h-3.5 xl:w-5 xl:h-5 ml-2" />
           </button>
         </div>
 
         {/*  Mobile / Tablet / LG */}
         <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
-          <div className="flex gap-3 w-max pb-2 px-5 md:px-8">
+          <div className="flex gap-3  w-max pb-2 px-5 md:px-8">
             {comboData.map((item) => (
               <DynamicCards key={item.id} item={item} isHorizontal />
             ))}
