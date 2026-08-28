@@ -160,11 +160,11 @@ export default function ChooseUsBody() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <h1 className="pb-1.5 md:pb-2 text-[22px] font-normal leading-tight tracking-wide text-black md:text-[28px] xl:text-white xl:text-[39px] 3xl:text-[52px]">
+              <h1 className="pb-1.5 md:pb-2 text-[17px] font-normal leading-tight tracking-wide text-black md:text-[28px] xl:text-white xl:text-[39px] 3xl:text-[52px]">
                 Quality Printing You Can
               </h1>
 
-              <h1 className="pb-1.5 md:pb-2 text-[22px] font-normal leading-tight tracking-wide text-[#FF8D28] md:text-[28px] xl:text-[39px] 3xl:text-[52px]">
+              <h1 className="pb-1.5 md:pb-2 text-[17px] font-normal leading-tight tracking-wide text-[#FF8D28] md:text-[28px] xl:text-[39px] 3xl:text-[52px]">
                 Trust
               </h1>
             </div>

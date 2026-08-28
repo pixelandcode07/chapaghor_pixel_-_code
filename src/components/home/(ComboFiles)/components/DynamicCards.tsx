@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, DollarSignIcon } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BorderBeam } from '@/components/ui/border-beam';
@@ -56,7 +56,7 @@ export default function DynamicCards({
       <div
         className={`relative z-10 text-white font-medium flex justify-between items-center border-b border-[#686868] ${
           isHorizontal
-            ? 'text-[10px] pt-5 px-4 pb-3 mb-4 md:mb-10'
+            ? 'text-[10px] py-2.5 md:pt-5 px-4 md:pb-3 mb-0 md:mb-10'
             : 'text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-0 mx-0.5'
         }`}>
         <h3 className="truncate ">
@@ -65,14 +65,15 @@ export default function DynamicCards({
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
           <span>
-            <TakaIcon className="w-8 h-6" />
+            {/* <TakaIcon className="w-8 h-6" /> */}
+            <DollarSignIcon className="w-3 xl:w-6 h-3 xl:h-6" />
           </span>
           {item.price}
         </h3>
       </div>
 
       {/* Stacked Image Container */}
-      <div className="relative z-10 pb-2 mt-[34px] xl:mt-[45px] 1xl:mt-[44px] 3xl:mt-[64px]">
+      <div className="relative z-10 pb-2 mt-[33px] xl:mt-[45px] 1xl:mt-[44px] 3xl:mt-[64px]">
         <div className="relative w-full aspect-212/152 mt-0 3xl:w-[284px] 3xl:h-[209px]">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}

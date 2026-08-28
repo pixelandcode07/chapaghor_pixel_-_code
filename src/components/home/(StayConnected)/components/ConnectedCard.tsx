@@ -136,7 +136,7 @@ export default function ConnectedCard() {
           return (
             <div
               key={social.id}
-              className="flex h-[83px] w-full flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:w-full md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3"
+              className="flex h-[88px] w-full flex-col items-center rounded-[10px] border border-[#EEEEEE] bg-white px-1 py-3 shadow-[0_3px_15px_rgba(0,0,0,0.05)] md:h-[170px] md:w-full md:px-2 md:pt-[17px] md:pb-[14px] lg:h-[180px] lg:px-3"
             >
               {/* w-[64px] 
               Width full dewa lagbe karon proti PX ei width change hoi, amra jodi 375px jonno ekta fixed width use kori, tahole 375+ or above user ra jkhn dekhbe tkhn card bhenge jabe
@@ -150,13 +150,13 @@ export default function ConnectedCard() {
               </h3>
 
               <span
-                className="mt-2 h-[1.5px] w-[9.45px] shrink-0 rounded-full md:mt-4 md:h-0.75 md:w-5"
+                className="mt-2 h-[0.5px] w-[9.45px] shrink-0 rounded-full md:mt-4 md:h-0.25 md:w-5"
                 style={{ backgroundColor: social.color }}
               />
 
               <a
                 href="#"
-                className="mt-2 md:mt-4 flex h-[28px] w-full max-w-[80px] items-center justify-center rounded-full text-[9px] font-medium md:h-[38px] md:w-[105px] md:text-[18px] tracking-[0.5px]"
+                className="mt-2.5 md:mt-4 flex py-[6px] w-full max-w-[80px] items-center justify-center rounded-full text-[6.8px] font-medium md:py-[8px] md:w-[105px] md:text-[14px] tracking-[0.5px]"
                 style={{
                   color: social.color,
                   backgroundColor: social.buttonBg,

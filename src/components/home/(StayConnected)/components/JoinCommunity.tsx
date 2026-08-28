@@ -48,7 +48,7 @@ export default function JoinCommunity() {
               Join 40,000+ <br className="lg:hidden" /> Happy Customers
             </h3>
 
-            <p className="mt-1 whitespace-nowrap font-['Helvetica_Neue',_sans-serif] font-medium leading-[1.2] tracking-normal text-white/90 text-[6.07px] md:text-[12.85px] xl:text-[11.33px] 1xl:text-[12.52px] 3xl:text-[17.29px]">
+            <p className="mt-1 whitespace-nowrap font-['Helvetica_Neue',_sans-serif] font-medium leading-[1.2] tracking-normal text-white/90 text-[5px] md:text-[12.85px] xl:text-[11.33px] 1xl:text-[12.52px] 3xl:text-[17.29px]">
               Be part of our growing community <br className="lg:hidden" /> and stay inspired every day
             </p>
           </div>
@@ -57,10 +57,10 @@ export default function JoinCommunity() {
         {/* Right Side (Auto adjusts now that left is strict) */}
         <ActionButton
           title="Join Our Community"
-          cardWidth="h-[26px] w-[130px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
-          iconCardWidth="h-[20px] w-[20px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
+          cardWidth="h-[22px] w-[97px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
+          iconCardWidth="h-[15px] w-[15px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
           buttonBg="bg-white"
-          titleColor="text-black font-normal tracking-[1px] text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
+          titleColor="text-black font-normal md:tracking-[1px] text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
           arrowBg="bg-[#F05A28]"
           arrowColor="text-white"
         />
