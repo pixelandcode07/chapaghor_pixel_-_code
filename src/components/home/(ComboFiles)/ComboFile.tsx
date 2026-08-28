@@ -106,7 +106,7 @@ export default function Combo() {
 
         {/*  Mobile / Tablet / LG */}
         <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory scroll-pl-5 md:scroll-pl-8">
-          <div className="flex gap-3 w-max pb-2 px-5 md:px-8">
+          <div className="flex gap-3  w-max pb-2 px-5 md:px-8">
             {comboData.map((item) => (
               <DynamicCards key={item.id} item={item} isHorizontal />
             ))}

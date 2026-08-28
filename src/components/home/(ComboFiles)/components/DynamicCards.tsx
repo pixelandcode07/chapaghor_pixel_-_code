@@ -28,13 +28,13 @@ export default function DynamicCards({
   return (
     <div
       className={`relative group cursor-pointer ${
-        isHorizontal ? 'w-[151px] md:w-47 shrink-0 snap-start' : ''
+        isHorizontal ? 'w-[135px] md:w-47 shrink-0 snap-start' : ''
       }`}>
       {/* Background Wrapper with Magic UI BorderBeam */}
       <div
         className={`absolute top-0 left-0 rounded-[13px] md:rounded-[15px] xl:rounded-[23px] bg-white/10 backdrop-blur-md z-0 transition-colors duration-300 group-hover:bg-white/10 overflow-hidden ${
           isHorizontal
-            ? "w-full aspect-151/157 md:w-47 md:aspect-188/194"
+            ? "w-full aspect-135/135 md:w-47 md:aspect-188/194"
             : "xl:w-full xl:aspect-214/180 1xl:w-full 1xl:aspect-246/207 3xl:w-[284px] 3xl:h-[345px]"
         }`}
       >
@@ -56,7 +56,7 @@ export default function DynamicCards({
       <div
         className={`relative z-10 text-white font-medium flex justify-between items-center border-b border-[#686868] ${
           isHorizontal
-            ? 'text-sm pt-5 px-4 pb-3 mb-10'
+            ? 'text-[10px] pt-5 px-4 pb-3 mb-4 md:mb-10'
             : 'text-[16px] xl:text-[18px] 3xl:text-[22px] pt-[29px] px-[25px] pb-[15px] mb-0 mx-0.5'
         }`}>
         <h3 className="truncate ">
@@ -72,7 +72,7 @@ export default function DynamicCards({
       </div>
 
       {/* Stacked Image Container */}
-      <div className="relative z-10 pb-4 mt-[0px] xl:mt-[45px] 1xl:mt-[44px] 3xl:mt-[64px]">
+      <div className="relative z-10 pb-2 mt-[34px] xl:mt-[45px] 1xl:mt-[44px] 3xl:mt-[64px]">
         <div className="relative w-full aspect-212/152 mt-0 3xl:w-[284px] 3xl:h-[209px]">
           {" "}
           {/* mt-4 gives room for back layers to peek out top */}

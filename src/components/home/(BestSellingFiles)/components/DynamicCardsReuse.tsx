@@ -22,13 +22,13 @@ export default function DynamicCardsReuse({
         <div
           key={idx}
           className={`relative flex flex-col group cursor-pointer mx-auto snap-start ${
-            isHorizontal ? 'w-[151px] md:w-46.75 shrink-0' : 'w-full'
+            isHorizontal ? 'w-[134px] md:w-46.75 shrink-0' : 'w-full'
           }`}>
           {/* Image Container */}
           <div
             className={`relative ${
               isHorizontal
-                ? 'w-full aspect-151/157 md:w-46.75 md:aspect-187/194'
+                ? 'w-full aspect-134/139 md:w-46.75 md:aspect-187/194'
                 : 'xl:w-full xl:aspect-189/207  1xl:aspect-199/207 3xl:aspect-265/275'
               // 1xl:w-49.75 3xl:w-66.5
             }`}>
