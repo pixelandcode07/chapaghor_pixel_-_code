@@ -1,10 +1,18 @@
 import NavHead from '@/components/home/(Navbar)/NavHead';
 import Footer from '@/components/home/(Footer)/Footer';
 import SectionHeading from '@/components/product/reuse-components/SectiionHeaing';
-
 import CardBox from '@/components/product/reuse-components/CardBox';
+import ProductBanner from '@/components/product/banner/ProductBanner';
 
-const products = [
+// TypeScript Interface for Product
+interface Product {
+  name: string;
+  moq: number;
+  views: number;
+  src: string;
+}
+
+const products: Product[] = [
   { name: 'Mug', moq: 1, views: 493, src: '/best/mug.jpg' },
   { name: 'Business Card', moq: 1, views: 493, src: '/best/card.jpg' },
   { name: 'Photo Frame', moq: 1, views: 493, src: '/best/frame.jpg' },
@@ -21,9 +29,10 @@ export default function ProductPage() {
     <main className="flex flex-col relative bg-white">
       <NavHead />
 
-      <div className="min-h-[calc(100vh-400px)]">
-        {/* Product content */}
+      {/* Product Banner Section */}
+      <ProductBanner />
 
+      <div className="min-h-[calc(100vh-400px)] pt-10">
         <div className="container-custom">
           <h1
             className="
@@ -35,39 +44,33 @@ export default function ProductPage() {
                   text-[25px]
                   leading-[100%]
                   tracking-[0]
-                  
                   sm:text-[30px]
                   md:text-[35px]
                   lg:text-[42.11px]
-                  my-5
-
-                ">
+                  my-10
+                "
+          >
             Our Print Products from A-Z
           </h1>
 
           <CardBox title="Offset Print" products={products} />
 
-          {/* Signage part  */}
           <div className="my-5">
-            <CardBox title="Signaget" products={products} />
+            <CardBox title="Signage" products={products} />
           </div>
 
-          {/* Signage part  */}
           <div className="my-5">
-            <CardBox title="Signaget" products={products} />
+            <CardBox title="Signage" products={products} />
           </div>
 
-          {/* Invitations & Cards */}
           <div className="my-5">
             <CardBox title="Invitations & Cards" products={products} />
           </div>
 
-          {/* Gift */}
           <div className="my-5">
             <CardBox title="Gift" products={products} />
           </div>
 
-          {/* Stationery */}
           <div className="my-5">
             <CardBox title="Stationery" products={products} />
           </div>
