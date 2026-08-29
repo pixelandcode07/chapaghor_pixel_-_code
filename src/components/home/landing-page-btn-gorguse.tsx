@@ -32,6 +32,7 @@ export default function ActionButton({
 >
   <span
     className={`whitespace-nowrap text-[6px] font-medium
+      pl-1.75
       md:pl-4 md:text-[16px]
       lg:pl-5
       xl:pl-6 xl:text-[14px]
@@ -46,9 +47,9 @@ export default function ActionButton({
     className={`flex shrink-0 items-center justify-center
       rounded-[1px] rounded-br-[4px]
       mr-[4px]
-      ml-[10px]
+     
       w-[16px] h-[15px]
-      md:ml-auto md:mr-2 md:h-[41px] md:w-[41px]
+      ml-auto md:mr-2 md:h-[41px] md:w-[41px]
       md:rounded-[3px] md:rounded-br-[9px]
       lg:h-[43px] lg:w-[43px]
       lg:rounded-[4px] lg:rounded-br-[11px]

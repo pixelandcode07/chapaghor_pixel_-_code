@@ -44,7 +44,7 @@ export default function CustomOrderInquiry() {
           cardWidth="h-[25px] w-[95px] md:h-[53px] md:w-[196px] lg:h-[64px] lg:w-[210px]"
           iconCardWidth="h-[20px] w-[20px] md:h-[41px] md:w-[41px] lg:h-[52px] lg:w-[52px]"
           buttonBg="bg-[linear-gradient(90deg,#FF4900_0%,#FF6501_100%)]"
-          titleColor="text-white"
+          titleColor="text-white "
           arrowBg="bg-white"
           arrowColor="text-black"
         />
