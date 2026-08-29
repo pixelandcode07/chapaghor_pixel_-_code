@@ -249,6 +249,7 @@ export default function NavHead() {
                   title="Vendor/Box">
                   <VendorBoxIcon className="size-5 sm:size-6" />
                 </Button>
+                
 
                 <Button
                   size="nav-icon"
@@ -265,7 +266,7 @@ export default function NavHead() {
                   variant="nav_menu"
                   title="Menu"
                   className="px-0">
-                  <CustomMenuIcon className="size-5 sm:size-6" />
+                  <CustomMenuIcon className="size-5 sm:size-6 " />
                 </Button>
               </div>
             </div>
