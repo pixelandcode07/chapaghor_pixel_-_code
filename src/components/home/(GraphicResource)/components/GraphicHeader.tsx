@@ -18,7 +18,7 @@ export default function GraphicHeader() {
           </p>
 
           <h1 className="text-[19px] md:text-[38px] xl:text-[34px] 1xl:text-[39px] 3xl:text-[52px] font-medium leading-none mb-3 tracking-[0.5px] text-[#202020]">
-            GRAPHIC <span className="text-[#FD7034]">RESOURCES</span>
+            GRAPHIC <br className='md:hidden' /> <span className="text-[#FD7034]">RESOURCES</span>
           </h1>
 
           <p className="text-[10px] md:text-[16px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[22px] font-light leading-none mb-3 text-[#757575] tracking-[0.5px]">
