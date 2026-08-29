@@ -65,8 +65,8 @@ export default function DynamicCards({
         </h3>
         <h3 className="flex justify-center items-center text-[#FD7034] shrink-0">
           <span>
-            {/* <TakaIcon className="w-8 h-6" /> */}
-            <DollarSignIcon className="w-3 xl:w-6 h-3 xl:h-6" />
+            <TakaIcon className="mb-1 w-2 h-2 md:w-2.5 md:h-2 xl:w-4 xl:h-4 3xl:w-4.5 3xl:h-4.5" />
+            {/* <DollarSignIcon className="w-3 xl:w-6 h-3 xl:h-6" /> */}
           </span>
           {item.price}
         </h3>

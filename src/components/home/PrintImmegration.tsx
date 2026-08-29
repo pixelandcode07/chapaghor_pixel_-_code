@@ -131,7 +131,7 @@ export default function PrintImmegration() {
                       {/* Face: 2 */}
                       <motion.div
                         variants={face2Variants}
-                        className="absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0"
+                        className="hidden absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] md:flex items-end justify-center mb-0.5 pb-3 z-0"
                       >
                         <h2 className="flex items-center justify-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white tracking-[0.5px]">
                           ORDER
@@ -141,7 +141,7 @@ export default function PrintImmegration() {
                       {/* Face: 1 */}
                       <motion.div
                         variants={face1Variants}
-                        className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
+                        className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-2.75 md:gap-4 xl:gap-5 p-2.5 md:p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
                       >
                         <div className="relative w-12.5 h-12.5 md:w-17.5 md:h-17.5 1xl:w-20 1xl:h-20 3xl:w-26.75 3xl:h-26.75 mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
                           <Image
@@ -152,7 +152,7 @@ export default function PrintImmegration() {
                           />
                         </div>
 
-                        <span className="text-[10px] md:text-[15px] 1xl:text-[17px] 3xl:text-[22px] whitespace-nowrap font-light text-[#012C60] text-center tracking-[0.5px]">
+                        <span className="text-[10px] md:text-[15px] 1xl:text-[17px] 3xl:text-[22px] whitespace-nowrap leading-none font-light text-[#012C60] text-center tracking-[0.5px]">
                           {category.name}
                         </span>
                       </motion.div>
