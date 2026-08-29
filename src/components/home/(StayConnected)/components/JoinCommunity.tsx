@@ -56,14 +56,14 @@ export default function JoinCommunity() {
 
         {/* Right Side (Auto adjusts now that left is strict) */}
         <ActionButton
-          title="Join Our Community"
-          cardWidth="h-[22px] w-[97px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
-          iconCardWidth="h-[15px] w-[15px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
-          buttonBg="bg-white"
-          titleColor="text-black font-normal md:tracking-[1px] text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
-          arrowBg="bg-[#F05A28]"
-          arrowColor="text-white"
-        />
+        title="Join Our Community"
+        cardWidth="w-[97px] h-auto p-[4px] pl-[11px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
+        iconCardWidth="h-[15px] w-[15px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
+        buttonBg="bg-white"
+        titleColor="text-black font-normal md:tracking-[1px] text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
+        arrowBg="bg-[#F05A28]"
+        arrowColor="text-white"
+      />
       </div>
     </section>
   );

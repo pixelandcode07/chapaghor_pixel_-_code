@@ -22,16 +22,44 @@ export default function ActionButton({
   className = "",
 }: ActionButtonProps) {
   return (
-    <div
-        className={`flex shrink-0 items-center overflow-hidden rounded-[2px] rounded-br-[5px] shadow-sm md:rounded-[5px] md:rounded-br-[11px] lg:rounded-[8px] 3xl:py-[10px] lg:rounded-br-[16px] xl:rounded-[8px] xl:rounded-br-[17px] ${cardWidth} ${buttonBg} ${className}`}
-      >
-      <span className={`whitespace-nowrap pl-2.5 text-[8px] font-medium md:pl-4 md:text-[16px] lg:pl-5 xl:pl-6 3xl:pl-[39px] xl:text-[14px] 1xl:text-[18px] 3xl:text-[20px] ${titleColor}`}>
-        {title}
-      </span>
+   <div
+  className={`flex shrink-0 items-center overflow-hidden rounded-[2px] rounded-br-[5px]
+    md:rounded-[5px] md:rounded-br-[11px]
+    lg:rounded-[8px] lg:rounded-br-[16px]
+    xl:rounded-[8px] xl:rounded-br-[17px]
+    3xl:py-[10px]
+    ${cardWidth} ${buttonBg} ${className}`}
+>
+  <span
+    className={`whitespace-nowrap text-[6px] font-medium
+      md:pl-4 md:text-[16px]
+      lg:pl-5
+      xl:pl-6 xl:text-[14px]
+      1xl:text-[18px]
+      3xl:pl-[39px] 3xl:text-[20px]
+      ${titleColor}`}
+  >
+    {title}
+  </span>
 
-      <button className={`ml-auto mr-1 flex  shrink-0 items-center justify-center rounded-[1px] rounded-br-[4px] md:mr-2 xl:mr-3.75  md:rounded-[3px] md:rounded-br-[9px] lg:rounded-[4px] lg:rounded-br-[11px] xl:rounded-[4px] xl:rounded-br-[13px] xl:px-0  ${iconCardWidth} ${arrowBg} ${arrowColor}`}>
-        <GorguseBtnIcon className="w-4 h-1.25 md:w-4 md:h-2.25 lg:w-5 lg:h-3.25 xl:w-4 xl:h-2.25 3xl:w-5 3xl:h-5" />
-      </button>
-    </div>
+  <button
+    className={`flex shrink-0 items-center justify-center
+      rounded-[1px] rounded-br-[4px]
+      mr-[4px]
+      ml-[10px]
+      w-[16px] h-[15px]
+      md:ml-auto md:mr-2 md:h-[41px] md:w-[41px]
+      md:rounded-[3px] md:rounded-br-[9px]
+      lg:h-[43px] lg:w-[43px]
+      lg:rounded-[4px] lg:rounded-br-[11px]
+      xl:ml-auto xl:mr-3.75 xl:h-[41px] xl:w-[41px]
+      xl:rounded-[4px] xl:rounded-br-[13px]
+      1xl:h-[46px] 1xl:w-[46px]
+      3xl:h-[64px] 3xl:w-[64px]
+      ${iconCardWidth} ${arrowBg} ${arrowColor}`}
+  >
+    <GorguseBtnIcon className="w-4 h-1.25 md:w-4 md:h-2.25 lg:w-5 lg:h-3.25 xl:w-4 xl:h-2.25 3xl:w-5 3xl:h-5" />
+  </button>
+</div>
   );
 }

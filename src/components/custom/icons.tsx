@@ -750,6 +750,20 @@ export function PhoneIcon({
     </svg>
   );
 }
+export function ArrowiconProduct({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className={cn('size-5', className)}
+    >
+    <path d="M0.85421 5.88977L13.999 5.88977" stroke="currentColor" stroke-width="1.70839" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9.61567 10.9247L14.7275 5.88945L9.61567 0.854186" stroke="currentColor" stroke-width="1.70839" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  );
+}
 
 export function EmailIcon({
   className,
