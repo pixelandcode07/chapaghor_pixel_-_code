@@ -76,11 +76,11 @@ export default function ChooseUsHeader() {
                   </div>
 
                   <div className="flex flex-col">
-                    <span className="text-[22px] 1xl:text-[26px] 3xl:text-[32px] font-bold leading-none tracking-[-0.5px] text-black">
+                    <span className="text-[22px] tracking-[0.04em] 1xl:text-[26px] 3xl:text-[32px] font-bold leading-none tracking-[-0.5px] text-black">
                       {stat.value}
                     </span>
 
-                    <span className="mt-1 text-[10px] 1xl:text-[12px] 3xl:text-[14px] font-normal leading-none text-[#777777]">
+                    <span className="mt-1 text-[10px] 1xl:text-[12px] 3xl:text-[17px] tracking-[0.08em] font-light leading-none text-[#777777]">
                       {stat.label}
                     </span>
                   </div>

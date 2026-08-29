@@ -1,10 +1,188 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import Image from "next/image";
+// import { Loader2 } from "lucide-react";
+// import { motion, type Variants } from "framer-motion";
+// import { CustomSquareArrowOutUpRight } from "../custom/icons";
+// import { Category } from "./(Navbar)/components/types-of-navhead/NavHeadType";
+
+// const containerVariants: Variants = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1 },
+//   },
+// };
+
+// const itemVariants: Variants = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.4, ease: [0.0, 0.0, 0.2, 1.0] },
+//   },
+// };
+
+// const face1Variants: Variants = {
+//   hidden: { top: 0, bottom: 0 },
+//   visible: {
+//     top: 0,
+//     bottom: 0,
+//     transition: { duration: 0.3, ease: "easeOut" },
+//   },
+//   hover: {
+//     top: -10,
+//     bottom: 32,
+//     transition: { duration: 0.3, ease: "easeOut" },
+//   },
+// };
+
+// const face2Variants: Variants = {
+//   hidden: { y: 0, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 0,
+//     transition: { duration: 0.3, ease: "easeOut" },
+//   },
+//   hover: {
+//     y: 22,
+//     opacity: 1,
+//     transition: { duration: 0.3, ease: "easeOut" },
+//   },
+// };
+
+// export default function PrintImmegration() {
+//   const [categories, setCategories] = useState<Category[]>([]);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [activeCard, setActiveCard] = useState<string | null>(null);
+
+//   const canHover =
+//     typeof window !== "undefined" &&
+//     window.matchMedia("(hover: hover)").matches;
+
+//   useEffect(() => {
+//     const fetchFeaturedCategories = async () => {
+//       try {
+//         const res = await fetch("/api/v1/categories");
+//         const data = await res.json();
+//         if (data.success) {
+//           const featured = data.data.filter((c: Category) => c.isFeatured);
+//           setCategories(featured);
+//         }
+//       } catch (error) {
+//         console.error("Failed to load featured categories", error);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
+//     fetchFeaturedCategories();
+//   }, []);
+
+//   if (isLoading) {
+//     return (
+//       <div
+//         style={{ display: "flex", justifyContent: "center", padding: "80px 0" }}
+//       >
+//         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+//         <Loader2
+//           size={40}
+//           style={{ color: "#F05A28", animation: "spin 1s linear infinite" }}
+//         />
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="w-full bg-[#FFFFFF]">
+//       <div className="w-full pb-0 md:pt-9  xl:pb-2 3xl:pb-13 relative flex flex-col items-center">
+//         <div className="relative z-10 w-full flex flex-col items-center">
+//           <h1 className="leading-none text-[18px] md:text-[26px] xl:text-3xl 3xl:text-[48px] tracking-[0.5px] font-light text-[#012C60] pb-4 md:pb-0 xl:mb-4 3xl:mb-15 text-center">
+//             {/* mb-5.25 md:mb-6.75 xl:mb-9.75 3xl:mb-15 */}
+//             PRINT YOUR IMAGINATION
+//           </h1>
+
+//           <div className="w-[calc(100%-66px)] md:max-w-149 lg:max-w-187.5 xl:max-w-[73vw] 3xl:max-w-[71vw] mx-auto rounded-xl">
+//             <div className="w-full md:overflow-x-auto xl:overflow-visible scrollbar-hide">
+//               <motion.div
+//                 variants={containerVariants}
+//                 initial="hidden"
+//                 whileInView="visible"
+//                 viewport={{ once: true, margin: "-50px" }}
+//                 className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-6 gap-4 md:gap-6 1xl:gap-7 3xl:gap-9 md:h-50 justify-between items-center md:w-max xl:w-full"
+//               >
+//                 {categories.map((category) => (
+//                   <button key={category._id} className="block outline-none">
+//                     <motion.div
+//                       variants={itemVariants}
+//                       whileHover={canHover ? "hover" : undefined}
+//                       animate={
+//                         activeCard === category._id ? "hover" : "visible"
+//                       }
+//                       onTap={() => {
+//                         if (!canHover) {
+//                           setActiveCard(
+//                             activeCard === category._id ? null : category._id,
+//                           );
+//                         }
+//                       }}
+//                       className="relative justify-self-center w-23 h-25 md:w-32.75 md:h-35.5 xl:w-32 xl:h-34.5 1xl:w-36.75 1xl:h-40 3xl:w-[196.39px] 3xl:h-[212.87px] rounded-[13.06px] md:rounded-[15.54px] xl:rounded-[15.23px] 3xl:rounded-[23.35px] cursor-pointer group z-10 hover:z-50 shadow-[6.9px_10.85px_45.37px_-5.92px_#DCDBDD]"
+//                     >
+//                       {/* Face: 2 */}
+//                       <motion.div
+//                         variants={face2Variants}
+//                         className="hidden absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] md:flex items-end justify-center mb-0.5 pb-3 z-0"
+//                       >
+//                         <h2 className="flex items-center justify-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white tracking-[0.5px]">
+//                           ORDER
+//                           <CustomSquareArrowOutUpRight className="size-3 xl:size-4.5 mb-1 xl:mt-1 ml-1" />
+//                         </h2>
+//                       </motion.div>
+//                       {/* Face: 1 */}
+//                       <motion.div
+//                         variants={face1Variants}
+//                         className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-2.75 md:gap-4 xl:gap-5 p-2.5 md:p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
+//                       >
+//                         <div className="relative w-12.5 h-12.5 md:w-17.5 md:h-17.5 1xl:w-20 1xl:h-20 3xl:w-26.75 3xl:h-26.75 mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
+//                           <Image
+//                             src={category.icon || "/icons/card.svg"}
+//                             alt={`${category.name} icon`}
+//                             fill
+//                             className="object-contain"
+//                           />
+//                         </div>
+
+//                         <span className="text-[10px] md:text-[15px] 1xl:text-[17px] 3xl:text-[22px] whitespace-nowrap leading-none font-light text-[#012C60] text-center tracking-[0.5px]">
+//                           {category.name}
+//                         </span>
+//                       </motion.div>
+//                     </motion.div>
+//                   </button>
+//                 ))}
+//               </motion.div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
 "use client";
 
 import { useState, useEffect } from "react";
+
 import Image from "next/image";
+
 import { Loader2 } from "lucide-react";
+
 import { motion, type Variants } from "framer-motion";
+
 import { CustomSquareArrowOutUpRight } from "../custom/icons";
+
 import { Category } from "./(Navbar)/components/types-of-navhead/NavHeadType";
 
 const containerVariants: Variants = {
@@ -57,7 +235,25 @@ export default function PrintImmegration() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
+  // Only enable animation from md and above
+  const [isMdOrAbove, setIsMdOrAbove] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMdOrAbove(window.innerWidth >= 768);
+    };
+
+    checkScreenSize();
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   const canHover =
+    isMdOrAbove &&
     typeof window !== "undefined" &&
     window.matchMedia("(hover: hover)").matches;
 
@@ -66,8 +262,12 @@ export default function PrintImmegration() {
       try {
         const res = await fetch("/api/v1/categories");
         const data = await res.json();
+
         if (data.success) {
-          const featured = data.data.filter((c: Category) => c.isFeatured);
+          const featured = data.data.filter(
+            (c: Category) => c.isFeatured,
+          );
+
           setCategories(featured);
         }
       } catch (error) {
@@ -76,18 +276,27 @@ export default function PrintImmegration() {
         setIsLoading(false);
       }
     };
+
     fetchFeaturedCategories();
   }, []);
 
   if (isLoading) {
     return (
       <div
-        style={{ display: "flex", justifyContent: "center", padding: "80px 0" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "80px 0",
+        }}
       >
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+
         <Loader2
           size={40}
-          style={{ color: "#F05A28", animation: "spin 1s linear infinite" }}
+          style={{
+            color: "#F05A28",
+            animation: "spin 1s linear infinite",
+          }}
         />
       </div>
     );
@@ -95,34 +304,52 @@ export default function PrintImmegration() {
 
   return (
     <div className="w-full bg-[#FFFFFF]">
-      <div className="w-full pb-4 md:pt-9  xl:pb-7.5 3xl:pb-13 relative flex flex-col items-center">
+      <div className="w-full pb-0 md:pt-9  xl:pb-2 3xl:pb-13 relative flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
-          <h1 className="leading-none text-[23px] md:text-[26px] xl:text-3xl 3xl:text-[48px] tracking-[0.5px] font-light text-[#012C60] pb-4 md:pb-0 xl:mb-4 3xl:mb-15 text-center">
+          <h1 className="leading-none text-[18px] md:text-[26px] xl:text-3xl 3xl:text-[48px] tracking-[0.5px] font-light text-[#012C60] pb-4 md:pb-0 xl:mb-4 3xl:mb-15 text-center">
             {/* mb-5.25 md:mb-6.75 xl:mb-9.75 3xl:mb-15 */}
             PRINT YOUR IMAGINATION
           </h1>
 
-          <div className="w-full max-w-[92vw] md:max-w-149 lg:max-w-187.5 xl:max-w-[73vw] 3xl:max-w-[71vw] mx-auto rounded-xl">
+          <div className="w-[calc(100%-66px)] md:max-w-149 lg:max-w-187.5 xl:max-w-[73vw] 3xl:max-w-[71vw] mx-auto rounded-xl">
             <div className="w-full md:overflow-x-auto xl:overflow-visible scrollbar-hide">
               <motion.div
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
+                initial={isMdOrAbove ? "hidden" : false}
+                whileInView={isMdOrAbove ? "visible" : undefined}
+                viewport={
+                  isMdOrAbove
+                    ? { once: true, margin: "-50px" }
+                    : undefined
+                }
                 className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-6 gap-4 md:gap-6 1xl:gap-7 3xl:gap-9 md:h-50 justify-between items-center md:w-max xl:w-full"
               >
                 {categories.map((category) => (
-                  <button key={category._id} className="block outline-none">
+                  <button
+                    key={category._id}
+                    className="block outline-none"
+                  >
                     <motion.div
                       variants={itemVariants}
+                      initial={isMdOrAbove ? undefined : false}
                       whileHover={canHover ? "hover" : undefined}
                       animate={
-                        activeCard === category._id ? "hover" : "visible"
+                        isMdOrAbove
+                          ? activeCard === category._id
+                            ? "hover"
+                            : "visible"
+                          : undefined
                       }
                       onTap={() => {
-                        if (!canHover) {
+                        if (canHover) {
+                          return;
+                        }
+
+                        if (isMdOrAbove) {
                           setActiveCard(
-                            activeCard === category._id ? null : category._id,
+                            activeCard === category._id
+                              ? null
+                              : category._id,
                           );
                         }
                       }}
@@ -131,17 +358,18 @@ export default function PrintImmegration() {
                       {/* Face: 2 */}
                       <motion.div
                         variants={face2Variants}
-                        className="absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] flex items-end justify-center mb-0.5 pb-3 z-0"
+                        className="hidden absolute bottom-0 left-0 right-0 h-23.75 bg-[#FD7034] rounded-b-[17.5px] md:flex items-end justify-center mb-0.5 pb-3 z-0"
                       >
                         <h2 className="flex items-center justify-center gap-0.5 text-sm xl:text-[16px] 3xl:text-[23px] font-light text-white tracking-[0.5px]">
                           ORDER
                           <CustomSquareArrowOutUpRight className="size-3 xl:size-4.5 mb-1 xl:mt-1 ml-1" />
                         </h2>
                       </motion.div>
+
                       {/* Face: 1 */}
                       <motion.div
                         variants={face1Variants}
-                        className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-4 xl:gap-5 p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
+                        className="absolute inset-0 bg-white rounded-[17.5px] flex flex-col items-center justify-center gap-2.75 md:gap-4 xl:gap-5 p-2.5 md:p-4 z-10 border border-transparent group-hover:border-white transition-colors duration-300"
                       >
                         <div className="relative w-12.5 h-12.5 md:w-17.5 md:h-17.5 1xl:w-20 1xl:h-20 3xl:w-26.75 3xl:h-26.75 mb-1 transform transition-all duration-500 ease-in-out group-hover:scale-75">
                           <Image
@@ -152,7 +380,7 @@ export default function PrintImmegration() {
                           />
                         </div>
 
-                        <span className="text-[10px] md:text-[15px] 1xl:text-[17px] 3xl:text-[22px] whitespace-nowrap font-light text-[#012C60] text-center tracking-[0.5px]">
+                        <span className="text-[10px] md:text-[15px] 1xl:text-[17px] 3xl:text-[22px] whitespace-nowrap leading-none font-light text-[#012C60] text-center tracking-[0.5px]">
                           {category.name}
                         </span>
                       </motion.div>

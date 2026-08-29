@@ -1,7 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @layer components {
   .container-custom {
@@ -9,8 +8,8 @@
   }
 }
 
-
-html, body {
+html,
+body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* old Edge */
 }
@@ -18,7 +17,6 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none; /* Chrome, Edge, Safari */
 }
-
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -123,8 +121,8 @@ body::-webkit-scrollbar {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --breakpoint-1xl: 90rem;  /* 1440px */
-  --breakpoint-3xl: 120rem;  /* 1920px */
+  --breakpoint-1xl: 90rem; /* 1440px */
+  --breakpoint-3xl: 120rem; /* 1920px */
   --breakpoint-3xl_v2: 128rem;
   --breakpoint-4xl: 144rem;
   --breakpoint-7xl: 192rem;

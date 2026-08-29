@@ -23,9 +23,6 @@
 //     )
 // }
 
-
-
-
 // import Link from "next/link";
 // import React from "react";
 
@@ -44,61 +41,125 @@
 //   );
 // }
 
+// import Link from 'next/link';
+// import { ReactNode } from 'react';
+
+// interface LandingPageBtnProps {
+//   href?: string;
+//   children?: ReactNode;
+//   icon?: ReactNode;
+//   iconPosition?: 'left' | 'right';
+//   className?: string;
+// }
+
+// const LandingPageBtn = ({
+//   href = '#',
+//   children = 'View All Products',
+//   icon,
+//   iconPosition = 'right',
+//   className = '',
+// }: LandingPageBtnProps) => {
+//   return (
+//     <Link
+//       href={href}
+//       className={`
+//        inline-flex items-center justify-center
+//     w-[255px] h-[62px]
+//     rounded-full
+//     border border-[#FD7034]
+//     text-[20px] font-bold
+//     text-[#FD7034]
+//     tracking-[0.5px]
+//     transition-all duration-300
+//     hover:bg-[#FD7034]
+//     hover:text-white
+//         ${className}
+//       `}
+//       // className={`
+//       //   inline-flex items-center justify-center gap-2
+//       //   rounded-full
+//       //   border border-[#FD7034]
+//       //   px-[42.25px] py-[21.13px]
+//       //   text-[21px] font-bold text-[#FD7034]
+//       //   transition-all duration-300 tracking-[0.5px] hover:bg-[#FD7034] hover:text-white
+//       //   ${className}
+//       // `}
+//     >
+//       {icon && iconPosition === 'left' && icon}
+
+//       {children}
+
+//       {icon && iconPosition === 'right' && icon}
+//     </Link>
+//   );
+// };
+
+// export default LandingPageBtn;
 
 
 
-import Link from "next/link";
-import { ReactNode } from "react";
+import Link from 'next/link';
+
+import { ReactNode } from 'react';
 
 interface LandingPageBtnProps {
   href?: string;
+
   children?: ReactNode;
+
   icon?: ReactNode;
-  iconPosition?: "left" | "right";
+
+  iconPosition?: 'left' | 'right';
+
   className?: string;
 }
 
 const LandingPageBtn = ({
-  href = "#",
-  children = "View All Products",
+  href = '#',
+
+  children = 'View All Products',
+
   icon,
-  iconPosition = "right",
-  className = "",
+
+  iconPosition = 'right',
+
+  className = '',
 }: LandingPageBtnProps) => {
   return (
-    <Link
+    <div className='flex items-center justify-center'>
+      <Link
       href={href}
       className={`
-       inline-flex items-center justify-center
-    w-[255px] h-[62px]
-    rounded-full
-    border border-[#FD7034]
-    text-[20px] font-bold
-    text-[#FD7034]
-    tracking-[0.5px]
-    transition-all duration-300
-    hover:bg-[#FD7034]
-    hover:text-white
+        inline-flex items-center justify-center
+       w-full
+       px-4.5 md:px-6.75 xl:px-7 1xl:px-8.25 3xl:px-10.5
+       py-2.25 md:py-3.25 xl:py-3.5 1xl:py-4 3xl:py-5.25
+        rounded-full
+        border border-[#FD7034]
+        text-[9px] font-medium
+        md:text-[14px] md:font-medium
+        xl:text-[14px] xl:font-bold
+        1xl:text-[16px] 1xl:font-bold
+        3xl:text-[21px] 3xl:font-bold
+        text-[#FD7034]
+        tracking-[0.5px]
+        transition-all duration-300
+        hover:bg-[#FD7034]
+        hover:text-white
         ${className}
       `}
-      // className={`
-      //   inline-flex items-center justify-center gap-2
-      //   rounded-full
-      //   border border-[#FD7034]
-      //   px-[42.25px] py-[21.13px]
-      //   text-[21px] font-bold text-[#FD7034]
-      //   transition-all duration-300 tracking-[0.5px] hover:bg-[#FD7034] hover:text-white
-      //   ${className}
-      // `}
     >
-      {icon && iconPosition === "left" && icon}
-
+       {/* w-[122px] h-[27px]
+        md:w-[182px] md:h-[41px]
+        xl:w-[167px] xl:h-[41px]
+        1xl:w-[192px] 1xl:h-[48px]
+        3xl:w-[255px] 3xl:h-[62px] */}
+      {icon && iconPosition === 'left' && icon}
       {children}
-
-      {icon && iconPosition === "right" && icon}
+      {icon && iconPosition === 'right' && icon}
     </Link>
+    </div>
   );
 };
 
 export default LandingPageBtn;
-

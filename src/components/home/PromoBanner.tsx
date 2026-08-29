@@ -34,7 +34,7 @@ const banners: PromoBanner[] = [
 
 export default function PromoBanner() {
   return (
-    <section className=" ml-1 md:ml-7 xl:ml-0 px-2 md:px-0 pb-5 xl:pb-12">
+    <section className=" ml-1 md:ml-7 xl:ml-0 pl-2 md:px-0 pb-5 xl:pb-12">
       {/* Mobile / Tablet */}
       <div className="xl:hidden overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
         <div className="flex gap-2 md:gap-4 w-max md:w-[548px]">

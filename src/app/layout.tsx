@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import CustomCursor from "@/components/CustomCursor";
+import MobileBottomNav from "@/components/home/(Navbar)/MobileBottomNav";
 
 
 
@@ -43,6 +44,7 @@ export default function RootLayout({
         </div>
         {children}
         <ScrollToTop />
+        <MobileBottomNav />
       </body>
     </html>
   );

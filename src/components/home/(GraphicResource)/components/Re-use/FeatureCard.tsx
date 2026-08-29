@@ -7,7 +7,8 @@ export default function FeatureCard({
 }) {
   return (
     <div className="flex w-full flex-col items-center justify-center px-1 py-2 xl:flex-row xl:items-center xl:justify-start xl:px-0 xl:py-2">
-      <div className="flex h-[25px] w-[25px] shrink-0 items-center justify-center rounded-md bg-[#FFECE5] text-[#ff7043] md:h-[53px] md:w-[53px] xl:h-10 xl:w-10
+      <div
+        className="flex h-[25px] w-[25px] shrink-0 items-center justify-center rounded-md bg-[#FFECE5] text-[#ff7043] md:h-[53px] md:w-[53px] xl:h-10 xl:w-10
        1xl:h-[46px] 1xl:w-[46px] 3xl:h-[62px] 3xl:w-[62px]">
         {icon}
       </div>

@@ -11,8 +11,8 @@ const customers = [
 
 export default function JoinCommunity() {
   return (
-    <section className="w-full px-2 py-2 md:px-0  md:py-3  lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
-      <div className="container-custom flex h-[90px] items-center justify-between gap-1.5 rounded-[10px] bg-[#FF4F00] px-3 shadow-[0_5px_14px_rgba(0,0,0,0.16)] md:h-[101px] md:gap-5 md:px-7 lg:h-[86px] xl:h-[72px] xl:rounded-[12px] xl:px-10 1xl:h-[80px] 1xl:px-25 3xl:h-[111px] 3xl:rounded-[16px] 3xl:px-30">
+    <section className="w-full px-0 pb-2 md:px-0  md:pb-3  lg:py-4 xl:py-5 1xl:py-6 3xl:py-7">
+      <div className="container-custom flex h-[90px] items-center justify-between gap-1.5 rounded-[10px] bg-[#FF4F00] px-3 shadow-[0_5px_14px_rgba(0,0,0,0.16)] md:h-[101px] md:gap-5 md:px-7 lg:h-[86px] xl:h-[72px] xl:rounded-[12px] xl:px-10 1xl:h-[80px] 1xl:px-25 3xl:h-[137px] 3xl:rounded-[16px] 3xl:px-30">
         
         {/* Left Side (Fixed Widths per Breakpoint) */}
         <div className="flex w-[108px] shrink-0 items-center gap-1.5 md:w-[342px] md:gap-4 lg:w-[400px] xl:w-[429px] xl:gap-6 1xl:w-[474px] 1xl:gap-7 3xl:w-[637px] 3xl:gap-8">
@@ -48,7 +48,7 @@ export default function JoinCommunity() {
               Join 40,000+ <br className="lg:hidden" /> Happy Customers
             </h3>
 
-            <p className="mt-1 whitespace-nowrap font-['Helvetica_Neue',_sans-serif] font-medium leading-[1.2] tracking-normal text-white/90 text-[6.07px] md:text-[12.85px] xl:text-[11.33px] 1xl:text-[12.52px] 3xl:text-[17.29px]">
+            <p className="mt-1 whitespace-nowrap font-['Helvetica_Neue',_sans-serif] font-medium leading-[1.2] tracking-normal text-white/90 text-[5px] md:text-[12.85px] xl:text-[11.33px] 1xl:text-[12.52px] 3xl:text-[17.29px]">
               Be part of our growing community <br className="lg:hidden" /> and stay inspired every day
             </p>
           </div>
@@ -56,14 +56,14 @@ export default function JoinCommunity() {
 
         {/* Right Side (Auto adjusts now that left is strict) */}
         <ActionButton
-          title="Join Our Community"
-          cardWidth="h-[26px] w-[130px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
-          iconCardWidth="h-[20px] w-[20px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
-          buttonBg="bg-white"
-          titleColor="text-black font-normal text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
-          arrowBg="bg-[#F05A28]"
-          arrowColor="text-white"
-        />
+        title="Join Our Community"
+        cardWidth="w-[97px] h-[21px] md:h-[54px] md:w-[235px] lg:h-[58px] lg:w-[235px] xl:h-[52px] xl:w-[228px] 1xl:h-[57px] 1xl:w-[260px] 3xl:h-[80px] 3xl:w-[360px]"
+        iconCardWidth="h-[15px] w-[15px] md:h-[41px] md:w-[41px] lg:h-[43px] lg:w-[43px] xl:h-[41px] xl:w-[41px] 1xl:h-[46px] 1xl:w-[46px] 3xl:h-[64px] 3xl:w-[64px]"
+        buttonBg="bg-white"
+        titleColor="text-black font-normal md:tracking-[1px] text-[6px] md:text-[12px] xl:text-[14px] 1xl:text-[16px] 3xl:text-[20px]"
+        arrowBg="bg-[#F05A28]"
+        arrowColor="text-white"
+      />
       </div>
     </section>
   );
