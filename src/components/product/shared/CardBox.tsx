@@ -23,7 +23,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
         border-[#EAEAEC]
         rounded-[16px]
 
-        pt-[20px]
+        pt-[6px]
         3xl:pt-[18px]
         1xl:pt-[13px]
         xl:pt-[12px]
@@ -34,6 +34,8 @@ export default function CardBox({ title, products }: CardBoxProps) {
         px-[20px]
         md:pl-[19px]
         md:pr-0
+        pr-0
+        pl-[10px]
         3xl:px-[55px]
         1xl:px-[40px]
         xl:px-[36px]
@@ -46,7 +48,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
           justify-between
           items-center
 
-          mb-[10px]
+          mb-[5px]
           md:mb-[11px]
 
           3xl:mb-[10px]
@@ -62,13 +64,12 @@ export default function CardBox({ title, products }: CardBoxProps) {
             leading-none
             text-[#333333]
 
-            text-[20px]
+            text-[18px]
             md:text-[30px]
 
             3xl:text-[42px]
             1xl:text-[30px]
             xl:text-[28px]
-            md:text-[30px]
 
             font-light
             font-['Helvetica_Neue',Helvetica,sans-serif]
@@ -83,14 +84,15 @@ export default function CardBox({ title, products }: CardBoxProps) {
           className="
             text-[#FF6B00]
 
-            text-[14px]
-            md:text-[20px]
+            text-[11px]
+            md:text-[21px]
 
             3xl:text-[30px]
             1xl:text-[22px]
             xl:text-[20px]
-            md:text-[21px]
+            
             md:pr-[33px]
+            pr-[15px]
 
             hover:underline
             font-light
@@ -107,10 +109,8 @@ export default function CardBox({ title, products }: CardBoxProps) {
           border-t
           border-[#EAEAEC]
 
-          mb-[24px]
-
+          mb-[10px]
           md:mb-[24px]
-
           3xl:mb-[40px]
           1xl:mb-[25px]
           xl:mb-[22px]
@@ -120,29 +120,30 @@ export default function CardBox({ title, products }: CardBoxProps) {
       {/* Products */}
       <div
         className="
-          grid
-          grid-cols-2
-          gap-[16px]
-
           /*
-           * ONLY MD = 768px
-           * Horizontal scroll
+           * MOBILE & MD = Horizontal scroll
            */
-          md:flex
+          flex
+          gap-[12px]
           md:gap-[18px]
-          md:overflow-x-auto
-          md:overflow-y-hidden
-          md:scroll-smooth
-          md:pb-[4px]
-          md:[scrollbar-width:none]
-          md:[-ms-overflow-style:none]
-          md:[&::-webkit-scrollbar]:hidden
+          
+          overflow-x-auto
+          overflow-y-hidden
+          scroll-smooth
+          pb-[4px]
+          
+          /* Hide Scrollbar for Mobile & Tablet */
+          [scrollbar-width:none]
+          [-ms-overflow-style:none]
+          [&::-webkit-scrollbar]:hidden
 
           /*
-           * Existing desktop layout
+           * Reset to Grid for Desktop (LG and above)
+           * To keep the desktop layout intact
            */
           lg:grid
-          lg:grid-cols-6
+          lg:grid-cols-4
+          xl:grid-cols-6
           lg:overflow-visible
 
           3xl:gap-[24px]
@@ -160,18 +161,26 @@ export default function CardBox({ title, products }: CardBoxProps) {
               bg-gray-100
               flex
               flex-col
-              w-full
+              
+              /*
+               * MOBILE ONLY
+               * Fixed width for horizontal scroll
+               */
+              w-[132px]
+              min-w-[143px]
+              shrink-0
 
               /*
-               * ONLY MD
-               * Fixed card width so horizontally scroll works
+               * MD ONLY
+               * Fixed width to match your 768px tablet design
                */
-              // md:w-[190px]
-              // md:min-w-[190px]
+              md:w-[190px]
+              md:min-w-[190px]
               md:shrink-0
 
               /*
-               * Reset from LG and above
+               * LG & ABOVE
+               * Reset back to grid auto width
                */
               lg:w-auto
               lg:min-w-0
@@ -189,24 +198,24 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 backdrop-blur-md
 
                 text-white
-                text-[12px]
+                text-[7px]
 
                 xl:text-[9px]
 
-                px-2
+                px-1.25
                 xl:px-[9px]
                 md:px-[9px]
 
                 xl:py-0.75
                 md:py-0
-                py-1
+                py-0
 
                 rounded-full
                 z-10
 
                 flex
                 items-center
-                gap-[4px]
+                gap-[1px]
 
                 xl:gap-[3px]
               "
@@ -217,8 +226,8 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 width={12}
                 height={12}
                 className="
-                  w-[12px]
-                  h-[12px]
+                  w-[9px]
+                  h-[9px]
 
                   xl:w-[9px]
                   xl:h-[9px]
@@ -245,12 +254,6 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 src={product.src}
                 alt={product.name}
                 fill
-                // sizes="
-                //   (min-width: 1920px) 264px,
-                //   (min-width: 1024px) 16vw,
-                //   (min-width: 768px) 190px,
-                //   45vw
-                // "
                 className="
                   object-cover
                   transition-transform
@@ -268,8 +271,8 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 left-0
                 w-full
 
-                px-[16px]
-                pb-[16px]
+                px-[9px]
+                pb-[7px]
 
                 xl:pb-[9px]
                 md:pb-[10px]
@@ -287,7 +290,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   text-white
                   font-bold
 
-                  text-[14px]
+                  text-[9px]
 
                   xl:text-[12px]
                   md:text-[13px]
@@ -306,7 +309,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   m-0
                   p-0
 
-                  mt-[5px]
+                  mt-[3px]
 
                   xl:mt-[3px]
                   md:mt-[3px]
@@ -316,7 +319,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   leading-none
                   text-white/80
 
-                  text-[10px]
+                  text-[6px]
 
                   xl:text-[7px]
                   md:text-[8px]
