@@ -165,7 +165,7 @@ export default function ProductBanner() {
               bg-white/60 backdrop-blur-[2px] border border-white/50
               rounded-2xl shadow-[1.02px_1.02px_3.98px_0px_#0000001A]
               p-5 md:pt-[10px] md:pb-[7px] md:px-[14px]
-              xl:pt-[8px] xl:pb-[8px] xl:px-[51px]
+              xl:pt-[8px] xl:pb-[8px] xl:px-[50px]
               1xl:pt-[16px] 1xl:pb-[18px] 1xl:px-[29px]
               3xl:pt-[21px] 3xl:pb-[24px] 3xl:px-[42px]
               relative mx-auto lg:mx-0
@@ -223,30 +223,18 @@ export default function ProductBanner() {
                   </div>
 
                   {/* Title + Description */}
-                  <div className="flex flex-col items-center flex-1 w-full justify-start">
-                    <h3
-                      className="
-                        font-medium md:text-[7px] md:leading-[8px]
-                        xl:text-[8px] 1xl:text-[9px] 3xl:text-[13px]
-                        text-[#1B2130] mb-0.5 3xl:mb-1
-                        leading-tight whitespace-nowrap
-                      "
-                    >
-                      {cap.title}
-                    </h3>
-                    <p
-                      className="
-                        md:text-[5px] md:leading-[6.5px]
-                        xl:text-[7px] 1xl:text-[8px] 3xl:text-[10.63px]
-                        text-gray-500 font-light leading-[1.3] whitespace-pre-line
-                      "
-                    >
-                      {cap.desc}
-                    </p>
-                  </div>
+                  {/* Title */}
+                  <h3 className="font-medium md:text-[7px] xl:text-[8px] 1xl:text-[9px] 3xl:text-[13px] text-[#1B2130] mb-0.5 3xl:mb-1 leading-tight whitespace-nowrap">
+                    {cap.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="md:text-[5px] xl:text-[7px] 1xl:text-[8px] 3xl:text-[10.63px] text-gray-500 font-light leading-[1.3] whitespace-pre-line">
+                    {cap.desc}
+                  </p>
 
                   {/* Orange Divider */}
-                  <div className="w-4 md:w-[11px] md:h-[0.5] h-[2px] bg-[#FF5A2C] mt-[3px] 3xl:mt-3 rounded-full shrink-0" />
+                  <div className="w-4 3xl:w-[16.59px] 3xl:h-[0.75px] md:w-[11px] md:h-[0.5] h-[2px] bg-[#FF5A2C] mt-[3px] 3xl:mt-3 rounded-full shrink-0" />
                 </div>
               ))}
             </div>
