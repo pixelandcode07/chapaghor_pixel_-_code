@@ -2,6 +2,8 @@ import NavHead from '@/components/home/(Navbar)/NavHead';
 import Footer from '@/components/home/(Footer)/Footer';
 import CardBox from '@/components/product/shared/CardBox';
 import ProductBanner from '@/components/product/banner/ProductBanner';
+import SupportBanner from '@/components/product/shared/SupportBanner';
+import GraphicsPromoBanner from '@/components/product/shared/GraphicsPromoBanner';
 
 interface Product {
   name: string;
@@ -155,13 +157,14 @@ export default function ProductPage() {
           
             mx-auto
             w-full
-            px-4
+            // px-4
             md:px-8
             3xl:px-[47px]
             1xl:px-[62px]
             xl:px-[31px]
             md:pl-[15px]
             md:pr-0
+            pr-0
           "
         >
           {/* Page Title */}
@@ -172,15 +175,15 @@ export default function ProductPage() {
             font-['Helvetica_Neue',Helvetica,sans-serif]
             font-normal
             text-[#1B2130]
-            text-[25px]
-            sm:text-[30px]
+            text-[18px]
+            
             md:text-[26px]
             3xl:text-[48px]
             1xl:text-[36px]
             xl:text-[31px]
-            mt-10
+          
             3xl:mt-[28px]
-            mb-[30px]
+           
             3xl:mb-[28px]
             1xl:mb-[27px]
             1xl:mt-[27px]
@@ -188,6 +191,8 @@ export default function ProductPage() {
             xl:mb-[20px]
             md:mt-[18px]
             md:mb-[18px]
+            mt-[9px]
+            mb-[9px]
             
             
           "
@@ -208,10 +213,10 @@ export default function ProductPage() {
 
           {/* Bottom Space */}
           <div className="mt-[40px] 3xl:mt-[72px] flex flex-col gap-6 mb-10">
-            {/* 
+            
               <SupportBanner />
               <GraphicsPromoBanner />
-            */}
+           
           </div>
         </div>
       </div>
