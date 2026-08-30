@@ -186,7 +186,8 @@ export default function ProductPage() {
             1xl:mt-[27px]
             xl:mt-[20px]
             xl:mb-[20px]
-            
+            md:mt-[18px]
+            md:mb-[18px]
             
             
           "

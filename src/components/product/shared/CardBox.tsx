@@ -68,6 +68,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
             3xl:text-[42px]
             1xl:text-[30px]
             xl:text-[28px]
+            md:text-[30px]
 
             font-light
             font-['Helvetica_Neue',Helvetica,sans-serif]
@@ -88,6 +89,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
             3xl:text-[30px]
             1xl:text-[22px]
             xl:text-[20px]
+            md:text-[21px]
             md:pr-[33px]
 
             hover:underline
@@ -164,8 +166,8 @@ export default function CardBox({ title, products }: CardBoxProps) {
                * ONLY MD
                * Fixed card width so horizontally scroll works
                */
-              md:w-[190px]
-              md:min-w-[190px]
+              // md:w-[190px]
+              // md:min-w-[190px]
               md:shrink-0
 
               /*
@@ -193,11 +195,13 @@ export default function CardBox({ title, products }: CardBoxProps) {
 
                 px-2
                 xl:px-[9px]
+                md:px-[9px]
 
                 xl:py-0.75
+                md:py-0
                 py-1
 
-                rounded-md
+                rounded-full
                 z-10
 
                 flex
@@ -241,12 +245,12 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 src={product.src}
                 alt={product.name}
                 fill
-                sizes="
-                  (min-width: 1920px) 264px,
-                  (min-width: 1024px) 16vw,
-                  (min-width: 768px) 190px,
-                  45vw
-                "
+                // sizes="
+                //   (min-width: 1920px) 264px,
+                //   (min-width: 1024px) 16vw,
+                //   (min-width: 768px) 190px,
+                //   45vw
+                // "
                 className="
                   object-cover
                   transition-transform
@@ -268,6 +272,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                 pb-[16px]
 
                 xl:pb-[9px]
+                md:pb-[10px]
 
                 flex
                 flex-col
@@ -285,6 +290,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   text-[14px]
 
                   xl:text-[12px]
+                  md:text-[13px]
                   1xl:text-[14px]
                   3xl:text-[16px]
 
@@ -303,6 +309,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   mt-[5px]
 
                   xl:mt-[3px]
+                  md:mt-[3px]
                   1xl:mt-[4px]
                   3xl:mt-[5px]
 
@@ -312,6 +319,7 @@ export default function CardBox({ title, products }: CardBoxProps) {
                   text-[10px]
 
                   xl:text-[7px]
+                  md:text-[8px]
                   1xl:text-[8px]
                   3xl:text-[11px]
                 "
