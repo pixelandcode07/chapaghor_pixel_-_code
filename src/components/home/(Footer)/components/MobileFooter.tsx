@@ -19,7 +19,7 @@ export function MobileFooter() {
 
   return (
     <footer className="w-full overflow-hidden bg-[#0F1722] font-sans text-white">
-      <div className="px-2 pb-[18px] pt-[17px]">
+      <div className="px-5 md:px-8 xl:px-0 pb-[18px] pt-[17px]">
         <div className="relative mx-auto h-[54px] w-[230px]">
           <Image
             src="/footer/logo-white.png"

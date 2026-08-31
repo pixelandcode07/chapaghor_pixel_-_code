@@ -1,0 +1,302 @@
+[
+  {
+    "_id": "card-001",
+    "category": "Offset Printing",
+    "subCategory": "Business Card",
+    "title": "Business Card",
+    "image": "/all-cards/business.png",
+    "moq": 100,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-002",
+    "category": "Offset Printing",
+    "subCategory": "Flyer",
+    "title": "Flyer",
+    "image": "/all-cards/fiver.png",
+    "moq": 100,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-003",
+    "category": "Offset Printing",
+    "subCategory": "Magazine",
+    "title": "Magazine",
+    "image": "/all-cards/magazine.png",
+    "moq": 50,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-004",
+    "category": "Offset Printing",
+    "subCategory": "Poster",
+    "title": "Poster",
+    "image": "/all-cards/poster.png",
+    "moq": 50,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-005",
+    "category": "Offset Printing",
+    "subCategory": "Brochure",
+    "title": "Brochure",
+    "image": "/all-cards/brochure.png",
+    "moq": 100,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-006",
+    "category": "Offset Printing",
+    "subCategory": "Envelope",
+    "title": "Envelope",
+    "image": "/all-cards/envolop.png",
+    "moq": 100,
+    "views": 1373,
+    "price": 135
+  },
+  {
+    "_id": "card-007",
+    "category": "Offset Printing",
+    "subCategory": "Catalog",
+    "title": "Catalog",
+    "image": "/all-cards/business.png",
+    "moq": 50,
+    "views": 1250,
+    "price": 180
+  },
+  {
+    "_id": "card-008",
+    "category": "Offset Printing",
+    "subCategory": "Letterhead",
+    "title": "Letterhead",
+    "image": "/all-cards/fiver.png",
+    "moq": 100,
+    "views": 1180,
+    "price": 120
+  },
+  {
+    "_id": "card-009",
+    "category": "Offset Printing",
+    "subCategory": "Book",
+    "title": "Book",
+    "image": "/all-cards/magazine.png",
+    "moq": 50,
+    "views": 980,
+    "price": 250
+  },
+  {
+    "_id": "card-010",
+    "category": "Offset Printing",
+    "subCategory": "Wall Calendar",
+    "title": "Wall Calendar",
+    "image": "/all-cards/poster.png",
+    "moq": 100,
+    "views": 870,
+    "price": 160
+  },
+  {
+    "_id": "card-011",
+    "category": "Offset Printing",
+    "subCategory": "Money Receipt",
+    "title": "Money Receipt",
+    "image": "/all-cards/brochure.png",
+    "moq": 100,
+    "views": 760,
+    "price": 110
+  },
+  {
+    "_id": "card-012",
+    "category": "Offset Printing",
+    "subCategory": "Invoice",
+    "title": "Invoice",
+    "image": "/all-cards/envolop.png",
+    "moq": 100,
+    "views": 690,
+    "price": 115
+  },
+  {
+    "_id": "card-013",
+    "category": "Offset Printing",
+    "subCategory": "Business Card 2",
+    "title": "Business Card 2",
+    "image": "/all-cards/business.png",
+    "moq": 100,
+    "views": 640,
+    "price": 145
+  },
+  {
+    "_id": "card-014",
+    "category": "Offset Printing",
+    "subCategory": "Business Card 3",
+    "title": "Business Card 3",
+    "image": "/all-cards/fiver.png",
+    "moq": 100,
+    "views": 590,
+    "price": 155
+  },
+  {
+    "_id": "card-015",
+    "category": "Offset Printing",
+    "subCategory": "Business Card 4",
+    "title": "Business Card 4",
+    "image": "/all-cards/magazine.png",
+    "moq": 100,
+    "views": 540,
+    "price": 165
+  },
+  {
+    "_id": "card-016",
+    "category": "Offset Printing",
+    "subCategory": "Business Card 5",
+    "title": "Business Card 5",
+    "image": "/all-cards/poster.png",
+    "moq": 100,
+    "views": 510,
+    "price": 175
+  },
+  {
+    "_id": "card-017",
+    "category": "Offset Printing",
+    "subCategory": "Brochure 2",
+    "title": "Brochure 2",
+    "image": "/all-cards/brochure.png",
+    "moq": 100,
+    "views": 490,
+    "price": 150
+  },
+  {
+    "_id": "card-018",
+    "category": "Offset Printing",
+    "subCategory": "Brochure 3",
+    "title": "Brochure 3",
+    "image": "/all-cards/envolop.png",
+    "moq": 100,
+    "views": 450,
+    "price": 160
+  },
+  {
+    "_id": "card-019",
+    "category": "Offset Printing",
+    "subCategory": "Brochure 4",
+    "title": "Brochure 4",
+    "image": "/all-cards/business.png",
+    "moq": 100,
+    "views": 430,
+    "price": 170
+  },
+  {
+    "_id": "card-020",
+    "category": "Offset Printing",
+    "subCategory": "Brochure 5",
+    "title": "Brochure 5",
+    "image": "/all-cards/fiver.png",
+    "moq": 100,
+    "views": 410,
+    "price": 180
+  },
+  {
+    "_id": "card-021",
+    "category": "Offset Printing",
+    "subCategory": "Flyer 2",
+    "title": "Flyer 2",
+    "image": "/all-cards/magazine.png",
+    "moq": 100,
+    "views": 390,
+    "price": 140
+  },
+  {
+    "_id": "card-022",
+    "category": "Offset Printing",
+    "subCategory": "Flyer 3",
+    "title": "Flyer 3",
+    "image": "/all-cards/poster.png",
+    "moq": 100,
+    "views": 370,
+    "price": 145
+  },
+  {
+    "_id": "card-023",
+    "category": "Offset Printing",
+    "subCategory": "Flyer 4",
+    "title": "Flyer 4",
+    "image": "/all-cards/brochure.png",
+    "moq": 100,
+    "views": 350,
+    "price": 150
+  },
+  {
+    "_id": "card-024",
+    "category": "Offset Printing",
+    "subCategory": "Flyer 5",
+    "title": "Flyer 5",
+    "image": "/all-cards/envolop.png",
+    "moq": 100,
+    "views": 330,
+    "price": 155
+  },
+  {
+    "_id": "card-025",
+    "category": "Offset Printing",
+    "subCategory": "Letterhead 2",
+    "title": "Letterhead 2",
+    "image": "/all-cards/business.png",
+    "moq": 100,
+    "views": 310,
+    "price": 125
+  },
+  {
+    "_id": "card-026",
+    "category": "Offset Printing",
+    "subCategory": "Letterhead 3",
+    "title": "Letterhead 3",
+    "image": "/all-cards/fiver.png",
+    "moq": 100,
+    "views": 290,
+    "price": 130
+  },
+  {
+    "_id": "card-027",
+    "category": "Offset Printing",
+    "subCategory": "Letterhead 4",
+    "title": "Letterhead 4",
+    "image": "/all-cards/magazine.png",
+    "moq": 100,
+    "views": 270,
+    "price": 135
+  },
+  {
+    "_id": "card-028",
+    "category": "Offset Printing",
+    "subCategory": "Letterhead 5",
+    "title": "Letterhead 5",
+    "image": "/all-cards/poster.png",
+    "moq": 100,
+    "views": 250,
+    "price": 140
+  },
+  {
+    "_id": "card-029",
+    "category": "Offset Printing",
+    "subCategory": "Invoice 2",
+    "title": "Invoice 2",
+    "image": "/all-cards/brochure.png",
+    "moq": 100,
+    "views": 230,
+    "price": 120
+  },
+  {
+    "_id": "card-030",
+    "category": "Offset Printing",
+    "subCategory": "Invoice 3",
+    "title": "Invoice 3",
+    "image": "/all-cards/envolop.png",
+    "moq": 100,
+    "views": 210,
+    "price": 125
+  }
+]
