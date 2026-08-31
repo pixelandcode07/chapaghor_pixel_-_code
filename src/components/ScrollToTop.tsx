@@ -98,7 +98,7 @@ box-shadow: 0px 4px 20px rgba(253, 112, 52, 0.15);
       </style>
       {isVisible && (
         <div className="relative">
-          <div className="fixed bottom-10 right-10 z-9999">
+          <div className="fixed bottom-22 md:bottom-10 right-2 md:right-10 z-9999">
             <button
               className="button"
               onClick={scrollToTop}

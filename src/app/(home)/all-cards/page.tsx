@@ -9,7 +9,7 @@ import ProductBanner from "@/components/product/banner/ProductBanner";
 
 export default function ViewAllProduct() {
   return (
-    <div>
+    <div className="pb-20 md:pb-0">
       <NavHead />
 
       <ProductBanner />
