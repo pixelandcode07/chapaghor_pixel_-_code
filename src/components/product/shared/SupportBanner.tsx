@@ -1,3 +1,4 @@
+import { SupportBannerArrow, WhatsAppIcons } from '@/components/custom/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,11 +9,27 @@ export default function SupportBanner() {
         w-full
         rounded-[12px]
         3xl:rounded-[16px]
+        
         flex
         flex-col
-        md:flex-row
         items-center
-        // px-[20px]
+        
+        relative
+        overflow-hidden
+        
+        /* ব্যাকগ্রাউন্ড কালার দিয়ে রাখলাম সেফটির জন্য */
+        bg-[#0B0D12]
+      "
+      style={{
+        backgroundImage: "url('/product-banners/support-folder.jpg')",
+        /* નીચેের ৩টি লাইন নিশ্চিত করবে যে ইমেজের ডানে বা বামে কোনো অংশই কাটবে না */
+        backgroundSize: "100% 100%", 
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* 
+      // px-[20px]
         // md:px-[40px]
         // xl:px-[50px]
         // 3xl:px-[80px]
@@ -20,20 +37,12 @@ export default function SupportBanner() {
         // md:py-[35px]
         // xl:py-[40px]
         // 3xl:py-[60px]
-        relative
-        overflow-hidden
-        bg-cover
-        bg-center
-        bg-no-repeat
-      "
-      style={{
-        backgroundImage: "url('/product-banners/support-folder.jpg')",
-      }}
-    >
-      {/* 
         এই Wrapper-টিতে pl (padding-left) ব্যবহার করা হয়েছে 
         যাতে ব্যাকগ্রাউন্ড ইমেজের বাম পাশের ফোল্ডারটি পরিষ্কার দেখা যায় 
         এবং টেক্সট ফোল্ডারের ওপর উঠে না যায়।
+        //   pl-[90px]
+        //   md:pl-[140px]
+        //   xl:pl-[200px]
       */}
       <div
         className="
@@ -45,21 +54,24 @@ export default function SupportBanner() {
           w-full
           relative
           z-10
-        //   pl-[90px]
-        //   md:pl-[140px]
-        //   xl:pl-[200px]
-        //   3xl:pl-[350px]
+        
+          3xl:pl-[393px]
+          1xl:pl-[283px]
+          xl:pl-[258px]
+          md:pl-[182px]
         "
       >
         {/* Text Content */}
-        <div className="text-left mb-[20px] md:mb-0">
+        <div className="text-left mb-[20px] md:mb-0 3xl:py-[24px] 1xl:py-[17px] xl:py-[15px] md:py-[14px]">
           <p
             className="
-              text-[#A0A4AB]
+              text-white
               text-[12px]
-              md:text-[14px]
-              3xl:text-[20px]
-              font-medium
+              md:text-[9px]
+              1xl:text-[11px]
+              xl:text-[10px]
+              3xl:text-[15px]
+              font-normal
               mb-[4px]
               3xl:mb-[8px]
               leading-none
@@ -71,10 +83,11 @@ export default function SupportBanner() {
             className="
               text-[#FF6B00]
               text-[20px]
-              md:text-[26px]
-              xl:text-[32px]
-              3xl:text-[46px]
-              font-bold
+              md:text-[18px]
+              xl:text-[20px]
+              1xl:text-[22px]
+              3xl:text-[31px]
+              font-normal
               mb-[8px]
               3xl:mb-[12px]
               leading-none
@@ -84,15 +97,18 @@ export default function SupportBanner() {
           </h2>
           <p
             className="
-              text-[#EAEAEC]
+              text-white
               text-[12px]
-              md:text-[14px]
-              3xl:text-[20px]
+              md:text-[10px]
+              xl:text-[11px]
+              1xl:text-[13px]
+              3xl:text-[17px]
               leading-[1.4]
               max-w-[250px]
-              md:max-w-[350px]
-              xl:max-w-[400px]
-              3xl:max-w-[500px]
+              md:w-[156px]
+              xl:w-[177px]
+              1xl:w-[196px]
+              3xl:w-[260px]
             "
           >
             Chat with our team on WhatsApp for custom templates and designs.
@@ -100,7 +116,7 @@ export default function SupportBanner() {
         </div>
 
         {/* Button */}
-        <div className="flex-shrink-0 self-start md:self-center">
+        <div className="flex-shrink-0 3xl:mr-[214px] 1xl:mr-[155px] xl:mr-[140px] md:mr-[55px] self-start md:self-center">
           <Link
             href="#"
             className="
@@ -110,8 +126,11 @@ export default function SupportBanner() {
               py-[10px]
               md:px-[24px]
               md:py-[12px]
-              3xl:px-[36px]
+              xl:py-[11px]
+              xl:px-[20px]
+              3xl:px-[30px]
               3xl:py-[18px]
+              
               rounded-full
               flex
               items-center
@@ -122,31 +141,21 @@ export default function SupportBanner() {
             "
           >
             {/* বাটনের ভেতরের হোয়াটসঅ্যাপ আইকনটি (svg) আগের মতোই থাকবে */}
-            <Image
-              src="/combo/whatsapp-icon.svg"
-              alt="WhatsApp"
-              width={24}
-              height={24}
-              className="
-                w-[16px]
-                h-[16px]
-                3xl:w-[28px]
-                3xl:h-[28px]
-                object-contain
-              "
-            />
+            <WhatsAppIcons className='1xl:w-[15px] 1xl:h-[15px] xl:w-[14px] xl:h-[14px] '/>
             <span
               className="
                 text-[14px]
                 md:text-[16px]
-                3xl:text-[24px]
+                xl:text-[11px]
+                1xl:text-[12px]
+                3xl:text-[16px]
                 font-semibold
                 leading-none
               "
             >
               Chat On WhatsApp
             </span>
-            <span className="text-[16px] 3xl:text-[24px] leading-none">&rarr;</span>
+            <span className="3xl:pl-[16px] 1xl:pl-[16px] 3xl:text-[17px] xl:pl-[8px] 1xl:text-[12px] leading-none"> <SupportBannerArrow className='xl:w-[8px] xl:h-[11px] '/> </span>
           </Link>
         </div>
       </div>
