@@ -212,7 +212,7 @@ export default function ProductPage() {
           </div>
 
           {/* Bottom Space */}
-          <div className="mt-[40px] 3xl:mt-[72px] flex flex-col gap-6 mb-10">
+          <div className="mt-[40px] 3xl:mt-[72px] 3xl:px-[55px] 1xl:px-[55px] xl:px-[20px] md:px-[18px] flex flex-col gap-6 mb-10">
             
               <SupportBanner />
               <GraphicsPromoBanner />
