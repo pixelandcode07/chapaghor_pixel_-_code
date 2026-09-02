@@ -10,7 +10,7 @@ import CustomPagination from "@/components/custom/pagination/CustomPagination";
 
 import { SearchIcon } from "lucide-react";
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 36;
 
 export default function AllCard() {
   const [cards, setCards] = useState<AllCardType[]>([]);

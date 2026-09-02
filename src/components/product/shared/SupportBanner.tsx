@@ -49,20 +49,27 @@ export default function SupportBanner() {
           flex
           flex-col
           md:flex-row
-          items-center
+          items-start
+          md:items-center
           justify-between
           w-full
           relative
           z-10
+          
+          pl-[38%]
+          pr-[15px]
+          py-[15px]
         
           3xl:pl-[393px]
           1xl:pl-[283px]
           xl:pl-[258px]
           md:pl-[182px]
+          md:pr-0
+          md:py-0
         "
       >
         {/* Text Content */}
-        <div className="text-left mb-[20px] md:mb-0 3xl:py-[24px] 1xl:py-[17px] xl:py-[15px] md:py-[14px]">
+        <div className="text-left mb-[12px] md:mb-0 3xl:py-[24px] 1xl:py-[17px] xl:py-[15px] md:py-[14px]">
           <p
             className="
               text-white
@@ -82,13 +89,15 @@ export default function SupportBanner() {
           <h2
             className="
               text-[#FF6B00]
-              text-[20px]
+              text-[16px]
+              sm:text-[20px]
               md:text-[18px]
               xl:text-[20px]
               1xl:text-[22px]
               3xl:text-[31px]
               font-normal
-              mb-[8px]
+              mb-[4px]
+              md:mb-[8px]
               3xl:mb-[12px]
               leading-none
             "
@@ -98,13 +107,15 @@ export default function SupportBanner() {
           <p
             className="
               text-white
-              text-[12px]
+              text-[10px]
+              sm:text-[12px]
               md:text-[10px]
               xl:text-[11px]
               1xl:text-[13px]
               3xl:text-[17px]
               leading-[1.4]
-              max-w-[250px]
+              max-w-[180px]
+              sm:max-w-[250px]
               md:w-[156px]
               xl:w-[177px]
               1xl:w-[196px]
@@ -122,8 +133,10 @@ export default function SupportBanner() {
             className="
               bg-white
               text-[#1B2130]
-              px-[20px]
-              py-[10px]
+              px-[14px]
+              py-[8px]
+              sm:px-[20px]
+              sm:py-[10px]
               md:px-[24px]
               md:py-[12px]
               xl:py-[11px]
@@ -144,7 +157,8 @@ export default function SupportBanner() {
             <WhatsAppIcons className='1xl:w-[15px] 1xl:h-[15px] xl:w-[14px] xl:h-[14px] '/>
             <span
               className="
-                text-[14px]
+                text-[11px]
+                sm:text-[14px]
                 md:text-[16px]
                 xl:text-[11px]
                 1xl:text-[12px]

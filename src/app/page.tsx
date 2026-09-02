@@ -22,7 +22,7 @@ export default function HomePage() {
   // const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
-    <main className=" flex flex-col relative">
+    <main className=" flex flex-col relative pb-20 md:pb-0">
       {/* Modal Logic */}
       {/* {isModalOpen && (
         <UnderDevelopmentModal onClose={() => setIsModalOpen(false)} />
