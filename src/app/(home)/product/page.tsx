@@ -4,6 +4,7 @@ import CardBox from '@/components/product/shared/CardBox';
 import ProductBanner from '@/components/product/banner/ProductBanner';
 import SupportBanner from '@/components/product/shared/SupportBanner';
 import GraphicsPromoBanner from '@/components/product/shared/GraphicsPromoBanner';
+import MobileCapabilities from '@/components/product/shared/MobileCapabilities';
 
 interface Product {
   name: string;
@@ -216,6 +217,7 @@ export default function ProductPage() {
             
               <SupportBanner />
               <GraphicsPromoBanner />
+              <MobileCapabilities />
            
           </div>
         </div>
