@@ -158,7 +158,6 @@ export default function ProductPage() {
           
             mx-auto
             w-full
-            // px-4
             md:px-8
             3xl:px-[47px]
             1xl:px-[62px]
@@ -213,7 +212,8 @@ export default function ProductPage() {
           </div>
 
           {/* Bottom Space */}
-          <div className="mt-[40px] 3xl:mt-[72px] 3xl:px-[55px] 1xl:px-[55px] xl:px-[20px] md:px-[18px] flex flex-col gap-6 mb-10">
+          <div className="container-custom mt-[40px] 3xl:mt-[72px]  flex flex-col gap-6 mb-10">
+            {/* 3xl:px-[55px] 1xl:px-[55px] xl:px-[20px] md:px-[18px] */}
             
               <SupportBanner />
               <GraphicsPromoBanner />
